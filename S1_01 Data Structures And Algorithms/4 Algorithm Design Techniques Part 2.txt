@@ -1,0 +1,50 @@
+Activity Selection Problem
+Dynamic programming
+
+Activity selection problem (it is an slight variation of the problem of scheduling a resource among several competing activities) here we use greedy approach
+
+Dynamic programming - Used to solve problems with overlapping sub-problems. It solves the problem by combining  the sub- problems.
+
+It is vey similar to Divide and conquer
+
+Diffrence between Dynamic programming and divide and conquer
+
+Divide and conquer technique considers every sub problems as disjoints while the dynamic programming considers them as overlapping.
+
+Example 
+M1 : (10, 20)
+M2 : (20, 50)
+M3 : (50, 1)
+M4 : (1, 100)
+
+-> M1 * (M2 *( M3 *M4))
+
+if applying recursive normal multiplication
+
+Operation       Multiplications Total
+M3*M4           50*100          5000
+M2*(M3*M4)      20*50*100       100000
+M1*(M2*(M3*M4)) 10*20*100       20000
+                                125000 <- total
+
+then applying dynamic programming
+Operation       Multiplications Total
+M3*M4           20*50*1         1000
+M2*(M3*M4)      10*20*1         200
+M1*(M2*(M3*M4)) 10*1*100        1000
+                                2200 <- total
+
+The dynamic programming technique is used to solve problems with overlapping sub-problems.
+
+
+Which algorithm would you use to solve a problem with disjoint sub-problems?
+Divide and conquer
+Decrease and conquer
+Activity Selection
+Dynamic programming
+
+-> Decrease and conquer
+
+
+
+

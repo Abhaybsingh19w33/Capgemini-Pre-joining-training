@@ -1,0 +1,8 @@
+Which of the following is not an important consideration for solving a problem?
+Solution is correct
+solution is simple
+solution is efficient and ooptimized
+solution is scalable
+
+-> solution is simple
+

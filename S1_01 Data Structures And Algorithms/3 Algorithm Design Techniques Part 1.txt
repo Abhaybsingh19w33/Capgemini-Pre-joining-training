@@ -1,0 +1,45 @@
+List different algorithm techniques
+Identify the algorithm in different techniques
+
+
+Algorithm Design techniques
+Brute force
+Divide and conquer
+Decrease and conquer
+Greedy
+Dynamic programming
+
+
+Brute force algorithm (linear search, selwction sort, bubble sort)
+Straight forward approach to solve a problem
+Directly based on problem statement
+One of the simplest algorithm designs to implement
+
+Divide and Conquer
+problem divided into smaller sub-problems
+Each sub problem solved independently
+Solutions of the sub problems combined to get to solution
+
+Decrease and conquer technique (This techniques establises  relation between given bigger instance of the problem and smaller instance of the problem)
+Problem can be solved either top-down or bottom-up
+Variants : Decrease by a constant, Decrease by a constant factor and variable size Decrease
+
+Greedy Desin technique (this technique is primarily used in optimization problems which helps in constructing  a problem to a sequence of steps where each step considered a partial solution which is extended progressively to get the complete solution)
+
+the choice at each step is based on the step beibg either feasible, locally optimal or irrevocable.
+
+
+
+
+Brute force technique follows each alternative to solve the problem.
+Decrease and conquer decreases the peobelm size bya constant and then solves the problem
+greedy technique aims at providing an optimal solution
+ 
+
+Which algorithm design technique would be employed while playing th cards game?
+Divide and conquer
+Decrease and conquer
+Brute force
+Dynamic programming
+
+-> Decrease and conquer

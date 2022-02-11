@@ -1,0 +1,31 @@
+List the types of algorithmi instructions
+Describe the life cycle of an algorithm
+
+
+A step-by-step proces for solving the problem needs to be defined.
+
+Properties of an algorithm:
+Expilicit unambiguos finite number of steps
+Known inputs
+Generated output
+treminates in a fixed amount of time
+
+
+Phases of algorithm:
+Analyse
+Design
+Write
+Test
+
+Types of instructions in an algorithm:
+Sequential
+Conditional 
+Iterative
+
+
+An algorithm is a step by step procedure to solve a problem on a fixed amount of time.
+
+An algorithm is an explicit unambiguous finite number os steps.
+
+Sequential, iterative and conditional are the types of algorithmic instructions.
+
