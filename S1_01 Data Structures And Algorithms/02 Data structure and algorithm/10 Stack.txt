@@ -1,0 +1,40 @@
+Stack is a linear data structure that allows insertion from one end called the top of the stack.
+
+Item are deleteed from the same end
+
+LAst item inserted is the first item to be deletedd from the stack.
+
+Stack is called as a LIFO- Last in First Out data structure
+
+
+Stack is implemented using an array to:
+-> Insert an item onto the stack - push
+-> Delete an item from the stack - pop
+-> Display the stack contents
+
+Stack operations are performed using the stack pointer (sp) that points to the top pf the stack
+
+Stack pointer is incremented before every push operation and is decremented from every pop operation
+
+Before insertion
+-> Check if the stack is not full - stack overflow
+
+Before deletion
+-> Check if the stack is not empty - stack underflow
+
+Stack Operations - Boundary conditions
+-> If stack is full then the TOS is equal to the maximum size of the stack
+-> If stack is empty then TOS is placed before the bottom of the stack
+-> Push only if the TOS is not equal to the maximum size of the stack
+-> Pop only if the TOS is not below the botton of the stack
+-> If the TOS is not equal to the maximum size of the stack only then push an element onto the stack
+-> If the TOS is not below the botton of the stack only then pop an element fron the stack
+
+To push
+-> if TOS is not is not equal to stack maximum size
+--> increment the TOS
+--> Insert the element at the TOS
+
+To pop
+-> If TOS is not below the stack
+--> Return the element at the TOS

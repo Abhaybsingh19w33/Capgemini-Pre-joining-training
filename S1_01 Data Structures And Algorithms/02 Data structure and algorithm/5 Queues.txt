@@ -1,0 +1,39 @@
+Queue is a linear data structure that allows insertion of data at one end and deletion from the other end.
+
+End of the queue where the items are inserted is called the rear end.
+
+End of the queue where the items are deleted is called the front end. 
+
+First item inserted is the first item to be deleted out of the queue.
+
+Queue is called as a FIFO -First in first out data structure.
+
+Queue is impplemented using an array to:
+
+-> insert an item at the rear end of the queue - insert_rear()
+-> delete an item at the front end of the queue - delete_front()
+-> display the queue contents
+-> Insertion to the queue is done at the rear end by incrementing the rear pointer, 'r'
+-> Deletion to the queue is done at the front end by incrementing the front pointer, 'f'
+
+
+Conditions or states or cases
+
+Before insertion
+-> check if the queue is not full
+
+Before deletion
+-> check if the queue is not empty 
+
+-> if the queue is full then 'r' will be equal to the maximum size of the queue
+
+-> if the queue is empty then 'f' will be greater than the 'r'
+
+To insert an item at the rear end of the queue when 'r' is not equal to the maximum size of the queue:
+-> Increment 'r'
+-> Insert the item at index 'r' 
+
+To delete an item from the from end of the queue when 'f' is not greater than 'r':
+-> Increment 'f'
+-> Delete the item at index 'f'
+-> if f>r then reset then pointers

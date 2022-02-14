@@ -1,0 +1,81 @@
+Tree is a non linear data structure which is represented using a graph notation.
+
+Graphs
+-> A graph G=(V,E), where V is the set of vertices and E is the set of Edges.
+-> The vertex of a graph is also called as a node.
+
+Directed Graphs or digraph
+-> A graph in which every edge is directed is called a directed graph.
+-> Every edge of a directed graph is represented as E = (i,t), where i is  the initial node and t is the terminal node of the direccted graph
+-> In the directed graph for edge AB, A is the initial node and B is the terminal node
+-> Total number of nodes leaving a node is called the out-degree of a node
+-> Total number of nodes incident on a node is called the in-degree of a node
+-> Sum of in-degree and out-degree of a node is known as the degree of a node
+
+Cycle and acyclic graphs
+-> In a directed graph, if a node u is reachable from node v and node v is reachable from node u, then the path v to v through u is called a cycle or a circuit.
+-> A directed graph in which a cycle or a circuit exists betwenn a pair of nodes is called a cyclic graph
+-> A graph that has no cycle is called an acyclic graph.
+
+Directed trees
+-> in directed acyclic graph,only one node has an in-degree of 0 and the rest of the nodes have an in-degree of 1
+-> Node with in-degree 0 is called root node, and all other nodes are reachable from the root node
+-> Nodes whihc are reachable fron anode u through a simgle edge are called children of u
+-> Nodes with out-degree of 0 are called leaf nodes
+
+Binary trees
+-> A binary tree is a directed tree in which the out-degree of each node is less than or equal to two
+-> Every node in a binary tree will have either 0,1, or 2 children
+-> Nodes which are reachable from a node u are called as children of u
+-> Nodes with out-degree of 0 are called leaf nodes
+
+
+A Binary tree can be recursively defined as three subsets comprising:
+-> First subset contants of a single element called the root
+-> Second subset constants of the left sub tree
+-> Third subset consists of the right sub tree
+
+Linked list representation of binary tree
+Each node in a tree comprises of :
+-> Data field
+-> Left link - llink - contains the address of the left sub tree
+-> Right link - rlink - contains the address of the right sub tree
+-> Memory for each node is allocated and freed dynamically
+-> llink and rlink of leaf nodes is NULL
+-> A varible roor will point to the root node and will be set to NULL when the tree is empty
+
+typedef struct node {
+    int info;
+    struct node *llink;
+    struct node *rlink;
+}NODE;
+
+When the tree is empty
+NODE* root =NULL;
+
+Binary tree traversals
+-> Eacg node in the tree is visited exactly once
+-> Types of traversals for a binary tree:
+--> Inorder
+--> Preorder
+--> Postorder
+
+In inorder traversal of a binary tree:
+-> Traverse the left subtree recursively in inorder
+-> Process the root node
+-> Traverse the right subtree recursively in inorder
+
+In Preorder traversal of a binary tree:
+-> Process the root node
+-> Traverse the left subtree recursively in Preorder
+-> Traverse the right subtree recursively in Preorder
+
+In Postorder traversal of a binary tree:
+-> Traverse the left subtree recursively in Postorder
+-> Traverse the right subtree recursively in Postorder
+-> Process the root node
+
+KeyPoints:
+-> A directed tree is an acyclic directed graph with one node having an in-degree 0 and the rest having an in-degree 1
+-> A binary tree is a directed tree in whihc every node has an out-degree <= 2
+-> A binary tree can be traverse in inorder, preorder, and postorder traversals

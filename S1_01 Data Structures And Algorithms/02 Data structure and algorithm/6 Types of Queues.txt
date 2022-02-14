@@ -1,0 +1,99 @@
+Different types of queue:
+-> ordinary Queue or simple queue
+-> Circular queue
+-> Deque or double ended queue
+
+Ordinary Queue
+-> In an ordiniary or a simple queue the reae pointer is incremented for every insertion of elements into the queue.
+
+-> When the rear pointer r reaches the last element of the queue, the queue is full and no further insertions are allowed.
+
+-> When some elements are deleted from the queue by incrementing the front pointer, the rear pointer still remains at the last element.
+
+-> Any insertion to the queue would still not be possible.
+
+Circular Queue
+-> The drawback of the ordinary queue is overcome using the Circular queue.
+
+-> In a circualr queue, the last element is adjacent to the first element.
+
+Circular Queue is impplemented using an array to:
+
+-> insert an item at the rear end of the queue - insert_rear()
+
+-> delete an item at the front end of the queue - delete_front()
+
+-> display the queue contents
+
+When circualr queue is impplemented using as array:
+-> Insertion to the queue is done at the rear end by incrementing the rear pointer, 'r' 
+-> Deletion to the queue is done at the front end by incrementing the front pointer, 'f'
+-> when f and r reach last element, they are reset to the beginning of the queue.
+
+// this is a way to imcrement and check if w reach the end of the queue at the same time
+
+f = (f+1)%QUEUE_SIZE  // it is all done to reset the pointer when we reach the maximum element
+
+Example :
+
+QUEUE_SIZE = 4
+f = 0
+Increment f, f = (0+1)%4 = 1
+Increment f, f = (1+1)%4 = 2
+Increment f, f = (2+1)%4 = 3
+Increment f, f = (3+1)%4 = 0
+
+Conditions or states or cases
+
+Before insertion
+-> check if the queue is not full
+
+Before deletion
+-> check if the queue is not empty 
+-> To check the count of the queue, define a count variablr, 'c' having the running count of the number of elements in the queue.
+-> If queue is full then 'c' will be equal to the maximum size of the queue.
+-> if queue is empty then 'c' will be equal to 0
+-> if queue is not empty then increment the f
+
+To insert an item at the rear end of the queue when 'r' is not equal to the maximum size of the queue:
+-> Increment 'r'
+-> Insert the item at index 'r' 
+
+To delete an item from the from end of the queue when 'f' is not greater than 'r':
+-> Increment 'f'
+-> Delete the item at index 'f'
+
+
+Deque or double ended queue
+
+Insertions and deletions can be performed both at the front and the rear end of the queue.
+
+-> insert an item at the rear end of the queue - insert_rear()
+-> insert an item at the front end of the queue - insert_front()
+-> delete an item at the front end of the queue - delete_front()
+-> delete an item at the rear end of the queue - delete_rear()
+
+insert_rear() -
+-> Increment the rear pointer 'r'
+-> Insert the item in the queue at the index 'r'
+
+delete_front() -
+-> Increment the front pointer 'f'
+-> Delete the item in the queue at the index 'f'
+
+insert_front() - 
+-> for the first time insertion:  If 'f' is pointing ot the first element and if 'r' is pointing before the first element, increment 'r' and insert the element.
+
+-> if 'f' is pointing to any other element decrement 'f' and insert the element
+
+delete_rear() - 
+-> If f is not greater than r: decrement 'r' and insert the element
+-> if f>r: reset the pointers
+
+
+Key Points:
+Simple queue or ordinary queue allows insertion at rear end and deletion at front end
+
+Circular queue has the last element adjacent to the first element
+
+Deque allows insertion and deletion at both ends of the queue

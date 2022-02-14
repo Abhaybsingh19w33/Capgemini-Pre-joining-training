@@ -1,0 +1,136 @@
+Linked list is a linear data structure which consists of a group of nodes in a logical sequence.
+
+Each node consists of:
+-> Data field
+-> Link or reference to thenext node in the sequence
+
+Node 
+-> Memory for each node is allocated dunamically and the nodes are not stored in contiguous memory locations
+-> First field of each node is the data to be stored in the linked list
+->  Second field of each node contains the address of the next node
+-> Link field of the last node is NULL
+-> Every node in the linked list is logically connected to the next node
+-> Every node starting from the first can be traversed till the last node
+-> Node traversal is in a single direction and hence these are also called as singly linked lists
+
+-> The first node of the linked list is identified by  the variable first
+-> The last node of the linked list has the link field set to NULL
+-> When the list is empty or when there are no nodes in the list the variable first is set to NULL
+-> There is no limit on the no of nodes in the linked list as long as the memory is available
+
+
+Node is defined as a structure which stores integer data items
+
+typedef struct node{
+    int data;
+    struct node* link;
+}NODE;
+
+
+Declare a pointer to the structure
+NODE *new;
+
+To allocate a new node using a malloc function:
+
+NODE * new = (NODE *) malloc(sizeof(struct node))
+
+if(new == NULL) {
+    printf("Out of memory");
+}
+
+
+
+Operation on linked list
+-> Insert a node into a list
+-> Delete a node into a list
+-> Traverse the list to display its contents
+
+Insert a node to a list
+-> Allocate a new node - NEW
+-> Share the item in the data field of the new node
+-> Position the node at the appropriate location in the list
+-> if the new node is the only node in the list
+--> First variable will have to point to this node
+--> Link field of the new node wil be set to NULL
+
+A new node to the linked list can be inserted:
+-> At the beginning of the list - insert_front()
+-> At the end of the list - insert_rear()
+-> In between 2 nodes - insert_at()
+
+To insert a node to the beginning of the list
+-> Allocate a new node - new
+-> Store the item in the data field of the new node
+-> Attach the new node to the first node - Address stored in the first is copied to the link field of the new node
+-> Set the first variable point to this new node - store the address of the new node in first
+
+Insert a node to the end of the list
+-> Allocate a new node - NEW
+-> Store the item in the data field of the new node
+-> Set the link field of the new node to NULL
+-> If this is the first node in the list then set the first point to this node
+-> If the list already exists:
+--> Traverse till the last node to get the address of the last node
+--> Attach the last node of the existing list to the new node - address of the new node is copied to the link field of the last node
+
+Insert a nodoe in between two nodes
+-> Allocate a new node - NEW
+-> Store the item in the data field of the new node
+-> If this is the first node in the list then set the first point to this node
+-> If the list already exists:
+--> Traverse till the specified node position, p to get address of the p node and the p_plus_1 node
+--> Attach the p node to the new node
+--> Attach the new node to p_plus_1 node
+
+To free a node in the linked list
+free(new);
+
+Before freeing a node check if the list exists by checking if the first is not set to NULL
+if(first != NULL) {
+    free(new);
+}
+
+
+Delete a node from a list
+-> Traverse to the position p where the node is to be deleted - p node
+-> Copy the data field of the p node into a temporary variable and return this variable to get the data field of the deleted node
+-> Free the node at position p
+
+
+Delete a node  fromm the list
+A new node to the linked list can be deleted:
+-> At the beginning of thelist- delete_front()
+-> At the end of the list - delete_rear()
+-> In between 2 nodes - delete_at()
+
+Delete a node at the beginning of the list
+-> first = NULL - List empty
+-> If the list exists:
+--> Copy the data field of the first node to a temp variable
+--> Set the first point to the successor node
+--> Free the first node
+-> The node adjacent to the first node is called the successor node
+
+Delete a node at the end if the linked list
+-> first = NULL - LIST EMPTY
+-> If the list exists:
+--> Traverse to the last node and the last predecessor node
+--> Copy the data field of the last node to a a temp variable
+--> Set the link field of the predecessor node to NULL
+--> Free the last node
+-> The node previous to the last node is called the predecessor node
+
+Delete a node in between 2 nodes
+// P-NODE : Node at position P
+// predecessor node : Node before the p node
+-> first = NULL -List EMPTY
+-> If the list exists:
+--> Traverse till the specified node positioon, p to get the address of the p node, predecessor node and the successor node
+--> Copy the data field of the p node to a a temp variable
+--> Attack the predecessor node to the successor node
+--> Free the node at position p
+
+Key point:
+Linked list is a linear collection of data in a alogical sequence
+Linked Lists are allocated memory dynamically
+Insertion of data to the linked list can be done at any position

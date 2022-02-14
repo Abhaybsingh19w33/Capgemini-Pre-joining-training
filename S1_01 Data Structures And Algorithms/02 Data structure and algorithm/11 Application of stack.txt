@@ -1,0 +1,218 @@
+Conversion of Arithmetic operator
+
+Arithmetic expressions are of the form 
+a or p
+
+where 
+-> a and b operands that is a variable or a numeric constant
+-> op is a binary operator such as +,-,*,/,^ etc ehich requires 2 operands
+
+Arithmetic expressions can be optionally parenthesized
+
+Types of arithmetic expressions
+-> Infix expression - An expression having an operator between the operand 
+--> Eg a + b
+-> Postfix expression - An expression where the operator follows two operands
+--> Eg a b +
+-> Prefix expression - An expression where the operator precedes two operands
+--> Eg + a b
+
+Precednece of operators
+-> Parenthesis : (,)
+-> Exponent : ^
+-> Multiplication and division : *, /
+-> Addition and substraction: + -
+
+Evaluation of arithmetic
+-> Programmer specifies an infix expression in the code
+-> Evaluation of an infix expression requires a scan fron left to right and vice versa repeatedly because of the precedence of operators
+
+Eg left to right
+( ( 10 + 15 ) * ( ( 18 - 14 ) / 2 ) + 10 / 5 )
+( 25 * ( ( 18 - 14 ) / 2 ) + 10 / 5 )
+( 25 * ( 4  / 2 ) + 10 / 5 )
+( 25 * 2 + 10 / 5 )
+( 50 + 2 )
+52
+this requires several steps and reset pointers sevral times
+
+C compiler internally converts an infix expression to a postfix or a prefi expression
+
+Stack data structure is used to implement the conversion of one expression form to other
+
+Conversion of infix to postfix
+( 10 + 15 ) * ( ( 18 - 14 ) / 2 ) + 10 / 5
+A = 10
+B = 15
+C = 18
+D = 14
+E = 2
+F = 10
+G = 5
+
+-> ( A + B ) * ( ( C - D ) / E ) + F / G
+        Infix   Postfix
+T1      A+B     AB+
+
+-> T1 * ( ( C - D ) / E ) + F / G
+        Infix   Postfix
+T1      A+B     AB+
+T2      C-D     CD-
+
+-> T1 * ( T2 / E ) + F / G
+        Infix   Postfix
+T1      A+B     AB+
+T2      C-D     CD-
+T3      T2/E    T2 E/
+
+-> T1 * T3 + F / G
+        Infix   Postfix
+T1      A+B     AB+
+T2      C-D     CD-
+T3      T2/E    T2 E/
+T4      T1*T3   T1 T3*
+
+-> T4 + F / G
+        Infix   Postfix
+T1      A+B     AB+
+T2      C-D     CD-
+T3      T2/E    T2 E/
+T4      T1*T3   T1 T3*
+T5      F/G     F G/
+
+-> T4 + T5
+        Infix   Postfix
+T1      A+B     AB+
+T2      C-D     CD-
+T3      T2/E    T2 E/
+T4      T1*T3   T1 T3*
+T5      F/G     F G/
+T6      T4+T5   T4 T5+
+
+T6
+T4 T5 +
+T1 T3 * F G / +
+A B + T2 E / * F G / +
+A B + C D - E / * F G / +
+10 15 + 18 14 - 2 / * 10 5 / +
+
+Evaluation of postfix expression
+-> Evaluation of prefix or postfic expression requires a single scan of the expression fom left to right
+-> Stack data structure is used for the evaluation of a prefix or a postfic expression
+
+Scan the expression from left to right till the end of the expression:
+-> If the scanned symbol is operand, push the operand onto the stack
+-> if the scanned symbol is an operator - pop 2 operands from the stack and perform the desired operation with the operator
+-> Push the result back to the stack
+
+10 15 + 18 14 - 2 / * 10 5 / +  
+
+Stack
+15
+10
+
+Stack 
++
+15
+10
+
+-> 10 + 15 = 25
+
+Stack
+25
+
+Stack
+-
+14
+18
+25
+
+-> 18 - 14 = 4
+
+Stack
+4
+25
+
+Stack
+/
+2
+4
+25
+
+-> 4 / 2 = 2
+
+Stack
+2
+25
+
+Stack
+*
+2
+25
+
+-> 25 * 2 = 50
+
+Stack
+50
+
+Stack 
+/
+5
+10
+50
+
+-> 10 / 5 = 2
+
+Stack
+2
+50
+
+Stack
++
+2
+50
+
+-> 50 + 2 = 52 
+
+
+Recursion
+
+-> Recursion is a senario when a function calls itself
+-> recursive function has two parts:
+--> Recursive condition: The invocation of a recursive call to the function (function calls itself)
+--> Vase condition:  When a function will terminate (until a condition is satisfied)
+
+Just like any other function call, a recursive function call uses stack
+
+Recursive calls are used ti solve complex problems
+
+
+Problem statement:
+-> Three pegs A, B, and C
+-> There are n discs on Peg A of different diameters placed one above the other
+-> Smaller disc is always placed above the larger disc
+-> Initially pegs B and C are empty
+-> All the discs from Peg A are to be moved to Peg C using peg B as temporary storage with only one disc is moved at a time
+
+
+If number of discs = 1
+-> Move the disc from Peg A to C
+Total No of Moves: 1
+
+If number of discs = 2
+-> Move the first disc from A to B
+-> Move the second disc from A to C
+-> Move the first disc from B to C
+Total No of Moves: 3
+
+If number of discs = 3
+-> Move the first and second disc from A to B using C as temporary storage
+-> Move the third disc from A to C
+-> Move the first and second disc from B to C using A as temporary storage
+Total No of Moves: 7
+
+If number of discs = n
+-> Move the n-1 discs from A to B using C as temporary storage
+-> Move the nth disc from A to C
+-> Move the n-1 discs from B to C using A as temporary storage
+Total No of Moves: 2^n - 1

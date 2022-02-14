@@ -1,0 +1,59 @@
+Binary search tree is an ordered binary tree.
+
+For each node, N in the Binary search trees:
+-> Elements in the left sub tree is less than the data(N)
+-> Elements in the right sub-tree is greater than or equal to data(N)
+
+Each node in a tree comprises of :
+-> Data field
+-> Left link - llink - contains the address of the left sub tree
+-> Right link - rlink - contains the address of the right sub tree
+-> Memory for each node is allocated and freed dynamically
+-> llink and rlink of leaf nodes is NULL
+-> A variable root will point to the root node and will be set to NULL when the tree is empty
+-> Allocate a new node - NEW
+-> Store the item in the data field of the new node
+-> Set the llink and rlinkn field of the new node to NULL
+-> If this is the first node in the tree, then set the root point to this node
+
+
+The tree already exists:
+-> If data field of the new node is less than the data field of the root node, then insert the new node iteratively in th eleft sub tree as a leaf node
+-> If data field of the new node is greater than or equal to the data field of the root node, then insert the new node iteratively in th left sub tree as a leaf node
+
+Traversing a BST
+-> Binary search tree cab be traversed in inorder, preorder, and postorder traversals
+-> Traversing th etreee in inorder, the elements of the tree will be displayed in sortde order(ascending order)
+
+In inorder traversal of a binary search tree:
+-> Traverse the left subtree recursively in inorder
+-> Process the root node
+-> Traverse the right subtree recursively in inorder
+
+Searching an element using BST
+-> Compare the elements to the searched with the data field of the root node
+-> If there is a match, then the element is found at the root node
+-> If the element is less than the data field of the root node recursively search the left subtree 
+-> If the element is greater yhan the data field in the root node recursively search the right subtree
+
+Key Point
+-> BST is an ordered binary tree in whihc elements in the left subtree will be less than the root and the elements in the right subtree will be greater than or equal to the root
+-> Inorder traversal of a BST will result in the elements being sorted in ascending order
+-> To search an element in the BST eithre the left or right subtree needs ro be traversed
+
+
+
+
+
+
+
+In Preorder traversal of a binary tree:
+-> Process the root node
+-> Traverse the left subtree recursively in Preorder
+-> Traverse the right subtree recursively in Preorder
+
+In Postorder traversal of a binary tree:
+-> Traverse the left subtree recursively in Postorder
+-> Traverse the right subtree recursively in Postorder
+-> Process the root node
+
