@@ -1,0 +1,43 @@
+ALGORITHM ANALYSIS AND DESIGN
+
+Define resource Analysis
+List the types of resouce analysis
+Describe time and spacce complexity measures
+
+Analysis of an algorithm:
+This refers to forcasting the resources consumed in terns of how much of the primary memeory algorithm consumes or how much the algorithm takes in executing the steps of program.
+
+Complexiy of an algorithm
+This represents quantity of resouces consumed during execution. The primary resources are time and space.
+
+Time complexity
+-> the analysis of how much the time taken by the algorithm
+-> Total execution time is deroived from 
+
+// here i in opi is instances
+->opi(n) is the total number of instances of operation opi and ti is the time taken to execute each instance of the operation.
+
+The time complexity is expressed in terms of operation count or step count.
+
+Operation count
+-> The OC iss one way to estimated the time complexity which measures the exact number of operations required to complete the algorithm.
+
+Step count is another way to estimate time complexity
+-> Step count is detailed estimate which computes the total number of basic operations perfromed at  every single step in unit time.
+
+Space complexity
+The analysis base on the space required by the algorithm
+It is expressed in terms of 
+instruction space - that is the space needed to store the executable code in the memory.
+
+Data Space - The space required to store the variables and constants in the memory
+
+Environment stack space -  The space consumed during function calls
+
+For Searching an element in an array, what is the operation count estimate of time complexity?
+Initializing the array
+Reading the array
+Number of search operation
+Displaying whether the element is found or not
+
+-> Number of Search operations

@@ -1,0 +1,26 @@
+Asymptotic Analysis - to determine the order of magnitude of algorithm
+
+How much more time does a problem of twice the size take?
+
+Example:
+if I can sort 1000 numbers in unit time, how much time will it take for sorting 10000 numbers?
+
+Asymptotic complexity - The limiting behaviour of the complexity of the problem as problem size increases?
+The Asymptotic analysis  is necessary but not sufficient for many kinds of problems? 
+
+Bog-O notation - upper bound of resouces required to solve a problem
+
+T(n) = O( f(n) ) if there are constants C and n0 Such where n > n0, T(n) <=  C*f(n)
+
+Big-0 notation is used for worst case analysis with an assumption that C and n0 are positive where n0 represents the threshold problem size and n is the Current problem size
+
+Omega notaion - lower bound of resouces required to solve a problem
+
+
+Upper bound is preffered by most of us.
+
+Specifying the upper bound is preferred in most of the situations rather than specifying the lower bound.
+True
+False
+
+-> True

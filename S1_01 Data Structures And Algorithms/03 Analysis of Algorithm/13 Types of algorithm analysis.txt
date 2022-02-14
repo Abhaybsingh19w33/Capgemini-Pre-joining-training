@@ -1,0 +1,20 @@
+List different algorithm design techniques
+Identify the algorithms in various design techniques
+
+-> There are 2 types of analysis of algorithms: 
+
+--> priori - analysis before the execution, in these we ignore the machine and platform dependent factor influencing the algorithms and coled algorithm consumption time and space
+
+requires the knowledge of mathematical equations to analyse the step count 
+
+--> posteriori analysis - analysis after the execution, external factor like network latency, hardware delay etc. mayy infuence analysis
+
+Profiler tool can be use dto peform a posteriori analysis
+
+Profiling referss to the process of measurement of spacce and time complexities of a program
+
+Profiler tool is used for a priori analysis. true or false.
+True
+false
+
+-> False

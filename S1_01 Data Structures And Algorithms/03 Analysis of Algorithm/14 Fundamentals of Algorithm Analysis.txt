@@ -1,0 +1,36 @@
+Define the problem size
+Describe the order of magnitude of an algorithm 
+Identify the nedd for a worst case analysis
+
+Problem- Example
+
+-> To search for an element in ana array having 'n' elements
+--> The problem size of expressed in terms of the size of the array which is equal to 'n'
+
+-> To merger 2 arrays each of size 'n' and 'm' respectively
+--> The problem size is the sum of the 2 array sizes, which is equal to 'n' + 'm'
+
+-> To compute the factorial of a number 'n'
+--> The problem size is 'n'
+
+
+Order of magnitude of an algorithm quantifies the running time
+
+-> Considerations in arriving at the order of magnitude of an algorithm
+--> Only the leading term of the formula is considered, lower order terms which are insignificant are ignored
+--> Constants, if any, in the derived formula are ignored
+--> In the example, the approximation is done because for higher values of 'n', the effect of the constant'c' will not be significant. Thus, it can be ignored.
+
+
+Analysis based on the nature of the problem:
+-> Worst Case Analysis
+-> Best Case Analysis
+-> Average Case Analysis
+
+In an algorithm, suppose there are 'p' statements inside a loop and the loop executes 'K' times, wnat is the order of magnitude of the algorithm?
+p
+k
+p*k
+p+k
+
+-> k
