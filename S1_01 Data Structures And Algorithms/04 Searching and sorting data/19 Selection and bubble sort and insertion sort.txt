@@ -1,0 +1,54 @@
+Sorting refers to the arrangement of data in a particular order.
+
+It has many applications in the area of computers for data processing.
+
+Arranging the data elements in a particular sequence in the ascending order (increasing order) or in the descending order (decreasing order)
+
+Sorting Algorithms:
+Bubble Sort
+Selection Sort
+Insertion Sort
+
+For ascending order:
+
+Bubble Sort
+
+Step 1: Compare the first and second data items. If the first data item is greater than the second one then make an interchange.
+
+Step 2: Compare second and third data. if the second one is greater than the third one then make an interchange.
+
+Step 3: The process is repeated till the last data item is reached.
+
+Step 4: When the last data item is reached it is said to be one pass. At the end of the first pass, the largest data item is bubbled out. That is it occupies the last position.
+
+Step 5: The steps 1 to 4 are repeated for the data items
+between 1 to N-1 because the nth data item is already
+sorted. At the end of second pass, the next highest
+data item-eEcupies its right place.
+
+Step 6: The steps are repeated till the last pass (N-1) is reached.
+
+Step 7: At the end of the last pass the entire list is sorted.
+
+
+Selection Sort
+Each pass selects the smallest data item from the unsorted set and move it to its position.
+
+Procedure: Here 'N' indicates the number of data items to be sorted.
+
+Step 1: From the data items in positions 1 to N, select the smallest data item and interchange with the Oth data item. Now the first data item is sorted.
+
+Step 2: From the data items in positions 2 to N, select the smallest data item and interchange with the 1st data item. Now the second data item is sorted.
+
+Step 3: The steps are repeated N-1 times. At the end of N-1th time the entire data set is sorted.
+
+Insertion sort
+Insert the next element into the correct position of the ordered part and in the process extend the ordered section by one element.
+
+Procedure: 
+
+Step 1: Select the second data item and compare it with the first. If the second one is less than the first one then insert it before the first data item. Otherwise proceed with the next step.
+
+Step 2: Select the third data item and compare it with the second. If it is less than the second then compare it with the first. If it is less than the first one, insert it before the first data item. Otherwise insert it in between first and second data item.
+
+Step 3: Repeat the steps N-1 times. The entire list gets sorted within (N-1)th pass.

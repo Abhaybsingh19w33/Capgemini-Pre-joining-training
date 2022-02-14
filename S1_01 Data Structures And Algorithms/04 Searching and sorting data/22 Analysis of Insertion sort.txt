@@ -1,0 +1,3 @@
+The worst case complexity of insertion sort algorithm O(n^2)
+
+In insertion sort algorithm, at the end of every iteration the element is inserted into the right position

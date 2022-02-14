@@ -1,0 +1,47 @@
+Searching refers to finding whether a data item is present in the set of items or not.
+
+The time required to search depends on the following factors:
+-> Whether the data is arranged in a particular order or not
+-> The location of the data to be searched
+-> The total number of iterations to be carried
+out to search the data
+
+Linear Search
+-> Linear search is applied on the set of items that are not arranged in any particular order
+-> In linear search, the searching process starts from the first item
+-> Searching continues either till the item is found or till the end of the list is reached indicating that the item was not found
+-> Items in the list are assumed to be unique
+
+Binary Search
+-> A binary search is a searching technique that can be applied only to a sorted list of items
+-> Binary search technique is similar to
+dictionary search
+
+Find the mid element of the array:
+-> Compare the mid element with the item to be searched
+--> If the mid element is equal to the item to be searched, Item found in the array
+--> If the item to be searched is less than the mid element, recursively perform the binary search on the elements till the mid element
+--> If the item to be searched is greater than the mid element, recursively perform search on the elements after the middle element
+
+Step 1: Set First 0 and Last = Number of Items - 1
+Step 2: Find the middle of the list as mid = (First+ Last) /2. Take only the intege part, if the result is a real number.
+Step 3: Compare the middle item with the searching item. If they are equal then "Item is found"
+Step 4: f the searching item is less than the middle item then the searching item comes before this middle element. So set Last= mid -1 and there is no change in the value of First.
+Step 5: Since the above conditions are false the searching element should be greater than the middle element. So set First mid +1 and there is no change in the value of Last.
+Step 6: If First <= Last then go to step 2 to find the middle element
+Step 7: Since end of the list is reached, the searching item is "not found" in the list.
+Step 8: End of the algorithm
+
+Linear search
+-> Can be applied on sorted and  unsorted list of items
+-> Searching time is more
+
+Binary search
+-> Can be applied only on sorted list of items
+-> Searching time is less
+
+Key points discussed in this video:
+-> Searching is an operation which is frequently used in data processing.
+-> Linear search is a sequential search where the key elements iteratively checks each element till the element is found,
+-> Binary search searches the element from a  data set which is sorted.
+

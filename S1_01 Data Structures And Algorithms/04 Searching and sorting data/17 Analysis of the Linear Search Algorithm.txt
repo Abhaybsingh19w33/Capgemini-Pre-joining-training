@@ -1,0 +1,11 @@
+Linear search algorith
+Applied to an unordered set of elements
+
+Worst case complexity 
+T(n) = O(n+k) = O(n)
+
+Average case (assuming the search element is present in middle)
+T(n) = O(n/2+k) = O(n)
+
+Best case complexity
+T(n) = O(1)

@@ -1,0 +1,6 @@
+Time complexity of a heap sort algorithm
+
+The worst case complexity of a heap sort algorithm O(nlogn)
+
+Two phases of heap sort- build the max heap, swap the root element with the last element and heapify rest
+

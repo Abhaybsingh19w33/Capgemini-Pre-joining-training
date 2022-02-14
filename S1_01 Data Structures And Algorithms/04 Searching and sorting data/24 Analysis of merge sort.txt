@@ -1,0 +1,13 @@
+Time complexity of the merge sort algorithm
+
+Merge sort is represented as T(N) = 2*T (N/2) + N
+
+Expanded version of this equation: T(N) = N*T(N/N) + N + N + N ...+ N
+
+n(logn+1) repetitions
+
+Combining, the worst case complexity of merge sort algorithm = O(nlogn)
+
+Merge sort uses the concept of divide and conquer
+
+List of elements is broken down into two halves, and the sorted arrays are merged back together

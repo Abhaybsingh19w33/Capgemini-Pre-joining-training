@@ -1,0 +1,9 @@
+Min value is swapped at front side
+
+The time complexity of selection sort algorithm O(n^2)
+
+Time complexity of bubble sort, selection sort and insertion sort is O(n^2)
+
+In the bubble sort algorithm the largest element gets sorted first
+
+In the selection sort algorithm the smallest element gets sorted first
