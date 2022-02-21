@@ -1,0 +1,100 @@
+Introduction
+It was introduced in Java 5, it is a uniform way of accessing the data
+-> Simple structure
+-> Simplifies the code
+
+
+Overview
+-> Simple structure
+-> Simplify code
+-> Enhances readability
+-> Visit each element of an array/collection without explicitly expressing how one goes from element to element
+-> Introduced with the Java SE 5
+
+Syntax
+The syntax uses the keyword (forage)
+for (<datatype> <variable>: <collection>) {
+    // process <variable>;
+}
+
+Example
+The header has two parts separated by a colon
+int []nums = (12, 23, 34, 56, 67, 78);
+
+for (int num: nums) { // Datatype and variable
+    System.out.println(num);
+}
+
+23
+34
+56
+67
+78
+
+Example
+Collection can be an array (including multi-dimensional), a list, set, or an iterator
+for (int []row: nums) {
+    for (int []cell : row)
+        S.o.print (cell+"\t");
+    S.o.p();
+}
+Output: // Arraylist
+22  30  495 20
+300 40  550 33 44 553
+0   0   0   0
+
+Comparison
+In an enhanced for loop, string name, colon names are declared in header
+
+String []names = {....}
+
+for (int i=0; i < names.length; i++)
+    String name = names [i];
+    S.o.p("Hello, "+ name);
+
+}
+for (String name: names) {
+    S.o.p("Hello, "+ name);
+}
+
+Comparison
+List is a collection, array list, linked list or a vector
+
+List<Employee> 1ist = {...}
+for (int i=0, j=list.size (); i<j: i++){
+    Employee emp list.get(i); // function to retreive individual list element
+    emp.print();
+}
+
+// So the for loop for working with arrays and for loop for working with list remains same
+for (Employee emp: list) {
+    emp.print();
+}
+
+Comparison
+Set can be hash set, tree set, etc.
+
+List Employee> list = {...}
+Iterator<Employee> it = list.iterator();
+while (it.hasNext()){
+    Employee emp = it.next();
+    emp.print();
+}
+
+for (Employee emp: list) {
+    emp.print();
+}
+
+Higher Abstraction Level
+In higher abstraction level, low level details are not expressed 
+-> The developer simply states that they want to loop and the language takes care of the rest
+
+Disadvantages
+Disadvantages of enhance for loop are:
+-> All the benefit is lost as soon as the developer needs to access the index or to remove an item
+-> More code is generated magically by the compiler
+
+Summary
+Key points discussed in this video:
+-> Enhanced for loop is very simple in structure and uses simplífied code
+-> Compiler adds a lot of code

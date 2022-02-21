@@ -1,0 +1,340 @@
+Q - What name was originally given to the Java language when it was an internal project in Sun Microsystems?
+Silk
+Oak
+Java
+Green Talk
+
+Ans - It was initially called as GreenTalk by Gosling with a file extension of .gt and later was called as Oak and was developed as a part of the Green Project.
+
+Q - Java specifications are standardised by
+Select the correct option and click Submit.
+Sun Microsystems
+Oracle
+Correct
+Apache Software Foundation
+Java Community Process
+
+Ans - All Java specification are released as documents called JSR (Java Specification Requests) by an open source community called Java Community Process (http://jcp.org)
+
+Q - Which of these commands is used for compiling a Java source code to produce a byte code?
+Select the correct option and click Submit.
+jcompiler
+javac
+javacompiler
+java
+
+Ans - The command javac is an executable file inside the bin directory of your JDK installation folder and is used for compiling a Java source code to produce a byte code.
+
+Q - Which of the following is a popular Java IDE?
+Textpad
+Editplus
+Correct
+Notepad
+Netbeans
+Ans - Textpad, Editplus and Notepad are simple text editors. Netbeans and Eclipse are two of the most popular Integrated Development Environments (IDES).
+
+Q - Which of the following is incorrect regarding references?
+
+Can be used as method arguments and return types
+Can be assigned to another reference of similar type
+Is initialised to null by default in the stack
+Can not be used with operators such as arithmetic or relational operators
+
+Ans -> The references in the method stack are not initialised to anything. Using such uninitialised rererences leads to compilation error
+
+Q - Which of the following is not a primitive data type?
+int
+double
+boolean
+String
+
+Ans -> String (java.lang. String) is a class that represents an object containinga text.
+
+Q - Given: float f= 9.0; System.out.printn (f/(fioat)3);
+What is the outpuť?
+3
+3.0
+Compilation error
+Runtime error
+
+Ans - The literal 9.0 is treated as double and will Occupy 8 bytes in memory. It is then assigned to a 4 byte variable, which the compiler does not allow
+
+Q - What is the size of the character primitive type in Java?
+1 bits
+2 bits
+8 bits
+16 bits
+
+Ans - Characters in Java stores the Unicode value of a character rather than the ASCII value. Unicode needs 2 bytes of storage.
+
+
+Q - Which of the following is called bitwise NOT operator?
+!
+~
+^
+&
+
+Ans - Let us use an example to understand this.
+int a = 1;
+int b = ~a;
+System.out.println(b); // will print-2
+
+Q - Which of the following is not a valid assignment operator?
+-> =
+-> =< 
+-> >>=
+-> >>>=
+Ans - Short circuit operators must be of the format <op>= where <op> can be any binary operator.
+
+Q - What is the output of given code?
+
+int num = 7;
+if(num%2){
+    System.out.printin("'Even");
+}
+else {
+    System.out.printin("Odd");
+}
+
+Even
+Odd
+Compiler error
+Runtime error
+
+Ans - The if statement requires a boolean expression or value.
+
+Q - Which of the following is incorrect regarding references?
+
+Given:
+int a=15;
+if(a<5)
+    System.out.printin("less than 5");
+else if(a<10)
+    System.out.printin("less than 10");
+    System.out.printin("'more than 5")
+else
+    System.out.printin('more than 10");
+
+less than 5
+less than 10 \n more than 5
+more than 10
+Error
+
+Ans - Error
+
+Q - The switch case statement in java can not work with
+char
+int
+short
+boolean
+
+Ans - The switch statement can't take float, double and Boolean.
+
+Q - In Java 1.7, the switch statement can also work with
+
+float
+String
+double
+boolean
+
+Ans - In Java 1.7, 'switch' can take a String variable. Value (not reference) comparison is done and it is case sensitive.
+
+
+Q -  The first expression in a for loop header is generally known as
+expression1
+loop intialiser
+loop terminator
+loop condition
+
+Ans - The for loop header has 3 parts; initialiser, Condition and loop-control statements.
+
+Q - How do you create an infinite for loop in Java?
+for{}(/* statements */}
+for{true}(/* statements */}
+for{;;}(/* statements */}
+for{;1;}(/* statements */}
+
+Ans - Let us understand with the help of this example:
+for(;;){
+    if(n++ >100){
+        break;
+    }
+    sum += n;
+}
+
+Q - Which of the following is the correct usage of the enhanced for loop?
+Select the correct option and click Submit.
+foreach(int n: intArray){}
+foreach(int n in intArray)
+for(int n: intArray)
+for(int n in intArray)}
+
+Ans - The actual syntax is.
+for(<data type> <variable>, <collection>{
+    // process <variable>;
+}
+
+Q - Is it true that the benefit is lost as soon as the developer needs to access the index or remove an item?
+
+Yes
+No
+
+Correct
+All the benefit is lost as soon as the developer needs to access tne index or remove an item.
+
+
+Q - What is the output of given code?
+Select the corect option and click Submit.
+25
+24
+45
+Error
+
+Ans - The while loop expression must be a boolean unlike C or C++. So, the loop should look like: while(n-- >=0} {...}.
+
+Q - Ihe do-while loop is generally preferred, when 
+
+the loop criteria is known in advance
+the number of iterations is fixed
+an input needs to be validated before proceeding further
+the loop has to iterate exactly once
+
+Ans - Generally the do-while loop is used for simple menus and user input validations.
+
+Q - In Java, yoOu cannot use to branch to a diferent part of the code.
+a label
+goto statement
+method call
+
+Ans - In Java, "goto" is a reserved word.
+
+Q - Which of the following is incorrect regarding the break statement?
+
+Terminates any labeled statement
+Skips rest of the block
+Continues with the statement following the block
+Proceeds with the next iteration
+
+Ans -  The "continue" proceeds with the next iteration and not the "break" statement
+
+Q - Which of the following stops the execution of a method and transfers control back to the caller?
+
+break
+continue
+return
+goto
+
+Ans - The "return" keyword is used to stop execution of a method and to transfer control back to the caller
+
+Q - Which of the following is not a valid array declaration?
+
+int []arr;
+int []arr = new int[3];
+Correct - int arr[] = {12, 34}
+
+Ans - The array operator [] in the declaration can not be used to specify the size.
+
+Q - What is the output?
+Select the correct option and click Stubmit.
+Given:
+int [] arr;
+arr={1,2, 3};
+int sum = 0;
+for(inti=0;i < arr.length;i++){
+    sum+=arr[i];
+    System.out.printin(sum);
+}
+
+0
+6
+1\n 3\n 6
+Error - Correct
+
+Ans - Assigning an array initialiser list to an array reference after declaration will result in an error.
+
+Q - The array operatorI can not be used for_
+declaring array types
+specifying array size during initialisation
+accessing array elements
+specifying the size of the array during declaration
+
+Ans - The array operator [] can not be used for specirying the size of the array during declaration. It is a compilation error.
+
+Q - Two dimensional arrays in Java is equivalent to_
+a matrix of rows and columns
+a single dimensional array of size R*C
+Correct - a pointer to pointer in C language
+
+Ans - It is also called as jagged arrays in C#.
+
+Q - Which of the following is not a valid array declaration?
+int [][] arr;
+int arr[][];
+Correct int arr[2][3]:
+int []arr[];
+
+Ans - Array declaration can not specify the size.
+
+Q - Which of the following is not true for String?
+
+The String class implements immutable character strings
+String objects are read-only once the string has been created and initialised
+
+Correct
+Calling toUpperCase() on a String object changes its
+content to upper case
+
+To work with dynamic character strings, use the StringBuffer class
+
+Ans - Strings are immutable, and calling any method on a string object can not change its content
+
+Q - Which of the following is not a compile-time constant expression?
+
+String name = "Vinod";
+String name = "Vin" + "od";
+
+Correct
+String name2 = name1+ "od";
+
+Ans - The expression name1+ "od" is not a compile-time constant expression, since the value of "name1" is not known at the comple time.
+
+Q - A reference to an intermed string can be obtained by calling the ______ method.
+
+getlnten()
+
+Correct
+intern()
+
+internString()
+clone()
+
+Ans - The method intern() returns a reference to an interned string.
+
+Q - Which of the following operators can not be used with a string?
++ 
++=
+-+
+
+Ans -  + and += Can be used for concatenating
+strings.
+
+Q - How do you create a Scanner instance representing the default console input?
+Select the correct option and click Submit.
+
+Scanner sc = new Scanner('console");
+Scanner sc = new Scanner(System.in);
+Scanner sc = new Scanner(DEFAULT_CONSOLE);
+Scanner sc = new Scanner(CONSOLE);
+
+Correct
+We can create a Scanner object by invoking several different constructors. One such constructor is Scanner(Inputstream Source). System.in iS an instance of Inputstream that represent the default Console input.
+
+Q - To specify a custom delimiter, the method ________
+of the Scanner is used.
+
+scanner.setCustomDelimiter(delimiter)
+scanner.setDel imiter(delimiter)
+scanner.use Delimiter(delimiter)
+scanner.useCustomDelimiter (delimiter)
+
+Ans - Use the method useDelimiter) to change the delimiter, if it is anything other than wnitespace

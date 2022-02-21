@@ -1,0 +1,115 @@
+Introduction
+-> Prior to Java 1.5 getting input from the console involved multiple steps
+-> Java 1.5 introduced the Scanner class which simplifies console input
+-> It can also be used to read from files and Strings, among other sources
+
+java.util.Scanner
+The class java.util.Scanner is a simple text scanner which can parse primitive types and strings using regular expressions
+-> A scanner breaks its input into tokens using a delimiter pattern, which by default matches whitespace
+-> The resulting tokens may then be converted into values of different types using the various next methods
+
+Token
+In computing, a token is a categorized block of text, usually consisting of indivisible characters
+A token can look like anything
+-> English, gibberish symbols
+-> It just needs to be a useful part of the structured text
+
+Delimiter
+A delimiter is a character used to separate items of data stored on a computer
+-> It is used to tell computers to finish processing one piece of data and move on to the next one
+-> Most delimiters are characters that will not be used in the data, such as spaces or commas
+-> It must also be consistent throughout the data
+
+Creating Scanner Objects
+-> Users can create a scanner object by invoking several different constructors
+
+-> Scanner(File source)
+--> Constructs a new Scanner that produces values scanned from the specified file34
+
+-> Scanner(InputStream source)
+--> Constructs a new Scanner that produces values scanned from the specified input stream
+
+-> A readable source can be used to construct a scanner
+
+-> Scanner(Readable source)
+--> Constructs a new scanner that produces values scanned from the specified source
+
+-> Scanner(String source)
+--> Persistent volumes that are dynamically created by a StorageClass will have the mount options specified in the mount Options field of the class
+
+-> The scanner class basically parses input from the source into tokens by using delimiters to identify the token boundaries.
+
+-> The default delimiter is whitespace : [ \t\n\x0B\f\r ]
+
+-> Scanner
+--> useDelimiter (String)
+--> Method use delimiter is used to change the delimiter
+
+-> Scanner
+--> useDelimiter (Pattern)
+
+Next Method
+-> byte nextByte() scans the next token of the input as a byte
+-> next byte scans the token scan in the entire source for the next available byte out and then gives that byte
+
+short nextshort ()
+int nextInt ()
+long nextLong ()
+double nextDouble ()
+float nextFloat ()
+boolean nextBoolean ()
+
+String next()
+-> Finds and returns the next complete token from this scanner
+--> Use the method useDelimiter() to change the delimiter, if it is anything other than whitespace
+
+String nextLine()
+-> Advances this scanner past the current line and returns the input that was skipped
+
+Has Method
+boolean hasNextDouble()
+-> Returns true in the next token in this scanner's input can be interpreted as a double value using the nextDouble() method
+
+boolean hasNextFloat ()
+boolean hasNextByte ()
+boolean hasNextInt()
+boolean hasNextShort()
+boolean hasNextLong ()
+boolean hasNextBoolean ()
+
+boolean hasNext()
+-> Returns true if this scanner has another token in its input
+boolean hasNextLine ()
+-> Returns true if there is another line in the input of this Scanner
+
+Exceptions
+-> An object of no element exception is thrown by the next functions to indicate that there is no more elements
+-> Exception received: No such element exception
+
+Creating Scanner Objects
+// Closing a scanner is always a good practice
+// Directly supply the file object representing the file name
+Scanner scanner = new Scanner (new File ("data.csv"));
+while (true) {
+    try{
+        String text = scanner.nextLine();
+        Scanner sc = new Scanner (text) ;
+        sc.useDelimiter ("");
+        while (sc.hasNext()) {
+            System.out.println (sc.next()):
+        }
+        sc.close();
+    }
+    catch (NoSuchElementException e){
+        break;
+    }
+}
+scanner.close();
+
+
+Summary
+Key points discussed in this video:
+-> scanner breaks its input into tokens using a delimiter pattern
+-> A scanner object can be created by invoking several different constructors
+-> The default delimiter is whitespace, and can be changed using the use Del imiter method
+-> There are several has..() and next.() methods to check and scan the data

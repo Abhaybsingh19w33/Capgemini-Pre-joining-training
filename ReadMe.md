@@ -1,3 +1,13 @@
+Used java version - 8u251
+
+In course JAVA version - 8u31
+
+JLS
+Java specification request for the language is called JLS
+Go to page for documentation
+
+Perspective button to reset the view of eclipse
+
 To run C programs in Vs code
 https://www.javatpoint.com/how-to-run-a-c-program-in-visual-studio-code
 

@@ -1,0 +1,80 @@
+Every language must provide some operators to achieve expressions.
+
+Operators perform on single or multiple operands to return a result based on how many operands are used
+
+Operators are special symbols that
+-> Perform specific operations on one, two, or three operands
+-> Return a result
+
+Broadly categorised into:
+-> Unary
+-> Binary 
+-> Ternary
+
+Unary operators Work on Single operands, binary work on tw0 operands, and ternary works on three
+-> Postfix expr++ expr
+-> Prefix +texpr -expr
+-> Sign indicator +expr -expr
+-> Bitwise Not ~ // If it's a 1, it becomes 0
+example
+65 
+first bit is sign bit
+
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 <- +65
+1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 0 <- -32702 (1's complement)
+1 0 0 0 0 0 0 0 0 1 0 0 0 0 1 0 <- -66 result (2's complement) sign bit does not change 
+
+
+-> Logical Not !
+
+Binary operators work on two operands
+Other operators include
+-> Arithmetic operators
+-> Assignment operators
+-> Relational operators
+-> Bitwise operators
+-> Logical operators shift
+
+Arithmetic Operators
+-> Compares relationship between two operands and logically combine multiple relational operators
+--> Multiplicative * %
+--> Additive + -
+
+Relational Operators
+-> Compares relationship between there is a less than, greater than, less than or equal to, greater than or equal to, instance
+-> Instance of is a keyword that checks whether a reference is an instance of a class
+--> Relational < > <= => instance of
+--> Equality == !=
+
+Logical Operators
+Uses multiple conditions
+-> And &&
+-> Or ||
+
+Shift and Bitwise Operators
+Shift the bits of a byte or bytes
+-> RShift << >> >>>
+-> Bitwise And &
+-> Bitwise or (inclusive) |
+-> Bitwise Or (exclusive) ^
+
+Ternary Operators
+-> Use a boolean, boolean operator, a boolean expression or a combination of theese
+-> A function calls that return a boolean can also be used
+--> expr1 ? expr2: expr3
+
+Assignment Operator
+Take a value of an expression or a function call and assigns it to a variable
+--> =
+--> *= /= %=  // also known as short circuit operator
+--> += -=
+--> <<= >>= >>>=
+--> &= ^= |=
+
+Summary
+Key points discussed in this video:
+-> Operators are special symbols
+-> Unary operators work on single operands
+-> Binary operates on two operands
+-> Ternary operator operates on three operands

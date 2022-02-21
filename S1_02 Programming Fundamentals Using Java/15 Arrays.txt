@@ -1,0 +1,92 @@
+Introduction
+Arrays are declared as one single variable
+-> Hold a bunch of values
+-> Accessed via something called index
+
+Overview
+-> A data structure that defines an indexed collection
+-> Elements in an array have same datatypes (Homogeneous)
+-> A position in the array is indicated by a non-negative integer value called the index
+-> An element at a given position in the array is accessed using the index
+-> Arrays declaration comes with a size
+-> The arrays can be of primitive datatypes or reference types
+-> Size can be decided at the runtime, unlike C or C++
+-> Once initialised, the size can not grow or shrink
+-> The first element is always at index 0
+-> Each array object has a final field called length, which specifies the array size
+
+Declaring an Array
+Syntax:
+<datatype> []variable;
+<datatype> variable[];
+
+Example:
+int []numbers;
+int []a, []b, []c;
+int x[], Y, Z;
+
+Declaring an Array
+-> Declaration does not actually create an array
+-> It only declares a reference that can denote an array object
+-> [] just signifies that the variable is not a primitive, but a reference
+-> [] can not specify the size
+
+<datatype> variable [size]; // error
+
+Constructing an Array
+-> Use 'new' keyword
+--> <array name> = new <element type> [<array size>]l:
+-> Example:
+--> numbers = new int[5];
+-> The minimum value of <array size> is 0
+-> If the array size is negative, a Negative Array Size Exception is thrown
+-> Use initialiser values
+--> int []numbers = {12, 33, 49};
+
+Initialising an Array
+-> Java provides the means of declaring, constructing, and explicitly initialising an array in one declaration statement
+--> <element type>[] <array name> = { <array initialize list> };
+-> Declare a variable and initialise them
+
+-> Applies to member as well as local arrays
+-> The <array initialise list> is a comma-separated list of zero or more expressions
+-> Such an array initialisation block results in the construction and initialisation of the array
+
+
+Example
+'anArray' is declared as an array of ints, to hold 10 elements
+int[] anArray = {1, 3, 49, 2, 6, 7, 15, 2, 1, 5};
+
+
+-> Assigning an array initialise list to an array reference after declaration will result in an error
+--> anArray = {22, 33, 44}; // error
+
+-> Can use 'new' along with array initialise list to recreate the array
+--> anArray = new int []{22, 33, 44};
+
+Accessing Array Element
+-> Individual aray elements are accessed by specitying an index with the [] operator
+--> <array name> [<indexExpression> ]
+-> Each individual element is treated as a simple variable of the element type
+
+<array name> [<indexExpression>]
+-> The index is specified by the <indexExpression>, which can be any expression that evaluates to a non-negative int value
+-> The index ranges from0 to arrayName.length-1
+-> if index is outside the range, then ArraylndexOutofBoundsException is thrown
+-> The <array name> can be any expression that returnsa reference to an array
+-> "Vinod".toCharArray()[1] will return the character
+
+The Array Operator []
+An array operator is used for
+-> Declaring array types
+-> Specifying array size
+-> Accessing array elements
+
+Using Arrays
+-> Most commonly accessed using a for loop
+
+Summary
+Key points discussed in this video:
+-> Array is a data structure where elements have the same datatype
+-> Array size is fixed once it is created
+-> Declaration of array only declares a simple reference variable

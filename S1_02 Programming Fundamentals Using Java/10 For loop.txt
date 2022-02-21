@@ -1,0 +1,84 @@
+Loop has a header that defines the body of the loop along with the behaviour.
+It is best used when the number of times the loop to be executed is already known.
+
+For loop is most commonly used loop and number of iterations is already known in advance
+
+Syntax
+The main purpose of initialiser is to initialise the loop variable
+
+Header
+for (exprl; expr2; expr3)
+//I7 loop statements
+
+
+Body
+Initialiser
+int i=0
+
+Boolean expression
+Criteria
+i<10
+
+Loop controller
+i++
+
+Factorial Syntax
+Evaluate code without executing is called as a dry run
+Example
+int f = 1;
+for (int i=2; i<=5; i++){
+    f = f * i;
+}
+System.out.println (f) ;
+
+f   i   i<=5
+6   4   true
+24  4   true
+120 5   true
+120 6   true
+120 6   false
+
+
+Things to Avoid
+Unnecessary functional call should be avoided
+
+for (int i=0; i<list.size(): i++){
+    // do some thing
+}
+
+list.size() is a function call
+Gets executed for each iteration
+Results in low performance
+
+Unnecessary functional call can be avoided by rearranging the list.size in different place
+for (int i=0, j=list. size (); i<j;i++) {
+// do something
+}
+
+In only the initialiser it is called
+Gets executed only one time
+
+Preference
+For "for loop" to work faster, prefer int instead of byte
+Example
+Compilers and VMs are tuned to work with "int" than other types
+for (byte b=0; b<100000; b++) {
+    // do something
+}
+
+Infinite Loop
+Infinite loop is the loop that never ends on its own
+
+No initialiser, increment/decrement statements or conditions
+
+for (;;){
+    //do some thing
+}
+
+Use break, return, throw or System.exitť(n) to stop the loop
+
+Summary
+Key points discussed in this video
+-> For loop is the most commonly used loop
+-> Do not use the method calls as a loop breaking expression
+-> Infinite loop is the loop that never ends on its own

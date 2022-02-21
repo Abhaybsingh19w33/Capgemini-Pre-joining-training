@@ -1,0 +1,59 @@
+Describe object oriented concepts
+
+Apply object oriented concepts to the Java programming language
+
+Define very powerful collection framework provided in Java
+
+Describe the basic concepts of annotations logging, unit testing using JUNIT, and Apache ANT
+
+Java is a general purpose computer programming language that is concurrent, class based object oriented and specifically designed
+
+-> Java applications are typically compiled into bytecode that can run on any Java virtual machine or JVM, regardless of computers architecture
+-> Java was originally developed by James Gosling at Sun Microsystems, which has since merged into Oracle Corporation
+
+-----------------------------------------------------------
+Modules of Java
+-----------------------------------------------------------
+
+First Module:
+
+-> Learn about a brief history of Java and get an overview of how a Java program is written compiled, executed and to use most popular ID called Eclipse
+
+Second Module:
+-> Introduced with the concepts around object oriented programming, to apply this in Java
+
+Third Module:
+-> Familiarise with the basic syntax programming constructs such as for loop or an if condition, working with arrays
+
+Fourth Module:
+-> Leaning how to apply the learned object oriented concepts in Java programming world
+
+Fifth Module:
+-> Help you understand runtime errors called exceptions, and write Java programs to handle them
+
+Sixth Module:
+-> Learn about input output streams, and how to work with files
+
+Seventh Module:
+-> Explore Java's very powerful collection framework, this is as an alternate to work with arrays
+
+Eighth Module:
+-> Learn some utility classes such as resource bundle properties, formatting dates, using date format and simple date format, working with wrapper classes and something called scanners
+
+Ninth Module:
+-> Teach how to execute parts of a program concurrently meaning parallel execution, done with the help of something called threads
+
+Tenth Module:
+-> Introduced with the concepts of annotations and their usage in Java annotations were introduced in Java 1.5
+
+Eleventh Module:
+-> Introduction to logging mechanism in Java, logger class was introduced in Java 1.4, there are third party frameworks available for doing so, one very popular one is fromn Apache which is called log for J
+
+Twelfth Module:
+-> Learn unit testing which is a very important aspect of any test driven development, use JUNIT as part of testing
+
+Thirteenth Module:
+-> Lean what is the prOcess of software building and the different tools involved, and particularly one tool called Apache ANT
+
+Fourteenth Module:
+-> Understand some of the best practices to be followed while coding Java programs

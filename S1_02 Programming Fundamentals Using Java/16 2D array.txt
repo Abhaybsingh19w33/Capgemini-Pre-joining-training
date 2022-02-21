@@ -1,0 +1,77 @@
+Overview
+-> Arrays in Java are objects
+-> Array elements can be primitives or object references
+-> Arrays are object references, then each element can refer to another array, since arrays themselves are objects
+
+Syntax
+An array of arrays can be defined as follows
+Individual element
+// individual element type
+-> <element type>[] []<array name>;
+-> <element type> <array name> [] [];
+-> <element type> []<array name> [];
+
+Construction
+-> It is customary to combine the declaration with the construction of the multi dimensional array
+-> The numbers is a reference, and that reference points to a collection of int values
+
+Example:
+int[][] numbers = new int[4] [5];
+
+Not a Matrix
+-> 'numbers' is an array of four elements
+-> Each element is a reference to an array of 5 int values (row)
+-> The concept of rows and columns is often used to describe the dimensions of a two dimensional array, which is often called a matrix
+-> It is equivalent to a pointer to a pointer in C or jagged arrays in C#
+-> Numbers of zero dot length is same as numbers of one dot length
+
+i [][] nums = new int[3][]; // Number dot length
+-> Defines an array references to an array of 3 references
+-> nums.length will return 3
+
+-> The reference are initialised to null because they are in heap
+int [] [] nums = new int[3][]:
+
+-> nums[0] is a reference to a single dimensional array, initialise the same to an array:
+
+nums [0] = new int[2];
+Similarly,  nums [1] = new int[5];
+and,    nums [0] = new int[2];
+
+Constructing Alternates
+Use initialisers to construct a two dimensional arrays
+Example:
+// Two dimensional array
+int [] [] nums = {
+    {22, 30, 495, 20},
+    {300, 40, 550, 33, 44, 553},
+    {0, 0, 0, 0},
+    anArrayRef,
+    null
+}
+Where
+int []anArrayRef = {12, 34, 56};
+
+Accessing a Two Dimensional Array
+-> Use nested for loop to access individual elements
+Example:
+// Prefer to use for loop
+for (int r=0; r<nums.length; r++) {
+    for (int c=0; c<nums [r] .length; c++) {
+        //work with nums [r] [c];
+    }
+}
+
+To get one row at a time from nums, use nested enhanced for loop
+
+for (int[]row: nums) {
+    for (int[] cell: row) {
+        // work with 'cell'
+    }
+}
+
+Summary
+Key points discussed in this video:
+-> Elements of an array can be primitives or object references
+-> Two dimensional arrays like pointers to pointer in C
+-> Nested for loop is generally preferred to access individual elements

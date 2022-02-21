@@ -1,0 +1,28 @@
+Introduction
+Do-while loop is the best-chosen loop for the scenario
+Executes the body of the loop at least one time
+
+Overview
+Do-while loop also known as post check while loop
+-> Loop body is executed at least once
+-> Subsequent iterations depend on the loop criteria
+-> Useful when a menu selection or input validation is processed
+
+Do-while Loop
+It can be a boolean expressionlike age less than or equal to 18 or less than something
+-> The results stored in boolean variable is called valid
+-> If false is used then loop will come out of the loop always
+-> If true is used loop acts like an infinite loop or endless loop
+
+Preference
+Do-while is the least preferred loop
+-> Used when the number of iterations is not known. Initially, and users are not aware of the loop criteria
+
+Alternatives
+-> Use an infinite while or for loop, with a force-exit at the end of the loop
+
+Summary
+Key points discussed in this video:
+-> Do-while loop guarantees the execution of the loop body at least one time
+-> Alternatively infinite while or a far loop can also be used
+-> It is the least preferred loop

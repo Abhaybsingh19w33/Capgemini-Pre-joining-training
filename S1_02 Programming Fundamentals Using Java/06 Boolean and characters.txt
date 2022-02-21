@@ -1,0 +1,23 @@
+Introduction
+Boolean data is used for anywhere where conditions are required:
+-> True/False requirement
+-> If condition
+-> Loop
+
+Boolean is a datatype
+-> Possible values: true and false
+-> Use this datatype for simple flags that track true/false conditions
+-> This datatype represents one bit of information
+-> All relational operations result in Boolean
+-> When printed, literals "true" or "false" are used
+-> In the heap, a Boolean variable has a default value of 0
+
+Characters
+-> Represented as Char
+-> Contain 2 bytes
+-> Stores Unicode corresponding to a character
+-> Standard for the consistent encoding, representation, and handling of text expressed in most of the world's writing systems
+
+Native2ASCll
+-> JDK is used to convert a Native language code to ASCIl or Unicode
+--> native2ascii -encoding UTF8 vinod.txt vinod-ch.txt

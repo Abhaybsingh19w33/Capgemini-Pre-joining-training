@@ -1,0 +1,48 @@
+Introduction
+-> A String object represents a group of characters
+-> Not just an array like in C or C++
+-> API methods in String class help us deal with Strings
+
+
+Overview
+-> The String class implements immutable character strings
+
+String name = "vinod";
+name.toUpperCase();
+name = name.toUpperCase();
+
+-> String objects are read-only once the string has been created and initialized
+-> To work with dynamic character strings, use the StringBuffer class
+
+
+CREATING AND INITIALIZING STRINGS
+-> Easiest way is to assign a String literal to a variable
+--> String name = "Vinod";
+-> A string literal itself is a reference to a String object
+-> The string literal on the right side of assignment is a reference
+-> It is assigned to the variable 'name which is an identifier of String type
+-> A string literal itself can be used to invoke methods on its String object.
+--> int len="Vinod". length();
+
+INTERN
+-> The compiler optimizes handling of String literals
+-> Only one String object is shared by all the string-valued constant expressions with the same character sequence
+-> Such strings are said to be interned
+-> The String class maintains a private pool where such strings are interned
+-> A reference to an interned string can be obtained by calling the intern() method in the String class
+-> Practically we don't need to use it
+
+CONCATENATION
+String fname = "Vinod"
+String Iname = "Kumar:
+String name = fname.concat(").concat(Iname);
+
+-> The concat() method does not modify the String object on which it is invoked as String objects are immutable
+-> Instead the concat() method returns a reference to a brand new String object
+
+
+SUMMARY
+Key points discussed in this video:
+-> Strings are immutable objects containing characters.
+-> Strings can be created by just assigning a double quoted text to a variable.
+-> Compilers optimize by sharing Strings.

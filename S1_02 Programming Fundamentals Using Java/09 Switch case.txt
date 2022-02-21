@@ -1,0 +1,72 @@
+Switch construct is a type of selection control mechanismn
+-> Compares the value of a variable with a series of values
+-> Improves clarity by reducing repetitive coding
+-> Faster execution through easier compiler optimisation
+
+Switch with an expression could be a variable, arithmetic logical relational or any expression
+
+switch (expression) {
+    case value :
+        //statements
+        break ;
+    case value :
+        //statements
+        break;
+    default:
+        //statements
+}
+-> It can be any kind of expression that results into a value, or it could be even a function call which is non void
+
+
+Restrictions
+Switch case can not use boolean expressions with "case"
+
+switch (someNumber) {
+    case >10000 :
+        System. out.print ("Too big") ;
+    case >5000:
+        System.out.print ("Moderate");
+    default:
+        System.out.print ("Too small");
+}
+
+Switch can't take float, double, boolean
+boolean tf = true;
+switch (tf) {
+    case true:
+        system.out.println ("True");
+        break;
+    case false:
+        System.out.println ("False") ;
+}
+
+Variables cannot be used in case. Case must always be used with a value
+switch("Vinod") { //Double quoted string
+    case name1:
+        System.out.println ("name1 is Vinod") ;
+        break;
+    case name2:
+        System.out.println ("name1 is Vinod");
+        break;
+    case name3:
+        System.out.println ("namel is Vinod") ;
+        break;
+}
+
+Enhancement in Java7
+Strings are most widely used data types in Java
+-> Switch can take a String variable
+-> Value comparison (not reference)
+-> Case sensitive
+
+
+Switch case is used to compare some variable with a lot of values and to do a common job
+-> Execute a common code
+-> Improve readability
+
+
+Summary
+Key points discussed in this video:
+-> Switch construct follows the values to change control flow of a program execution
+-> Switch case cannot use boolean expressions
+-> Switch case can take a string variable only in Java seven

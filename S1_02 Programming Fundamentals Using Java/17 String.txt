@@ -1,0 +1,140 @@
+Introduction
+-> A String object represents a group of characters
+-> Not just an array like in C or C++
+-> API methods in String class help us deal with Strings
+-> Strings are the most commonly used class in Java
+-> String is an object that represents a group of characters, but they're not exactly the same
+-> Strings are also considered as immutable 
+-> The String class implements immutable character strings
+
+
+Overview
+String class implements mutable character strings. Immutable means the objecť's values don't change
+-> String objects are read-only once the string has been created and initialised
+-> The string class implements immutable character strings
+-> Work with dynamic character strings, use the StringBuffer class
+
+Text
+A new object gets constructed because of the keyword usage called New
+Example:
+// name is just a reference
+String name = new String (""Vinod");
+
+Creating and Initialising Strings
+-> Easiest way is to assign a string literal to a variable
+-> A string literal itself is a reference to a string object
+
+String name = "Vinod";
+-> The string literal on the right side of assignment is a reference
+-> A string literal itself can be used to invoke methods on its string object
+
+Intern
+-> The compiler optimises handling of string literals
+-> Only one string object is shared by all string-valued constant expressions with the same character sequence
+-> Such strings are said to be interned
+-> The string class maintains a private pool where such strings are interned
+
+Intern
+-> The compilers optimises the handling of string literals
+-> Strings in the cache are called interns
+-> String class maintains a private pool where such strings are stored
+
+String namel = "Vinod";
+String name2 = "Vinod";
+// Compile-time constant expression
+String name3 = "Vin" + "od";
+
+Intern
+-> Since name1, name2 and name3 are all referencing to same objects, all of these evaluate to true:
+namel = name2
+name2 = name3
+name1 = name3
+
+Consider
+String name1 ="Vinod";
+String part1 = "Vin";
+String name4 = part1 + "od";
+
+Expression will evaluate to false
+name1 == name4
+
+-> The expression part1+ "od" is not a compile-time constant expression. // name1 == name4
+-> It is equivalent to: // new StringBuffer(part1).append("od").tostring()
+-> A new object is created by the overloaded + operator
+
+
+String Constructor
+String (String s)
+-> Explicitly creates a new String object
+-> Not interned
+
+String Constructor
+String name1 = new String("Vinod");
+String name2 = new String("Vinod");
+-> The expression name1 == name2 will evaluate to false
+-> A reference to an interned string can be obtained by calling the intern() method in the String class
+-> Practically it is not used
+
+Reading Characters from a String
+String reverse (String input) {
+    String rev = "";
+    for (int i=input.length () -1; i>=0; i--){
+        rev += input.charAt (i) ;
+    }
+    return rev;
+}
+
+Comparing Strings
+int compareTo (String str2)
+-> Two strings are compared lexicographically;
+-> "shyam" is less than "shylaja"
+-> To check if two strings contain the same character strings
+
+
+boolean equals (Object obj) // Case sensitive
+boolean equalsIgnoreCase (String str2)
+
+String toUpperCase ()
+String toLowerCase ()
+
+String name1 = "Vinod".toUpperCase ();
+String name2 = name1.toLowerCase ();
+
+For name one.toUppercase, there is no conversion required
+-> The original string is returned if none of the characters need their case changed
+-> New String object is returned if any of the characters need their case changed
+
+Concatenation
+String concat (String str)
+-> concat is the function where one string is supplied to the original string and they get concatenated
+-> Concatenation of two strings results in a string that consists of the characters of the first string followed by the characters of the second string
+-> Also achieved using the overloaded operator+ for string concatenation
+
+String fname = "Vinod";|
+String Iname = "Kumar";
+String name = fname. concat (" ") .concat (lname)
+-> The concat()) method does not modify the String object on which it is invoked, as String objects are immutable
+-> Instead the concat() method returnsa reference to a brand new String object
+
+Searching
+There are many functions to search a string within another string
+int indexof (int ch)
+int indexof (int ch, int fromIndex)
+int indexof (String str)
+int indexof (String str, int fromIndex)
+int lastIndexof (int ch)
+int lastIndexof (int ch, int fromTndex)
+int lastIndexof (String str)
+int lastIndexof (string str, int fromIndex )
+
+SubstringsS
+Spaces at the beginning or at the end is trimmed by calling a trim function
+String trim ()
+String substring (int startIndex)
+String substring (int startIndex, int endIndex)
+
+Summary
+Key points discussed in this video:
+-> String class implements immutable character strings
+-> Easiest way is to assign a string literal to a variable
+-> There are many functions to search a string within another string

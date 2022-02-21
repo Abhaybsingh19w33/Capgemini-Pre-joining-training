@@ -1,0 +1,122 @@
+Introduction
+Skipping certain part of a loop, coming out of the loop; all these are possible with the help of transfer statements
+-> Most commonly used branching keywords are break and continue
+
+Language Constructs
+Most common keywords
+-> Break
+-> Continue
+-> Return
+
+others
+-> Try-catch-finally
+-> Throw
+-> Assert
+
+Goto
+Java follows syntaxes of C language
+-> Java does not have a Goto statement
+-> Goto is a reserved word
+
+Labeled Statements
+A statement may have a label
+
+Syntax:
+<label>: <statement>
+
+Example:
+L1: if (n>0) {
+    // statements
+}
+
+L1: if (n>0) {
+    L2: System.out.println (n) ;
+    // more statements
+}
+
+L1: {
+    // some statements
+}
+
+Labeled Statements
+Example:
+// Identifies the whole try block
+Ll: try {
+    int n = 10, d = 0;
+    L2: System. out.println (n/d) ;
+} catch (ArithmeticException e) {
+    L3: e.printstackTrace ()
+} finally {
+    L4: System.out.println ("Let's clean");
+}
+
+Labeled Statements
+A statement can have multiple labels:
+LabelA:
+LabelB:
+
+System.out.println("Blah. .blah. . ");
+
+Labeled Statements
+Labels have certain restrictions
+Example:
+Labels can't be used with declarations
+Meant for compilers
+L1: int n; // error
+
+Break
+Break comes in two forms
+-> Labeled form
+    break <label>;
+-> Unlabeled form
+    break;
+
+
+Unlabeled Break
+Used with a loop or a switch statement
+
+-> Terminates loops and switch statements
+-> Transfers control out of the Current context (1.e., the closest enclosing block)
+-> Rest of the statement body is skipped
+-> Terminates the enclosing statement
+-> Continues execution
+
+Only way to come out of this is to break it forcefully
+
+Labeled Break
+-> Terminates any labeled statement
+-> Rest of the block is skipped and execution
+-> Continues with the statement following the block
+
+Continue
+Keywords
+-> Can only be used with loops
+-> Prematurely stop the current iteration of the loop body
+-> Proceed with the next iteration
+-> In the case of the while and do-while loops, the rest of the loop body is skipped
+-> In the case of the for loop, the rest of the loop body is skipped, With execution continuing with the <increment expression>
+
+Continue
+Continue comes in two forms
+-> Labeled form
+    Continue <label>;
+-> Unlabeled form
+    Continue;
+
+Return
+Keyword to look for is the return statement
+-> Used to stop execution of a method
+-> Transfer control back to the caller
+-> Can be used in two forms:
+--> return;
+--> return <expr>;
+
+Return
+-> The usage of the two forms of the return statement is dictated by whether it is used in a void or a non-void method
+-> The first form does not return any value to the calling code, but the second form does
+-> Keyword void does not represent any type
+
+Summary
+Key points discussed in this video:
+-> Labels can be used to identify the location in the code
+-> Break and continue are of two forms labeled and unlabeled form

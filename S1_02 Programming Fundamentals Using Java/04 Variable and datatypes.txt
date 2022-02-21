@@ -1,0 +1,75 @@
+Introduction
+-> All programming languages allows to create variables
+
+-> A variable contain some known and unknown information
+
+-> Variable name is the way through which you can access
+the stored values
+
+-> Variable is a storage location paired with a symbolic name
+
+-> Contains some known or unknown quantity or information called values that can be changed during program execution. Also called as a literals
+
+-> The variable name is the usual way to reference the stored value
+
+-> In Java, no access to the actual address, unlike C or C++
+
+-> Variables in Java are of two types
+--> Primitives
+--> References
+
+-> It is important to know about these variables because it
+depends on where exactly they get created
+
+Primitives
+-> Primitives are variables that are created using the Java's built in datatypes
+
+-> Integers
+--> byte, short, int, long
+
+-> Decimals
+--> float, double
+
+-> Character
+-->char
+
+-> Booleon
+--> booleon
+
+Primitives Memory Allocation
+-> The compiler allocates memory when a variable is declared
+-> Size of variable depends on the datatype
+--> For example, the size of a char is 2 bytes and size of double is 8 bytes
+
+References
+-> Declared using a Class, Interface, Enum, or Arrays
+-> The size of a reference is fixed and does not depend on the type used for creating it
+-> Initialised to a reference number representing an object
+-> Can be assigned with "nlr', when not referencing to an object
+-> Not same as pointers in C/C++
+
+-> Data typing involved cannot be used with operators such as arithmetic or relational operators
+-> Can be assigned to another reference of similar type
+-> Can not be used with operators such as arithmetic or relational operators
+-> Can be used as method arguments and return types
+
+Creating and Initialising Reference
+-> Creating image in a class called Person:
+example
+
+Person pl, p2; // Declared but no memory has been allocated
+// Create an object
+P1 new Person (); // now memory has been allocated
+P1.age = 44;
+p2 = p1 // now they are pointing to the same object, this means we have single object but 2 references
+p1 = null; // now p1 is delinked from the object
+p2 = null; // now p2 is delinked from the object, now the pbject has been abandoned, this could cause memory leak in c and c++, but in java we have garbage collector, it wil clear the memory automatically
+// Nobody referencing to an object is called an abandoned object
+
+
+Summary
+Key points discussed in this video:
+-> Variables that exist in Java are primitives and reference
+-> Primitives are static memory allocation
+-> References can be used as method arguments, and return types
+

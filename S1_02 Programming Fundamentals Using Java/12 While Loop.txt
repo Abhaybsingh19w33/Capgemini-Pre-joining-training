@@ -1,0 +1,28 @@
+Introduction
+To repeat the job code is executed again and again
+-> Reading data one-by-one from a database table
+-> Stop when there is no records
+
+Overview
+Basic working of while loop
+-> Allows code to be executed repeatedly based on a given boolean condition
+-> Can be thought of as a repeating if statement
+-> Condition gets executed evaluated repeatedly, until it becomes false
+
+How It Works?
+-> Consists of a block of code and a condition
+-> Condition is evaluated, and if the condition is true, the code within the block is executed
+-> This repeats until the condition becomes false: called pre-test loop
+
+Boolean Always
+-> Boolean expressions are always used in conditions
+-> But in Java it will throw an error
+
+Infinite Loop
+Supplying a "true" to the while construct makes it an endless (infinite) loop
+
+Summary
+Key points discussed in this video
+-> While loop is a code that gets executed repeatedy
+-> While loop always requires a boolean expression
+-> A true condition makes the loop an infinite one

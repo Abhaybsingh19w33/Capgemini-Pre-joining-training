@@ -1,0 +1,12 @@
+A condition is represented as a boolean expression
+C and C++
+if x do something where x can be zero or non-zero
+
+Java
+if x less than 10, x greater than 10 and then perform the operationss
+
+Condition Fails
+-> Use the "else" construct to execute a code, when the condition in the "if" construct fails
+-> Use of else is optional
+-> Only one "else" per "if"
+-> "else" must immediately follow an "if
