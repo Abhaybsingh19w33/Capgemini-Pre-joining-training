@@ -1,0 +1,41 @@
+PROCEDURAL VS OBJECT ORIENTED PROGRAMMING
+Introduction
+-> Programming paradigm is the way to write the programs
+-> Every programming pattern has its on Paradigm
+
+Object Oriented Programming
+Procedural Programming
+
+Procedural Programming
+-> Derived from structural programming
+-> Follows top-down approach
+-> Emphasises modular programming
+-> Based on procedural calls
+
+Procedures
+-> A procedure contains steps of an algorithm
+-> Common application languages available in the segment are C, Fortran, BASIC and Pascal
+--> Routines
+--> Subroutines
+--> Functions
+--> Methods
+
+Object Oriented Programming
+-> Paradigm based on the concepts of objects
+-> Groups data and related procedures inside the object
+-> Emphasises on reducing complexity and increasing code reusability, maintainability
+
+Object
+-> Object stores data in the form of variables
+-> Also known as fields, attributes or properties
+--> Code that operate on the data in the form of functions
+--> Function in an object will access only the data member of that object
+
+Design Pattern
+"Design Patterns: Elements of Reusable Object-Oriented Software"
+
+-> A book by Gang of Four (GOF), 1995
+-> Explores the advantages and downfalls of OOP
+-> Describes common 23 programming problems and patterns for solving them
+-> Each problem solution combination was known as a design pattern
+

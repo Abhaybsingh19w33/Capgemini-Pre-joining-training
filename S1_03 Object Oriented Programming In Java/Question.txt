@@ -1,0 +1,40 @@
+Q - Which of the following does not contain steps of an algorithm?
+
+Routine
+Subroutine
+Method
+Function
+Object
+
+Ans - Object does not represent the steps of an algorithm, but has fields and methods to operate on the fields.
+
+Q - Who wrote the book called 'Elements of Reusable Object-Oriented Software'?
+
+Grady Booch
+Dennis Ritchie
+Gang Of Four
+Ramuk Doniv
+
+Ans -  The book Elements of Reusable Object-Oriented Software' was written by Gang of Four, in 1995 which explores the capabilities and pitfals of OOP. The book describes 23 common programming problems and patterns for solving them.
+
+Q - In a UML class diagram, what is the symbol used for a protected member?
+
+Plus (+)
+Correct - Minus (-)
+Hash (#)
+Slash (/)
+Percent (%)
+
+Ans - Plus is used for public and Hash is used for
+protected members. Slash and Percent are
+not used in UML class diagrams.
+
+Q - An object of a class is also known as
+
+a member
+an instance
+a variable
+a reference
+
+Ans - The process of creating an object is known as instantiation, and hence the result of instantation is instance.
+

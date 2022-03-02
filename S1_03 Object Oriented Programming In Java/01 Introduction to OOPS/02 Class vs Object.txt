@@ -1,0 +1,27 @@
+Introduction
+Class
+-> Class groups information data related to common entities
+
+Object
+-> Object is generally a representation of the Class
+
+Class
+-> It is a template/blueprint used for creating objects
+-> Defines methods and variables to be included in an Object
+
+UML Class Diagram (Car)
+It's a pictorial representation of how different classes in an application are related to each other
+
+Minus (-) for Private
+Plus (+) for Public
+Pound (#) for Protected
+
+Classname 
+-> Fields with access indicators and datatypes
+-> Methods with access indicators, parameter types and return types
+
+Abstract - Class that doesn't create an Object , Used in inheritance
+Concrete - Class that allows to create an Object
+Final (non-sub classable) - Class that can't be extended
+Inner (nested/enclosed) - Class that are defined inside another Class
+Anonymous (unnamed) - Contains all other classes
