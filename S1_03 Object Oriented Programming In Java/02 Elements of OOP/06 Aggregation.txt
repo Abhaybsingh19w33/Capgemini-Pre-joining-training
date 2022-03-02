@@ -1,0 +1,46 @@
+Introduction
+-> HAS-A is the relationship, that represents a form of composition
+-> It forms critical building blocks of many applications
+
+HAS-A Relationship
+-> Aggregation represents composition, which means whole part relationship
+
+Object A - constituted object
+Object B - composite object- because it has Object A
+
+Case 1
+Object A -> Belongs to -> Object B
+Object B has Object A
+
+Case 2
+Object A -> Part of -> Object B
+Object B has Object A
+
+UML Representation of Composition
+-> Unified Modelling Language allows to represent relationships pictorially
+
+Applications
+Aggregation combines simple objects into complex ones
+-> Tagged union
+-> Linked list
+-> Binary tree
+
+Features
+-> The contained object is destroyed with the owning object
+-> Aggregation is a form of composition
+
+A constituent can be part of only one composite
+Composition
+-> Department - 1 university
+-> Engine - 1 car
+-> Steering - 1 car
+-> Processor - 1 laptop
+
+Composites does not imply the ownership on the constituent
+
+Summaryy
+
+-> Aggregation represents HAS-A relationship
+-> Aggregation forms building blocks of data structures
+-> Composite does not have ownership on its constituent in case of Aggregation
+-> A constituent can also be part of more than one composite

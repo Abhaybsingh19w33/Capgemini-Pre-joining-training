@@ -1,0 +1,48 @@
+Polymorphism
+Polymorphism provides a single interface to different types of entities
+
+Polymorphism (Greek term)
+-> Poly means many
+-> Morphs means form
+--> Different forms of same object
+
+Types
+There are three types of Polymorphism:
+-> Ad hoc
+-> Parametric
+-> Subtyping
+
+Ad hoc Polymorphism
+Ad hoc is about function or operator overloading
+
+Example:
+String add(String firstName, String lastName)
+int add(int num1, int num2)
+Date add(Date source, int number of Days)
+
+Operator Overloading
+Redefining the behaviour of an operator is called as an operator overloading
+
+Example
+
+Employee scott, miller;
+
+Function    Case 1              Case 2          Operator redefined
+add         scott += "Ross"     scott += 500.0  +=
+Comparing   scott> miller       Scott> 6500.0   < or >
+
+Parametric Polymorphism
+-> In Java and C sharp the function or datatype of parametric Polymorphism is called as generics
+-> In C++ it is called templates
+-> Allows a function or a data type to be written generically
+-> It can handle values identically without depending on their type
+
+Subtyping Polymorphism
+-> Also known as inclusion Polymorphism, it involves a super type subtype relationship
+-> Subtyping always overides a method from the supertype
+
+Summary
+-> Polymorphism provides a single interface to different objects
+-> There are three types of Polymorphism
+-> Subtyping subtype always overrides a method from the super type
+

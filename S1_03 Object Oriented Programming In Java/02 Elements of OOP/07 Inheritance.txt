@@ -1,0 +1,67 @@
+Introduction
+-> Inheritance allows a subclass to inherit the properties from a parent class
+
+IS-A relationship
+-> IS-A relationship is the foundation for Inheritance
+-> It represents hierarchy between two classes
+
+(Base class/Super type of B) Object A ---> Extension of A ---> (Derived/Subtype of A) Object B
+
+Features
+-> An object of a subclass has all the implementations of the super class
+-> Emphasises on code-reusability in programming languages
+-> Allows independent extensions of the original software
+
+Types
+-> Single Inheritance
+-> Multiple Inheritance
+-> Hybrid Inheritance
+-> Muitilevel Inheritance
+-> Hierarchical Inheritance
+
+Single Inheritance
+-> A single Inheritance subclass inherits the features from only one superclass
+-> Java allovws only single Inheritance
+
+Multiple Inheritance
+-> Allows a class to have more than one supper class to inherit features from all parent class
+-> C++ supports this, but Java and C sharp don't support this
+
+Multilevel Inheritance
+-> A subclass is inherited by another class at multiple levels
+-> Java, C#, C++ support this
+
+Hierarchical Inheritance
+-> Every superclass is inherited by more than one subclass (at-least two)
+
+Hybrid Inheritance
+-> Combination of different types of Inheritance
+
+Method Overiding
+-> Subclass provides a specific implementation of a method that is already provided by one of its super classes
+
+Method Overriding: Features
+-> The version of a method that is executed will be determined by the object that is invoking it
+--> Same name
+--> Same parameter or signature
+--> Same return type as the method in the super class
+
+Method Overriding: Languages
+-> Java can override and prevent overriding using keyword
+Methods             ->       Keyword used in Java
+Force overriding    ->       abstract
+Prevent overriding  ->       Final
+
+IS-A vs HAS-A Composition Inheritance
+-> IS-A and HAS-A are hierarchies and are used for code reusabilityy
+
+Correct statement
+Computer <-- Laptop is a computer <-- Laptop --> Laptop has a processor --> Processor
+
+Wrong statement
+Computer <-- Laptop has a computer <-- Laptop --> Laptop is a processor --> Processor
+
+Summary
+-> Inheritance is how a subclass can inherit properties from the superclass
+-> IS-A and HAS-A are hierarchies and are used for code reusability
+-> 3 There are five types of Inheritance

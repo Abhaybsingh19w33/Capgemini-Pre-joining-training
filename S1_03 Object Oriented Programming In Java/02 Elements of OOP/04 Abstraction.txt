@@ -1,0 +1,23 @@
+Definition
+-> Abstraction provides crisply defined conceptual boundaries
+-> These boundaries are related only to the perspective of the viewer
+
+-> Abstraction denotes the essential characteristics of an object that distinguishes it from other kinds of objects.
+
+-> Emphasises on the details that are significant to the user
+-> Suppresses the details that are not significant to the user
+
+Datatype of Abstraction
+-> Abstraction is represented in form of a datatype
+-> Abstraction in Java can be created in the form of a class or an interface
+Examples of datatype
+-> int
+-> double
+-> date
+-> string
+
+Summary
+Key points discussed in this video:
+-> Abstraction provides conceptual boundaries
+-> Abstraction emphasises on details that are significant to the user
+-> Abstractions are represented typically in the form of a datatype

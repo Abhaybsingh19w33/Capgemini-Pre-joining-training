@@ -38,3 +38,108 @@ a reference
 
 Ans - The process of creating an object is known as instantiation, and hence the result of instantation is instance.
 
+Q - Which of the following is not a major element in OOP?
+Abstraction
+Encapsulation
+Typing
+Hierarchy
+
+Ans - The four major elements of OOP include
+Abstraction, Encapsulation, Hierarchy, and
+Modularity.
+
+Q - In case of ______________ object continues to exist even after its creator ceases to exist.
+
+Encapsulation
+Typing
+Persistence
+Modularity
+
+Ans - Persistence is the property of an object through
+which its existence transcends time and hence
+the object continues to exist even after its creator
+ceases to exist.
+
+Q - Abstraction ______________ on details that are significant to the viewer.
+
+emphasises
+suppresses
+ignores
+Ans - Abstraction presents an object's view relative to the perspective of who is using it
+
+Q - Encapsulation is generally used for
+
+Hiding the data members
+
+Emphasizing on the details that are significant to the viewer
+
+Presenting an object's view relative to the perspective of who is using it
+
+Ans - Encapsulation is the mechanism for restricting access to Some components of an object, and hence hide the data members which are accessed via public methods.
+
+Q - In a UML class diagram, encapsulated members are prefīxed with the symbol.
+
+Plus
+Minus
+Hash
+
+Ans - Encapsulated members are denoted as private and hence we use the minus symbol to the same in a UML class diagram.
+
+Q - Which of the following does not describe aggregation?
+Select the correct option and olick Submit.
+
+Whole-part relationship
+Object "A" belongs to object "B"
+Has-A
+Is-A
+
+Ans - Is-A relationship describes inheritance and
+not aggregation.
+
+Q - In aggregation, the constituent continues to exist even after a composite is destroyed. Is this statement correct?
+
+
+Yes
+No
+
+Ans - For example, A universisty has departments and a
+department has proteSsors. It the university closes,
+the departments will no longer exIst. But the
+professors in those departments will continue to exist.
+
+Q - Which of the following is not allowed in Java?
+
+Single inheritance
+Multiple inheritance
+Multilevel inheritance
+Hierarchical inheritance
+
+Ans - Java does not allow multiple inheritance between classes. However, be aware that it is allowed to have intertaces.
+
+Q - Which of the following is not a type of hierarchy?
+
+Inheritance
+Aggregation
+Composition
+Overriding
+
+Ans - Inheritance, Aggregation and Composition defines a relationship between various classes in an application. Overniding is only to re-write an inherited method to provide a different behavior in the subclass.
+
+Q - Which of the following is not allowed in Java?
+
+Method overriding
+Operator overloading
+Method overloading
+Constructor overloading
+
+Ans- Overloading of operators are not allowed in Java, unlike C++ or C#.
+
+Q - Which of the following is also known as inclusion polymorphism?
+
+Subtyping
+Ad-hoc
+Parametric
+Operator overloading
+
+Ans - Subtyping is also known as inclusion Polymorphism and involves a super-subtype relationship.
+

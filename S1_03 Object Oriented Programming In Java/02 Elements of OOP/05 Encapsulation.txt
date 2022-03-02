@@ -1,0 +1,22 @@
+Introduction
+
+-> Encapsulation is a mechanism to restrict the access to some components of an object
+
+-> It is also known as data binding, but not necessarily that it should hide the data all the times
+
+-> Encapsulation is the process of compartmentalising the elements of an abstraction
+
+Features
+-> Segregation allows to define that these are something that outside world can access or cannot access
+
+Segregate members of object
+Private - Accessible to members of the object only
+Public - Accessible to outside world
+
+Encapsulation in Programming World
+-> Using Encapsulation hide the data members and expose some functionalities in the form of typically setters and getters
+
+Summary
+
+-> Encapsulation is a process of compartmentalising the elements of an Abstraction
+-> Set name and set age are functions through which we validated the assigning data

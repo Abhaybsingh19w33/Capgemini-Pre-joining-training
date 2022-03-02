@@ -1,0 +1,60 @@
+Major Elements
+An object-oriented model should include:
+-> Abstraction
+-> Encapsulation
+-> Modularity
+-> Hierarchy
+
+Minor Elements
+Each of these elements is useful, but not essential
+-> Persistence
+-> Typing
+-> Concurrency
+
+Abstraction
+-> Denotes essential characteristics of an object that distinguish it from other objects
+-> Provides defined conceptual boundaries, relative to the perspective of the viewer
+
+Encapsulation
+-> Process of compartmentalising the elements of an abstraction that constitute its structure and behaviour
+-> Serves to separate the contractual interface of an abstraction and its implementation
+-> Popularly known as Data Hiding
+
+Modularity
+-> It is a property of a system that has been decomposed into a set of cohesive and loosely coupled modules
+
+Coupling
+-> Tight coupling
+--> Works with specific module
+
+-> Loose Coupling
+--> Works with any module
+
+Hierarchy
+Hierarchy allows to make a proper ranking or ordering of the classes
+-> Composition
+--> One object contains another object
+
+-> Aggregation
+
+
+Typing 
+Typing is an enforcement of a class of an object such that objects of different types may not be interchanged
+
+Concurrency
+Concurrency is the bility of an object to work with another object in a concurrent way
+
+Persistence
+-> The property of an object through which its existence transcends time
+-> Object continues to exist after its creator ceases to exist
+
+Persistence is very useful as objects occupy memory
+Primary memory: lose data when computer is shutdown
+Secondary memory: save object in persistence storage
+
+Summary
+Key points discussed in this video
+-> Object oriented development into 4 major and 3 minor elements
+-> A model without any of major elements is not object oriented
+-> Minor elements are useful, but they're not necessaryy
+
