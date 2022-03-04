@@ -1,0 +1,79 @@
+Introduction
+-> Classes without variables generally act as a bunch of functions like utility functions
+-> Objects have state that are represented by internal fields
+
+Overview
+-> Known as fields, instance variables, member variables and does not exist until an object is created
+-> May be primitives or references, or both Generally private
+-> Need a reference to the object in order to access
+-> When created, will be in the heap
+-> Primitives will be set to Integer(0), Decimal (0.0), Boolean (false)
+-> References will be set to null
+
+Instance Variables
+-> By default, the variables of a class belong to the object
+-> These are called non-static variables or instance variables
+
+Consider
+
+class Employee {
+    int id;
+    String name;
+    double salary;
+}
+
+-> Create variables of Employee class
+-> Assign them to objects of Employee class
+-> Variables created occupy memory
+
+Instance Varlables
+
+Instance variables are not accessible in:
+-> Static method
+-> Static block
+
+Protection
+-> Instance variables represent the state of an object
+-> if the instance variables are accessible directly using a reference wrong values may be assigned
+
+-> Encapsulation is used to protect these state variables
+-> Hide the data members using private and then expose the access to these using the public members, which are methods
+
+-> Methods are blocks of code
+
+This
+Variable is an implicit reference to the object
+-> Local variable (argument/parameter)
+-> Instance variable
+
+Use the keyword 'this' to refer to the instance variable
+
+Final Fields
+A field can be marked as a final variable
+To initialise the final field assign a value at:
+-> Declaration
+-> Constructor
+
+class Employee {
+    // Initialised to zero by default
+    private final int id;
+    Employee (int id) {   //Constructer is called only once
+        this.id = id; // allowed
+    }
+
+    public void setId (int id) {
+        this.id = id; // error
+    }
+}
+
+Class Variables
+In a class, some variables don't belong to an object, called class or static variables
+
+-> All objects see the same value
+-> Use 'static' keyword to define
+-> Accessed using the class name
+
+Summary
+-> A variable in a class is also known as fields
+-> Fields are kept private, and exposed by public functions
+-> Static variables belong to the class

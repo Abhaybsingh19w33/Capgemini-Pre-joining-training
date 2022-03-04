@@ -1,0 +1,110 @@
+Introduction
+-> A class in Java represents abstraction
+-> Nested classes and anonymous objects can be created in Java
+
+Overview
+-> Use the class keyword
+-> It acts as a container for declaring
+--> Fields
+--> Methods
+--> Constructor
+--> Static blocks
+
+Syntax
+It has a class and the name of the classs
+[public] class ClassName {
+    // member declarations
+}
+
+-> In square bracket, there is a public.
+-> A class can be either public or not public
+
+Few statements cannot be written such as:
+-> for loop
+-> If condition
+-> Calling another function
+
+Best Practices
+-> A class name starts with a capital letter
+-> It follows camelCase convention
+-> If the has multiple words, each letter of the first word starts with a capital letter
+-> Fields, methods in a class start with lowercase
+-> This convention improves readability
+
+Creating Classes
+class Employee {
+    int id;
+    String name;
+    double salary;
+}
+
+-> Inside these curly brackets, there shouldn't be any executable statements like a for loop
+-> A source code has a file with an extension of .java
+
+-> Class definition in the source code is converted into a bytecode file
+-> Once this is compiled, it gives what is called as a .class file containing the bytecode
+-> A bytecode file has an extension of ".class" and name that matches the class name
+
+Source Code
+source code contains one or more Java class definition
+-> Java class definition is kept in separate files
+-> Only one public class per source file
+-> Source filename must match the public class name
+
+Nested Class
+Use of nested classes are very limited
+
+Example:
+
+public class C{
+    // Some members of C
+    class Nc {
+        // Some members of Nc
+    }
+}
+
+javac C.java
+
+C.class
+C$NC.class
+
+
+Nested Class
+Objects of classes without names
+
+Example:
+
+public class HelloWorld {
+    public static void main (String[]args) {
+        Object a = new Object () {
+            public void sayHello () {       //Subclass of object
+                System.out.println("Hello.. ");
+            }
+        };
+        a.sayHello ();
+    }
+}
+
+javac HelloWorld.java
+
+HelloWorld.class
+HelloWorld$1.class
+
+Object Creation
+-> Use "new" keyword
+-> There are other ways too
+
+Example
+
+Employee e1;
+e1 = new Employee();
+
+-> New Employee expression is called to Create an object
+
+-> During garbage collection, the actual object gets moved to different locations
+
+Summary
+-> Class is a container for declaring fields, constructors, methods, static blocks, and nested classes
+-> Naming a class in Java follows the CamelCase convention
+-> The source file is compiled using "javac" bytecode file with the extension ".class" and the defined class is converted into a
+-> Nested classes and anonymous objects can be created in a Java class

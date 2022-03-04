@@ -1,0 +1,143 @@
+Introduction
+There are fields that contain data, but there should be a business logic to work on them
+
+-> Methods contain logic that affects the value of one or more fields
+-> Overloading allows us to define methods with the same name but different behaviour
+
+Overview
+Methods are functions in a class
+-> They contain logic to operate on and affect the value of one or more fields
+
+Syntax
+
+<modifiers> <returnType> <methodName> (<formal Parame terList>) <throwsClause>
+{
+    <local variable declarations>
+    <nested local class declarations>
+    <statements>
+}
+
+Method Prototype
+A part from the name, a method contains information about:
+
+-> Accessibility modifier
+-> Additional method modifiers
+-> The type of the return value, or void if the method does not return any value
+-> Formal parameter list
+-> Checked exceptions thrown by the method in a throws clause
+
+Accessibility Modifiers
+It tells whether a function can be accessed outside of the object or inside the class
+Accessibility modifiers
+-> none (when no modifier is mentioned)
+-> private
+-> protected
+-> public
+
+Additional Method Modifiers
+A method without a body is called as abstract method
+
+Abstract
+
+-> Has no method body
+-> Makes the class as non-concrete, and forces the class as abstract
+-> Restricts object creation
+-> Forces subclasses to define method with exact prototype
+
+Additional Method Moditiers
+Final is a keyword that can be used with variables, functions, or class, with different meanings
+
+Final
+-> Has method body
+-> When inherited, subclass can not override such method
+-> Makes this function to be used as-is by objects of subclasses
+
+Static methods are more like global functions
+Static
+-> Method belongs to the class
+-> Cannot access the fields of an object
+-> Can be considered as global methods
+-> Methods in a class are independent of each other
+
+Return Type
+It signifies the datatype of the function itself
+-> Use 'void' to indicate that the method does not return any value
+-> Non-void methods can be directly used in an expression
+-> Non-void methods can be assigned to a variable of a similar type
+
+Parameter (argument) List
+It is a comma-separated list of parameters for passing information to the method when the method is invoked by a method call
+-> An empty parameter list must be specified by parenthesis
+-> Each parameter is a simple variable declaration
+-> A value cannot be assigned to it, but can be used as a placeholder when a function call is made
+-> Consists of type and name for each parameter
+-> A parameter can also be marked as 'final to indicate that the value cannot be changed within the method
+-> Parameters are not optional, when the method is invoked
+
+Method Program
+
+public class Number{
+    private int num;
+
+    // Here, pubic access is allowed to the variable, but via setNum
+
+    public void setNum (int _num) {
+        num = _num;
+    }
+
+    public long factorial () {  // No arguments list
+        // A parameter can be a local variable, but a local variable cannot be a parameter
+
+        long f = 1;
+        for (int i=num; i>1; i--){
+            f *= i;
+        }
+        return f;
+    }
+}
+
+Invoking Methods
+Invoking a method deals with:
+-> Creating a reference of the class containing the method
+-> Initialising the reference to an object
+-> Using the reference, call the required method, supply arguments if required
+
+Method Signature
+The signature of a method comprises of two things:
+-> Name
+-> Parameter List
+
+Return type or access modifiers are not part of the signature
+
+Method Signature
+
+Example:
+
+int sayHello (String name)
+void sayHello (String user)
+
+They have the same signature: sayHello(String);
+
+-> Data type of the parameter
+-> The count of the parameter
+-> The number of arguments
+
+Method Overloading
+In Java, several method implementations may have the same name, as long as the method signatures differ
+
+-> Since overloaded methods have the same name, their parameter lists must be different
+-> Method overloading can be used when the same logical operation requires multiple implementations
+
+Summary
+
+-> Methods are functions in a class
+
+-> Method prototype contains additional information apart from the name for the method
+
+-> Private, public and protected can be used to control the access of the methods
+
+-> Abstract, final and static are additional modifiers
+
+-> The signature of a method comprises the method name and the formal parameter list
+
+-> The parameter list for overloaded methods should be different

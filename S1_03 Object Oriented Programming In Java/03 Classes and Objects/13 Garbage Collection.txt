@@ -1,0 +1,86 @@
+Introduction
+Responsibility of a developer to free the allocated memory often leads to two major problems:
+
+-> Memory leak
+-> Dangling pointers
+
+Garbage collection is the approach by Java to overcome this problem
+
+Garbage Collection
+Garbage collection is a process in which Java recollects the space occupied by dead/abandoned objects
+
+Garbage collector is responsible for:
+
+-> Allocating memory for new objects
+-> Ensuring that any referenced (live) objects remain in the memory
+-> Recovering memory used by objects that are no longer reachable (dead objects)
+
+Marking
+-> The garbage collector first performs a task called 'marking'
+
+-> Each object the garbage collector meets is marked as being used, and will not be deleted in the sweeping stage
+
+Sweeping
+-> Memory allocator holds a list of references to free spaces and searches tor free space whenever an allocation is required
+
+-> The traditional way is to let the allocator methods use complex data structure to search the memory for required free space
+
+Compacting
+-> Compact the memory by moving objects close to each other
+
+-> Memory allocator holds a list of references to free spaces and searches for free space whenever an allocation is required
+
+-> This way object allocation is much faster
+
+Problems
+-> A few problems occur in this model. This model is also called as non-generational GC
+
+Non-generational GC will just iterate over objects in the heap:
+-> increased objects reduce performance
+-> ignores typical object behaviour
+
+-> Generational GC improves upon this
+
+Generations
+Generational GC improves on this features
+-> HotSpot uses what is termed as 'Generational Garbage collectors 
+
+Generations
+The memory space is divided into three sections:
+
+Young generations (For newer and young objects) -> Eden
+from' survivor space 
+to' survivor space
+
+Tenured/ old generations (For old objects)
+These objects survive multiple garbage collection process and tend to live longer
+
+Permanent generations (For metadata, classes, etc.)
+An exception called 'permgen exception' might occur if there are lots of anonymous classes being loaded
+
+Young Generation
+-> GCs occur relatively frequently
+-> GCs are fast and efficient because young generation space is usually small and likely to contain a lot of short-lived objects
+-> Objects that survive some number of young generation collections are promoted to old generation heap space
+
+Old Generation
+These are typically larger than young generation heap space
+-> Its occupancy grows slowly
+-> GCs are infrequent but takes significantly longer time
+to complete than young generational heap space
+-> GCs in old generation should be minimized
+
+Points to Remember
+-> Young generation that is divided into Eden, survivor space and objects age here
+-> Minor GC are always "stop-the-world" events
+-> Old generation contains objects that have reached the minor GC age threshold
+-> Permanent generation contains metadata required by the JVM
+-> It contains class, objects, and methods
+-> It contains interned strings and static data
+
+Summary
+
+-> Marking identifies all the reachable (live) objects
+-> Sweeping cleans memory by zero filing
+-> Generations are parts of the memory where objects of different ages are kept
+-> A new object is always created in the young generation, specifically in Eden

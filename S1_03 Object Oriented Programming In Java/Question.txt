@@ -143,3 +143,137 @@ Operator overloading
 
 Ans - Subtyping is also known as inclusion Polymorphism and involves a super-subtype relationship.
 
+Q - As a best practice, hoW would you like to arrange the members?
+
+Constructors, Fields, Getters/setters
+Constructors, Getters/setters, Fields
+Getters/setters, Fields, Constructors
+Fields, Constructors, Getters/setters
+
+Ans - AS a best practice, arrange the members in this order.
+Fields, Constructors, Getters/setters, Overridden methods, Other methods
+
+Q - Which of the following is incorrect regarding a source code?
+
+Only one public class per source file
+Source filename must match the public class name
+A source code Is saved in a file with the extenslon of .java
+A source code can not contain more than one Java class definition
+
+Ans - A source code can contain any number of class definition, but only one of them can be marked as public. Source filename must match the public class name.
+
+Q - What does the above statement return?
+
+A named object
+Correct - An anonymous object 
+A nested object
+A proxy object
+
+new Object(){
+    public void sayHello(){
+        System.out printin("Hello.");
+    }
+};
+
+Ans- The curly braces after the "new Object()" is equivalent to a nameless class that extends Object. Inside the braces, we can define new methods or Override the inherited methods
+
+Q - To provide encapsulation, hide the data members using.
+
+private access
+protected access
+package level access
+minus symbol
+
+Ans - To protect these state variables, we use the concept of encapsulaton. Hide the data members using 'private. Expose the access to them using public methods
+
+Q - A member can be shared with all instances of the class by declaring it as
+
+abstract
+final
+private
+static
+
+Ans - static members belong to the class and only one
+Copy exists in the JVM.
+
+Q - Which of the following is not true if the method of a class marked as 'final?
+
+Makes the class as non-concrete, and forces the class
+as final
+
+Method must have body
+
+When inherited, subclass can not override such method
+
+Makes this function to be used as-is by objects of subclasses
+
+Ans - A class is made as non-concrete when a method is marked as abstract, and forces the class as abstract.
+
+Q - A parameter can also be marked as ______________ to indicate that the value of the parameter supplied may not be changed within the method.
+
+single
+constant
+const
+final
+
+Ans - A parameter can also be marked as 'final' too indicate that the value of the parameter supplied may not be changed within the method.
+
+Q - Which of the following is not overloading?
+
+Correct - int sayHello(String name);
+void sayHello(String user);
+void sayHello(String user, String city);
+Ovoid sayHello(Stringoll users);
+
+Ans - While overloading the methods, only the signature must differ. By return type alone, Overloading can not be established.
+
+Q - The 'this' keyword can not be used inside:
+
+constructors
+non-static methods
+static methods
+
+Ans - Static methods do not need object creation. The reference this refers to the invoking object, with out which this can not be used.
+
+Q - The this' keyword can also be used to invoke a constructor from another one. True or false?
+
+Correct - True
+False
+
+Let us understand this with the help of an example
+
+Employee(int id) {
+    this.id = id;
+    this('ADMIN", 20000.0);
+}
+
+Employee(String dept, double salary) {
+    this.dept= dept,
+    this.salary salary
+}
+
+Q - The ______________ stage is where the deletion of objects take place.
+
+sweeping
+marking
+Compacting 
+
+Ans - The traditional way is to let the allocator methods use complex data structure to search the memory for the required free space
+
+Q - In a generational GC, new objects are created in _
+
+Young generation
+Old generation
+Permanent generation
+Survivor spaces
+
+Ans - Young generations contain new and young Objects. It is divided into eden, and two Survivor spaces.
+
+Which generation contains objects that have reached the minor GC age threshold?
+Select the correct option and click Submit.
+Eden
+Survivor spaces
+Old generation
+Permanent generation
+
+Ans - Old generation contains objects that have reached the minor GC age threshold. Major GC is performed on this generation, when the threshold is reached here.

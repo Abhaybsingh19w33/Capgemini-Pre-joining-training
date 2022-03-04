@@ -1,0 +1,53 @@
+Overview
+In Java, 'this' is a reference to the object in context (current object)
+
+It can only be used inside:
+-> Non-static methods
+-> Constructors
+
+Introduction
+When a method is called using an object reference, the same is supplied as an implicit parameter to the method, with the name 'this'
+
+this' Keyword
+-> When an instance method is invoked, the reference of
+the invoking object is passed to the invoked method
+
+-> It is passed as the first (invisible) argument and
+received by the reference 'this
+
+this' Keyword: Uses
+Used in a constructor or a method to refer to a member variable
+
+Example:
+
+class Employee {
+    int id;
+    public void setId (int id) {
+        this.id = id; // ID is the same variable as a parameter as well as the member
+    }
+}
+
+-> The 'this' keyword can also be used to invoke a constructor from another one 
+-> 'this' is merely to transfer control and reuse the code
+
+Example
+class Employee {
+    int id;
+    String dept;
+    double salary;
+
+    Employee (int id) {
+        this.id = id;
+        this("ADMIN" , 20000.0);
+    }
+
+    Employee (String dept, double salary) {
+        this.dept = dept;
+        this.salary = salary;
+    }
+}
+
+Points to Remember
+this
+-> Can never be null
+-> Can not be used to access static variables, since static variables do not belong to the object

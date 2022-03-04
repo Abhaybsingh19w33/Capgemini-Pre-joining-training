@@ -2,3 +2,5 @@
 tempCodeRunnerFile.c
 .metadata
 bin
+*.class
+*.ctxt
