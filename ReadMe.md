@@ -35,8 +35,7 @@ To debug c code in linux
 
 -> gdb a.out
 
-
-gdb commands 
+gdb commands
 
 --> l - to list program (show code in terminal)
 
@@ -44,7 +43,7 @@ gdb commands
 
 --> r - to run the program till the breakpoint
 
---> info b - info about the break point 
+--> info b - info about the break point
 
 --> n - next line of program to be executed (in appropriate sequence of running of code)
 
@@ -54,8 +53,12 @@ gdb commands
 
 --> s - it was used to step into the function (this is to enter the function and debug the function)
 
---> p variableName - to print the value of variable 
+--> p variableName - to print the value of variable
 
---> print variableName - to print the value of variable 
+--> print variableName - to print the value of variable
 
 --> q - to end the gdb
+
+javap co.vinod.entity.Product // to print member variables
+
+javap -private co.vinod.entity.Product // to also print private members

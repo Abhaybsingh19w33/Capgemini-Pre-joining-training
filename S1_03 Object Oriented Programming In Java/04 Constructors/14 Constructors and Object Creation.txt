@@ -1,0 +1,75 @@
+Introduction
+Constructors are used for initialising an object's data members
+-> Compiler adds an implicit, no-argument constructor, if a class does not have one
+
+Constructor
+Method-like code block is invoked during object creation
+-> It has the same name as the class name
+-> Only accessibility modifiers are permitted, but abstract, final and static not allowed
+
+Constructor
+-> Are not methods (cannot be explicitly invoked)
+-> Can be parameterised
+-> Does not have a return type, not even void but can contain simple form of return statement
+-> Set the initial state of an object during the object creation
+
+-> In Java, compilers don't give an error. But in C++ this would be an error
+
+Syntax
+A constructor has the following general syntax:
+<modifier> <className> (<formalParameterList>) <throwsClause> {
+    <local variable declarations>
+    statements>
+}
+
+Invoking Constructors
+Constructor cannot be explicitly invoked using an object reference
+
+class Test {
+    public static void main (String []args){
+        Employee e1 = new Employee ();  //No arguments
+    }
+}
+
+Default Constructor
+A default constructor is one which doesn't take any parameter or arguments
+
+-> If a class does not specify any constructors, then an implicit detauit constructor is supplied for the class
+
+Implicit Default Constructor
+A default constructor
+-> Added by the compiler
+-> Added only when there is no explicit constructor
+-> Initialises the fields to default values
+
+Good Practices
+
+-> Once you add a constructor, compiler will not add the default constructor
+-> Constructor takes parameters to initialise the members
+
+Employee (double salary) {
+    this.salary = salary
+}
+
+The only way to create an Employee object is to use this constructor:
+    Employee e2 = new Employee (34500.0);
+
+The following statement to create Employee object fails:
+    Employee el = new Employee ();
+
+It is a good practice to add a default, no-argument constructor, even if you do not have anything to do in it
+
+Example
+class Employee {
+    // for better practice
+    // No initialisation
+    Employee () {
+    }
+}
+
+Summary
+
+-> Constructor is invoked during object creation
+-> A constructor has the same name as their class, can be parameterised
+-> If a class does not specify any constructors, the compiler creates an implicit default constructor for the class
+-> Adding a default, no-argument constructor is a good practice

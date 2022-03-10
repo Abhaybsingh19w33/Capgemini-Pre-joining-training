@@ -1,0 +1,83 @@
+Introduction
+-> A constructor is a method like code that gets automatically executed during object creation
+-> Overloaded constructors provide the users more than one way to create and initialize objects
+
+Overloading
+Overloading of methods:
+-> signature = name + arguments
+-> Signature must vary
+
+Constructor is a method-like code block:
+-> Same name as the class
+-> No return datatype
+-> Invoked during object creation
+
+class Employee {
+    Employee () {
+    }
+}
+
+-> A constructor without parameters is known as default constructor
+-> If you don't provide any constructor, a default constructor will be implicitly provided by the compiler
+
+A class can have more than one constructor:
+-> Constructor without any parameters
+-> Constructor with parameters
+
+Ensure that the combination of datatype, count and order of parameters are different for each of those constructors
+
+Having more than one constructor alloWs us to create objects in different ways
+
+Example:
+new Employee();
+new Employee("Shyam");
+new Employee(12, "shyam");
+new Employee(12, "Shyam", "ADMINISTRATION");
+new Employee(12, "Shyam", "ADMINISTRATION", 145000.0);
+new Employee(12, "Shyam", 145000.0);
+
+Without this flexibility, the objects like the first one cannot be created
+
+Constructor: Usage
+-> While creating an object, only one constructor is used
+
+Example:
+Employee shyam;
+shyam = new Employee();
+shyam = new Employee("Shyam");
+
+-> Though two constructors are used while initialising the reference 'shyam', both of them are going to create separate objects
+
+-> For each of those objects, only one constructor is called
+
+Calling Constructors
+-> Constructors are automatically called during object creation
+-> Calling a constructor using a reference would result in compiler error
+// error 
+--> shyam.Employee ("Shyam ") ;
+
+-> However, a call to a constructor can be made from within another constructor. Use the 'this' keyword as function call
+
+class Employee {
+    private static int idCounter = 0;
+
+    Employee () {
+        this(++idCounter, 45000.0);
+    }
+
+    Employee (int id, double salary) {
+        this.id = id;
+        this.salary = salary;
+    }
+}
+
+Points to Remember
+-> Having more than one constructor allows flexible ways of creating objects
+-> Having a default, no-argument constructor is always considered as a best practice
+-> Make the constructors public
+
+Summary
+
+-> Overload the constructors in a class, when you want to provide more flexible ways to create and inítialise the objects of that class
+-> Having a no-argument default constructor is always a good practice
+-> Constructors are generally made public

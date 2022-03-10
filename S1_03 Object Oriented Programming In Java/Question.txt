@@ -277,3 +277,46 @@ Old generation
 Permanent generation
 
 Ans - Old generation contains objects that have reached the minor GC age threshold. Major GC is performed on this generation, when the threshold is reached here.
+
+Q - Which of the following is an incorrect statement regarding the constructors?
+
+Can not be explicitly invoked
+Correct - Can not be parameterised
+Does not have a return type, not even void
+Sets the initial state of an object during the object creation
+
+Ans - By adding parameters to the constructor, overloading of constructors can be done.
+
+Q - If there is no initialization required, do not add a default constructor.lf there is no initialization required, do not add a defauit constructor
+
+True
+Correct -  False
+Ans - It is a good practice to add a default, no argument constructor, even if you do not have anything to do in it.
+
+Q - What is a method signature?
+
+return type + name
+
+return type + name + arguments
+
+name + arguments
+
+return type + arguments
+
+Ans - Signature of a method is the combination of name and arguments (if any).
+
+Q -  Choose the correct statement regarding constructor
+
+Correct - Constructors are automatically called during object creation
+
+Constructors are automatically called before object creation
+
+Constructors can be called using an object reference
+
+An object can be created using more than one constructor
+
+Ans -  Creating an object involves using the constructor.
+For example,
+Employee emp = new Employee();
+The brackets here determine which constructor to call.
+
