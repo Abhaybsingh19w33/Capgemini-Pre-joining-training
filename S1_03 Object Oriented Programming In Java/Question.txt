@@ -344,4 +344,20 @@ Correct - Declare a method as static if the method does not use any of the insta
 
 Ans - Static methods are accessed using the name or the class. Staic methods can not aCcess instance variables. Static methods can access other static members of the same class.
 
+Q - In Java, Aggregation is created by declaring a reference of ______________ type in ______________
 
+Correct - constituent, composite
+composite, composite
+constituent, constituent
+composite, constituent
+
+Ans - In Aggregation a Composite HAS-A constituent and a Constituent is a PART-OF a composite.
+
+Q - if accessing a method of a constituent using a composite is done frequently, we can have a decorator method in the composite to avoid the statement chaining. These are also known as ______________
+
+members
+accessors
+Correct - Delegates
+Aggregation
+
+Ans - Using a delegate method, a reference of a composite can invoke the corresponding method of the constituent.

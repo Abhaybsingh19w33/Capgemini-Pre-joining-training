@@ -1,0 +1,101 @@
+Introduction
+-> Aggregation defines HAS-A relationship between objects of two related classes
+-> It allows code reusability
+-> Aggregation is the types of composition
+
+Aggregation
+-> Aggregation is a form of composition, where a composite does not imply ownership on its constituents
+--> Composite HAS-A constituent
+--> Constituent is PART-OF a composite
+
+-> If one object which is called composite has constituents, and composite is destroyed, constituents will still be alive
+
+Aggregation
+
+-> if this ( <> )  is filled, this is composition. Otherwise, it is considered as aggregation
+-> The arrow ( > ) is from the composite tothe constituent
+Example
+Laptop                          Processor
+- serialNumber: String          - coreCount: int
+- make: String                  - model: String
+- model: String                 - manutacturer: String
+- processor: processor
+                        <>------> 
+                        0..1    1..1
++Constructors                   +Constructors
++getters                        +getters
++setters                        +setters
+
+-> In Java, Aggregation is created by declaring a reference
+of constituent type in composite
+-> It is a good practice to initialise the constituent to an object during the construction of composite
+
+Constructor -> Hey, let's initialise the constituent
+
+Example
+
+public class Laptop {
+    private String serialNumber;
+    private String make;
+    private string model;
+    private int ram;
+    private Processor processor; // this acts as aggregation
+
+    //...
+    public Laptop () {
+        //...
+        // for good practice we also initialise the object
+        processor = new Processor () ;
+        //...
+    }
+    // setters/getters
+}
+
+
+Accessing Constituents
+-> Since constituent is an object, they can be accessed from the constituent and call methods directly in a statement chaining fashion
+
+-> To get the model of the processor from a laptop, use:
+
+Laptop laptop = ... 
+S.o.p(laptop.getProcessor().getModel());
+
+-> If accessing a method of a constituent using a composite is frequently done, a decorator method can be written inside the composite.
+
+-> These are also known as delegates.
+
+public class Laptop {
+    // ..        
+    private Processor processor;
+    public Laptop () {
+        processor = new Processor();
+        // ..
+    }
+    // setters/getters
+
+    public String getProcessorModel () {
+        return processor.model();
+    }
+
+    public void setProcessorModel (String model){
+        processor.setModel(model);
+    }
+}
+
+It is a single method call for the client application to get the processor model
+
+Laptop laptop = ...
+S.o.p(laptop.getProcessorModel());
+
+It is the same as
+
+Laptop laptop = ...
+s.o.p(laptop.getProcessor().getModel());
+
+Summary
+
+-> Apply aggregation in Java, by creating a member variable of constituent's type in a composite
+
+-> Use statement chaining to access the members of a constituent using reference of a composite
+
+-> Use a decorator method to act as a delegate to the constituent's member method to avoid statement chaining
