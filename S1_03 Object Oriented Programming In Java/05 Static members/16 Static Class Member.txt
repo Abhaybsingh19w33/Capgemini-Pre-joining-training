@@ -1,0 +1,73 @@
+Introduction
+-> Static variables are shared by all objects of the same class
+-> Static methods do not depend on an object's state and allow developers to create utility classes
+
+Example:
+
+Consider the class circle:
+
+Instance variables
+-> radius (8 bytes)
+-> pi (8 bytes)
+
+For each Circle object, there will be 16 bytes of storage required in the heap
+
+Circle []circles = new Circle[10];
+
+for (Circle c: circles) {
+    c = new Circle (100 *Math.random());
+}
+
+Create pi variable as static so that a separate pi variable is not required for each circle
+
+Static Variable
+-> Static variable belongs to the class and not to an object
+-> Static variables belong to the class
+-> They dont belong to any object explicitly
+-> All objects share the same variable
+-> Static variables are often used with final
+
+class Circle {
+    private double radius;
+    private static final double pi = 3.1416;
+    // constructors
+    // setters
+    // getters
+}
+
+A static variable cannot be initialised in the constructor because there is only one static variable but constructor is called for every object
+
+
+Example
+class Employee {
+    private static int idCounter = 0;
+    private final int id;
+
+    Employee () {
+        id= ++idCounter;
+    }
+}
+
+// somewhere
+Employee el, e2, e3, e4;
+el new Employee ();
+e2 new Employee ();
+e3 new Employee ();
+e4 new Employee ();
+
+Static Method
+-> A static method acts like a utility function or global function
+-> It usually takes one or more input parameters and return a calculated result
+-> Static methods are accessed using the name of the class
+
+Math.sqrt(12);
+Integer.parseInt("234");
+
+-> Static methods cannot access instance variables
+-> Declare a method as static if the method does not use any of the instance variables in that class
+
+Summary
+
+-> Static members of a class do not have any authority on an object's state
+-> Static variables are shared by all object
+-> Static methods help us build utility classes

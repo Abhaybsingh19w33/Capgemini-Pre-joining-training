@@ -320,3 +320,28 @@ For example,
 Employee emp = new Employee();
 The brackets here determine which constructor to call.
 
+Q - Choose the incorrect statement regarding static variables.
+
+Static variables belong to the class
+
+They don't belong to any object explicitly
+
+Correct - Static variables belong to an object
+
+All objects share the same variable
+
+Ans - Static variables do not belong to any object. In fact, a static variable occupies memory as soon as the class in which it is declared is loaded.
+
+Q - Which of the following is correct regarding a static method?
+
+Static methods are accessed using the reference of an object
+
+Static methods can access the state of an object
+
+Static methods can not access other static methods in the same class
+
+Correct - Declare a method as static if the method does not use any of the instance variables in that class
+
+Ans - Static methods are accessed using the name or the class. Staic methods can not aCcess instance variables. Static methods can access other static members of the same class.
+
+
