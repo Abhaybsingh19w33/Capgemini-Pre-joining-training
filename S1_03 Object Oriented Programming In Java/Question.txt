@@ -515,3 +515,43 @@ Correct - java.lang.Object
 java.lang. String
 
 Ans - Every class inherits from java.lang.Object.
+
+Q - Which of the following is incorrect regarding method overriding?
+
+Signature must match
+Return type should not change
+Correct - Access can be made narrower but not wider
+Final methods cannot be overridden
+
+Ans - Access can be made wider but not narrower
+
+Q - Polymorphism helps in
+
+tight coupling
+Correct - loose coupling
+overriding
+inheritance
+
+Ans - Use references of an interface (or abstract class) and objects of implementing (or sub) classes.
+
+Q - Identify the incorrect statement.
+
+When a class extends another, it inherits all members
+from super class, including the abstract methods
+
+An abstract class cannot be instantiated
+
+Correct - An abstract class must have at least one abstract method
+
+An abstract class may contain non-abstract (concrete) methods too
+
+Ans - A class can be marked as abstract even if there are no abstract method. The only purpose achieved is that the objects of that class can not be created.
+
+Q - An abstract method cannot be marked as
+
+public
+static
+Correct - final
+private
+
+Ans - Final members cannot be overridden, while abstract members need to be overridden.

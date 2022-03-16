@@ -1,0 +1,108 @@
+Introduction
+-> Overriding inherit methods from superclass
+-> Polymorphism is a very powerful feature of OOP
+
+Overriding
+While Overriding
+-> The name of the method and the parameter list should exactiy match
+-> Written type should not change
+-> Access can be made wider but not narrower
+-> Final methods cannot be overridden
+
+Overriding
+Overiding applies to:
+-> Re-writing a method from the Super class
+-> Implementing a method from an interface
+
+public abstract class Shape {
+    public static final double PI= 3.1416;
+    public abstract double getArea();
+}
+
+public class Circle extends Shape {
+    private double radius;
+
+    public Circle (double radius) { 
+        this.radius radius;
+    }
+
+    @override
+    public double getArea () { 
+        return PI * radius * radius;
+    }
+}
+
+By Using Interfaces
+public interface Shape {
+    double PI = 3.1416;
+    double getArea ();
+}
+
+public class Circle implements Shape {
+    private double radius;
+    public Circle (double radius) { 
+        this.radius = radius;
+    }
+
+    @override
+    public double getArea () { 
+        return PI * radius * radius;
+    }
+}
+
+In both the cases, a Shape reference can refer to an object of Circle
+
+Shape shape;
+shape new Circle (22)
+
+Interfaces in UML diagram represented with dashed arrow ( <------ ), 
+// this is different from dashed arrow in abstraction and inheritance, in those they are not dashed arrow( non dashed arrow ka option nahi tha, to dashed se kar diya, samajh jana)
+
+Shape  <------------- Circle , Triangle
+
+Example:
+Shape s1;
+Circle cl = new Circle (22);
+Triangle t1 = new Triangle (12 , 23)
+
+s1 = c1; 
+S.o.P(s1.getArea());
+
+s1 = t1;
+S.o.p(s1.getArea());
+
+Polymorphism
+-> Polymorphism means poly + morph means many forms
+-> Polymorphism helps in loose coupling
+-> Exhaustively used in Java API
+--> JDBC
+--> Java I/O
+--> Servlet APL
+--> EJB
+
+Polymorphism in JDBC
+An APl for working with databases
+Provides a uniform approach to:
+-> Connect to a database
+-> Execute SQL statements
+-> Retrieve data from tables
+-> Process the result
+-> Close resources
+
+How to work with database and tables by providing interfaces in java.sql package
+-> Driver
+-> Connection
+-> Statement
+-> Result set
+-> Result set metadata
+
+-> Applications use these interfaces only to call the methods but not the actual objects
+-> Factory method is generally called as a virtual constructor
+-> Factory method creates objects for each of these interfaces
+-> Application is now loosely coupled with the implementation
+
+Summary
+
+-> OverrIding is re-Writing a method already inherited from a super class
+-> In polymorphism, an object behaves differently at different circumstances
+-> Almost all Java API's use polymorphism

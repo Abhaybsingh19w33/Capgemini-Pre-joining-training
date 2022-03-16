@@ -1,0 +1,123 @@
+Introduction
+-> Abstract method does not have a method body
+-> Using an abstract method
+--> Forcing some method implementations
+--> Abstract classes cannot be instantiated
+
+Abstract Method
+A class can have methods without a method body
+Such method should be marked as abstract
+
+Example:
+public class Animal { 
+    public abstract void talk(); // Method has a body
+}
+
+Abstract Method
+
+Calling the stock function:
+
+Example:
+Animal a1 = new Animal();
+a1.talk();
+
+Abstract Method
+-> Compiler results in an error
+-> Using an object must be prevented
+-> Prevent the object creation and method
+-> Mark the class as abstract
+
+Abstract Class
+An abstract class may contain non-abstract (concrete) methods
+
+Example:
+public abstract class Animal {
+    public abstract void talk();
+
+    public String info() { 
+        return "Class Animal";
+    }
+}
+
+An abstract class cannot be instantiated
+
+Calling the info() method:
+Animal a1 = new Animal(); // Error
+S.o.p(a1.info());
+
+The only way to create an object of Animal class is by realising it
+
+Example:
+public class Cat extends Animal {}
+
+Animal a1 = new Cat(); // some what Erroneous statement
+s.o.p(a1.info()); // this still works
+
+Inherits a1 members from super class, including the abstract methods
+The class Cat now implicitly has two methods
+
+public abstract void talk ();
+public String info () { }
+
+Class Cat has an abstract method
+Declared as abstract
+public abstract class Cat extends Animal {}
+
+Mark the class Cat as abstract
+Animalal = new Cat(); // Erroneous statement
+
+A subclass that extends an abstract class can override the abstract methods
+
+public class Cat extends Animal { // Half implementation if not all abstract methods are Overridden
+    //Overrides the talk method
+    @Override
+    public void talk () {
+        S.o.p("Meow. .") ;
+    }
+}
+
+// concrete only if all abstract function are Overridden
+
+An Animal instance can be realised using the Cat instance
+Abstract classes encourage
+-> Inheritance
+-> Overriding
+
+All subclasses are forced to provide those implementations
+
+Polymorphism
+There are multiple subclasses for class Animal:
+
+Animal a1;
+a1 = new Dog ();
+a1.talk ();
+
+a1 new cat();
+a1.talk ();
+
+a1 = new Lion ();
+a1.talk();
+
+A1 is pointing to different objects changing the behaviour of talk function called polymorphism
+
+Polymorphic method:
+public class AnimalStore {
+    public void examine (Animal a1) {
+        a1.talk ();
+        String into  = a1.info ();
+    }
+}
+
+Final
+-> An abstract method cannot be marked as final
+-> They are independent modifiers
+-> Final members cannot be overridden
+-> public abstract final void talk () ; // error
+
+Abstract class encourages inheritance and final class discourages inheritance
+
+Summary
+
+-> Abstract method does not have a method body
+-> Abstract method can be declared in an abstract class only
+-> Abstract classes and methods encourage inheritance
