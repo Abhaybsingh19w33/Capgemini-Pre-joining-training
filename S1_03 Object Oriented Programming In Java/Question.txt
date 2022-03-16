@@ -361,3 +361,157 @@ Correct - Delegates
 Aggregation
 
 Ans - Using a delegate method, a reference of a composite can invoke the corresponding method of the constituent.
+
+Q - The keyword ______________ is used to achieve inheritance.
+
+inherit
+implement
+extend
+Correct - extends
+
+Ans - Use the keyword 'extends' to achieve inheritance.
+For example : class Employee extends Person { }
+
+Q - Choose the incorrect statement regarding inheritance.
+
+Memory required by an object of subclass is equal to the total memory required by members of the same class and members of its super class hierarchy.
+
+The keyword 'super' is used to refer to any super class member, especially when there is a name conflict.
+
+Correct - If you invoke a method f1() of super class, which has been overridden in the subclass, using reference of a subclass, Java prefers to invoke the method from the super class.
+
+If you invoke a method f1() of super class, which has been overridden in the subclass, using reference of a subclass, Java prefers to invoke the method from the subclass.
+
+Ans - A reference always invokes the overridden method in the object.
+
+Q - A method from the super class can be re-writen in the subclass. What is this known as?
+
+Overloading
+Correct - Overriding
+Modularity
+Encapsulation
+
+Ans - If a method from the super class is re-written in the subclasS, It is called as Overriding.
+
+Q - Multiple inheritance is supported in many languages, but not in ______________
+
+C++
+Eiffel
+Perl
+Correct - Java
+Ans - Java does not support multiple inheritance for Classes.
+
+Q - The diamond problem is also known as ______________
+the gem problem
+the rhombus problem
+Correct - the diamond of death problem
+the death of diamond problem
+
+Ans - This is a common problem in languages that Support multiple inheritance.
+
+Q - Choose the incorrect statement.
+
+Private data members occupy memory, but cannot be accessed
+
+Using inheritance, a class gets all the members of a Super class
+
+Private methods are not accessible, and can be redefined with a different return type. Hence they may be considered as not inherited
+
+Correct - Multilevel inheritance is not allowed in Java
+
+Ans - Java does not allow multiple inheitance. However, a subclass can also be used as a super class and then it is called multi-level inheritance.
+
+Q - Is the following statement true or false?
+
+If the super class does not have a default constructor, and in the subclass constructor there is no call to super class overloaded constructor, compilation fails.
+
+Select the corect option and click Submit.
+Correct - True
+False
+
+Ans - Let us understand this with the help of an example.
+public class A {
+    public A(int n) {}
+}
+
+public class B extends A{
+    public B() {}
+}
+Compilation of class B fails.
+
+Q - Using ______________ you can invoke an inherited member with protected or stronger access.
+
+Select the corect option and click Submit.
+
+base
+Correct - super
+this
+super()
+
+Ans - Using "super" you can invoke a super class member (protected or stronger access).
+
+Q - Overriding ______________ the super class method.
+
+exposes
+deletes
+Correct - hides
+invalidates
+
+Ans - If such a method is called using a reference of the subclass object, super class method will not be called.
+
+Q - To restrict a method from being overridden, use the ______________ modifier on the method.
+
+static
+Correct - final
+abstract
+const
+
+Ans - The modifier final ona method indicates that subclasses can not override them.
+
+Q - Choose the incorrect statement.
+
+A non-static method in the superclass cannot be
+Overridden in the subclass as a static method.
+
+Correct - If a static method in the super class is overridden in a subclass, it has to be marked as static even in the subclass.
+
+Overriding does not apply to private methods, as the
+subclass does not see the same method in the super class.
+
+A protected method in the super class can be overridden with package level access modifier in the subclass.
+
+Ans - While overiding, access can be widened but can not be narrowed.
+
+Q - Which keyword is used for calling super class constructor from a subclass constructor?
+
+base
+this
+init
+Correct - super
+
+Ans - The 'super keyword is used as method name to invoke the super class constructor.
+
+Q - If the super class constructor declares a checked exception in the prototype, then the subclass constructor should also declare the same exception in its prototype.
+
+Correct - True
+False
+
+Ans - Alternatively, it can call the super class Constructor in a try-catch block.
+
+Q - Which keyword is used for restricting inheitance?
+
+super
+static
+const
+Correct - final
+
+Ans - Using the 'final' keyword on a class makes the class non-extendable. It does not mean that references to objects of a final class are final. And it does not mean that the members of a final class are final
+
+Q - Which of the following is not a final class?
+
+java.lang.System
+java.lang.Class
+Correct - java.lang.Object
+java.lang. String
+
+Ans - Every class inherits from java.lang.Object.

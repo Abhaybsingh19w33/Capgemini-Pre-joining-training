@@ -1,0 +1,127 @@
+Introduction
+-> Even though Java does not support multiple inheritance, a class can still inherit from more than one class using multi level inheritance
+-> A subclass acts as a super class
+
+Inheritance
+Using inheritance, a class gets all the members of a super class
+
+The members that can be accessible to the subclass depends on the modifiers:
+-> Private data members occupy memory, but cannot be accessible
+-> Private methods are not accessible and can be redefined with a different return type. Hence, they may be considered as not inherited
+
+Example
+Class A has f1()
+Class B has f1() and f2()
+Class C has f1(), f2() and f3()
+
+A {
+    - private f1(){}
+    # protected f2(){} // it can be accessed by any member method of B and C, however if you are trying to access function using B or C, in a different package, then f2 is inaccessible
+    + public f3(){}
+}
+
+B extends A {
+    inherited : 
+    f2() {}
+    f3() {}
+}
+
+C extends A {
+    inherited : 
+    f2() {}
+    f3() {}
+}
+
+Example
+Method f2() can be invoked directly inside any member of
+B or C
+
+public class C extends B {
+    public void f2Test () {
+        f2 ();  
+        // ...
+    }
+}
+
+-> Calling method f2 using a reference of C would give
+an error from a class in another package 
+
+public class Test {
+    publia void f2Test () {
+        C cl = new c();
+        C1.f2 (): // error
+    }
+}
+
+Super Class
+-> There is no limit on how many levels of super-sub class layerss
+-> An inheritance can stop if a subclass is marked as final
+
+public final class D extends C {
+    // ...
+}
+
+Constructor
+-> When the subclass instance is created, its constructor will call the super class constructor before executing itself
+-> This continues till java.lang.object on the top of the inheritance hierarchy
+-> The first constructor to finish execution would be Object() and then each of the subclass constructors, till the class of which an object is being created
+
+In any constructor, the very first statement must be a call to the super class constructor
+
+public class C extends B {
+    public c() {
+        super();
+        // ...
+    }
+}
+
+Using an executable statement before super() inside a constructor will result in compilation error
+
+public class c extends B {
+    public c() {
+        int n = 0;
+        doSomething (n) ;
+        super (); // error
+    }
+}
+
+If super class constructor is not called, the default constructor in the super class will be implicitly called
+
+public class A {}
+
+public class B extends A {
+    // implicitly calls
+    public B(){ 
+
+    }
+
+}
+
+if the super class does not have a default constructor, and in the subclass constructor there is no call to super class overloaded constructor, compilation fails
+
+public class A {
+    public A(int n) {
+
+    }
+}
+
+public class B extends A {
+    public B(){ 
+        // Implicitly calls A(), which does not exist
+    }
+}
+
+Super
+Calling f1() is same as calling super.f1 ()
+
+-> Method f1() in B hides the existence of f1() in A
+-> In a member of C, if super.f1() is called, it will always call from B
+
+-> From C, you can not invoke super.super.f1()
+-> For class C, there is always only one super class, which is class B
+-> For C, members of A are now members of B
+
+Summary
+-> Java does not support multiple inheritance
+-> More than one class can be inherited using the concept of multilevel inheritance
+-> Subclass constructor calls the default constructor of the super class implicitly

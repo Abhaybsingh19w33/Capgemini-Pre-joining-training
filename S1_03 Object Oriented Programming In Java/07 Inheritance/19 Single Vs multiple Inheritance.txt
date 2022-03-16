@@ -1,0 +1,87 @@
+Introduction
+-> Inheritance is an object-oriented principle, which emphasizes on code reusability
+-> There are different types of inheritance in OOP, of which multiple inheritance has some complexities involved
+
+Inheritance
+-> Inheritance is a type of "Hierarchy" relationshipp
+-> Encourages code reusability
+-> Depending on the number of super classes, inheritance can be categorised as single or multiple inheritance
+
+Single Inheritance
+-> A subclass has only one super class
+-> A super class may have more than one subclasses
+-> A method from the super class can be re-written (overridden) in the subclass
+-> The subclass method hides the visibility of the overridden method from the superclass
+
+Animal                          Cat
+talk():void <------------------ talk():void
+
+Animal a1 = new Cat ()
+a1.talk (); // calls from Animal
+
+Single Inheritance: Limitations
+-> The code from more than one class cannot be reused, since there is only one super class
+
+Composition Over Inheritance
+-> Composition represents HAS-A relationship, in comparison with inheritance which stands for IS-A relationship
+-> Just like inheritance, composition (and aggregation) helps in code reusability
+-> Using composition, one can overcome the shortcomings of not having multiple inheritance
+
+Multiple Inheritance
+-> A subclass may have more than one super class. It is supported in many languages like Ct+, Eiffel, Perl and Python
+-> Not supported in Java for classes. Interfaces can have multiple super interfaces
+-> Compilers have to keep track of multiple inheritance paths, leading to lower performance
+-> Introduces more complexities
+
+Diamond Problem
+-> A.K.A. deadly diamond of death
+--> Both classes B andC override the method fn()
+--> Consider class A with a function fn()
+--> Class B and C inherit from A
+
+A al= new B();
+al.fn() // fn () from class B
+al = new C();
+al.fn(): // fn () from class c
+
+--> Class D inherit from both B and C
+--> Class B and C inherit from A
+--> Consider class A with a function fn()
+--> Both classes B and C override the method fn()
+
+A al= new B();
+al.fn() // fn () from class B
+al = new C();
+al.fn(): // fn () from class c
+A al= new D(); // here D has now 3 fn functions, 1 each from A, B, C
+al.fn(); // Which fn()?
+
+The class button inherits from two classes:
+Rectangle : defines the look and feel features
+Clickable: defines the actions that can be performed on a clickable object
+
+-> Both rectangle and clickable classes inherit from object which defines basic features of any object
+-> Rectangle and clickable override equals() method
+
+// Object - equals function
+// Rectangle - equals function - compares dimensions
+// Clickable - equals function - compares if clickable
+
+// now button inherits both clickable and rectangle, what should be compare in button class dimensions or clickable
+
+Button btn1 = new Button ("OK", 20, 75);
+Button btn2 = new Button ("OK", 20, 75);
+s.o.p(btn1.equals (btn2));
+Rectangle rect = new Rectangle (20, 75)
+S.o.p(btnl.equals (rect));
+
+Increased Complexity
+-> Since there is no limit on the number of super classes, the interface exposed by a subclass would be very complicated
+-> Very difficult to keep track of which methods are being inherited from which class
+-> If two methods are inherited from two classes with the same signature but with different return types, calling or overriding such methods is not possible
+
+Summary
+-> Inheritance emphasizes on code reusability
+-> With single inheritance, there is a limitation of not having more than one super class
+-> Use composition to overcome that limitation
+-> Multiple inheritance often leads to a most common problemThe diamond problem

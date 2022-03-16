@@ -1,0 +1,84 @@
+Introduction
+Inheritance is a very powerful object-oriented feature
+
+Restrict from being Wrongly used -> Might get some wrong results
+Final classes cannot be inherited -> Complete flexibility and control
+
+Overview
+-> final keyword on a class makes the class non-extendable
+-> final keyword can be used with a method with a variable
+
+if a class is declared as final it does not mean
+--> References are final
+--> Members are final
+
+Only it means the class can not be used as a super class
+
+Final class
+Example of a final class:
+
+public final class Television extends product {
+    // members
+}
+
+The keywords public and final can exchange their places:
+
+final public class Television extends product { 
+    // members
+}
+
+Final class
+The compiler would give error if Television class is extended
+
+public class FlatTelevision extends Television {
+    // members
+}
+
+Compiler error: cannot inherit from final Television
+
+API classes
+Java API has many final classes:
+
+-> java.lang.System Class is marked as final
+-> Represent some class
+-> java.lang.String is very powerful and most widely used    
+
+Disadvantages of Final Class
+-> Use of 'final' keyword on a class, stops the idea of code reusability
+-> Classes may not be able to inherit the features of a powerful classes
+-> Use composition instead of inheritance
+
+-> Final classes are used when a class is supposed to be immutable
+-> An object whose state or values cannot be changed is called immutable object
+
+Final Classs
+-> String class is immutable, any of its methods does not change the original value
+
+-> If String class is not final; then it can be passed to doSomething()
+
+-> Immutable class ensures that calling any function does not result in any harm
+
+class Test {
+    void doSome thing (String str){ 
+        // ...
+        str.toUpperCase ();
+        // ...
+    }
+}
+
+-> String class is marked as final, so there is no subclass of String class
+
+Abstract and Final
+-> An abstract class can not be used for creating an object
+-> To realise an object, create a subclass and an object of that subclass
+-> The keywords abstract and final cannot be applied on a single class
+
+abstract encourage inheitance
+
+final discourage inheritance
+
+Summay
+
+-> Final keyword is used in a class to stop inheritance
+-> String class defines final
+-> The keywords abstract and final cannot be together

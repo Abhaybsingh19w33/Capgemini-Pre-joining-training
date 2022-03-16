@@ -1,0 +1,212 @@
+Introduction
+Inheritance allows you to get everything from the base class that includes private member variables and methods
+
+-> Overriding hides the superclass method
+-> It provides a new or a different definition for the same method calls that otherwise would call the superclass methods
+
+Overview
+Overriding refers to rewriting a superclass method in a subclass
+-> The method name, return type, and the parameters must match exactly
+--> That's the reason compilers put a break
+-> If the parameters do not match, it's an additional method
+
+Method Overriding
+Example: Method Overiding
+
+class Super {
+    // The some method, which takes into parameter and it doesnt retum anything, is doing some work
+    void someMethod (int param) { 
+        // ...
+    }
+}
+
+class Sub extends Super {
+    void someMethod (int param) {
+        // ....
+    }
+}
+
+Method Overloading
+
+Example: Method Overloading
+class Super {
+    void someMethod (int param) {
+        // ...
+    }
+}
+
+class Sub extends Super {
+    void someMethod (String param) {
+        // ...
+    }
+}
+
+Incorrect Return type
+Example: Incorrect return type
+
+class Super {
+    void someMethod (int param) { 
+        //...
+    }
+}
+
+class Sub extends Super {
+    int someMethod (int param) { 
+        // ...
+    }
+}
+
+Access Modifiers
+While overriding a method, the subclass can increase the visibility
+-> protected
+-> package level
+-> public
+
+Access Modifiers
+-> Using a package level access is a weaker access and protected is stronger
+
+package level (Weaker)
+package level members are accessed only inside the package
+
+protected members (stronger)
+protected members can be even accessed outside the package provided are inherited
+
+public members (strongest)
+public members can be accessed anywhere
+
+Access Modifiers
+Example: Reducing the visibility
+
+class Super {
+    Protected void someMethod () { 
+        // ...
+    }
+}
+
+class Sub extends Super{
+    private void someMethod () {
+        // ...
+    }
+}
+
+Error: attempting to assign weaker access privileges; was protected
+
+Final Methods
+Final methods cannot be overridden
+
+-> As an author of a class, user have complete control on what functions somebody can override
+
+-> An object exposes the final method
+
+-> It is guaranteed that nobody else will modify the code in their subclasses
+
+Final Methods
+Example: Overriding a final method
+
+class Super { 
+    public final void someMethod () { 
+        // ...
+    }
+}
+
+class Sub extends Super { 
+    public void someMethod (){ 
+    }
+}
+
+Error : Overirdden method is final
+
+Private Methods
+A private method belongs only to the object and is not exposed even to the subclass
+
+-> As far as a method is concerned, the method belongs totally to the object of the superclass
+
+-> Private methods are not accessible
+
+-> Overriding does not apply to private methods, as the subclass does not see the same method in the super class
+
+Example: private methods
+class Super {
+    private void someMethod () {
+        // ...
+    }
+}
+
+class Sub extends Super{ 
+    public int someMethod () {
+        // ...
+    }
+}
+
+Since subclass does not inherit the private method, question of overriding does not arise
+
+Static Methods
+If a static method in the super class is overridden in a subclass, it has to be marked as static even in the subclass
+
+class Super {
+    public static void someMethod () {
+        // ...
+    }
+}
+
+class Sub extends Super{ 
+    public void someMethod () {
+        // ...
+    }
+}
+
+Error: Overridden method is static
+
+Non-Static Methods
+A non-static method in the superclass cannot be overridden in the subclass as a static method
+
+class Super { 
+    public void someMethod () { 
+        // ...
+    }
+}
+
+class Sub extends Super{ 
+    public static void someMethod () { 
+        // ...
+    }
+}
+
+Error : Overriding method is static
+
+@Override
+This annotation indicates that a method is intended to override a method ina super class
+
+-> Annotations generally act as instructions, instructions to somebody like a compiler, or a tool like a Java doc or probably for a runtime to or even for a framework
+
+-> It was Introduced in Java 1.5
+
+This particular annotation is only used along with a method and this is going to be returned only in the source code
+
+-> It Instructs the compiler to check if the method is being overridden or not
+-> From Java 1.6 onwards, this can also indicate that the method is an implementation of an interface method
+
+Example:
+
+class Super {
+    class void someMethod() {
+        // ...
+    }
+}
+
+class Sub extends Super {
+    class void somemethod() {
+        // ...
+    }
+}
+
+-> Method name wrongly spelled
+-> Compiler has no problem, will treat the subclass method as a new one
+-> Erro : Methd does ont override aor implement a amethod from a subtype
+
+Summary
+
+-> Overriding of methods enables us to redefine an inherited method
+-> Users can increase the visibility of an overridden method, but cannot decrease
+-> Final methods cannot be overridden
+-> @Override instructs the compiler to verify if the method is really overridden

@@ -1,0 +1,138 @@
+Introduction
+-> Classes in an application are always related to each other
+-> When one class is like another class, with some changes and additions, apply inheritance
+
+Inheritance
+-> Inheritance describes a relationship between two classes, where one class is an extension of another without affecting the base class
+-> Here the idea is to reuse the code
+
+Types of Inheritance
+-> Single
+-> Multiple (not allowed in Java)
+-> Multi-level
+
+Inheritance: syntax
+-> Members of Java.lang.Object are always inherited to any
+class either directly or via Multi-level inheritance
+-> Use the keyword 'extends' to achieve inheritance
+
+Syntax:
+class SubclassName {
+    extends SuperClassName {
+        // ....
+    }
+}
+
+UML Representation
+UML representation of Product and Television:r
+Product(Base Class)
+Television(Derived Class)
+
+Product                                     Television
+- id: int                                   - screenType: String
+- name: String                              - dimension: String
+- price: double
+                <--------------------------
++constructors                               +constructors
++getters                                    +getters
++setters                                    +setters
+
+
+public class Product {
+    private int id;
+    private String namee;
+    private double price;
+    public Product () {
+
+    }
+    // getters/setters
+}
+
+public class Television extends Product {
+    private String
+    screenType;
+    private String dimension;
+    public Television () {
+    // getters/setters
+}
+
+Memory Allocation
+-> When an object of Television class is created, memory is allocated to store:
+
+Data members of Television (screenType, dimension)
+Data members of its superclass, Product (id, name, price)
+
+Accessing Super Class Members
+-> Since data members of Product class are private, they carnnot be accessed inside the Television class directly
+-> Need to use the getters/setters
+
+Example: Problem
+public class Television extends Product {
+    //...
+    public void print()  {
+        S.o.p ("Name = " +name);
+        S.o.p("Screen type = +screenType);
+        S.o.p("Price = " + price);
+    }
+}
+
+Example: Solution
+public class Television extends Product {
+    //...
+    public void print()  {
+        S.o.p ("Name = " + getName());
+        S.o.p("Screen type = +screenType);
+        S.o.p("Price = " + getPrice());
+    }
+}
+
+The 'Super' Keyword
+-> When a method f1() in superclass is overridden in the subclass, an object of a subclass has two definitions for the same method
+-> To invoke the method f1() using reference of a subclass, Java prefers to invoke the method from the subclass
+
+Example : Problem
+public class Product {
+    public void print () {
+        S.o.p("Name = "+ name);
+        S.o.p("Price = " +price);
+    }
+}
+
+public class Television extends Product {
+    //... 
+    public void print () {
+        print(); // trying to print Product class print function
+        // but this will not call Product.print() function
+        // this will locally search for print function first and it will cause recursive issue
+
+        // print the data members of Product
+        S.o.p("Screen type = "+ screenType);
+        S.o.p("Dimension = " +dimension);
+    }
+}
+
+Example : Problem
+public class Product {
+    public void print () {
+        S.o.p("Name = "+ name);
+        S.o.p("Price = " +price);
+    }
+}
+
+public class Television extends Product {
+    //... 
+    public void print () {
+        // this will call superclass print function in Product
+        super.print();
+
+        // print the data members of Product
+        S.o.p("Screen type = "+ screenType);
+        S.o.p("Dimension = " +dimension);
+    }
+}
+
+
+Summary
+-> The 'extends' keyword is used to define inheritance
+-> Memory required by an object of subclass isequal to the total memory required by members of the same class and members of its super class hierarchy
+-> The keyword 'super' is used to refer to any super class member, especially when there is a name conflict

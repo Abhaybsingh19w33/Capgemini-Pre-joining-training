@@ -1,0 +1,174 @@
+Introduction
+-> Constructors provide flexible ways to create an object
+--> Default no argument constructors
+--> Overloaded constructors
+-> Constructor of a subclass can choose to execute a different constructor from the super class
+
+Constructor
+When a subclass inherits from a superclass, it gets everything from the superclass
+-> Variable or member method of subclass
+-> Superclass constructor
+
+Though varibale or member method of subclass can't Call Superclass constructor
+
+-> A superclass constructor can be called by a subclass constructor only
+
+-> Constructor is done only during object creation, only one time
+
+-> Entire object gets constructed with a combination effort of all other constructors
+
+-> Once an object is constructed, user cannot call a function that cannot call superclass constructor
+
+Keyword Super Call
+-> The keyword super can be used in two ways
+--> To invoke superclass method
+--> To invoke superclass constructor
+
+public class B extends A {
+    public B() { // NO argument default constructor
+        super();
+    }
+}
+
+Keyword Super Call
+-> In the subclass constructor, if super() is not called, then it is implicitly called
+
+public class B extends A {
+    public B () {
+    }
+}
+    
+If users are calling a super class constructor, then it has to be the first statement in the subclass constructor
+
+public class B extends A {
+    public B(){
+        doSomething ();
+        super (); // Error
+    }
+}
+
+Super and Overloaded Constructors
+-> If a super class has one or more overloaded constructors and no default (no-argument) constructor, then the subclass constructor will give an error
+
+public class B extends A{ 
+    public B() { // There is no super class
+        
+    }
+}
+
+-> It is compilers responsibility to find out what kind of values are supplied
+
+public class B extends A {
+    public B(){ 
+        super (12, 3.4); // 12 qualifies as an int, whereas 3.4 qualifies as a double
+    }
+}
+
+Overloaded Constructors
+Example: Class product
+
+public class Product { 
+    private string name;
+    private double price;
+
+    public Product (){
+    }
+
+    // Product object with values
+    public Product (String name, double price) { 
+        this.name = name;
+        this.pr1ce price;
+    }
+
+    // ....
+}
+
+The television has a name, as well as a price because of inheritance
+
+public class Television extends Product {
+    int screenSize;
+    public Television () { }
+
+    // Specific value
+    public Television (int screenSize){
+        this.screenSize = screenSize;
+    }
+}
+
+Default Constructors
+-> Default constructor invokes superclass constructor without argument
+-> If default constructor is not used it will resuit in complier error
+-> Default constructor initialises only screen size in television clause, which leads to a problem
+
+Stack and Heap
+-> In stack local variables get created
+-> In heap objects get allocated with some memory
+
+Creating Variable
+-> Variable TV of television class has some space in the stack
+
+Television tv;
+
+Allocating Memory
+-> In heap, memory allocated for name, price and screen size
+
+tv = new Television(28);
+
+Initialising
+-> Name and price were never initialized
+
+-> To initialize the members of the super class, the users have to receive the name and price as parameters
+
+public Television (String name, double price, int screenSize) {
+    this.screenSize = screenSize;
+    // ...
+}
+
+-> But, the users may not be able to assign values directly, since the members are private
+
+Setters Constructor
+-> Users cannot access name and price because they are private members of the product class
+
+-> Name and price can be accessed by using superclass
+
+-> If superclass is private, use setters constructor to access name and price
+
+public Television  (String name, double price, int screenSize) {
+    super. setName (name);
+    super. setPrice (price);
+    this.screenSize = screensize;
+}
+
+Reusability
+-> Superclass constructor is invoked by supplying some parameters
+
+public Television (String name, double price, int screenSize) {
+    // Only one super call can be there in one single constructor
+    super (name, price) ;
+    this.screenSize = screenSize;
+}
+
+// Any encapsulation logic in the constructor is also reused
+
+Overloaded Constructors
+-> The television constructor takes three different parameters
+
+Television tv;
+tv = new Television("Acme", 15900.0, 29);
+
+Now, Object is complete with proper values
+
+EXception
+-> If the super class constructor throws an exception, then the object creation fails
+
+-> If the super class constructors declares a checked exception in the prototype, then the subclass constructor should also declare the same exception in its prototype
+
+-> User can use try catch to protect constructor from checked exception
+
+Summary
+
+-> The default constructor of super class is implicitly called by the subclass constructor
+
+-> Super keyword is used as function call
+
+-> If super class constructor throws exception, it should also be thrown by the subclass constructors
