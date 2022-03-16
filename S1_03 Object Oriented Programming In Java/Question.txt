@@ -555,3 +555,22 @@ Correct - final
 private
 
 Ans - Final members cannot be overridden, while abstract members need to be overridden.
+
+Q - If the name of the class is co.vinod.dao.ProductDao, then the location of the ProductDao.class relative to the CLASSPATH is ______________
+
+src/co/vinod/dao
+bin/co/vinod/dao
+bin/co.vinod.dao
+Correct - co/vinod/dao
+
+Ans - The package names correspond to a folder structure in the file system. If the package name is a.b.c, then we must create a folder structure a/b/c and then place the class files of all thte package members.
+
+Q - If the referenced class is from a different package, compiler looks for it in the same package or the package ______________
+
+java
+Correct - java.lang
+java.util
+java.lang.default
+
+Ans - All classes and interfaces from java.lang package are automatically imported to every class.
+

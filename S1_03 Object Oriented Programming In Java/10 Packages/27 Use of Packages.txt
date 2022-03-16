@@ -1,0 +1,198 @@
+Introduction
+Organising classes helps in using the same class name for more than one class
+-> Package
+-> Import
+
+Overview
+-> A package is like a family name given to a class or an interface
+-> Contains one or more classes/interfaces
+
+Example:
+Fully qualified class name
+--> java.1ang.System
+--> java.util.Date
+
+Creating
+-> A package is created by adding a package statement to the class or interface
+-> Refrain from using class without a package
+
+package com.acme;
+public class Person { 
+    // ...
+}
+
+Naming
+A package name is made up of words delimited with dot (.)
+
+Example:
+java.lang
+java.util
+java.sql
+java.net
+
+Naming
+Package names do not contain camel case words
+
+Example:
+Instead of ThisIsMyPackage
+use this.is.my.package
+
+Third party APl provides Information about the company, project, nature etc.
+
+Example:
+Driver - class
+
+com.mysql.jdbc.Driver
+Org.apache.struts.action.ActionServlet
+org.hibernate.cfg.configuration
+
+Uniqueness
+The package names correspond to a folder structure in the file system
+
+Example:
+a.b.c -> Package name
+
+a/b/c -> a is the parent directory; b is a sub directory; and c is the sub directory
+
+.class files -> Helps to run the package
+
+-> Classes/interfaces in a given package must be unique
+-> They represents different abstractions, if they are in different packages
+
+Example
+-> Multiplication table
+-> Furniture table
+-> HTML table
+
+Instead of naming them as:
+MultiplicationTable
+FurnitureTable
+HtmlTable
+
+Table as the class name but in different packages:
+com.vinod.maths.Table
+com.vinod.furniture.Table
+com.vinod.html.Table
+
+Full Qualifier
+-> Compiler changes the name of the class
+
+Example:
+-> Prefixing with the name of the package
+
+Folder Creation
+-> Compiler can create the folder structure
+-> Start by executing the Java C compiler command
+-> specifying the -d <folder> option in the javac command
+
+Example:
+javac - d ../bin  *.java
+
+Importing
+A class present in one package can be used in any class present in the same package directly
+
+Example:
+package my.pack;
+
+public class A {
+    public void f1 () {
+        // ...
+    }
+}
+
+package my.pack;
+public class B {
+    public void f2 () {
+        A a1 = new A();
+        a1.fl();
+    }
+}
+
+Importing
+If the referenced class is from a different package, then compiler would give an error
+
+Example
+Package your.pack;
+public class A {
+    public void fl() {
+        // ...
+    }
+}
+
+Package my.pack; // it will throw an error symbol A is not found
+public class B {
+    public void f2() {
+        A a1 = new A();
+        a1.f1():
+    }
+}
+
+Importing
+Use the import statement to resolve the location of the class being referenced
+
+import package.*;
+import package.className;
+
+package your pack;
+public class A{ 
+    public void fl () {
+        // ...
+    }
+}
+
+package my.pack;
+import your.pack.A;
+public class B {
+    public void f2 () {
+        A a1 = new A();
+        a1.fl ():
+    }
+}
+
+Importing
+Use the full qualifier name directly, instead of importing
+
+package your.pack;
+public class A {
+    public void f1 (){ 
+        // ...
+    }
+}
+
+package my.pack
+public class B {
+    public void f2() {
+        Your pack.A a1 = new your.pack.A();
+        a1.f1()
+    }
+}
+
+Importing
+Use two classes with the same name
+
+Example:
+
+import java.util.Date;
+import java.sql.Date;
+
+public class A{
+    // here confusion occurs which  Date object to choose from util or sql
+    public Date convert (Date dt) { //error
+        // ...
+    }
+}
+
+Import one of the statement and use the full qualifier for the other
+
+Example:
+import java.util.Date;
+public class A {
+    public java.sql.Date convert (Date dt) {
+        // ...
+    }
+}
+
+Summary
+-> Package statement must be the first statement in source code
+-> Compiler changes the class and constructor name to a ful qualiier
+- >Package names correspond to the folder structures

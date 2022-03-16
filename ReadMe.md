@@ -62,3 +62,30 @@ gdb commands
 javap co.vinod.entity.Product // to print member variables
 
 javap -private co.vinod.entity.Product // to also print private members
+
+While using packages , if a package path is declared in the class, to which the class belongs to 
+
+to create the dir path thorugh command line
+
+-d  -  indicates we have to create directory structure for the package
+
+.  indicates current working directory
+
+it can be replaced with any directory (Eg    ../bin)
+
+javac -d . *.java
+
+
+you can use f7 as a shortcut in cmd to list previous commands
+
+we can also set classpath for compiler to look for all .class files in this classpath
+
+set classpath=%classpath%; //  if the classpath is already been set you use that
+set classpath=PATH;
+
+//. means look for all the classes in the current working directory
+; it is used as seperator
+c:\temp - look any class in the temp folder
+set classpath=.;c:\temp
+
+in eclipse terminology it ic called buildpath
