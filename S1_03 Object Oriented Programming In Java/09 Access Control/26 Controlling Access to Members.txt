@@ -1,0 +1,283 @@
+Introduction
+-> Encapsulation is a very significant feature
+-> Restrict access to certain member variables
+-> Right kind of access control
+-> Protect the state of an object
+
+Access Modifiers
+-> Access modifiers on an identifier makes it visible, hidden, accessible and not-accessible to the world
+-> An access modifier can be applied on identifier that can be:
+--> Class
+--> Field
+--> Method
+--> Constructor
+
+Types of Access Modifierss
+There are 3 access modifiers in Java:
+-> Private
+-> Protected
+-> Public
+
+When no access modifiers are specified
+-> package level access modifier when non specified
+-> Public is considered as a package level
+
+Private
+-> Cannot be applied to a class (outer) by itself
+-> Can be applied to a inner class also
+-> Can be applied to any member of a class
+-> General rule of thumb have fields as private and methods as public
+-> Field cannot be accessed using an object reference
+-> Field can be accessed from within the constructor or method of the same class
+-> Field outside of the class field cannot be accessed
+
+Example:
+public class Person {
+    private String name;
+    // ...
+    public void printName () {
+        S.o.p("Name = " + name);
+    }
+}
+
+Person p1 = new person();
+p1.name = "Vinod";  // error
+p1.printName(); // oK
+
+When applied on method:
+-> Field cannot be accessed using an object reference
+-> Field can be accessed from any constructor
+-> Generally used for creating helper methods
+
+Example:
+public class PersonDao {
+    private Connection getConnection () {
+        // ...
+    }
+    private void release (Connection conn) {
+        // ...
+    }
+
+    public void addPerson (Person p) {
+        Connection conn = getConnection ();
+        // ...
+        release (conn) ;
+    }
+}
+
+When applied on a constructor:
+-> Class cannot be instantiated
+-> Typically used in utility classes or singletons
+
+Example:
+public class Math {
+    private Math() {
+
+    }
+    // ...
+}
+
+Singleton
+A singleton is a concept where at a single object is created
+
+Example
+public class PersonDao {
+    private PersonDao () { }
+
+    // Access a class using the access a class for calling a static method
+    public static PersonDao instance= new PersonDao ();
+    public static PersonDao getInstance () { 
+        return instancee;
+    }
+
+}
+
+PersonDao dao = new PersonDao(): // error
+PersonDao dao = PersonDao.getInstance(); //OK
+// Person Dao class getss loaded into the jvm
+
+Private Behaviour
+
+package1
+public class A {
+    private void fn () {}
+
+    public void test ()  {
+        fn();
+    }
+}
+
+public class B {
+    void test ()  {
+        A a1;
+        a1 = new A();
+        a1.fn(); // error
+    }
+}
+
+package2
+public class C {
+    void test () {
+        A a1;
+        a1 = new A();
+        al.fn(); // error
+    }
+}
+
+public class D extends A {
+    void test1 () {
+        A a1;
+        a1 = new A();
+        al.fn(); //error
+    }
+
+    void test2 () {
+        super.fn(); //error
+    }
+}
+
+Public
+A public member of an object can be accessible from anywhere
+-> Applied on constructors
+-> Accessing the private members
+
+Public Behaviour
+
+package1
+public class A {
+    public void fn () {}
+
+    public void test ()  {
+        fn();
+    }
+}
+
+public class B {
+    void test ()  {
+        A a1;
+        a1 = new A();
+        a1.fn();
+    }
+}
+
+package2
+public class C {
+    void test () {
+        A a1;
+        a1 = new A();
+        al.fn();
+    }
+}
+
+public class D extends A {
+    void test1 () {
+        A a1;
+        a1 = new A();
+        al.fn();
+    }
+
+    void test2 () {
+        super.fn();
+    }
+}
+
+Protected
+-> Behaves like a private for outsiders', public for the members
+-> Accessible to any member function
+-> Accessible from any mermber of any class
+-> Any class in the same package
+-> Subclasses in a different package
+
+
+Protected Behaviour
+
+package1
+public class A {
+    protected void fn () {}
+
+    public void test ()  {
+        fn();
+    }
+}
+
+public class B {
+    void test ()  {
+        A a1;
+        a1 = new A();
+        a1.fn();
+    }
+}
+
+package2
+public class C {
+    void test () {
+        A a1;
+        a1 = new A();
+        al.fn(); // error
+    }
+}
+
+public class D extends A {
+    void test1 () {
+        A a1;
+        a1 = new A();
+        al.fn(); //error
+    }
+
+    void test2 () {
+        super.fn();
+    }
+}
+
+Package Level Access
+Can be accessed by any member function of any class
+"Default" access -> defauit means package level
+Behaves as:
+-> Public member inside the package
+-> Private member outside the package
+
+
+Protected Behaviour
+
+package1
+public class A {
+    void fn () {}
+
+    public void test ()  {
+        fn();
+    }
+}
+
+public class B {
+    void test ()  {
+        A a1;
+        a1 = new A();
+        a1.fn();
+    }
+}
+
+package2
+public class C {
+    void test () {
+        A a1;
+        a1 = new A();
+        al.fn(); // error
+    }
+}
+
+public class D extends A {
+    void test1 () {
+        A a1;
+        a1 = new A();
+        al.fn(); //error
+    }
+
+    void test2 () {
+        super.fn(); // error
+    } 
+}
+
+Summary
+
+-> Private members are not accessible outside the class
+-> Package level members are accessible from any member methods
