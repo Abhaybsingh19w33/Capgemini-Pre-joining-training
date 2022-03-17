@@ -1,0 +1,87 @@
+Introduction
+-> Interfaces and Abstract classes have many similarities in terms of their usage in polymorphism
+-> Unlike classes, an Interface can extend multiple classes
+
+Abstract Class
+A class marked with 'abstract'
+-> An object of this class cannot be created
+--> Realized using an object of its subclass
+-> It generally (not necessarily) contains one or more abstract methods
+-> Can contain logic filled concrete methods that are  inherited by subclasses
+
+Interface
+A data type is created using the keyword 'Interface'
+-> A reference of an Interface can be created
+-> Object of an Interface cannot be created but can be realised using an object of its implementing class
+
+Interface may contain one or both:
+-> Static final field
+-> Abstract method
+
+Abstract Class
+Abstract classes encourage inheritance
+
+-> The only way to use an Abstract class is by extending it to one or more subclasses
+-> A subclass must be declared as abstract too
+--> Or implement all the abstract methods
+--> This is often termed as overriding, and indicated using Java 5 annotation @Override
+
+Interface
+A class implements an Interface, so that an object of this class also qualifies as an object of that Interface
+
+-> Implementing an Interface is similar to extending an Abstract class containing only abstract methods
+-> Nothing is inherited from the Interface
+-> The object exposes the methods of the Interface
+-> When a class implements an Interface, it must implement (override) all the abstract methods from the Interface
+
+Abstract Class
+It is not possible for a class to inherit from more than one Abstract class
+It is not possible for an object of a class to expose
+methods from multiple Abstract classes
+
+Abstract class A {}
+Abstract class B {}
+class C extends A, B {} // error
+
+C cl = new c();
+S.o.p(cl instanceof A);
+S.o.p(c1 instanceof B) ;
+
+Interface
+-> A class can implement zero or more interfaces
+-> It is not possible for an object to have multiple interfaces of different Abstract classes
+
+Interface A {}
+Interface B {}
+class C implements A, B {}
+
+C cl = new c();
+S.o.p(cl instanceof A);
+s.o.p(c1 instanceof B);
+
+Abstract Class
+-> If an Abstract class must extend another class, it can only extend from one class
+-> A Java does not support multiple inheritance
+
+Interface
+An Interface can extend one or more interfaces
+-> When a class implements such an Interface, it must override all the abstract methods from each of the interfaces
+
+-> If two interfaces have defined a common method, then the implementing class must implement that method only once
+
+Abstract Class
+-> An Abstract class is preferred when separating generalisation and specialisation from a class hierarchy
+
+-> The idea is to share as many generic functionalities as possible using a super class, and force the subclasses to provide the specific functionalities
+
+Interface
+-> The only use of an Interface is to achieve loose coupling between a reference and an object
+-> For example, if an application needs to perform CRUD operations on a product object, it can use an Interface variable to perform the tasks
+- > The object which performs the tasks can vary based on where the data is persisted and how it should be accessed
+
+Summary
+Abstract class and Interface cannot be instantiated
+
+Abstract class is used more for sharing and imposing some contracts on subclasses
+
+Interface is used only for loose coupling between a reference and an object

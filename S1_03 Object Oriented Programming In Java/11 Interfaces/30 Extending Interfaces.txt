@@ -1,0 +1,117 @@
+Introduction
+-> Like classes, an interface can also extend another interface
+-> Unlike classes, an interface can extend multiple classes
+
+Inheritance
+The concept of inheritance can be applied on the interfaces, just like classes
+
+-> Unlike a class, an interface can extend more than one interface (multiple inheritance)
+-> An interface cannot extend a class
+-> A class cannot extend an interface that incompatible types
+
+-> When a class implements an interface, which has inherited from more than one interface, the class must override all abstract methods from each of the interfaces.
+
+-> If two interfaces have defined a common method, then the implementing class must implement that method only once.
+
+public interface A {
+    void f1();
+    void f2();
+}
+
+public interface B {
+    void f2();
+    void f3();
+}
+
+public interface C extends A,B {
+    void f3();
+    void f4();
+}
+
+public class D implements D {
+    f1 () { // ... }
+    f2 () { // ... }
+    f3 () { // ... }
+    f4 () { // ... }
+}
+
+Conflicts
+-> Two methods from two interfaces may have the same signature, but different return types
+
+-> If an interface attempts to inherit from these two, the compilation will result in an error
+
+Inheritance
+Example:
+
+interface A {
+    void someFunction (); // Both of them define some function
+}
+
+interface B {
+    String someFunction (); // Both of them define some function
+}
+
+interface C extends A, B {
+
+}
+
+Error: types B and A are incompatible; both define someFunction(), but with unrelated return
+
+Nested Class
+An interface can declare an inner (nested) class
+
+Example:
+interface A {
+    class B {
+        static void hello () {
+            S.o.p("Hello from B");
+        }
+    }
+}
+
+Methods in the implementing classes can make use of the inherited nested class
+
+Example:
+class C implements A {
+    void sayHello ()  {
+        B.hello ();
+    }
+}
+
+// Somewhere else
+C cl = new C();
+cl.sayHello();
+
+Diamond Problem
+interfaces A { dosomething();}
+
+interfaces B extends A{
+    class NC {
+        fn () {
+            // ...
+        }
+    }
+}
+
+interfaces C extends A{
+    class NC {
+        fn () {
+            // ...
+        }
+    }
+}
+
+class Test implements D {
+    public void dosomething (){
+        NC.fn ();
+    }
+}
+
+Error: reference to NC is ambiguous, both class B.NC in B and class C.NC in  C match
+
+Summary
+-> An interface can extend zero or more interfaces
+
+-> The implementing class must provide method bodies for all methods from all interfaces
+
+-> An interface can declare a nested class, that can be used by all members of an implementing class

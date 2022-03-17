@@ -1,0 +1,295 @@
+Introduction
+-> An interface is equivalent to an abstract class with only abstract methods and shared final fields
+-> An interface cannot be used for creating objects, it must be realized using some other object
+
+Overview
+Interfaces are just like classes, these are also data types, which means users use this for creating variables
+
+-> Users can create variables of an interface
+--> But cannot create object using new <InterfaceName> ()
+
+-> An object of an interface can only be realised using an object of some concrete class and this concrete class must implement this interface
+
+Interface shape
+
+Example
+interface Shape {
+
+}
+
+Shape s1; // okay
+s1 = new Shape (); // error
+
+In the memory only eight bytes are required for s1 just to have a reference number to an object
+
+
+
+interface Shape {
+
+}
+
+class Circle implements Shape {
+
+}
+
+Class Triangle implements Shape {
+
+}
+
+Shape is ont reference variable
+Shape sn;
+sn = new Circle(); // okay
+sn = new Triangle(); // okay
+
+Members
+An interface can contain:
+
+-> Fields
+--> public, static, final
+--> Should be initialised
+
+-> Methods
+--> public, abstract
+--> Cannot have body
+--> Cannot be static/final
+
+Implementing Class
+A class can implement an interface using the implements keyword
+
+-> It should be used ony after the extends keyword (if there is one)
+-> A class can implement Zero or more intertaces
+-> A class must implement all the methods declared in the interface
+
+The implemented method can be marked as final
+
+-> The implemented method cant be marked as final but not static
+-> When a class implements an interface, it is equivalent to extending an abstract class with only abstract methods
+-> Because of this, the implementing class becomes abstract, in case any of the other interface methods are not implemented
+
+In this scenario, all the class, all the abstract methods of the interface must be implemented
+interface Shape {
+    double getArea ();
+}
+
+class Circle implements Shape { 
+
+}
+
+Error: Circle must implement getarea ();
+
+Interface shape now has a method called double get area
+interface Shape { 
+    double getArea ();
+}
+
+// Circle is concrete and can be instantiated
+class Circle implements Shape {
+    @Override
+    public double getArea () { 
+        // ....
+    }
+}
+
+An object of a class that implements an interface is also considered as an object of that interface
+
+class A implements B, C {
+    A al new A();
+}
+
+al instanceof A -> true
+al instanceof B -> true
+al instanceof C -> true
+
+When the user is using a reference of an interface to point to an object of a class, now only the methods defined in the interface can be accessed
+
+Consider interface shape with double get area method alone
+interface Shape {
+    double getArea ():
+}
+
+class Circle implements Shape {
+    public String getInfo() {
+        //...
+    }
+    public double getArea() {
+        // ...
+    }
+}
+
+Circle c1 = new Circle ();
+
+c1.getArea (); // okay
+c1.getInfo (); // okay
+
+Shape s1 = new Circle ();
+
+s1.getArea(); // okay
+s1.getInfo(); // error
+
+(s1(Circle)).getInfo (); // okay
+
+Casting
+-> Casting is where the user converts objects of one data type or a reference of one type to another type
+
+-> In up casting, which is implicitly done, an object of a subtype is automatically converted or assigned to a variable of super type
+
+Circle cl = new Circle (), c2;
+Triangle tl = new Triangle ();
+Shape sl;
+
+// upcasting (implicit)
+s1 =  cl;
+
+// downcasting
+// need to do explicitly
+
+c2 = s1; // error
+
+// okay
+c2 = (Circle) s1;
+
+//----------------------------------------------------
+// upcasting (implicit)
+s1= t1;
+
+// error; down casting
+// (need to do explicitly)
+// This can lead to some problems at the runtime
+c2 = s1;
+
+// compile ok;
+// ClassCastException at runtime
+c2 = (Circle) s1;
+
+// correct method
+if (s1 instanceof Circle) {
+    c2 = (Circle) s1;
+}
+
+Up casting is where the user is converting an object of a base type or a subtype to a super type
+
+Down casting means assigning an instance or a reference to an instance of superclass to a variable of a subclass
+
+                         Shape
+                        ^     ^
+                        |     |
+                        |     |
+                    Triangle Circle
+
+if casting is done from Triangle or Circle to Shape, then it is upcasting
+
+if casting is done from Shape to Triangle or Circle, then it is downcasting
+
+Loose Coupling
+Up cast, downcast interface implementation classes, will help in doing loose coupling
+
+class AnalogCamera {
+    // ...
+}
+
+class Application { 
+    void someMethod(){ 
+        AnalogCamera c =  new AnalogCamera();
+        c.flash("on") ;
+        C.click ();
+        c.flash ("off") ;
+        c.click ()
+    }
+}
+
+// -----------------------------------
+class Digitalcamera { 
+    // ...
+}
+
+class Application { 
+    void someMethod(){ 
+        // Will change AnalogCamera to DigitalCamera C =
+        AnalogCamera c =  new AnalogCamera();
+        c.flash("on") ;
+        C.click ();
+        c.flash ("off") ;
+        c.click ()
+    }
+}
+
+// -----------------------------------
+
+class AnalogCamera {
+    // ...
+}
+
+class Digitalcamera { 
+    // ...
+}
+
+class CameraPhone { 
+    // ...
+}
+
+class Application { 
+    void someMethod(){ 
+        Camera c = ... // through implementing this we can change the interface to any desired Camera
+
+        c.flash("on") ;
+        C.click ();
+        c.flash ("off") ;
+        c.click ()
+    }
+}
+
+Factory Method
+-> A factory method is responsible for manufacturing objects of different classes of the same interface
+
+-> The method's return type is usually a super type or an interface type
+
+-> Parameter will determine what subtype instance should be returned
+
+class AnalogCamera {
+    // ...
+}
+
+class Digitalcamera { 
+    // ...
+}
+
+class CameraPhone { 
+    // ...
+}
+
+class CameraFactory {
+    public static Camera newInstance(String type) {
+        switch(type.toLowerCase()){
+            case "analog":
+                return new AnalogCamera();
+            case "digital":
+                return new DigitalCamera();
+            case "phone":
+                return new CameraPhone():
+        }
+        return null;
+    }
+}
+
+class Application { 
+    void someMethod(){ 
+        Camera c = CameraFactory.newInstance("...");
+
+        c.flash("on") ;
+        C.click ();
+        c.flash ("off") ;
+        c.click ()
+    }
+}
+
+Summary
+
+-> Variables of interface can be created but not objects directly
+
+-> Variables of an interface should refer to an object of some class that implements an interface
+
+-> An object of such implementing class is also considered as an object of the interface itself
+
+-> Up casting is implicit, where the user is converting an object of a subtype to a super tight and a down casting needs explicit casting, it is better to use instance of during down casting
+
+-> Factory methods can be used for loose coupling between two modules of an application

@@ -574,3 +574,79 @@ java.lang.default
 
 Ans - All classes and interfaces from java.lang package are automatically imported to every class.
 
+Q - ldentify the incorrect statement.
+
+correct - A class must implement all the methods declared in the interface
+
+The implemented method can not be marked as final
+
+The implemented method cannot be marked as static
+
+Ans - The final modifier is only to say that it can not be overridden in any of the subclasses and has nothing to do with interfaces.
+
+Q - Assigning an instance (or reference) of a subclass to a variable of a super class is known as ______________
+
+Correct - up casting
+down casting
+hybrid casting
+
+Ans - Assigning an instance (or reference) of super class to a variable of a subclass Is called as downcasting. There is no such thing as hybrid casting.
+
+Q - In a factory method, ______________ will determine what subtype instance should be returned
+
+return type
+Correct - parameter
+caller
+callee
+
+Ans - The method's return type is usually a super type or an intertace type. Ihe parameter/s of the method will determine what subtype instance should be returned
+
+Q - An interface may contain variables that are
+
+Correct - public, static and final
+static and final
+public and static
+public and final
+
+Ans - A variable in an interface must be marked as public, static and final. If none of these modifiers are used, it will be applied automatically by the compiler.
+
+Q- Can an interface extend more than one interface?
+
+Correct - True
+False
+
+Ans - Java allows multiple inheritance for interfaces but not for classes.
+
+Q - What is preferred when separating generalization and specialization from a class hierarchy?
+
+Correct - Abstract classes
+Interfaces
+Combination of abstract classes and interfaces
+
+Ans - The idea iS to share as many generic functionalities as posssible using a super class, and force the subclasses to provide the specific functionalities.
+
+Q - A reference of an interface can reter to an object of
+
+Correct - A class that implements that interface
+Any class
+Any class that has the methods of that interface implemented
+The same interface
+
+Ans - Let us understand this with the help of an example
+interface A { }
+Class B implements { };
+A a1 = new B();
+
+Q - An interface can contain a class definition.
+
+Correct - True
+False
+
+Ans - Let us understand this with the help of an example.
+interface A{
+    class B{
+        static void hello(){
+            S.o.p("Hello from B");
+        }
+    }
+}
