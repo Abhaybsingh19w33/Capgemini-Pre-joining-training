@@ -1,0 +1,108 @@
+Introduction
+-> Every class inherits from java.lang.Object
+-> This is the only class in Java that does not have a superclass
+
+Overview
+java.lang.Object is the only class that does not have a superclass
+-> It automatically inherits from an Object
+-> It is inherited through Multilevel inheritance
+-> It is often referred to as "The cosmic class"
+
+Methods that every object generally should override:
+-> public int hashCode()
+-> public String toString()
+
+Object Equality
+-> public boolean equals (object object)
+Reflexive - x.equals(x) is true
+Symmetric - X.equals(y) is same as y.equals(x)
+Transitive - X.equals(y) and y.equals(z) then x.equals(z)
+
+Object Equality
+-> x.equals(nuil) is always false
+-> Checks only for references, which means if two objects are constructed two new keywords, going to be different
+
+Any two distinct objects compared using the default equals method aliways returns false
+
+Class Person
+
+Person
+- name : String
++ age : int
+
++constructors
++getters
++setters
+
+public boolean equals (Object obj) {
+    if (this == obj) return true;
+
+    if (obj == null) return false;
+
+    if (! (obj instanceof Person) ) return false;
+
+    Person other = (Person) obj;
+    // Consider an object p that was supplied as an argument and is equal to it
+
+    if (age != other.age) return false ;
+
+    if (name == nul1) {
+        if (other.name != null) return false;
+    }
+    else if (!name.equals(other.name)) {
+        return false;
+    }
+
+    return true;
+}
+
+'hashCode' Method
+-> The 'hashCode' method has a signature of public int 'hashCode', no parameters
+-> A number represents a unique number for a particular object
+
+-> A hash table is a kind of data structures to store a bunch of objects in the memory
+
+public int hashCode ()
+
+-> Default implementation of Java.lang.Object ensures uniqueness of 'hashCode'
+
+-> Two unique objects may have the same 'hashCode'
+
+-> Integer address is converted into object integer, and it is unique for every object
+
+If two objects have identical values for the fields, then that 'hashCode' also would be identical
+
+public int hashCode () {
+    final int prime = 31;
+    int result = 1;
+    result = prime * result + age;
+    result = prime * result +( (name == null) ? 0 : name.hashCode());
+
+    return result;
+}
+
+String Version of an Object
+-> toString method returns a string to define an object
+-> Result should be a concise Informative representation
+
+public String tostring ()
+
+-> All subclasses override this method
+
+The return value is composed of the class name and hexa decimal version of the 'hashCode'
+
+getclass().getName() + Integer.toHexString (hashCode())
+Example - Person@3C45BCD
+
+Override this to return a meaningful String containing one or more fields of the object
+
+Example
+public string toString () {
+    return " Person [name=" + name + ", age=" +age + "]";
+}
+
+Summary
+
+-> Class java.lang.Object is considered as a cosmic class
+-> Class should override the methods equals "hashCode' and toString
+-> 'hashCode' is primarily used in hash tables or data structures

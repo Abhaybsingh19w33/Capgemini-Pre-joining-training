@@ -650,3 +650,34 @@ interface A{
         }
     }
 }
+
+Q - Which of the following implies that the equals() method is reflexive?
+
+Correct - x.equals(x) is true
+x.equals(y) is same as y.equals(x)
+x.equals(null) is false
+x.equals(y) and y.equals(z) then x.equals(z)
+
+Ans - It means that an object is equal to the same Object.
+
+Q - The default implementation ensures the uniqueness of hashCode ______________
+
+by returning a number based on the hashcode of each
+member in the object
+
+by returning the current timestamp
+
+Correct - by converting the internal address of the object into an integer
+
+by returning a number based on the ip address and timestamp of the computer
+
+Ans - Generally, one should override this method and returm a number derived using the internal tields of the class
+
+Q - What is the return value of the toString) method of an object?
+
+boolean
+int
+Correct - String
+char[]
+
+Ans - It returns a string representation of the object. In general, the toString method returns a string that "textually represents" this object.
