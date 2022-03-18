@@ -1,0 +1,213 @@
+INTRODUCTION TO CLOUD COMPUTING -> 0BJECTIVES
+-> Define cloud computing
+-> Compare cloud computing with in-house IT infrastructure
+-> Identify key business drivers behind cloud computing
+
+INTRODUCTION TO CLOUD COMPUTING -> WHAT IS CLOUD COMPUTING
+A model for enabling ubiquitous, convenient, on-demand network access to a shared pool of configurable computing resources:
+-> Networks
+-> Servers
+-> Storage
+-> Application and services
+
+Cloud computing infrastructure is rapidly provisioned and released with minimal management effort or service provider interaction.
+
+Characteristics of Cloud Computing
+-> Use of internet-based services to support business process
+-> Rapid deployment
+-> Low start-up costs/ capital investments
+-> Costs based on usage or subscription
+-> Multi-tenant sharing of services/ resources
+-> On demand self-service
+-> Ubiquitous network access
+-> Location independent resource p0oling
+-> Rapid elasticity
+
+What Cloud Computing is not:
+
+Cloud is not a place.
+-> It is a more agile and efficient method of delivering IT services.
+
+Cloud is not lock-in.
+-> It is about openness and open source for choice and flexibility.
+
+Cloud is not server virtualization.
+-> It is a new breed of purpose-built cloud architectures.
+
+Cloud is not an island.
+-> It is a holistic strategy that spans and connects private and public clouds.
+
+Cloud is not top-down.
+-> It is being driven from the bottom-up by innovative and agile users.
+
+INTRODUCTION TO CLOUD COMPUTING -> EXAMPLES OF CLOUD COMPUTING
+
+Amazon, Google, IBM, Sun, Cisco, Dell, HP, Intel, Novell, and Oracle have invested in cloud computing and to offer individuals and businesses a range of cloud-based solutions.
+
+Google
+Google Drive is a pure cloud computing service with all the apps and storage found online.
+
+Google Drive is available on desktop computers, tablets like the iPad, and on smartphones.
+
+All of Google's services could be considered cloud computing: Gmail, Google Calendar, Google Reader, Google Voice
+
+INTRODUCTiON TO CLOUD COMPUTING -> SUMMARY
+-> Cloud computing is a model for on-demand network access to a shared pool of computing resources.
+-> Cloud computing is neither server virtualization nor top-down.
+-> Amazon, Google, Microsoft, Intel, Cisco and other blue-chip companies are some of the key players in cloud computing
+-> What makes cloud computing different are attributes such as Scalability, elasticity, cost effectiveness, and multi-tenancy.
+-> While oftering business solutions based on cloud computing model, you need to safeguard against risks of under-provisioning and over-provisioning.
+
+//---------------------------------------------------------
+
+Cloud Computing
+Module 1: Introduction to Cloud Computing
+
+Table of Contents
+1 Cloud Computing- An Overview
+2 Types of Cloud Computing
+3 Major Cloud Providers
+4 Cloud Computing: Key Differentiators
+5 Business Drivers for Cloud Computing
+6 Summary
+
+Introduction
+In this module, we get an overview of cloud computing, its different types and aiso learn about major providers of cloud computing services. You will also find out how cloud computing differs from traditional in-house computing. Additionally, this module sheds light on key business drivers for cloud computing
+
+Objectives
+Upon completion of this module, you will be able to:
+
+-> Define cloud computing
+-> Compare cloud computing with in-house IT infrastructure
+-> Identify key business drivers behind cloud computing
+
+Cloud Computing-An Overview
+
+Cloud computing is a model under which the resources (memory, network, and processing power) of multiple computers are available on demand. These res ources are not confined to single computer. The infrastructure can be provisioned as and when needed with the least of the effort by provider.
+
+Cloud computing also includes the use of services, such as software development platfforms, servers, storage, and software over the Internet, often referred to as the Cloud. The origin of the term cloud can be understood due to the concealing nature of cloud technology. The consumers of applications and services have no idea about the complexities that the system utilizes.
+
+With cloud computing, you don't need to make large upfront investments in hardware and spend a lot of time on the heavy lifting of managing that hardware. Instead you can provision the right type and size of computing resources you need to make your IT Infrastructure meet the new demands and the best part you only pay for what you use.
+
+In general, there are three cloud computing characteristics that are common among all cloud computing vendors: 
+
+-> The back-end of the application (especially hardware) is completely managed by a cloud vendor.
+-> The user only pays for services used (memory, processing time and bandwidth, etc.)
+-> Services are scalable.
+
+Virtualization is integral part of Cloud computing. There are two important reasons behind the success of cloud computing - pay as you go and scale infrastructure quickly due to which the vendors are able to pool resources which in turn could be shared.
+
+
+Typesof Cloud Computing
+
+There are three types of cloud computing models: 
+Private Cloud
+Public Cloud
+Hybrid Cloud. 
+
+A public and private cloud can inherently look similar, but there is a key difference- in a public cloud you do not know where your resources are running, what infrastructure and components they are running on, and you do not run, manage, or own this infrastructure; whereas in a private cloud it is your infrastructure. 
+
+The hybrid cloud is, as the name suggests, a combination of private & public cloud computing. Some services are utilized from the public cloud and some are available in-house.
+
+
+Cloud Computing : Key Differentiators
+
+One obvious question that may have cropped up in your mind To me cloud computing and in-house computing look the same, so what is the difference?
+
+There are some key differences between in-house computing and cloud computing.
+
+
+Diferentiator
+In-house computing
+
+Ubiquitous
+-> Computing services available through privare nerwok
+
+Simple Scaling
+-> Requires lots of work right from  purchase of H/w to provisioning of software and connectivity.
+
+Licensing
+-> Purchase licenses and go through the entire process of activation of license and tracking
+
+Cost Effective
+-> Incur Capital expenditure and recurring operational expenditure
+
+Elasticity
+-> The computing capacity cannot  be increased or reduced on demand. Sometimes resuts in under-provisioning or over-provisioning.
+
+Self-Service
+-> Requires expertise to provision H/w, S/w
+
+Multi-tenancy
+-> Not possible due to ownership compliance and legal compulsions
+
+
+Cloud computing
+Ubiquitous
+-> Available via internet, connect from anywhere model
+
+Simple Scaling
+-> Available on dem and, takes few minutes to hours to increase computing power and meet the demand.
+
+Licensing
+-> Licenses are managed by provider.
+
+Cost Effective
+-> No capital expenditure and nominal or nil operational expenses.
+
+Elasticity
+-> The computing capacity can be increased during peak demand or reduced during normal utilization
+
+Self-Service
+-> Provisioning of computing resources is fully automated.
+
+Multi-tenancy
+-> It is possible to rent-out computing resources housed on the same hardware.
+
+Business Drivers for cloud Computing
+
+Business Continuity/Disaster Recovery
+
+A classic cloud driver that people can use to host computing and storage resources is Businesss Continuity / Disaster Recovery or (BC/DR) that can keep the organization running if they cannot access their buiding(S) or their technology resources. Cloud hosting operates as either the primary or secondary delivery mechanism that helps to do away with reliance on-premise kit or taking over if on-premise services are not available.
+
+Overcoming Resource Shortages
+
+Managed cloud hosting can solve various challenges - lack of available systems, real-estate personnel or expertise - by providing companies with dynamic resources avalabie elastically and on-demand, with dedicated experts working as an extension of the customers IT department.
+
+Campaign, Special Event or Seasonality
+
+Many organzations, particularnly in B2C industries such as leisure. hospitality. entertainment and retail, run regular one-off campaigns, special events, or have high levels of seasonality in their business models. Managed cloud hosting enables these companies to "turn up" resources when demand increases and turn down when the demand declines. This elasticity - the ability to cloud burst acts as an impetus for many businesses as it is a much more cost-effective than buying hardware that is only used for limited period of time in a year.
+
+Application Upgrades or Performance Issues
+
+Organizations do not go for software updates (eg Exchange) immediately, resulting in expensive hardware upgrades. Others experience hardware-related performance issues with applications that put a strain on server infrastructure. Companies, therefore, migrate to the cloud to focus on managing apps while leaving hardware challenges to the cloud provider.
+
+Compliance or Regulatory Challenges
+
+Information security involves significant legal, regulatory and compliance challenges. Some industries have best practice guidelines that are even more exacting. The Cloud offers not only the ways to achieve compliance but also threats related to data.
+
+Requirement for UAT Environment
+
+Some of the earlest cloud pioneers were "test and dev" users and they still remain a powerful force today. One of the key drivers for cloud hosting is the ability to spin up production quality environments to write code and for User Acceptance Testing that can migrate easily into a live environment for a short time.
+
+Avoiding Hardware Ownership/Move to Opex
+
+Many IT departments now emphasise on managing applications and using managed services to deliver the Infrastructure as a Service (IaaS) enabling components. This may be due to various reasons such as business focus on core competencies, the need to avoid hardware upgrade cycles or to switch to an operating expenditure model with predictable monthly recurring charges replacing capex spikes.
+
+Coping with Uncertainty and Change
+
+In current scenario of business, the companies that are new in the business find flexibility of cloud services quite appealing. Moving from 5 year depreciation cycles to annual or even monthly service charges allows companies to scale up or down as their business expands, contracts or changes focus.
+
+When considering cloud option companies have several of these drivers in mind. They also need to consider their own ability to implement, the service levels they need (a 'production' environment for mission-critical  application hosting or a "test and dev" environment where SLAa are not very important).
+
+Summary
+
+-> Cloud computing is a model under which the resources (memory, network, and processing power) of multiple computers are available on demand
+
+-> There are three types of cloud computing models: Private Cloud, Public Cloud, and Hybrid Cloud.
+
+-> Google, Amazon, Apple, and Mcrosoft are some major Cloud providers
+
+-> Cloud computing differs from in-house computing on various grounds such as ubiquitous nature of services, scaling. licensing, cost effectiveness, elasticity, and multi-tenancy.
+
+-> Some of the key business drivers of cloud computing are need to maintain business continuity, overcome resource shortages, manage hardware performance issues, meet regulatory and compliance challenges, as well as cope with uncertainty and change
