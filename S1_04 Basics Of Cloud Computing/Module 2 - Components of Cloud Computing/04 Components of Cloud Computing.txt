@@ -1,0 +1,281 @@
+-> Define data centre
+-> Discuss Cloud storage
+-> Explain virtualization
+
+COMPONENTS OF CLOUD COMPUTING -> WHAT IS DATA CENTER
+
+Data centers are physical or virtual infrastructure used by enterprises to house computer, server and networking systems and components for the company's IT needs: storing, processing and serving large volumes of data to clients in a client/server architecture.
+
+Key requirements of data center:
+-> redundant or backup power supply systems
+-> cooling systems
+-> redundant networking connections
+-> policy-based security systems
+
+Data Center Management
+-> ensure the reliability of the connections to the data center
+-> ensure the consistency of the mission-critical information stored within the data center
+-> Data centers are commonly run by large Companies or government agencies.
+-> Data Centers are used to provide cloud solution services for private and business applications.
+
+CLOUD VS DATA CENTER
+
+CLOUD
+-> A cloud is an off-premise form of computing that stores data on the Internet.
+-> Clouds are usually maintained and managed by third-party.
+-> Cloud providers may use multiple data centers to store data and provide a variety of services.
+-> The focus IS on reliability of data and not where it is stored.
+
+
+DATA CENTER
+-> A data center refers to on-premise hardware that stores data within an organization's local network.
+-> Data centers are run by in-house IT department.
+-> Data centers house hardware components.
+-> A data center is a specific place housing specific servers.
+
+CLOUD STORAGE
+-> In Cloud storage, digital data is stored in logical pools.
+-> Physical storage spans multiple servers and locations
+
+Cloud storage providers ensure:
+-> availability of data
+-> security and dependability of the physical environment
+
+Data stored can be:
+-> End-user
+-> Organisation
+-> Application
+
+CLOUD STORAGE -> HIGH LEVEL ARCHITECTURE
+
+CHARACTERISTICS OF CLOUD STORAGE
+-> Made up of many distributed resources, but still acts as one: federated storage clouds
+-> Highly fault tolerant through redundancy and distribution of data
+-> Highly durable through the creation of versioned copies
+
+ADVANTAGES OF CLOUD STORAGE
+-> Saves capital expenditure
+-> Pay as you use
+-> In-built storage availability and dataprotection
+-> No storage maintenance cost
+-> Immediate access to data via web services
+
+RISKS IN CLOUD STORAGE
+-> Increased scope of attack
+-> Security of data in transit
+-> Legal compliance
+-> Vulnerable to hacking
+
+CLOUD STORAGE PROVIDERS
+-> Amazon S3
+-> Google
+-> Microsoft Azure
+
+WHAT IS VIRTUALIZATION?
+"Virtualization, in computing, is the creation of a Virtual (rather than actual) version of something, such as a hardware platform, operating system, a storage device or network resources"
+
+___________________________________________
+| Application                              |   
+|   _____________________________________  |
+|   |Operating system                    | |
+|   |   ________________________________ | |
+|   |   | xxx architecture             | | |
+|   |   |   __________________________ | | |
+|   |   |   | CPU, Memory, NIC, Disk | | | |
+|   |   |   |________________________| | | |
+|   |   |______________________________| | |
+|   |____________________________________| |
+|__________________________________________|
+
+
+___________________       ___________________
+| App | App | App |       | App | App | App |
+|_____|_____|_____|       |_____|_____|_____|
+___________________       __________________
+|Operating System |       | Operating System|
+|_________________|       |_________________|
+____________________________________________
+|              Virtualization               |
+|___________________________________________|
+____________________________________________
+|            Xxx Architecture               |
+|___________________________________________|
+        
+HARDWARE VIRTUALIZATION
+-> It is possible to run multiple 0S (Virtual Machines) on single physical machine through hypervisor
+
+___________________       __________________
+|Operating System |       | Operating System|
+|_________________|       |_________________|
+____________________________________________
+|              hypervisor                   |
+|___________________________________________|
+____________________________________________
+|               System                      |
+|___________________________________________|
+
+A hardware abstraction that enables the operating systems to share the resources of the physical server without allowing another guest operating system to directly access those resources.
+
+VIRTUALIZATION VS CLOUD COMPUTING 
+-> Virtualization abstracts computer resources-typically as virtual machines (VMs)-with associated storage and networking connectivity.
+
+-> The cloud determines how those virtualized resources are allocated, delivered, and presented.
+
+MANAGING CLOUD
+-> Cloud management refers to the software and technologies designed for operating and monitoring applications, data and services residing in the cloud.
+
+-> Cloud management tools help ensure a company's cloud computing-based resources are working optimally and   properily interacting with users and other services.
+
+CLOUD MANAGEMENT PLATFORMS(CMP)
+-> Products that manage public, private, and hybrid cloud environments
+
+-> Have self-service interfaces, enable metering and billing, and provide for workload optimization
+
+Advanced products for cloud management:
+-> integrate with external enterprise management systems
+-> support the configuration of storage and network resources
+-> allow for enhanced resource management(resource throtling)
+-> enable improved "guest" performance and availability
+
+CMP OFFERINGS
+Open Source
+-> Apache
+-> CloudStack
+-> Eucalyptus
+-> OpenStack
+
+These products are marked by low entry costs and portability, but require substantial in-house development.
+
+Commercial Vendors
+-> Microsoft
+-> VMWare
+
+These products offer commercial off-the shelf capabilities but are more expensive than open-source offerings.
+
+SUMMARY
+-> While Cloud stores data on] the Internet, data center stores data within an organization's local network.
+-> Cloud storage refers to storng the digital data in logical pools.
+-> Cloud storage saves capital expenditure and provides for pay as you use. However, it involves risks of data security and legal compliance.
+-> Virtualization allows running multiple 0S on single physical machine.
+-> Cloud management tools ensure optimal usage of cloudComputing-based resources by end-users and other services.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//---------------------------------------------------------
+Module 2: Components of Cloud Computing
+
+Table of Contents
+
+1. What is Data Center
+2. Data Center Consolidation
+3. Data Center Interconnect
+4. Data Center Tier Levels
+5. Data Center Architecture
+6. Data center Management
+7. Cloud vs Data Centres
+8. Cloud Storage
+9. Cloud Computing Components
+10. What is Virtualization
+11. Summary
+
+Introduction
+In this module, we wil learn about data center which is at the heert of an organisation's information System (IS). Data centres may be both private and shared. There are mutipie drivers for data center consolidation, particularly the need to improve legacy systems and growing demand for data storage resources. You will get an overview of data center tier levels and data center management. The key differences between cloud and data center are also covered here. Additionally, this module explains the cloud storage mechanism and lists both risks and benefits of cloud storage. The major components of cloud computing such as Appication, client , infrastructure and processing power are discussed as well. You will also find out how a virtualized system is different from a non-virtualized system. This module also gives a brief insight into key cloud management offerings available currently in the market.
+
+Objectives
+Upon completion of this module, you will be able to:
+-> Define data center
+-> Discuss cloud storage
+-> Explain virtuaization
+
+What is Data Center?
+A data center is a repository that houses computing facities like servers, routers, switches and firewalls, as well as supporting components like backup equipment, fire suppression facilites and air conditioning. A data center may be complex (dedicated building) or simple (an area or room that houses only a few servers). Additionally, a data center may be private or shared.
+
+Data center components often make up the core of an organzations intormation system (IS). Thus, these critical data center facilities usually require a significant investment of supporting systems, including air conditioning/climate control systems, fire suppression/smoke detection, secure entry and identification and raised floors for easy cabling and water damage prevention.
+
+When data centres are shared, virtual data center access often makes more sense than granting total physical access to various organizations and personnel. Shared data centres are usually owned and maintained by one organzaton that leases center partitions (virtual or physical) to other client organizations. Often, client/leasing organizations are small companies without the financial and technical resources required for dedicated data center maintenance. The leasing option allows smaller organizations to obtain professional data center advantages without incurring heavy capital expenditure.
+
+Data Center Consolidation Helps Cloud Computing
+
+A data center is not only a highly complex part of an IT architecture. but also its central most point of access for observation. Applying efficiency principles to a data center will typically improve overall IT systems. Goals for data center consolidation may focus around finite data storage resources, legacy systems that could be built better, and other aspects of the system that offer room for improvement.
+
+Companies can consolidate their data centres and improve efficiency of their IT systems in several ways. Some common strateges include either server or storage virtualization, where physical networking systems are replaced with logical access systems or virtual networks that use software to fill the role of traditional hardware devices such as, servers and individual machines. Alternative types of servers, such as blade servers can also be used.
+
+New cloud hosting systems can replace in-house hardware and software systems, and third party vendor services can help provide business process automation or other improvements that can reduce the resources necessary to run a corporate or business data center.
+
+This evokes an interesting discussion. What happens when the data centres are connected with each other? It is obvious when data centres are connected they produce super computing power. It is like wired CPUs which are doing paralel processing?
+
+The other term which is popularly used is data center co-location Put simply, data center co-loction is a process through which an organization can rent physical office space, network or internet bandwidth and other resources within an existing data center to deploy its own data center. It enables sharing the existing pool of data center resources to be used for deploying and hosting data center services for external or retail customers/ organizations.
+
+Data Center Interconnect
+
+Data center interconnect is a technique used in enterprise IT infrastructures that have multple owned or partnered data centres. Typically, data center interconnect is achieved by connecting data centres through a VPN, leased lines or the internet. Once connected, these data centres can use all or selected IT resources from within the network.
+
+Data center interconnect is used to:
+-> connect muitiple data centres within the same organiz ation
+-> connect partner/customer data centres with shared data and/or resources
+-> allow for workload sharing, wherein some or the bulk of the processes are performed at the interconnected data center
+-> pool data center resources meets scability needs
+-> use an interconnected data center as a disaster recovery site
+
+Data Center Tier Levels
+1. Tier 1 data center - The data centres which fall in this category are not fault-tolerant (fault tolerant - ability to withstand failures without interruption of services)
+
+2. Tier 2 system - There are redundant features for example, in energy source support
+
+3. Tier 3 systems - offer more comprehensive protection for power outages and have N + 1 redundancy (more than one fall back point), which is a reliable backup powwer system.
+
+4. Tier 4 the highest level, will be the ones with fully fault-tolerant systems having energy supply, storage and data distribution and backup power sources for climate control systems. These specifications for data centre stability and reliabilty help to create a consistent standard in business environment
+
+Data Center Architecture
+
+Data center architecture is usually created during the data center design and construction phase. The data center architecture specifies where and how the server, storage, networking, racks and other data center resources will be physically located.
+
+It also addresses how these resources wil be interconnec ted and how physical and logical security workflows are arranged.
+
+Typically, data center architecture consists of
+-> Data center network architecture
+-> Data center computing architecture
+-> Data center security architecture
+-> Data center physical architecture
+-> Data center information architecture
+
+Data Center Management
+The goal of data center management is to:
+-> ensure the reliability of the connections to the data center
+-> ensure the consistency of the mission-critical information stored within the data center
+
+While human oversight in data management has been reduced, some IT professionals are still required to design, operate and manage computing and housing architecture
+
+Data center management also come into play in the telecommunications arena. A large company, such as a telecommunications company, may have IT professionals that remotely manage the data center. Smilarly, large data clearinghouses manage electronic health records (EHR) for hospitals that may lack the space tor all of their computer servers. Insurance companies aiso enlist data center management through data ciearinghouses. Customer service representatives can work on-site in various offices across the country, the worid, or from the employees own homes. Meanwhile, consumer orders are processed and managed in one large data center located elsewhere.
+
+
+The advantages of data center management include cost savings, especially vhen the data centres are green. Within all data management centres, fewer employees are needed as a result of automation, allowing agencies and businesses to experience growth without having to allocate space for their servers or operating systems.
+
+
+Cloud vs Data Centres
+
+You might wonder if cloud and data centre are two different things altogether or are there any similarities between the two.
+
+The terms "cloud" and "data center" might be used interchangeably indicating they have the same infrastructure. However, there are major differences between these two computing systems.
+
+One of the key differences between a cloud and a data center is that a cloud is an off-premise form of computing that stores data on the Internet; whereas a data center is an on-premise hardware that stores data within an organization's local network. While cloud services are outsourced to third-party cloud providers who manage all updates and ongoing maintenance, data centres are typically administered by an in-house IT department.
+
+Both cloud and data center can store data, as a physical unit. Yet only a data center can contain servers and other equipment. Therefore, cloud service providers use data centres to house cloud services and cloud-based resources. Cloud vendors also often own muitiple data centres in several geographic locations to safeguard data availability during outages and other data center failures.
+
+Let us understand the key differences between cloud and data center.
+
+Cloud security vs Data center security
+
+Security of data (in transit as well as at rest) is one of the major concerns for most of the enterprises. As cloud is an external form of computing, it may be less secure than a data center. Unlike data centres, where you are responsible for your own security, if you opt for cloud, you will be entrusting your data to a third-party provider who may or may not have the most up-to-date security

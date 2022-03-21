@@ -1,0 +1,79 @@
+CLOUD COMPUTING CURRENT TRENDS -> FUTURE OF CLOUD
+
+What is beyond Cloud?
+-> Cloud, Analytics, Mobility and social networking offer businesses real-time insights across the organisation.
+
+-> These technologies are reshaping products, services and customer engagement.
+
+-> Business models are re-aligned to meet changing customer requirements.
+
+CLOUD COMPUTING CURRENT TRENDS -> CLOUD VENDORS
+
+VMware
+Market share
+-> a market leader in virtualization and cloud infrastructure technologies with a customer base of more than 250,000
+
+Cloud Management
+-> broad-based Cloud portfolio: laaS and management, PaaS, and VMware-hosted Saas
+
+Cloud Security
+-> vShield security solutions along with partner solutions built for the vShield security framework
+
+Hybrid Cloud
+-> bridges on-premise and off-premise clouds
+
+Other benefits
+-> services ranging from on-demand, pay-as-you-go laaS to enterprise-grade hybrid cloud services
+
+Microsoft
+Market share
+-> operates at every level of the Cloud market: laaS, PaaS, and Saas
+
+Hybrid Cloud
+-> investing in channel partners to become a leading hybrid Cloud supplier
+
+Cloud Management
+-> provides ready to use Cloud management software
+-> focus on cross-hypervisor strategy
+
+RedHat
+Market share
+-> created a one-stop shop for multiple cloud offerings called CloudForms laas
+
+Cloud Management
+-> OpenShift PaaS allows applications to run on any Red Hat Certified Public Cloud and across major virtualization platforms
+-> Competitive pricing of Cloud offerings
+
+Amazon
+Market share
+-> created a large portfolio of Amazon- developed laaS products and services
+
+Cloud Management
+-> EC2 Cloud: a rich ecosystem of third party software: Oracle and SAP software certified to run as Saas
+-> exceptional ease of use, low pricing, and quick time-to-deployment
+
+Rackspace
+Market share
+-> leading provider of managed hosting services
+
+Cloud Management
+-> OpenStack initiative will help strengthen its cloud laaS and management capabilities
+-> high-quality customer support and service
+
+IBM
+Market share
+-> a strong array of cloud-enabling professional and managed services
+
+Cloud Management
+-> CloudBurst private cloud and laaS acts as a "cloud in a box"
+-> IBM Smart Cloud Enterprise offerings; deployment of enterprise-capable public laaS clouds
+-> reliability, faster time-to-deployment
+
+CLOUD COMPUTING CURRENT TRENDS> SUMMARY
+
+o Cloud technologies reshaping products, services and Customer engagement.
+o Business models are re-aligned to meet changing customer requirements
+o Vmware offers a broad-based Cloud portfolio to more than 250,000 customers.
+o Microsoft operates at every level of the Cloud market.
+o Red Hat manages a one-stop shop for multiple cloud offerings called CloudForms laaS.
+o Amazon has developed EC2 Cloud; IBM has created Smart Cloud Enterprise offerings with reliability and faster deployment.

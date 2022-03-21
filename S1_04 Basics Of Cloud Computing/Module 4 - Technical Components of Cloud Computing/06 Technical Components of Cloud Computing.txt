@@ -1,0 +1,53 @@
+CLOUD COMPUTING TECHNICAL COMPONENTS -> SOA
+
+What is Service-oriented Architecture (SOA)?
+-> A set of principles and methodologies applied by software engineers to design and develop software in the form of interoperable services.
+
+Service-oriented Architecture (SOA)
+-> Services are usually built in the form of components that can be reused for purposes other than originally intended.
+
+CLOUD COMPUTING TECHINCAL COMPONENTS -> WEB SERVICE
+
+What is Web Service?
+-> A software application with a standardized way of providing interoperability between disparate applications.
+
+Web Service
+-> a service provider
+-> service requester (client)
+
+Web services feature is language neutral
+-> Service provider: written in Java
+-> Client: written in Perl, Python or Ruby
+
+CLOUD COMPUTING TECHINCAL COMPONENTS -> WEB 2.0
+
+What is Web 2.0?
+-> The second generation of the World Wide Web, which brings in shift from static HTML pages to a more interactive and dynamic Web experience.
+
+Web 2.0: Key features
+-> allows online exchange of information online via social media, blogging and Web-based communities
+
+-> interactive experience between users and Web publishers
+
+-> represents a more populist version of the Web
+
+CLOUD COMPUTING TECHINCAL COMPONENTS -> AGILE DEVELOPMENT
+
+Agile Software Development
+-> a lightweight software engineering framework
+
+Features of Agile Development
+-> Iterations
+-> Close collaboration between the development team and business
+-> Constant communication
+-> Well-knit teams
+
+CLOUD COMPUTING TECHINCAL COMPONENTS -> APPLICATION SERVERS
+A type of server designed to instal, operate and host applications and services for end users, IT services and organizations.
+
+CLOUD COMPUTING TECHNICAL COMPONENTS -> SUMMARY
+o SOA refers to a set of principles and methodologies used to develop software in the form of interoperable services.
+o Web service involves a service provider and a service requester (client).
+o Web 2.0 facilitates exchange of information online via social media, blogging and Web-based communities.
+o Agile Software Development (or Agile Development) is a lightweight software engineering framework.
+o Application servers facilitate the hosting and delivery of high-end consumer or business applications.

@@ -1,0 +1,159 @@
+Introduction
+CLOUD INFRASTRUCTURE MODELS -> CLOUD INFRASTRUCTURE
+-> A cloud infrastructure is the collection of hardware and software that enables cloud computing.
+
+-> The cloud infrastructure contains both a physical layer and an abstraction layer.
+
+-> Physical Layer hardware resources that are necessary to support the cloud services being provided
+
+-> Abstraction Layer - software deployed across the physical layer
+
+
+CLOUD INFRASTRUCTURE MODELS > MODELS OF CLOUD INFRASTRUCTURE
+Infrastructure as a Service (laaS)
+
+Self-Provisioning
+-> The consumer can deploy and run arbitrary software, which can include operating systems and applications.
+
+Management and Control
+-> The consumer does not manage the cloud infrastructure but has control over operating systems, storage, and deployed applications
+
+Delivery 
+-> IT infrastructure is delivered as off-premises, on-demand services rather than as dedicated.
+
+Providers
+-> Amazon (AWS)
+-> RackSpace cloud, CloudCompute and
+-> Bizcloud
+-> Microsoft (Azure)
+
+Platform as a Service (PaaS)
+What does it offer?
+-> The consumer can use consumer-created or acquired applications on cloud infrastructure.
+
+What does the consumer control?
+-> Consumer has control over the deployed applications and possibly configuration settings for the application-hosting environment.
+
+Software as a Service (SaaS)
+What does it offer?
+-> The vendor supplies software and the hardware infrastructure to the consumer via multiple interfaces.
+
+What does the consumer control?
+-> The user has control over user-specific application configuration settings.
+
+Example:
+Google Pack includes web applications such as, Calenda, Gmail, Google Talk, Docs, etc
+
+Hierarchical Relationship: laas, PaaS, Saas
+
+SaaS
+-> Application Software
+-> Access from anywhere
+--> PaaS
+---> Information
+---> Messaging
+---> Connectivity
+-----> laaS
+-------> Network Devices
+-------> Servers
+-------> Storage
+
+Cross Concept Matrix
+IaaS
+-> Paradigm shift
+--> Infrastructure as an asset
+
+-> Characteristics
+--> Usually platform independent; infrastructure costs are shared; SLAS; pay by usage; self-Scaling
+
+-> Key Terms
+--> Grid computing, utility computing, compute instance, hypervisor, cloud bursting. multi-tenant computing. resource pooling
+
+-> When not to use
+--> When capital budget is greater than operating budget
+
+-> Advantages
+--> reduced ROl risk; low barriers  to entry; streamlined and automated scaling
+
+-> Disadvantages
+--> Business efficiency and productivity largely depends on the vendor's capabilities; centralization requires different security measures
+
+Paas
+-> Paradigm shift
+--> License purchasing
+
+-> Characteristics
+--> caters to agile project management methods
+
+-> Key Terms
+--> Solution stack
+
+-> When not to use
+-> N/A
+
+-> Advantages
+--> Streamlined version deployment
+
+-> Disadvantages
+--> Centralization requires new/different security measures
+
+Saas
+-> Paradigm shift
+--> Software as an asset (Dusiness and consumer)
+
+-> Characteristics
+--> SLAs; Ul powered by thin-client applications communication via APls; stateless; loosely coupled; modular, semantic interoperability
+
+-> Key Terms
+--> Thin client; client-server application
+
+-> When not to use
+-> N/A
+
+-> Advantages
+--> Lack of capital expenditure on software and development resources; reduced R0l risk; streamlined and iterative updates
+
+-> Disadvantages
+--> Centralization of data requires new/different security measures
+
+
+CLOUD INFRASTRUCTURE MODELS> PUBLIC CLOUD VS PRIVATE CLOUD
+
+Comparison: Public Vs Private
+
+Private Cloud
+-> Is used by a single organization
+-> May be managed by the organization or a third party
+-> Is consumed by multiple consumers - business units
+-> May exist on or off premises
+
+Public Cloud
+-> Is for open use by general public
+-> may be managed by a business, academic, or government organization, or some combination of them
+-> exists on the premises of the cloud provider
+
+COMPONENTS OF CLOUD CcOMPUTING -> HYBRID CLOUD
+A combination of two or more distinct cloud infrastructures:
+-> Private
+-> Community
+-> Public
+
+-> Private & public cloud remain unique entities
+-> Public & private cloud are bound together by standardized or proprietary technology for seamless flow of data and applications
+-> Example: Cloudbursting
+
+COMPONENTS OF CLOUD cOMPUTING -> ADVANTAGES OF HYBRID CLOUD
+Hybrid Cloud:
+
+-> Leverages the scalability and cost-effectiveness of a public cloud offering, without exposing critical data to external resources
+
+-> Provides the best of both worlds while optimizing the use of infrastructure resources
+
+-> Helps companies overcome issues and Concerns related to security and compliance
+
+COMPONENTS OF CLOUD COMPUTING> SUMMARY
+
+o laS, Paas, and SaS are diferent cloud infrastructure models.
+o When capital budget is greater than operating budget, laaS should not be used.
+o While Private cloud infrastructure is used exclusive by a single organization, Public cloud is operated tor open use by the general public.
+o In a hybrid cloud, the public & private cloud are bound together by standardized or proprietary technology.

@@ -1,0 +1,95 @@
+CLOUD SECURITY > RISKS IN CLOUD COMPUTING
+
+-> Cloud acts as a big black box, nothing inside the cloud is visible to the clients.
+
+-> Clients have no idea or control over what happens inside a cloud.
+
+-> System admins may tamper with the VMs and violate confidentiality and integrity.
+
+-> Cloud is also prone to traditional data confidentiality, integrity, availability, and privacy issues.
+
+Cloud security problems arise due to:
+-> Loss of control
+-> Lack of trust (mechanisms)
+-> Multi-tenancy
+
+These problems exist mainly in third party management models
+
+CLOUD SECURITY -> DATA SECURITY
+-> Physical security denotes controlling physical access to the servers that support your infrastructure.
+
+-> When selecting a cloud provider, it is important to understand physical security protocols offered by the cloud provider.
+
+Some of the key data control challenges are:
+-> your data can be accessed on someone else's servers
+
+-> your cloud provider declares bankruptcy and ceases operations
+
+-> your cloud provider fails to secure portions of its resulting in security breach
+
+Data-in-transit:
+-> Confidentiality and integrity using secured protocol
+-> Confidentiality with non-secured protocol and encryption
+
+Data-at-rest
+-> Encryption if it is not associated with applications
+-> Indexing and searching
+
+CLOUD SECURITY -> NETwORK SECURITY
+-> Ensuring confidentiality and integrity of your organization's data-in-transit to and from your public cloud provider
+
+-> Ensuring proper access control to resources at your public cloud provider
+
+-> Replacing the established model of network zones and tiers with domains
+
+CLOUD SECURITY> CLOUD SECURITY CONTROL
+-> Cloud security control primarily helps in addressing, evaluating and implementing security in the cloud.
+
+-> The Cloud Security Alliance (CSA) has created a Cloud Control Matrix (CCM), which is designed to help prospective cloud buyers evaluate a cloud solution's overall security.
+
+Types of cloud security controls:
+
+Deterrent Controls:
+-> Serve as warning to a potential perpetrator of an attack.
+
+Preventive Controls:
+-> Used for protecting the vulnerabilities within a cloud.
+
+Corrective Controls:
+-> Help reduce the after-effects of an attack.
+
+Detective Controls:
+-> Used to detect an attack
+
+
+CLOUD SECURITY -> WS SECURITY
+Web Services (WS) Security:
+-> provides integrity, confidentiality and authentication for SOAP messages
+
+-> defines a SOAP header (Security) that carries the WS-Security extensions
+
+-> defines how existing XML security standards like XML Signature and XML Encryption are applied to SOAP messages
+
+How does it operate
+-> XML Encryption allows XML fragments to be encrypted to ensure data confidentiality.
+
+-> The encrypted fragment is replaced by an EncryptedData element containing the ciphertext of the encrypted fragment as Content.
+
+-> XML Signature allows XML fragments to be digitally signed to ensure integrity or to proof authenticity.
+
+The signing process works as follows:
+-> The Signedinfo element is canonicalized
+and signed.
+
+The result of the signing operation is placed in the SignatureValue element and the Signature element is added to the security header.
+
+CLOUD SECURITY > SUMMARY
+o Cloud is also prone to traditional data confidentiality, integrily availability, and privacy issues.
+
+o Companies face data security challenges with data-in-transit, data-at-rest, and during data processing.
+
+o Network security requires ensuring proper access control to resources at your public cloud provider.
+
+o Cloud Control Matrix is aimed to help prospective cloud buyers evaluate a cloud solution's overall security.
+
+o WS Security defines how existing XML security standards like XML Signature and XML Encryption are applied to SOAP messages.
