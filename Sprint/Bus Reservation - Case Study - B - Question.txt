@@ -1,0 +1,92 @@
+Mr. Arun Raj, founded an AR Travels company, in India, its headquarters in Bangalore. The company was operating the bus service over the years. Arun was looking at bringing in new offerings to increase revenue. A survey was conducted among people and their preference for booking the tickets was through online. Like any businessman, saw an opportunity here and decided to launch an online shopping portal also this portal helps to add services by different operators. He directed his IT team to make ticket booking option for customers available on their online portal. http://artravels.com
+
+Your company ABC Corp India has been awarded this project and you are chosen as one of the developers, to provide solution for the AR Travels
+
+At a very high level the Business Analyst has captured the attributes of the business shown in Figure 1.0
+
+Admin (class)
+adminId
+firstName
+lastName
+password
+
+
+
+
+
+You are expected to deliver the application in phases getting regular feedback from all stakeholders. The application development has to be done in sprints and should follow Agile methodology. ABC Corp understands that you have graduated recently from college. In order to help you get skilled on the technologies needed, you have been provided with a learning platform called ADAPT.
+
+In order to follow best practices and delivery standards, company has laid out the below learning and delivery plan for you:
+
+
+STAGE 1
+
+Java - Programming Fundamentals - OOPs
+
+Sprint Outcome
+
+Topic Name - Programming Fundamentals
+Sprint : 1
+-> understanding the basic programming using arrays
+-> Implementing for loop and switch case
+-> Searching the data using linear search and binary search algorithm
+
+Business Outcome
+-> Records Inventory details
+-> Identify and provide the customer and ServiceDetails information / availability based on the user requirement.
+
+Topic Name - OOPS
+Sprint : 2
+a. Understanding the object, constructor and OOP principles
+b. understanding the POJO class
+c. Instance variables, static variable and Its need
+d. understanding the object class toString method and overriding
+e. Understanding overloading by creating a search method with different parameter like id and name
+
+Business Outcome
+-> Records the data about the admin, customer and ServiceDetails which are valid
+-> Provides meaning full information to the user when the unexpected event occurred
+-> Provides the Information about the availability of services and customer information
+
+Below is the list of requirements captured by a Business Analyst. Requirements are in terms of business outcome and use cases. Learning outcomes will be the takeaway for you (developer) as you implement these requirements. You will be graded on the learning outcomes that you will achieve.
+
+
+
+Sprint 1
+Programming Fundamentals
+
+Business Outcome: Record Book details into inventory
+
+Learning Outcome: Simple program using structured programming
+
+1. Create a program to accept the five customer's id in an array and display the customer in a descending order.
+2. Write a program to get the input as integer and pass as input to switch case to display the customer with respect to city.
+
+Business Outcome: Records Customer data and search the Customer information
+Learning Outcome: Complex program using structured programming
+
+3. Create a program with muitidimensional array to store customerDetails (customerId, name, address) array. This program should sort the customer based on the customer’s name.
+
+4. Create a program to search the customer based on the customer's id using linear search algorithm.
+
+5. Create a program to search the customer based on the customer's name using binary search algorithm.
+
+
+Sprint 2
+Object Oriented Programming
+
+Business Outcome: Records validated Admin, Customer and ServiceDetails data into inventory and provide customer to Service report.
+
+Learning Outcome: Simple program using O0P programming
+
+1. Create Address, Admin and ServiceDetails class as per the given structure with setter and getter methods. Admin and Address classes are related with Has-a relationship.
+
+2. Create the parameterised constructor to pass the values to the instance variables for Admin, Address, Customer and ServiceDetails and BookingDetails objects and display them.
+
+3. Override the toString method of the object class to display the respective details of Admin, customer, address and ServiceDetails class.
+
+Business Outcome: Reports about toy availability, customer information and record the Customer, Book Details
+
+Learning Outcome: Complex Programming using OOP and working with Array
+
+4. Create an interface CustomerService. Add CRUD, search methods such as add, modify, delete, retrieve and search. These methods will be for adding new Customer details, modifying existing Customer details, deleting Customer details, retrieving the details of Customer details and searching Customer details respectively.
