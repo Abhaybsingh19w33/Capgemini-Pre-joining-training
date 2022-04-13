@@ -1,0 +1,72 @@
+INTRODUCTION TO ORACLE 11g INTRODUCTION
+
+Relational Database Management System- ORACLE
+-> Storing information
+-> Managing data for various business applications
+
+INTRODUCTION TO ORACLE 11g FEATURES OF ORACLE DATABASE-ORACLE
+-> Object-Relational Database Management System (ORDBMS)
+-> Handles large amounts of data - Railway reservation system
+-> Open architecture
+-> Supports multiple platforms - Oracle for different Operating System
+-> Provides many user and application friendly features
+-> Supports advanced technologies like cloud computing mobile platforms, and grid architecture
+-> Supports both relational database management system and object relational database features
+
+Component 1
+-> Handles database instance in the main memory
+
+Component 2
+-> Handles data in the secondary memory
+
+-> Applications cannot process data if it is in the hard disk
+-> Data should be brought to the main memory to be processed
+
+Database Elements of Oracle
+Kernel code
+-> Manages memory and storage for DBMS
+
+Repository of metadata
+-> Contains data dictionary of the database
+
+Query language
+-> Enables applications to access the data SQL
+
+Many users can log into Oracle database at the same time
+
+Each user's area in the database is referred to as database schema
+-> Provides restricted access to objects created by users. A user can only access objects created by him
+
+INTRODUCTION TO ORACLE 11g WORKING OF ORACLE DATABASE
+11 g - g stands for Grid Computing
+Grid Infrastructure
+
+Using simple nested if
+-> Pool of servers
+-> Does not have different networking infrastructure and resources
+-> Coordinates large numbers of servers and storage to act as a single large computer
+
+Grid Infrastructure
+-> Software that provides infrastructure for an enterprise grid architecture
+
+Oracle 12C -> C stands for cloud computing
+Oracle 11g -> G stands for grid computing
+Oracle 10g -> G stands for grid computing
+Oracle 9i  -> I stood for the internet
+
+Oracle Database 11g Release 2 combines cluster and standalone server grid infrastructure products into grid infrastructure home
+-> Improved overall performance
+
+Launched with enhancements to Overcome limitations in the previous version
+
+
+-> Provides better performance
+-> More table partitioning options - static SQL
+-> Enhancements to dynamic SQLs
+-> Enhancements to external tables
+-> Supports external tables
+-> Supports virtual columns in tables
+-> Enhancements to PL/SQL
+-> Query result cache
+-> And much more...
+

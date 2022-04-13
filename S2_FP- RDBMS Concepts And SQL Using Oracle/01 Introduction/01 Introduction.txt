@@ -1,0 +1,58 @@
+COURSE INTRODUCTION-ORACLE OVERVIEW
+
+Information Age
+-> Milions of bits of information get created every day
+
+-> Important to store and manage useful information for daily and future use
+
+-> Organizations need to store information to meet their requirements
+
+How can huge amounts of data be stored?
+
+DATABASE
+-> Collection of useful information normally treated as a logical unit
+
+-> Used to store data for business and personal applications
+
+-> Acts as foundation for many database applications
+
+COURSE INTRODUCTION ORACLE ORACLE DATABASE
+-> Why has Oracle become so popular?
+
+--> Provides complete, open, and integrated business software, hardware and storage systems
+
+--> Provides many cloud and mobile technology based solutions for various businesses and industries
+
+--> Latest developments have made it faster and more efficient
+
+COURSE INTRODUCTION-ORACLE LEARNING OBJECTIVES
+-> ldentify how to retrieve, transform, and group data from Oracle database
+
+-> Use different types of SQL statements to manage and manipulate data
+
+-> Write different types of queries to retrieve data from many database tables using various methods of database joins
+
+-> Appreciate usage of PL/SQL in giving programming aspect to SOL statement output
+
+COURSE INTRODUCTIONORACLE CoURSE CURRICULUM
+-> Recall RDBMS concepts
+--> Recollects concept of relational database management system
+
+-> Data retrieval, transformation and grouping
+--> How to write queries to retrieve, transform, and group data, as per requirement?
+
+-> Database joins
+-> How to retrieve data from many tables simultaneously using different types of SQL statements?
+
+-> Using differet types of SQL statements
+--> What are the different types of SQL statements?
+
+-> Subqueries
+--> How to manipulate data in database subqueries?
+
+-> Oracle database objects
+--> How to get appropriate database objects in Oracle?
+
+-> Basic PL/SQL programming
+--> How programming features of PLSQL augment the
+usage of SQL?
