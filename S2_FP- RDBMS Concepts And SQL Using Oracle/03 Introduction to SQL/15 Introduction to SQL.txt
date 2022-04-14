@@ -1,0 +1,70 @@
+INTRODUCTION TO SQL -> INTRODUCTION
+Database Design
+
+-> Converted ER model into equivalent tables
+-> Normalized and finalized the set of tables
+-> Place and retrieve data from tables
+
+INTRODUCTION TO SQL -> DEFINITION
+SQL
+-> Language used to manipulate or manage the database
+
+Standard language for managing most RDBMS systems
+
+Set of Commands to access and manage database
+
+Based on Dr. EF Codd's Relational Model -> Father of database
+
+INTRODUCTION TO SQL -> SQL COMMAND GROUPS
+
+Data Query Language (DQL) statement
+-> Used for querying database
+-> Read database
+-> SELECT Used to retrieve data present in the database
+
+Data Definition Language (DDL) statements
+-> Used to create a table
+-> Used to define database structure or schema
+
+How to create a table? -> Data Definition Language (DDL) statements
+
+CREATE -> Creates objects in database
+ALTER -> Alters structure of database
+DROP -> Deletes objects from database
+TRUNCATE -> Removes all records from a table permanently
+COMMENT -> Adds comments to data dictionary
+RENAME -> Renames an object
+
+Data Manipulation Language (DML) statements
+-> Used for managing data within objects
+
+INSERT -> Inserts data into a table
+UPDATE -> Updates existing data within a table
+DELETE -> Deletes unwanted/all records from a table
+MERGE -> UPSERT operation (insert or update) (UPSERT - is mixtue of update and insert)
+
+Data Control Language (DCL) statements
+-> Controls data across diferent users
+-> Used for granting and denying access privileges to users
+
+GRANT -> Gives access privileges to database users
+REVOKE -> Withdraws access privileges from database users
+
+Transaction Control Language (TCL) statements
+-> Used to manage changes made by DML statements
+
+COMMIT -> Saves work done
+ROLLBACK -> Restores database to original state since last COMMIT
+SAVEPOINT -> Identifies a point in the transaction to rollback to
+
+INTRODUCTION TO SQL -> SUMMARY
+Key points discussed in this video:
+
+SOL is a standard language for managing almost any RDBMS
+
+SQL command groups are:
+-> Data Query Language (DQL)
+-> Data Definition Language (DDL)
+-> Data Manipulation Language (DML)
+-> Data Control Language (DCL)
+-> Transaction Control Language (TCL)

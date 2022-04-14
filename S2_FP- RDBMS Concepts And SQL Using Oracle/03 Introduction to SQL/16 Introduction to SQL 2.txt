@@ -1,0 +1,75 @@
+Table of Contents
+1. Introduction to SQL
+2. Categories of SQL Commands
+3. Data Control
+4. Summary
+
+Introduction
+-> This module introduces Structured Query Language (SQL) and the categories of SQL commands.
+
+Learning Objectives
+-> Upon completion of this module, you will be able to:
+--> Define SQ
+--> List the categories of SQL command
+
+1. Introduction to SQL
+SQL is an acronym for Structured Query Language. It is available in a number of database management packages based on the relational model of data, for example, Oracle.
+
+It allows data definition, manipulation and data control of a relational database. The data definition facilities of SQL permit the definition of relations and of various altemative views of relations. Further, the data control facility gives features for one user to authorize other users and access his data. This facility also permits assumptions to be made about data integrity. All the three major facilities of SQL, namely, data manipulation, data definition and data control are bound together in one integrated language framework.
+
+2. Categories of SQL Commands
+SQL commands can be divided following categories:
+
+-> Data Query Language (DQL) 
+--> Used for querying database
+--> Example: SELECT - used to retrieve the data present in the database
+
+-> Data Definition Language (DDL)
+--> Used to define the database structure or schema
+--> Examples: CREATE, ALTER, DROP, etc.
+
+-> Data Manipulation Language (DML)
+--> Used for managing data within objects
+--> Examples: INSERT, UPDATE, DELETE
+
+-> Data Control Language (DCL) 
+--> Used for granting and denying access privileges to users
+--> Examples: GRANT, REVOKE
+
+-> Transaction Control Language (TCL)
+--> Used to manage the changes made by DML statements
+--> Examples: COMMIT, ROLLBACK
+
+3. Data Control
+Data control deals with three issues:
+
+Recovery and concurrency
+
+-> Concurrency is concermed with the manner in which multiple users operate upon the database. Each individual user can either reflect the updates of a transaction by using the COMIT or can cancel all the updates of a transaction by using ROLLBACK.
+
+Security
+
+-> It has two aspects. The first is the VIEW mechanism. A view of a relation can be created vhich hides the sensitive information and defines only that part of a relation which should be visible. A user can then be allowed to access this view.
+
+CREATE VIEW Regular_Suplier AS
+SELECT FROM SUPPLIER
+WHERE supplier.type = "Regular"
+
+The above view reveals only regular suppliers.
+
+The second is by using GRANT operation. This grants one or more access rights to perform the data manipulative operations on the relations.
+
+Integrity Constraints
+
+-> In these case, one can specify that an attribute of a relation does not take on null values.
+
+4. Summary
+
+-> Structured Query Language allows data definition, manipulation and data control for a relational database.
+
+-> SQL commands can be divided follovwing categories:
+--> Data Query Language (DQL)
+--> Data Definition Language (DDL)
+--> Data Manipulation Language (DML)
+--> Data Control Language (DCL)
+--> Transaction Control Language (TCL)
