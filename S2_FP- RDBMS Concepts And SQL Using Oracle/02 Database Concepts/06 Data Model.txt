@@ -1,0 +1,113 @@
+DATA MODEL - THREE SCHEMA ARCHITECTURE FEATURES OF RDBMS
+-> What data is stored in the database?
+--> DBMS helps to manage data properly
+--> Data required for programs is stored in the database
+Eg : Money transaction details of a bank
+
+Data stored in database is determined by end user
+
+DATA MODEL -THREE SCHEMA ARCHITECTURE INTRODUCTION
+Consider the example of a bank
+Data that needs to be stored:
+-> Customer's basic information
+-> Customer's account information
+-> Customer's transaction and interest calculation details
+
+Interact with relevant people to collect appropriate data
+
+Eg : 
+Manager 1 - Savings related activities
+Manager 2 - Loan related activities
+Manager 3 - Recurring deposit related activities
+
+
+DATA MODEL - THREE SCHEMA ARCHITECTURE THREE SCHEMA ARCHITECTURE
+
+External Schema A
+External Schema B 
+External Schema C
+-> Perspective of end-users
+-> External/View Level (Individual User View)
+        ^
+        |
+Conceptual Schema
+-> Information from manager on savings-related activities and related data
+-> Perspective of database designer
+-> Conceptual Level (Common User View)
+        ^
+        |
+Internal Schema
+-> Specific to a particular technology or database
+-> Perspective of technology
+-> If implementation is in Oracle, Oracle-specific syntax to be used to create internal schema
+-> Internal Level (Storage View)
+        ^
+        |
+Database
+
+
+Three important characteristics of the database approach:
+Installation of program and data
+-> Can independently write program without considering format of data
+
+Supports multiple users views
+
+Data Dictionary a catalogue to store DB description
+
+DATA MODEL -THREE SCHEMA ARCHITECTURE SCHEMA
+What is schema?
+-> Description of a database specified during database design, represented as a schema diagram
+
+Example of a schema diagram:
+Customer
+-> Cust_no
+-> Cust_name
+-> Cust_type
+-> Cust_phone 
+-> Address
+
+Product
+-> Prod_no
+-> Prod_name
+-> Prod_desc
+-> Prod_price
+
+Order
+-> Order_no
+-> Cust_no
+-> Prod_no
+-> Ord_date
+-> Ord_gty
+
+External Schema
+End-user perspective
+-> Data such as account number, branch code, and balance
+
+Conceptual Schema
+Internal Schema
+-> Captures same set of details in a different format
+CREATE TABLE Savings AC Acct_no NUMBER (20), Branch_cd_NUMBER (10), Balance NUMBER (20, 2)
+
+Database
+-> acct no
+TYPE = BYTE (20), OFFSET = 0 
+branch_cd_TYPE = BYTE (10), OFFSET = 20 
+balance TYPE = BYTE (20), OFFSET = 30
+
+DATA MODEL THREE SCHEMA ARCHITECTURE TWO LEVELS OF DATA INDEPENDENCE
+
+Data is inflexible in a file system
+
+Logical Data Independence
+-> Capacity to change conceptual schema without changing external schema
+
+Physical Data Independence
+-> Capacity to change internal schema without changing Conceptual schema
+-> Changing offset without impacting conceptual schema 
+
+
+DATA MODEL - THREE SCHEMA ARCHITECTURE SUMMARY
+Key points discussed in this video:
+
+-> Three layers of database architecture-External View Level, Conceptual Level and Internal Level
+-> Two levels of data independence- Logical Data Independence and Physical Data Independence

@@ -1,0 +1,46 @@
+INTRODUCTION TO DATABASE -> INTRODUCTION
+-> What is data?
+-> What is information?
+-> Why it is important to store data?
+-> How to manage data efficiently to avoid data loss?
+
+INTRODUCTION TO DATABASE -> DEFINITION
+
+Database
+-> Storing the files in database using a particular software
+
+Database system
+-> Computerization
+--> Computerized record-keeping system
+--> Electronic filing cabinet
+--->Stored the files
+
+Database System
+-> Adding new files
+-> Removing data
+-> Inserting data
+-> Modifying data
+-> Retrieving data
+-> Deleting data
+
+INTRODUCTION TO DATABASE ADVANTAGES AND DISADVANTAGES
+
+Advantages
+-> Well organized
+-> Easy to manage
+-> Easy to sort and search
+-> Easy to generate reports
+
+Disadvantages
+-> Need to keep the data secure to avoid any mismanagement
+-> No transaction support
+-> May lead to data redundancy
+-> Need to take regular backups
+-> Difficult to recover from crash
+
+INTRODUCTION TO DATABASE SUMMARY
+Key points discussed in this video:
+-> Data is collection of information organized for easy access, management and maintenance
+-> Database system is a computerized record-keeping system
+-> In database system, data can be well organized
+-> In this type of system, data is insecure and may lead to data redundancy

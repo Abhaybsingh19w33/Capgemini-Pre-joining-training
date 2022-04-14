@@ -1,0 +1,124 @@
+DATA MODELING CONSTRUCTS INTRODUCTION
+Database Design
+-> Database design is the initial phase of the software application development
+
+Advantage of data modeling
+-> Provides diagrammatic representation of data and its relationship among the data
+
+ER Modeling Constructs
+
+Entity
+-> Object in the real world with an independent existence
+-> Can be tangible or intangible
+E.g. customer (tangible); car, acco0unt (intangible)
+
+Entity Type
+-> Collection of entities with same attributes
+E.g. employees of HR dept., telecom subscribers and cars of a particular brand
+
+Entity Instance
+-> Member of the entity type
+E.g. Pupil tree (Instance of Tree)
+
+Entity Relationship
+-> Association between two or more entities
+E.g. car owners (relationship between customers and cars)
+
+Attributes
+-> Description about the entity
+E.g.car model, car manufacturing year, etc.
+
+Types of Attributes
+
+Simple Attribute
+-> Cannot be divided into simpler components of application programs
+E.g. employee number
+
+Composite Attribute
+-> Can be split into multiple components
+E.g. employee name, address, etc.
+
+Single-Valued Attributes
+-> Can take only a single value for each entity instance
+E.g. department name
+
+Multi-Valued Attributes
+-> Can take up many values
+E.g. employee skill set
+
+Stored Attribute
+-> Can be stored permanently
+
+Derived Attribute
+-> Can be calculated based on other attributes
+E.g.age
+
+DATA MODELING CONSTRUCTS -> ER MODELING CONSTRUCTS
+ER modeling is a diagrammatic representation of the database design
+
+Notations
+-> Entity
+--> Rectangle
+
+-> Weak Entity
+--> Double walled rectangle
+
+-> Relationship
+--> Diamond
+
+-> Identifying Relationship
+--> Double walled diamond
+
+-> Attribute
+--> Ellipse
+
+-> Key Attribute
+--> Ellipse with underscore
+
+-> Multi-Valued Attribute
+--> Double ellipses
+
+-> Composite Attributes
+--> Group of attributes
+
+-> Derived Attributes
+--> Dotted Ellipse
+
+Relationships
+How to establish relationship using that R?
+
+-> No entity is independent in any ER model
+
+-> Single connection
+--> Partial participation of E1 in R
+
+-> Double connection
+--> Total participation of E2 in R
+
+Cardinality
+
+1-N
+N-1
+N-N
+
+(Min, Max) - settting limit to cardinality from min to max participation
+
+Types of Entities
+-> Regular
+--> Independent existence
+
+-> Weak
+--> Dependent on regular entity
+
+DATA MODELING CONSTRUCTS -> TYPES OF ENTITIES
+Relationship - set of all associations between the entity types
+
+Relationship instance - each instance of the relationship between members of entity types
+
+2 different types of relationships
+-> Total Participation
+--> All instances need to participate
+
+-> Partial Participation
+--> All instances need not participate
+

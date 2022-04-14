@@ -1,0 +1,52 @@
+NORMALIZATION -> FEATURES OF RDBMS
+
+RDBMS
+-> Programmer needs to take precautions while designing tables
+
+Normalization
+-> Decomposes large, complex tables into smaller, simpler tables
+
+NORMALIZATION -> NORMALIZATION AND NORMAL FORMS
+-> Normalization is performed to refine E-R model
+-> Entity-relationship model diagram explains different entities and relationship between them in the system
+-> Should not include computed fields 
+--> Derived data such as age
+
+NORMALIZATION -> NORMALIZATION AND NORMAL FORMS
+-> First Normal Form (1NF)
+-> Second Normal Form (2NF)
+-> Third Normal Form (3NF)
+-> Higher Normal Form (BCNF, 4NF, 5NF, ...)
+
+NORMALIZATION -> NEED FOR NORMALIZATION
+Why normalization?
+
+Does the design ensure all database operations will be performed efficiently?
+-> Data retrieval
+-> Data searching
+-> Data sorting
+
+Are there any expensive DBMS operations which are avoidable?
+Is the information unnecessarily replicated?
+
+Redundancy and loss of information may arise
+
+Normalization - Decomposes large, complex tables into smaller, Simpler tables
+
+NORMALIZATION -> NEED FOR NORMALIZATION
+Is it possible to insert an item that has not been purchased by the customer?
+
+Can we delete an item purchased by only one Customer?
+May cause loss of information
+
+How many rows need to be updated if there is a change in item detail?
+
+-> Insert, Update, Delete anomalies
+-> Data Duplication
+-> Split the table into different tables to manage each entity properly
+-> All anomalies could be reduced
+
+Key points discussed in this video:
+-> Normalization is the process of decomposing large, complex tables into smaller, simpler ones
+-> Third Normal Form or 3NF is used for most practical purposes
+-> Normalization minimizes redundancy and the effort of checking constraints and dependencies

@@ -1,0 +1,76 @@
+Table of Contents
+1. Why Normalization?
+2. Properties of Normalized Relations
+3. Functional Dependency
+4. First Normal Form
+5. Second Normal Form
+6. Third Normal Form
+7. Summary
+
+Introduction
+-> This module introduces us to the benefits of normalization. It gives the properties of ideal relations after normalization.
+
+Learning Objectives
+-> Upon completion of this module, you will be able to
+--> State the objectives of Normalization
+--> List the properties of normalized relations
+
+1. Why Normalization?
+-> The objective of normalization is to reduce redundancy which means that information is to be stored only once. Storing infornmation several times leads to wastage of storage space, and increase in the total size of the data stored. Relations are normalized to avoid information loss in case of updates or data modification.
+
+-> Normalization removes insert, update and delete anomalies of the database which otherwise lead to data duplication, data loss and/or performance issues.
+
+2. Properties of Normalized Relations
+-> Ideal relations after normalization should have the following properties to arvoid the problems mentioned above.
+--> No data value should be duplicated n different rows unnecessarily.
+--> A value must be specified for every attribute in a row
+--> Each relation should be self-contained. In other words, if a row from a relation is deleted, important information should not be accidentally lost.
+--> When a row is added to a relation, other relations in the database should not be affected.
+--> A value of an attribute in a tuple may be changed independently of other tuples in the relation.
+
+3. Functional Dependency
+-> A functional dependency (FD) is a constraint between two sets of attributes in a relation from a database
+-> A set of attributes X in a relation R is said to functionally determine another atribute Y, also in R, (written X -> Y) if and only if each X value is associated with precisely one Y value.
+-> Functional dependency may also be based ona composite attribute. For example, if we write: X,Z -> Y
+-> It means that there is only one value of Y corresponding to given values of X, Z. Iin other words, Y is hunctionally dependent on the composite X, Z.
+
+Three types of functional dependencies are:
+-> Full functional dependency
+--> A set of attributes X in a relation R is said to fully functionally determine another attribute Y, also in R, (written X -> Y) if and only if each X value is associated with precisely one Y value.
+
+-> Partial functional dependency
+--> Attribute Y is partially dependent on attribute Xif and only if it is dependent on the subset of attribute X.
+
+-> Transitive dependency
+--> X, Y, Z are three attributes, X -> Y, Y -> Z. Hence, X -> Z i.e. Z is transitively dependent on X.
+
+4. First Normal Form
+
+A relation schema is in 1NF, if and only if all attributes in the relation are atomic in nature and there are no repeating elements or groups of elements.
+
+Converting a relation to the 1NF form is the first essential step in normalization. There are successive higher normal forms known as 2NF, 3NF, BNCF, 4NF and 5NF. Each form is an improvement over the earlier form. The higher normalization steps are based on three important concepts:
+
+--> 1. Dependencies among attributes in a relation
+--> 2. Identification of an attribute or a set of attributes as the key of a relation
+--> 3. Multivalued dependency between attributes.
+
+5. Second Normal Form
+
+A relation is said to be in 2NF, if and only if it is in 1NF and there is no partial dependency between non-key attributes and key attrbutes.
+
+6. Third Normal Form
+
+A relation R is said to be in 3NF, if and only if it is in 2NF and there is no transitive dependency between non-key attributes and key attributes through another non-key attribute.
+
+7. Summary
+-> Normalization helps reduce redundancy.
+
+-> It eliminates insert, update and delete anomalies of the database.
+
+-> A functional dependency (FD) is a constraint between two sets of attributes in a relation from a database.
+
+-> A relation schema is in 1NF, if and only if all attrbutes in the relation are atomic in nature and there are no repeating elements or groups of elements.
+
+-> A relation is said to be in 2NF, if and only if it is in 1NF and there is no partial dependency between non-key attributes and key attributes.
+
+-> A relation R is said to be in 3NF if and only if it is in 2NF and there is no transitive dependency betveen non-key attributes and key attributes through another non-key attribute.

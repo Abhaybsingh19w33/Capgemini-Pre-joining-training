@@ -1,0 +1,35 @@
+FUNCTIONAL DEPENDENCIES INTRODUCTION
+
+-> Normalization is the process of decomposing larger data set or a table into smaller components or smaller tables
+
+Normalization rules - 1nF, 2nF, 3nF
+
+What are functional dependencies?
+
+FUNCTIONAL DEPENDENCIES -> DEFINITION
+Functional Dependency 
+-> Functional dependency (FD) is a constraint between two sets of attributes in a relation
+--> Set of attributes
+
+Set of attributes X in a relation R is said to functionally determine another attribute Y, also in R, if and only if each X value is associated with precisely one Y value
+
+Example: X -> Y
+
+FUNCTIONAL DEPENDENCIES -> FD TYPES
+There are three types of functional dependencies
+-> Full Functional Dependency
+-> Partial Functional Dependency
+--> Attribute Y is partially dependent on attribute X if and only if it is dependent on the subset of attribute X
+-> Transitive Dependency
+
+FUNCTIONAL DEPENDENCIES -> SUMMARY
+Key points discussed in this video:
+
+-> Functional dependency is a constraint between two sets of attributes in a relation
+
+-> Set of attributes X in a relation R is said to functionally determine another attribute Y, also in R, if and only if each X value is associated with precisely one Y value
+
+-> Attribute Y is partially dependent on attribute X if and
+only if it is dependent on the subset of attribute X
+
+-> Transitive dependency- If in a relation R, X -> Y and  Y -> Z, then X -> Z

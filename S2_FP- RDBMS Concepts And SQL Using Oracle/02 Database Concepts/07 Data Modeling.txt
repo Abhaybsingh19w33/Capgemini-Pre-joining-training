@@ -1,0 +1,15 @@
+DATA MODELING INTRODUCTION
+
+Database design
+Data format needs to be captured appropriately -> Data Modeling
+
+DATA MODELING DEFINITION
+What is data modeling? 
+-> Process of creating a blueprint for the database of a software application using relevant standards and techniques
+
+Similar to an architect providing various blueprints for a house
+
+Before implementing, database needs to be appropriately designed
+
+Define and analyze data requirements of business processes
+-> Initial stage of database design

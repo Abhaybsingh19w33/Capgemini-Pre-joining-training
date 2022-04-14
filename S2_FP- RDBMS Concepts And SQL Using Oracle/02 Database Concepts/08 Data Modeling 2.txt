@@ -1,0 +1,59 @@
+Table of Contents
+1. Data Modeling for a Database
+2. What is E-R Data Model?
+2.1 Entities
+2.2 Attributes
+2.3 Key
+3. Summary
+
+Introduction
+This module introduces data modelling for a database and the process of ER modelling
+
+Learning Objectives
+Upon completion of this module, you wll be able to:
+-> Explain the data modelling for a database
+-> Discuss the process of ER modelling
+
+1. Data Modelling for a Database
+The data model and function model are parts of the conceptual design process. The data model focuses on what data should be stored in the database while the function model deals with how the data is processed. To put this in the context of the relational database, the data model is used to design the relational tables. The functional model is used to design the queries that will access and perform operations on those tables.
+
+2. What is E-R Data Model?
+The entity-relationship (E-R) data model is based on a perception of real world that consists of a set of basic objects called entities, and relationships among these objects. It was dereloped to facilitate database design by allowing the specification of an enterprise schema, which represents the overall logical structure of a database. The E-R model is extremely useful in mapping and interacting with real-world enterprises onto a conceptual schema. Because of this utility, many database design tools draw on concepts from the E-R model.
+
+2.1 Entities
+Entities are the principal data objects about which information is to be collected, they usually denote a person, place, thing, or event of informational interest. A particular occurrence of an entity is called an entity instance or sometimes an entity ocurrence.
+
+2.2 Attributes
+Attributes are characteristics of entities that provide descriptive details. A particular occurrence of an attribute within an entity or relationship is called an attribute value. Attributes of an entity such as Employee may incude emp id, emp name, emp address, phone no, fax no, job title, and so on. The attribute is connected to the entity it characterizes.
+
+There are two types of attributes: identifiers and descriptors. An identifier (or key) is used to uniquely determine instance of an entity. Also knovwn as key attribute. A descriptor (or non-key attribute) is used to specify a non-unique characteristic of a particular entity instance. Both identifiers and descriptors may consist of either a single attribute or some composite of attributes.
+
+For example, an identifier or key attribute of an Employee is Empld, and a descriptor of an Employee is EmpName or JobTitle. Entities have internal identifiers that uniquely determine the existence of entity instances, but weak entities derive their identity from identifying attributes of one or more parent entities.
+
+Atrribute is a table column. Other commonly used terms for attribute are property and field. The set of permissible values for each attribute is called the domain for that attribute.
+
+2.3 Key
+A key is a single attribute or combination of attributes whose values uniquely identify the tuples of the relation. Each row has a different value for the key attribute(s). The relational model requires that every relation has a key and that.
+
+-> No two tuples (or rows) may have the same key value
+-> Every row must have a value for the key attribute (the key fields have non-null vahues)
+
+One of the main advantages of the relational model is that it is conceptually simple and more importantly, based on the mathematical theory of relation. It also takes care of details of storage structure and access methods. The relational model like all other models consists of three basic components:
+
+-> Set of domains
+-> Set of relations
+-> Integrity rules
+
+3. Summary
+-> Data model focuses on what data should be stored in the database
+-> Data model is used to design the relational tables.
+-> The entity-relationship (E-R) data model is based on a perception of real world that consists of a set of basic objects called entities, and relationships among these objects.
+
+-> The relational model requires that every relation have a key and that:
+--> No two tuples (or rows) may have the same key value
+--> Every row must hare a value for the key attribute (the key fields have non-null vaues)
+
+-> The relational model consists of three basic components:
+--> Set of domains
+--> Set of relations
+--> Integrity nules

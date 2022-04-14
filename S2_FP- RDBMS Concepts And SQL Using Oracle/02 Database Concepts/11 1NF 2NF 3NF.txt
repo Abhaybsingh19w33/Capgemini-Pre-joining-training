@@ -1,0 +1,61 @@
+1NF, 2NF, 3NF INTRODUCTION
+
+Database design
+-> ER model
+--> Process of converting requirements of end Customers into equivalent database design
+---> Implement database ->  not final Database
+
+Apply Normalization
+-> 1NF, 2NF, 3NF, 4NF, BCNF
+
+1NF, 2NF, 3NF -> INTRODUCTION
+
+Types of Normal Form
+-> First Normal Form (1NF)
+-> Second Normal Form (2NF)
+-> Third Normal Form (3NF)
+
+What is first normal form or 1NF?
+-> A relation schema is in 1NF, if and only if,
+-> All attributes in the relation are atomic in nature and there are no repeating elements or groups of elements
+
+Cannot split the attribute further
+-> Employee name
+-> Employee's department name
+-> ID of the department
+
+--> Address is a combination of multiple attributes hence not atomic
+
+2NF : 
+A relation is said to be in 2NF, if and only if,
+-> It is in 1NF
+-> No partial dependency exists between non-key attributes and key attributes
+
+Partial dependency: When two attributes decide another attribute and a subset of this attribute also decides another attribute
+
+3NF
+A relation R is said to be in 3NF, if and only if,
+-> It is in 2NF
+-> No transitive dependency exists between non-key attributes and key attributes through another non-key atribute
+
+-> When decomposing relationships to eliminate redundancy, bring them into higher normal forms
+-> Do not lose original relationship information
+-> Keep the keys in both tables to avoid information loss
+
+Pros
+-> Based on mathematical foundation
+-> Removes redundancy to a large extent
+-> After 3NF, data redundancy is minimized to the extent of foreign keys
+-> Removes anomalies present in INSERTS, UPDATES and DELETEs
+
+Cons
+-> Data retrieval or SELECT operation performance will be Severely affected
+-> May not always represent real World scenarios
+
+Key points discussed in this video:
+-> In 1NF, domain of each attribute contains only atomic values, and value of each attribute contains only a single value from that domain
+-> In 2NF, no non-prime attribute in the table is functionally dependent on a proper subset of any candidate key
+-> In 3NF, every non-prime attribute is non-transitively dependent on every candidate key in the table
+-> Normalization is based on mathematical foundation and removes redundancy to a large extent
+-> Complex queries may become slower because joins have to be performed to retrieve relevant data from several normalized tables
+

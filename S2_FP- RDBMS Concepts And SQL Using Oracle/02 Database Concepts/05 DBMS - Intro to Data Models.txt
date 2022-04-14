@@ -1,0 +1,52 @@
+DATABASE MANAGEMENT SYSTEM (DBMS) INTRODUCTION
+What is data?
+What is information?
+What is database?
+What is database system?
+
+Database system is a Computerized record-keeping system
+
+A simple database system does not have sophisticated software functionality
+
+DATABASE MANAGEMENT SYSTEM (DBMS) DEFINITION
+Set of software programs that control the organization, storage, management, and retrieval of data in a database
+
+DATABASE MANAGEMENT SYSTEM (DBMS) > DBMS FUNCTIONS
+-> Data management
+
+-> Data definition
+--> Storing customer related data in a format
+
+-> Transaction Support
+--> A logical set of activities
+
+-> Concurrency Control
+--> Multiple users can access data at the same time - Railway Ticket Reservation System
+--> Throughput of the system is increased
+--> If concurrency is not controlled, it could lead to data loss
+
+-> Recovery mechanism
+--> On a simple database, if there is a system crash, data recovery is not possible
+--> DBMS provides functions to recover data
+--> Data needs to be secure and integrity of data should be maintained
+--> Same data should be reflected everywhere
+--> For example, the same student's name should appear everywhere for the corresponding student ID
+
+-> Security and Integrity
+-> DBMS utilities
+--> DBMS provides different utilities to export and import data in different formats
+
+
+DATABASE MANAGEMENT SYSTEM (DBMS) BENEFITS OF DBMS
+-> Enhanced security mechanism
+-> Reduced data redundancy
+-> Data independence
+-> Sharing data across applications
+-> Better flexibility
+-> Enforce integrity Constraints
+-> Backup and recovery features
+-> Better transaction Support
+-> Enforce standards
+
+DATABASE MANAGEMENT SYSTEM (DBMS) SUMMARY
+-> DBMS is a set of software programs that control the organization, storage, management, and retrieval of data in a database

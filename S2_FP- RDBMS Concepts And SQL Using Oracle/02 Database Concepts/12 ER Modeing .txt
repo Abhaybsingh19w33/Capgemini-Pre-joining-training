@@ -1,0 +1,54 @@
+E-R MODELING STEPS -> INTRODUCTION
+Database Design
+-> E-R Modeling
+--> Used to define and capture relationship between two entities
+
+E-R MODELING STEPS DEGREE OF RELATIONSHIP
+Unary relationship
+-> One entity is related to another entity
+
+Binary relationship
+-> Two entities are related to another entity
+
+Ternary relationship
+
+Relationship may also have attributes
+
+E-R MODELING STEPS STEPS IN E-R MODELING
+-> Identify entities (typically nouns in the requirement statements)
+-> Find relationships (typically verbs)
+-> Identify key attributes for every entity
+-> Identify other relevant attributes
+-> Draw complete E-R diagram with all attributes including primary key
+-> Review your results with the end-users
+-> Refine it further, if required
+
+Converting strong entity types
+-> Each entity type becomes a table
+-> Each single-valued attribute becomes a column
+-> Derived attributes are ignored
+-> Composite attributes are represented by its equivalent parts
+-> Multi-valued attributes are represented by a separate table
+
+E-R MODELING STEPS -> PROS AND CONS OF E-R MODELING
+Advantages/Pros of E-R Modeling
+
+-> Is intuitive and helps in physical database creation
+-> Is diagram-oriented
+-> Is easy to understand for business users
+-> Can be generalized and specialized, based on business needs
+-> Can help in database design
+-> Gives a higher level description of the system
+-> Helps clear ambiguities in the requirements
+
+Cons of E-R Modeling
+-> Physical design derived from E-R model may have some ambiguities or inconsistencies
+-> Diagrams may lead to misinterpretations
+
+E-R MODELING STEPS -> SUMMARY
+Key points discussed in this video:
+
+-> Degrees of relationship are Unary, Binary, and Ternary
+-> Steps involved in E-R model - identify entities, find relationships, identify key attributes, identify relevant attributes, draw E-R diagram with primary key, review results with end users, and refine if required
+-> Pros- understandable, intuitive, generalized, specialized, helps clear ambiguities, gives higher level description of system
+-> Cons- may lead to inconsistency, misinterpretations in physical design

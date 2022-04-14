@@ -1,0 +1,27 @@
+DATA AND FILE SYSTEM -> DISADVANTAGES OF FILE SYSTEM
+
+-> Security of data
+--> Multiple users can inadvertently make changes to data
+
+-> Data redundancy
+--> Information of a single customer must not be duplicated in case of multiple accounts
+
+-> Ensuring isolation
+--> Transactions done in savings accounts need to be done separately in isolation to ensure that there is no mix up of data between multiple transactions and accounts
+
+-> Program/data dependence
+--> Data should be in a particular format so that it can be processed by program at any time
+
+-> Inflexibility of data formats
+--> Format of data is fixed and it cannot be updated to the existing requirement
+
+-> Access issues
+--> Multiple users cannot access the data simultaneously
+
+DATA AND FILE SYSTEM -> SUMMARY
+
+Key points discussed in this video:
+
+-> Data is a fact or a collection of facts from which conclusions may be drawn
+-> Data might get lost if it is not managed properly
+-> While managing data in file system, it is not Secure and there is lot of data redundancy
