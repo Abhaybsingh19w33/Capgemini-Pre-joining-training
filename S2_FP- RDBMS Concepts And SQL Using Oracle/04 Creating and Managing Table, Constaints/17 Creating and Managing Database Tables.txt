@@ -1,0 +1,171 @@
+Creating and Managing Database Tables
+
+Table of Contents
+1. Data Definition Language (DDL) Statements
+2. Constraints
+3. Application of DDL Statements
+4. Summary
+
+Introduction
+-> This module introduces the usage of Data Definition Language (DDL) statements and constraints in SQL to create and manage database tables.
+
+Learning Objectives
+-> Upon completion of this module, you wll be able to:
+-> Use Data Definition Language (DDL) statements and constrairnts in SQL to create and manage database tables
+
+1. Data Definition Language (DDL) Statements
+Data Definition Language (DDL) statements are used to define the database structure or schema.
+
+The following table lists DDL commands and their functions:
+
+CREATE -> To create objects in the database
+ALTER -> To alter the structure of existing objects
+DROP -> To delete or remove objects from the database
+TRUNCATE -> To remove all records from a table
+COMMENT -> To add comments to the data dictionary
+RENAME -> To rename an object in the database
+
+
+2. Constraints
+Constraints are used to enforce business rules in the database and to specify relationships between tables. Integrity constraints control the entry of data into the database.
+
+The following table lists the types of integrity constraints that can be defined on a table:
+
+Integrity Constraint
+NOT NULL* -> Prevents entry of NULL values into the column
+CHECK -> Enforces certain values into the column
+UNIQUE -> Ensures non-duplicate or distinct values in a column Column which has UNIQUE constraint can contain NULL value
+PRIMARY KEY -> Ensures non-duplicate values in a column. Column which has PRIMARY KEY constraint cannot contain NULL value PRIMARY KEY can be created on a composite key. A table can have only one PRIMARY KEY
+FOREIGN KEY -> Used to relate two or more tables A FOREIGN KEY defined on a table refers to the PRIMARY KEY OR UNIQUE KEY of another table
+
+* All constraints except NOT NULL can be applied on multiple columns. NOT NULL can only be applied on a single column
+
+3. Application of DDL Statements
+
+CREATE
+
+-> CREATE TABLE statement creates a database table.
+
+The following CREATE TABLE statement creates dept and emp tables:
+
+CREATE TABLE dept(
+deptno      number (2, 0),
+dname       varchar2 (20),
+loc         varchar2 (20),
+    CONSTRATNT pk_dept PRIMARY KEY (deptno)
+);
+
+CREATE TABLE emp (
+empno       number (4,0),
+ename       varchar2 (20) NOT NULL,
+job         varchar2 (9),
+mgr         number (4,0),
+hiredate    date,
+sal         numder (7,2),
+comm        number (7,2),
+deptno      number (2,0),
+    CONSTRATNT pk_emp PRIMARY KEY (empno),
+    CONSTRAINT fk_deptno FOREIGN KEY (deptno) REFERENCES dept (deptno),
+    CONSTRAINT chk_sal CHECK (sal> 0),
+);
+
+DESCRIBE <Table name> command is used to list all columns of a table and their data types.
+
+CREATE TABLE AS statement can be used to create copies of a table.
+
+If we need to create a copy of emp table as emp_bak, the following statement can be used.
+
+-> CREATE TABLE emp_bak AS SELECT * FROM EMP;
+
+Note that the above statement copies all the existing records from the emp table to emp_bak table.
+
+To copy tables without rows, i.e. to just copy the structure of a table, the following statement can be used:
+
+-> CREATE TABLE emp_bak AS SELECT *  FROM EMP WHERE 1=2;
+
+Note that when a table is created using CREATE TABLE statement, only the NOT NULL constraints are copied to the new table.
+
+ALTER
+
+ALTER TABLE statement alters the structure of a table.
+
+The following statement can be used to add new columns city and pin to emp table:
+
+ALTER TABLE emp ADD (
+    city    varchar2 (20),
+    pin     varchar2 (10)
+);
+
+The following statement can be used to increase the length of the column ename to VARCHAR2(30):
+
+-> ALTER TABLE empMODIFY (ename varchar2 (30)):
+
+Note that column width can be decreased up to the width of the largest value it holds.
+
+To change the datatype, all rows of the colhumn must be empty.
+
+The following command drops the columns pin and city from emp table.
+
+-> ALTER TABLE empDROP (pin, city) :
+
+Note that if the table has only one column, it carnnot be dropped.
+
+CASCADE CONSTRAINT clause has to be used if the column that is being dropped has a primary key constraint on it which is referred to in other tables.
+
+The following statement to drop deptno column from dept table has to use CASCADE CONSTRAINT clause, since deptno column in dept table is a primary key which is referred to in emp table:
+
+-> ALTER TABLE dept DROP (deptno) CASCADE CONSTRAINTS;
+
+RENAME
+
+RENAME statement is used to rename database objects
+
+The following command renames table emp_bak to emp_backup.
+
+->  RENAME emp_bak To emp_backup;
+
+DROP
+
+DROP statement is used to drop database objects.
+
+The following command drops table dept:
+
+-> DROP TABLE emp_backup;
+
+If dept table has a primary key constraint to which other tables refer to, then in order to DROP the table, referential integrity constraint has to be dropped first.
+
+To drop table by dropping the referential constraints, the following command can be used:
+
+-> DROP TABLE dept CASCADE CONSTRAINTS;
+
+TRUNCATE
+
+TRUNCATE statement deletes all the rows from a table permanently.
+
+Truncate does not generate any rollback data hence, it cannot be rolled back.
+
+-> TRUNCATE TABLE emp;
+
+COMMENT
+
+COMMENT statement is used to include comments on a table or a column.
+
+-> COMMENT ON TABLE emp
+IS 'This is a table consisting of employee records';
+
+-> COMMENT ON COLUMN emp.ename
+IS 'This column contains both first and last names';
+
+Use the following statements to view the comments on a table or column:
+
+SELECT comments
+FROM user_tab_coments
+WHERE table_name = 'EMP';
+
+SELECT comments
+FROM user_col_comments
+WHERE table_name = 'EMP'
+AND column_name = 'ENAME';
+
+4. Summary
+-> Data Definition Language (DDL) statements and constraints are used to define the database structure or schema.

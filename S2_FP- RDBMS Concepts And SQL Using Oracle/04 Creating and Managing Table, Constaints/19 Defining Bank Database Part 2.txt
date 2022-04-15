@@ -1,0 +1,22 @@
+FOREIGN KEY AND PRIMARY KEY CONSTRAINTS -> LOAN ACCOUNT TABLE
+                    Loan Account        
+
+Column Name         Data Type       Constraints
+Loan Account No.    number(18)      Primary key of the table
+Customer Id         Number(8)       Can take only those values wnich are present in the Customer Id of the Savings Account table
+Loan Amount         Number (20, 2)
+Loan Term           Number(2)       In months
+Loan interest type  Character(1)    Loan Interest Type: 'F' for Fixed or 'V' for variable
+
+CREATE TABLE Loan_Account (
+    Loan_AccNo NUMBER(18) PRIMARY KEY,
+    Cust_Id NUMBER(5) CONSTRAINT CustID_PKey REFERENCES Savings_Account (Cust_Id),
+    Loan_Amount NUMBER(18,2),
+    Loan_Term NUMBER(2),
+    Loan_Int_Type CHAR (1) CONSTRAINT Chkcons CHECK (Loan_Int_Type = 'F' OR Loan_Int_Type = 'V')
+);
+
+INSERT INTO Savings_Account VALUES (1000, 'FFFF', 'LLLLL', 2000001, 'ABC10', 'fff@ggg.com', 342424, 102342);
+
+INSERT INTO Loan_Account  VALUES (100001, 1000, 500000, 60, 'F');
+

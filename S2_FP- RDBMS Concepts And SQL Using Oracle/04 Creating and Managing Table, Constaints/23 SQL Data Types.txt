@@ -1,0 +1,35 @@
+SQL DATA TYPES -> INTRODUCTION
+Primitive Data Type
+-> Number
+-> Char
+-> Varchar2
+-> Long
+-> Date
+-> Timestamp
+
+
+SQL DATA TYPES -> SQL DATA TYPES
+
+Number
+-> Stores fixed and floating-point numbers.
+-> Number(20,5): Floating point number with scale 20 digits and precision 5 digits
+
+Char
+-> Stores fixed-length character strings
+-> Char(10) - Character of 10 Bytes. Default is 1
+
+Varchar2
+-> Stores variable-length character strings
+-> Varchar2(20)- Maximum String length is 20
+
+Long
+-> Columns defined as LONG can store variable-length character data containing up to 2 gigabytes of information
+
+Date
+-> Stores point-in-time values (dates and times) in a table.
+-> DATE datatype stores the year (including the century), the month, the day, the hours, the minutes, and the seconds (after midnight)
+
+Timestamp T(fractional_seconds)]
+-> Year, month, and day values of date, as well as hour, minute, and second values of time
+-> The fractional_seconds_precision is the number of digits in the fractional part of the SECOND datetime field
+

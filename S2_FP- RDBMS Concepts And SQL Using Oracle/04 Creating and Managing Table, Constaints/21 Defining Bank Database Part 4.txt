@@ -1,0 +1,19 @@
+IMPLEMENTATION OF CHECK CONSTRAINTS -> FIXED DEPOSIT ACCCOUNT TABLE
+                    Fixed Deposit Account
+Column Name         Data Type           Constraints
+FD AccOunt No.      Number(14)          Primary key
+Customer Id         Number(8)           Can take only those values which are present in tne customer ld or the Savings Account table
+FD Amount           Number(20, 2)
+Interest Rate       Number(5, 2)        Can take values only between 2.5 to 12.0
+
+CREATE TABLE FD_Account (
+    FD_Acc_No NUMBER(14) CONSTRAINT FD_PKey PRIMARY KEY,
+    Cust_Id NUMBER(8) CONSTRAINT FD_FKey REFERENCES Savings_Account (Cust_Id),
+    FD_Amount NUMBER (20,2),
+    Interest_Rate NUMBER (5,2) CONSTRAINT Int_Check CHECK (Interest_Rate >=2.5 AND Interest_Rate <= 12.0)
+);
+
+INSERT INTO FD_Account 
+VALUES (50001, 1000, 34444, 10);
+
+Select * from FD_Account;

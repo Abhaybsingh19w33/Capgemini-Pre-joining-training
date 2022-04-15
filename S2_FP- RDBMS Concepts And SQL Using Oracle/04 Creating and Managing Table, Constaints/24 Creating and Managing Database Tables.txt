@@ -1,0 +1,98 @@
+CREATING AND MANAGING DATABASE TABLES -> INTRODUCTION
+-> Create the ER model
+-> Convert the ER model into equivalent physical schema and create tables
+
+How to create the tables?
+-> Data definition language
+
+CREATING AND MANAGING DATABASE TABLES ->  DDL STATEMENTS
+
+CREATE
+-> Creates the specified object
+-> Objects in Oracle are table, view, index, sequence etc.
+
+ALTER
+-> Changes the specifications, attributes and other characteristics of an object after it has been created
+-> ALTER table, ALTER View, ALTER index etc.
+
+TRUNCATE
+-> Can be specified for a table or a cluster
+-> Erases all records or rows from the object while retaining its original structure
+-> Cannot undo this operation
+-> Removes the table completely from the database
+
+COMMENT
+-> Used in documentation
+-> Used to insert some text description about the object
+
+RENAME
+-> Changes the name of objects like table, view etc.
+
+Impact created by the DDL statement is high
+-> Many database applications and other systems may depend upon the database
+
+All DDL statements cause an implicit commit
+Example:
+Once the administratorS update or delete a file in a database, the administrators can create the DML which gets implicitly committed
+
+Only database administrators (DBA) and users with such privileges can issue DDL statements in the database environment
+
+Developers
+-> Do not issue any DDL statement
+-> Focus mainly on the DML
+-> Interested in storing the data and retrieving the data
+
+CREATING AND MANAGING DATABASE TABLES -> FLASHBACK TABLE
+Flashback Table
+-> Flashback is the ability to recover a table to a specified point in time or SCN
+
+System Change Number (SCN)
+-> Stamp that defines a Committed version of a database at a point in time
+
+-> Oracle assigns every committed transaction a unique SCN
+
+Flashback 
+-> Changes are made to a table
+-> Need to visit the previous versions of the table
+
+Flashback Table
+-> Reduces the effort for point-in-time recovery operations and is faster than backup and recovery mechanism
+
+-> Flashback table is much faster
+-> Restores the table while automatically maintaining the associated attributes such as indexes, triggers and constraints
+
+-> Restores the table back to its past state as per
+the SCN or time specified
+
+-> FLASHBACK TABLE SQL statement is used with a target time or SCN to flashback the Table
+
+Flashback Table
+-> To restore Books_Hist table to a year back:
+FLASHBACK TABLE books_hist
+TO TIMESTAMP (SYSTIMESTAMP - INTERVAL '1' YEAR);
+
+Book on January 1st, 2015 -> Book on January 1st, 2014
+
+-> Restore it to the previous version
+
+-> Accidentally dropped book can be rescued using FLASHBACK TABLE
+
+
+To retrieve Books table that was dropped accidentally
+FLASHBACK TABLE Books TO BEFORE DROP;
+
+Use RENAME clause to rename retrieved table if Books table already exists:
+FLASHBACK TABLE Books TO BEFORE DROP RENAME TO Books_old;
+
+For FLASHBACK to work, ROW MOVEMENT must be enabled on the table:
+ALTER TABLE Books ENABLE ROW MOVEMENT;
+
+
+CREATING AND MANAGING DATABASE TABLES -> SUMMARY
+
+Key points discussed in this video:
+
+-> CREATE statement creates the specified object
+-> ALTER statement is used to modify structure of an object
+-> DROP statement removes the object from the database completely
+-> FLASHBACK SQL restores the table to a specified point in time or System Change Number (SCN)

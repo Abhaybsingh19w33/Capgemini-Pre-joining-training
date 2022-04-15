@@ -1,0 +1,31 @@
+IMPLEMENTATION OF SELF REFERENCING FOREIGN KEY -> BANK EMPLOYEE DETAILS
+
+                    Bank Employee Details
+
+Column Name         Data Type       Constraints
+Employee No.        Number(6)       Primary key of the table
+First Name          Varchar2(20)    Not Null
+Last Name           Varchar2(20)    Not Null
+Email Id            Varchar2(30)    Unique
+Department No.      Number(2)       Default 10 (Say 'TRAINING')
+Manager Employee No.Number(6)       Can take only those values wnich are present in Employee No. column
+
+CREATE TABLE Bank_Employee (
+    Employee_No NUMBER(6) PRIMARY KEY,
+    First_Name VARCHAR2 (20),
+    Last_Name VARCHAR2 (20),
+    Email_Id VARCHAR2 (30),
+    Dept_No NUMBER (2) DEFAULT 10,
+    Manager_Emp_No NUMBER(6) CONSTRAINT Manager_FKey     REFERENCES Bank_Employee (Employee_No)
+);
+
+INSERT INTO Bank_Employee (Employee_No, First_Name, Last_Name, Email_Id, Manager_Emp_No)
+VALUES (1001, 'John', NULL, 'john@abc.com', NULL);
+
+INSERT INTO Bank_Employee (Employee_No, First_Name, Last_Name, Email_Id, Manager_Emp_No)
+VALUES (1002, 'Jane', 'David', 'jane@abc.com',NULL);
+
+Select * from Bank_Employee;
+
+INSERT INTO Bank_Employee (Employee_No, First_Name, Last_Name, Email_Id, Manager_Emp_No)
+VALUES (1003, 'Jany', 'David', 'jany@abc.com', 1001);

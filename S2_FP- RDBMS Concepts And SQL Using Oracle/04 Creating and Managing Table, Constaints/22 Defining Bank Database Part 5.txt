@@ -1,0 +1,27 @@
+IMPLEMENTATION OF SELF REFERENCING FOREIGN KEY -> TRANSACTION TABLE
+
+                    Transaction Table
+Column Name         Data Type           Constraints
+Customer ID         Number(8)           Can take only those values which are present in the Customer Id of the Savings Account table
+Transaction Date    Date                Customer Id and Transaction Date together forms the Primary Key of the table.
+Transaction Type    Varchar2(2)         'CR' or 'DB'
+Transaction Amount  Number(20,2)
+Available Balance   Number(24,2)
+
+There is 2 Primary for this table Customer Id , Transaction Date
+
+CREATE TABLE Transaction_Table (
+    Cust_Id NUMBER(8)
+        CONSTRAINT CustTran_Fkey
+        REFERENCES Savings_Account (Cust_Id) ON DELETE SET NULL,
+    Acct_No NUMBER(14),
+    Txn_Date TIMESTAMP(6),
+    TXn_Type VARCHAR2(2) CHECK (txn_type = 'CR' OR txn_type = 'DB'),
+    Txn_Amt NUMBER(20, 2),
+    Available_Bal NUMBER (24, 2), CONSTRAINT Txn_PKey PRIMARY KEY (Acct_No, Txn_Date)
+);
+
+INSERT INTO Transaction_Table
+VALUES (1000, 2000001, SYSDATE ,'CR', 3333, 10000);
+
+SELECT * FROM Transaction_Table;

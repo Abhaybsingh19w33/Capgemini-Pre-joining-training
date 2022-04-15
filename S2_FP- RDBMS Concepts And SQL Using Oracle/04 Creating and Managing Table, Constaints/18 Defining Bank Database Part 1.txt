@@ -1,0 +1,61 @@
+DEFINING BANK DATABASE -> INTRODUCTION
+
+Database
+
+-> Logical design
+
+--> Physical design
+---> Different scripts for table creation
+---> Constraints
+---> Other relationships
+
+----> Implementation into desired platform
+
+ER Diagram  -- Basis for creation --> Database
+-> Different entities and relationships among them
+
+-> Conversion of relationship into different tables
+-> Conversion of entities into different columns
+
+DEFINING BANK DATABASE -> DDL STATEMENTS
+TRUNCATE
+-> Erases the whole table and the data but the structure remains the same
+
+ALTER
+-> Changes the structure of the table -
+--> Add the column
+--> Drop the column
+--> Change the column size
+
+DROP
+-> Completely removes the table from the database
+
+Used to create different types of Oracle objects like views and indexes etc.
+
+DEFINING BANK DATABASE -> EXAMPLES
+
+Savings Account
+
+Column Name         Data Type       Constraints
+Customer id         Number(8)       Primary key of the table
+First Name          Varchar2(20)    Not Null column
+Last Name           Varchar2(20)    optional
+Account No.         Number(18)      Not Null, Unique column
+Branch Code         Varchar2(10)    Not Null column
+Email id            Varchar2(30)    Unique column
+Phone No.           Varchar2(20)    Optional
+Current Balance     Number(20, 2)   Current Balance - Not Null
+
+
+CREATE TABLE Savings_Account (
+    Cust_Id NUMBER(8) CONSTRAINT Cust_Pkey PRIMARY KEY,
+    Cust_Fname VARCHAR2(20) NOT NULL,
+    Cust_LName VARCHAR2(20),
+    Account_No  NUMBER(18) NOT NULL CONSTRAINT Cust_Acc_Unq UNIQUE,
+    Branch_Code VARCHAR2(10) NOT NULL,
+    Cust_Email VARCHAR2(30) CONSTRAINT CustEmail_Unq UNIQUE,
+    Cust_Phone_No VARCHAR2(20),
+    Curr_Balance NUMBER(20,2) NOT NULL
+);
+
+Select * from user_constraints where table_name = 'Savings_Account';
