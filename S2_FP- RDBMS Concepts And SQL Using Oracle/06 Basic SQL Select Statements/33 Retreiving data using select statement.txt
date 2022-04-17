@@ -1,0 +1,13 @@
+The Select clause uses an ORDER BY statement
+
+ORDER BY Syntax:
+
+SELECT <column_name(s)>
+FROM <table_name>
+[WHERE <condition(s)> ORDER BY <column-name(s)>
+[ASC | DESC]
+
+Allows to specify one column with multiple columns
+
+ASC stands for ascending
+DESC stands for descending

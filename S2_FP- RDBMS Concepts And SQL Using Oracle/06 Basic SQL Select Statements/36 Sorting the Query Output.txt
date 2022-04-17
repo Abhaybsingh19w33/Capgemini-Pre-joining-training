@@ -1,0 +1,57 @@
+Table of Contents
+1. Sorting Rows
+2. Summary
+
+Introduction
+-> This module introduces us to usage of ORDER BY cdause in SQL queries.
+
+Learning Objectives
+Upon completion of this module, you wil be able to:
+-> Use ORDER BY clause to sort the rows returned by SELECT statement
+
+1. Sorting Rows
+Rows returned by SELECT statement may not be in any specific order. ORDER BY clause is used to return rows in a specific order of the column specified. If the ORDER BY clause is used, the rows are by default returned in ascending order. If it is used along with keyword DESC, the rows are returned in descending order. Rows are retuned in ascending order by using the keyword ASC explicitly in the ORDER BY clause. ORDER BY clause is used after the FROM clause and WHERE clause in the SELECT statement.
+
+Following query is sorted on commission_pct in descending order:
+
+SELECT frst_name, salary, commission_pct
+FROM employees
+WEERE job_id = 'SA_REP'
+ORDER BY commission_pct DESC;
+
+PIRST_NAME      SALARY      COMISSION PCT
+Allan           9000        0.35
+Patrick         9500        0.35
+Janette         10000       0.35
+Lindsey         8000        0.3
+Ellen           11000       0.3
+
+If multiple column names are specified in the ORDER BY clause, resulting rows will be sorted by the first column specified in the ORDER BY clause, then the second column and so on.
+
+Column not appearing in SELECT can still be used in the ORDER BY clause.
+
+Output of the following query will be sorted on descending order of department_id first and then salary. Note that the salary under the same department is sorted in ascending order.
+
+SELECT employee_id, first_name, department_id, salary
+FROM employees
+WHERE commission_pct IS NOT NULL
+ORDER BY department_id DESC, salary;
+
+EMPLOYEE_ID     FIRST_NAME      DEPARTMENT_ID   SALARY
+178             Kimberely                       7000
+173             Sundita         80              6100
+167             Amit            80              6200
+
+If the data in the column speciñied in ORDER BY clause contains NULL values, the row containing the NULL will appear at the top of the result set when sorted in descending order.
+
+Same query above can specify the position of the column in the SELECT clause for ORDER BY.
+
+SELECT employee_id, first_name, department_id, salary
+FROM employees
+WHERE commission_pct IS NOT NULL
+ORDER BY 3 DESC, 2;
+
+2. Summary
+Here are the key takeaways
+-> Rows returned by SELECT statement can be restricted by using the WHERE clause.
+-> ORDER BY clause is used to return rows in a specific order of the column specitied

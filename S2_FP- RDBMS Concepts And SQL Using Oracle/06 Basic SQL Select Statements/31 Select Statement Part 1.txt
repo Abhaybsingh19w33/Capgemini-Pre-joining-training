@@ -1,0 +1,127 @@
+
+SELECT STATEMENT -> SYNTAX
+Used to select data froma table based on prescribed conditions
+
+Syntax
+
+Mandatory
+SELECT <column name(s)>
+FROM <lable name(s)>
+
+Optional
+
+[WHERE <condition(s)>
+[GROUP BY <attribute(s)>
+[HAVING <group restriction> ]]]
+
+[ORDER BY <attribute(s)>]
+
+
+Limiting the rows retrieved by a query
+
+The WHERE clause extracts rows that fulfill a specified condition
+
+Syntax
+SELECT <column name/s>
+FROM <table name/s>
+WHERE <column_name> <operator> <value>
+
+
+WHERE clause
+Get all books whose cost is more than 200
+SELECT book_id, book_title, isbn
+FROM Books
+WHERE book_cost > 200;
+
+Character value should be enclosed in ''. Text enclosed within single quotes is case sensitive
+
+Numeric value should not be enclosed in ''.
+
+Retrieving rows using NULL
+SELECT book_type
+FROM Books
+WHERE book_discount IS NULL;
+
+IS NOT SAME AS
+
+SELECT book_type
+FROM Books
+WHERE book_discount = NULL;
+
+NULL is not a value it is an indicator
+
+AND Operator
+Selects a row, if both the conditions are true
+
+SELECT cust_id, cust_fname, cust_email, cust_city
+FROM Book_Customer
+WHERE cust_lname = 'Tiwari' AND cust_city = 'Bangalore';
+
+OR Operator
+Selects a row, if any condition is true
+
+SELECT cust_id, cust_fname, cust_email, cust_city
+FROM Book_Customer
+WHERE cust_lname = 'Tiwari' OR cust_city = 'Bangalore';
+
+AND has higher precedence over OR
+Grouping of ORs needs to be done using ()s
+
+SELECT book_id, book_title, book type, publ_date
+FROM Books
+WHERE publ_id = 1
+AND book_type = 'PR'
+OR book_type = 'DB';
+
+Returns details of Programming books published by publisher 1 or Database Books
+
+SELECT book_id, book_title, book type, publ_date
+FROM Books
+WHERE publ_id = 1
+AND ( book_type = 'PR'
+OR book_type = 'DB' );
+
+Returns details of Programming or Database books which are published by publisher 1
+
+BETWEEN clause
+-> Used to find values within a range
+-> Includes values at both ends for comparison
+
+SELECT book_id, book_cost
+FROM Books
+WHERE book_cost BETWEEN 100 AND 300;
+
+Using >= and <=
+
+SELECT book_id, book_cost
+FROM Books
+WHERE book_cost>= 100 AND book_cost <= 300;
+
+LIKE clause
+-> Used in the WHERE dlause to search for a specified pattern in a column
+-> Wildcards are used to form a pattern
+-> % Substitute for zero or more characters
+-> _ Substitute for exactly one character
+
+Syntax:
+SELECT <col_names>
+FROM <table_name>
+WHERE <column_name>
+LIKE pattern
+
+Examples: Get all 'Programming' related books
+
+SELECT book_title
+FROM Books
+WHERE book_title LIKE '%Programming%';
+
+'%Programming%' is not same as '%programming%' Text inside '' is case sensitive.
+
+DISTINCT clause : Removes duplicates and returns distinct values
+
+Examples: Get all customer details residing in city
+'Bengaluru' or 'Mangaluru'
+
+SELECT cust_fname, cust_lname, cust_city
+FROM Book_Customer
+WHERE cust_city LIKE '_angaluru';

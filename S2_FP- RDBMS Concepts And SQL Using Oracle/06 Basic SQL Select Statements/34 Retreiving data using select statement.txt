@@ -1,0 +1,163 @@
+Table of Contents
+1. Retrieving Rows
+2. Restricting Rows
+3. Operator
+3.1 Comparison operators
+3.2 Logical Operators
+4. Summary
+
+Introduction
+-> This module introduces us to usage of SELECT clause, WHERE clause and various
+operators.
+
+Learning Objectives
+Upon completion of this module, you will be able to
+-> Use SELECT clause to retrieve rows from the tables
+-> Use WHERE clause to restrict rows in the SELECT statement
+-> Use various operators
+
+1. Retrieving Rows
+SELECT statement is used to retrierve rows from the table that is stored in the database.
+All the columns in the table can be displayed in the SELECT statement by using a notation (*). By specifyinga paticular cohumn names in the SELECT statement, only required columns in a table can be displayed. Cohumn alias can also be specified next the column name.
+
+Following query returms all the rows and all the columns from employees table.
+
+SELECT * FROM employees;
+
+Following query returns all the rows and few specific columns from employees table.
+
+This query also makes use of column alias Full_name while using concatenation operation on first_name and last_name.
+
+SELECT employee_id, first_name ||' '|| last_name AS Ful1_name, hire date, job_id, salary FROM employees;
+
+Using DISTINCT in the SELECT statement results in displaying unique rows from the table.
+
+Note that if there are any records with department_id column value as NULL in the employees table, following query will also display a row with NULL.
+
+SELECT distinct department_id FROM employees;
+
+Uniqueness is enforced against the entire row and not the specific column that follows DISTINCT keyword.
+
+The result set of the following query will display uniqueness considering both the columns that are specified: Sample output is shown below:
+
+SELECT DISTINCT department_id, job_id FROM employees:
+
+DEPARTMENT_ID   JOB_ID
+10              AD_ASST
+20              MK_MAN
+30              MK_REP
+
+2. Restricting Rows
+Rows returmed by SELECT statement can be restricted by using the WHERE clause.
+
+Following query returns the rovws in employees table working in a specified department.
+
+SELECT first_name, department_ id, salary
+FROM employees
+WHERE department_id=30;
+
+The query thus returns only those rows that satisies the logical condition in the WHERE clause.
+
+3.Operators
+
+Various operators like =, >= , <= , <> , < , > ,IN, ANY, ALL, AND, OR, NOT, BETWEEN, EXISTS, IS NULL, IS NOT NULL, LIKE can be used in the WHERE clause 9.1
+
+3.1 Comparison operators
+
+Comparison operators like =, >= , <= , <> , < , > , IN, ANY, ALL are evaluated during the query execution and only those rows are returned for which the expression returns a Boolean TRUE.
+
+ANY and ALL operators have to be preceded by a comparison operator.
+
+Following query using ALL operator retuns only those rows which belong to department other than 10, 20 and 30. Note that records which have department_id as NULL will not be displayed by the following query:
+
+SELECT first_name || ' ' || last_name AS full_name,
+department_id
+FROM employees
+WHERE department_id != ALL (10,20, 30);
+
+-> Using NOT IN operator is same as !=ALL operator
+
+Following query using ANY operator retuns only those rows which belong to departments 10, 20 and 30:
+
+SELECT first_name, department_id
+FROM employees
+WHERE department_id = ANY (10, 20, 30);
+
+FIRST NAME      DEPARTIMENT IDP
+Jennifer        10
+Michael         20
+Pat             20
+Den             30
+
+-> Using IN operator is same as =ANY operator
+
+3.2 Logical Operators
+
+AND operator returns TRUE if both the conditions are TRUE. It returns FALSE if any one of the conditions is FALSE.
+
+OR operator returns TRUE if any one of the conditions are TRUE. It returns FALSE if both or all the conditions are FALSE.
+
+NOT operator returns TRUE if the condition expression returms FALSE. It returns FALSE if the condition expression evaluates to TRUE.
+
+Following query returns rows from employees table with department_id = 30 and with salary greater than 3000.
+
+SELECT first_name || ' ' || last_name AS full_name, salary
+FROM employees
+WHERE department_id=30 AND salary >3000;
+
+Following query returns rows with department_id=30 as well as rows belonging to other department if the employee's salary is greater than 3000.
+
+SELECT first_name || ' ' || last_name AS full_name,
+department_id, salary
+FROM employees
+WHERE department_id=30 OR salary >3000;
+
+Following query returns rows with all departments except 20.
+
+SELECT first_name, job_id, salary, department_id FROM
+employees
+WHERE NOT (department_id=20);
+
+However, it is better to use "department_id <> 20" condition for such requirements.
+
+Other operators - LIKE, IS NULL, IS NOT NULL, BETWEEN, EXISTS
+
+
+LIKE is a pattem matching operator. % (percentage) and _ (underscore) are the pattern searching characters that can be used with LIKE operator. % is used to search any number of characters, whereas, '_' is used to search for a single character.
+
+Folloving query returns all rows whose first names begin with 'Ra'.
+
+SELECT first_name || ' ' || last_name AS fullname, manager_id, salary
+FROM employees
+WHERE first_name LIKE 'Ra%';
+
+Following query returns all rows with names that have the second letter as 'a':
+
+SELECT first_name || ' ' || last_name AS fullname,  manager_id, salary
+FROM employees
+WHERE first_nane LIKE '_a%';
+
+To retrieve rows with NULL values IS NULL operator is used.
+
+NOT NULL operator is used to retrieve rows without NULL values.
+
+SELECT first_name, job_id, salary, commission_pct, department_id
+FROM employees
+WHERE commission_pct IS NULL AND department_id IS NOT NULL;
+
+Note: NULL is absence of value for a column and not a value by itself.
+
+BETWEEN operator is used to retrieve rows that falls within the range of a specified column.
+
+BETWEEN is an inclusive operator.
+
+SELECT first_name, job_id, salary, departnent_id
+FROM employees
+WHERE salary BETWEEN 3000 and 4000.
+
+4. Summary
+Here are the key takeaways:
+
+-> SELECT statement is used to retrieve rows from the table that is stored in the database.
+-> Rows returned by SELECT statement can be restricted by using the WHERE clause.
+-> Various comparison and logical operators can be used in the WHERE clause.
