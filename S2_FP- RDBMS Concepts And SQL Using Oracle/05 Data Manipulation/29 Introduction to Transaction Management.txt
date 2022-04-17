@@ -1,0 +1,206 @@
+INTRODUCTION TO TRANSACTION MANAGEMENT -> INTRODUCTION
+
+-> Multiple users can log into the database simultaneously
+-> Multiple users can update the same table simultaneously
+-> Data manipulation process should be taken care properly in the database
+-> Updating or changing the data in the table is considered as a transaction
+
+Transaction is a single unit of work composed of one or more tasks i.e. Logical Unit of Work (LUW)
+
+Example:
+-> Money transfer from one account to another account is a LUW that requires three tasks
+-> Transfer Rs. 1000 from one account to another account
+-> Crediting from one account
+-> Debiting to another account
+-> Updating journal entry
+
+Transactions can also be complex involving many subtasks
+
+Example:
+Online purchase
+Reservation system
+-> 1. Choose seats
+-> 2. Enter passenger details
+-> 3. Give credit card details
+
+-> Lot of activities which happen in the background
+-> Users are unaware of the activities happening in the background
+
+INTRODUCTION TO TRANSACTION MANAGEMENT -> TRANSACTION DEFINITION
+
+Transaction Processing System
+-> System to capture and proOcess the information necessary to manage various operations of an organization
+
+What are the different activities that happen in an organization ?
+-> Financial
+-> Accounting
+-> Purchase
+
+INTRODUCTION TO TRANSACTION MANAGEMENT -> TRANSACTION PROCESSING SYSTEM
+
+Batch Processing
+
+Systems which hardly need a user interaction but keep
+on executing at regular intervals
+
+-> Salary processing of people
+-> Quarter end financial results
+
+Certain systems take the data from the background, execute and update the data
+
+-> Doesn't require user interaction
+-> Time or performance requirement may not be very high
+
+Amount of data that being processed is huge
+
+Real-time System
+Timing of various operations is very important
+-> ATM
+-> POS terminal
+
+Placing the item in front of the scanner, which displays the item details and the rate
+
+
+Online Transaction Processing
+Example:
+Online leave portal 
+-> Requires lot of user interaction to read the data, edit the data, enter the data
+
+INTRODUCTION TO TRANSACTION MANAGEMENT -> TRANSACTION PROPERTIES
+
+Atomicity
+-> Each transaction is executed either completely (1) or not at all (0)
+-> There is no half-transaction
+
+Consistency
+-> Ensures that the database is in a consistent state after execution of the transaction
+
+Isolation
+-> Enables Concurrent execution of transactions while ensuring that the resuits are equivalent to that obtained by sequential execution
+
+Durability
+-> Ensures that after successful transaction completion all updates are made permanent, irrespective OT system failure
+
+INTRODUCTION TO TRANSACTION MANAGEMENT -> ATOMICITY
+
+Atomicity
+
+Example of money transfer A transters Rs 1000 to B
+Steps:
+A-1000 -> B+1000    Credits and Debits are Successful
+A-1000 -> B         Credit failed. Status will be rolled back. Database state is left unchanged
+
+Atomicity requires that database modifications must follow an "all or nothing" rule i.e. no partial results
+
+Choose items
+Add to cart
+Provide credit card details
+Page cannot be displayed
+        Money lost?
+            No, it rollbacks the transaction
+
+An event
+-> If completes, it will be Committed
+-> If fails, it will be rolled
+
+Successful completion of a transaction is called Commit
+
+Failure of a transaction is called Abort
+
+System will take care of undoing all the changes done to the database by a failed transaction
+
+Failed transaction could have acquired a lot of resources memory
+
+INTRODUCTION TO TRANSACTION MANAGEMENT -> CONSISTENCY
+
+Consistency
+-> Consistency defines correctness of the system
+-> Database should be consistent before and after the execution of a transaction
+-> In database terms, consistency means that the database at least satisfies all its integrity constraints
+-> Integrity constraints are used to ensure accuracy and correctness of data
+
+Example:
+Integrity constraints are maintained before and after a transaction in accounting books:
+Debits = Credits
+Assets = Liabilities
+
+Several kinds of integrity constraints that database systems typically maintain
+
+Domain integrity
+-> Entering the data in Correct format
+
+Required data
+-> How to ensure that the user has given the value to a particular column?
+
+Referential integrity
+-> Ensuring foreign key is consistent
+
+Entity Integrity
+-> Following certain integrity rule
+
+INTRODUCTION TO TRANSACTION MANAGEMENT -> ISOLATION
+
+Isolation
+-> Isolation requires that multiple transactions occurring at the same time should not impact each other's execution
+
+-> Enables concurrent execution of transactions while ensuring that the results are equivalent to that obtained by sequential execution
+
+-> One transaction may be forced to wait for the completion of another transaction that has modified data
+
+-> Each transaction must remain unaware of other concurrently executing transactions
+
+Multiple users can log into the database and they can do a lot of activities
+
+Every transaction should be executed separately
+
+What happerns if the administrator allows only one transaction to happen at a time in the whole system?
+-> Overall Efficiency
+
+Need for concurrency
+For better transaction throughput
+-> Number of processors or number of transactions happening per unit of time
+
+For improved response time
+-> Access data at the same time through isolation and two users can update the same row simultaneously
+
+Conflicts with isolation requirements
+
+Concurrency
+-> Two or more users access a database concurrently
+What happens if administrator do not take care of consistency properly?
+
+Problems associated with concurrent execution:
+-> Lost update
+-> Dirty read
+-> Non repeatable read
+-> Phantom records
+
+Concurrency techniques:
+-> Locking
+-> Time stamping
+--> Check if the other user had updated after the first user started
+
+INTRODUCTION TO TRANSACTION MANAGEMENT -> DURABILITY
+
+Ensures that after successful transaction completion all updates are permanent, irrespective of system failure
+
+Money transfer example
+-> Once money has been transferred from one account to another, user will get a reply stating that transaction is complete
+
+-> Updates are stored in database
+
+-> If system crashes, these updates will be lost
+
+-> Need to store all the updates on persistent storage called Log File before writing to the database
+
+-> Even if system fails, all updates can be recovered from Log file and can be reapplied to the database
+
+-> With this feature, a system is said to be durable
+
+Key points discussed in this video:
+-> Transaction is a logical unit of work which takes the database from one consistent state to the other
+-> Atomicity, Consistency, Isolation and Durability are the ACID properties of a transaction
+-> Data integrity and security are enforced using SQL DDL statements
+-> Transactions should be able to concurrently execute without affecting the consistency of the database
+-> Locking is a mechanism of achieving such controlled
+concurrency

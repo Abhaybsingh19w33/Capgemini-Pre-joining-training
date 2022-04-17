@@ -1,0 +1,54 @@
+Table of Contents
+1. Transaction Management
+2. Properties of Transaction
+3. Transaction States
+4. Summary
+
+Introduction
+-> This module introduces us to the concepts of transaction management.
+
+Learning Objectives
+Upon completion of this module, you will be able to:
+-> Understand basics of transaction management
+
+1. Transaction Management
+-> A transaction is a single unit of work composed of one or more tasks.
+
+2. Properties of Transaction
+-> Every transaction has the follovwing four properties:
+
+Atomicity
+-> A transaction is treated as a single/atomic unit of operation and is either executed completely or not at all. Partial results of an interrupted transaction must be undone.
+
+Consistency
+-> A transaction preserves database consistency, ie, should not violate any integrity constraints.
+
+Isolation
+-> If several transactions are executed concurrently, the result must be the same as if they were executed serially in some order
+
+Durability
+-> The updates of a committed transaction are permanent in the database.
+
+Once a transaction commits, the system must guarantee that the results of its operations will never be lost, in spite of subsequent failures.
+
+3. Transaction States
+
+There are the following six states in which a transaction may exist:
+
+Active: The initial state when the transaction has just started execution.
+
+Partially Committed: At any given point of time, if the transaction is executing properly, then it is going towards its COMMIT POINT. The values generated during the execution are all stored in volatile storage.
+
+Failed: If the transaction fails for some reason. The temporary values are no longer required, and the transaction is set to ROLLBACK. It means that any change made to the database by this transaction up to the point of the failure must be undone.
+
+Aborted: When the ROLLBACK operation is over, the transaction is now said to have been aborted.
+
+Committed: If no failure occurs then the transaction reaches the COMMIT POINT. All the temporary values are written to the stable storage and the transaction is said to have been committed. All resources acquired by the transaction will be released after COMMIT.
+
+Terminated: Either committed or aborted, the transaction finally reaches this state.
+
+4. Summary
+-> A transaction is a single unit of work composed of one or more tasks.
+-> Every transaction has the four properties. They are atomicity, consistency isolation and durability (commonly referred with acronym ACID).
+-> When the ROLLBACK operation is orer, the transaction is now sad to have been aborted.
+-> If no faihure occurs then the transaction reaches the COMMIT POINT. All the temporary values are written to the stable storage and the transaction is said to have been committed.

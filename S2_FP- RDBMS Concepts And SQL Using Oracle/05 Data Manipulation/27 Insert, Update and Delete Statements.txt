@@ -1,0 +1,145 @@
+Table of Contents
+1. Data Manipulation Language (DML) Statements
+2. Application of DML Statements
+3. Exclusive Row-Level Locks
+4. Summary
+
+Introduction
+-> This module introduces Data Manipulation Language (DML) statements in SQL such as Insert, Update, and Delete, and their usage.
+
+Learning Objectives
+-> Upon completion of this module, you will be able to:
+--> Use Data Manipulation Language (DML) statements such as Insert, Update and Delete to modify databases
+
+1. Data Manipulation Language (DML) Statements
+-> Data Manipulation Language (DML) statements are used to change data in the database. DML statements access and manipulate data in existing schema objects.
+
+The following table lists DML commands and their functions:
+
+DML Command         Function
+SELECT              To retrieve data from the database
+INSERT              To add rows to the table
+UPDATE              To modify data stored in the table
+DELETE              To remove rows from a table
+MERGE               To insert or update rows from one table into another
+LOCK TABLE          To prevent another session from performing DML operations on a table
+
+2. Application of DML Statements
+
+SELECT
+
+SELECT statement is a form of DML statement which can only access data in the database. It cannot manipulate or modify data.
+
+INSERT
+
+INSERT statement is used to add new rows of data to a table.
+
+Following insert statement adds a row to the emp table:
+
+INSERT INTO emp (empno, ename, job, mgr, hiredate, sal, comm, deptno) VALUES ( 7839, 'KING', 'PRESIDENT', null, to_date ('17-11- 1961', 'dd-mm-yyyy'), 5000, null, 10);
+
+In the above example, since data is being inserted to all columns, column names can be omitted.
+
+The above insert statement can also be written as:
+
+INSERT INTO emp VALUES ( 7839, 'KING', 'PRESIDENT', null,
+to_date('17-11-1981', 'dd-mm-yyyy'), 5000, null, 10);
+
+New rows can also be added to a table by selecting data from another table, as shown below:
+
+INSERT INTO emp_backup SELECT * FROM emp;
+
+Note that when adding a new row, one should ensure that the data type of the value that is being inserted and that of the column match. The integrity constraint that may be defined for the table has to be followed.
+
+UPDATE
+
+UPDATE statement is used to modify existing rows in a table.
+
+The followving query modifies the salaries of all employees in the emp table for a particular department:
+
+UPDATE emp SET sal = sal + (sal 0.2) WHERE deptno = 10;
+
+Note that omitting the WHERE clause in an UPDATE statement updates all the rows in the table.
+
+The following query modifies the salaries of all employees in the emp table for a particular department by using a correlated subquery in an UPDATE statement:
+
+UPDATE emp eSET sal = sal + (sal * 0.2)
+WHERE EXISTS (SELECT empno FROM dept d WHERE d.deptno= e.deptno AND UPPER (dname) = 'ACCOUNTING');
+
+DELETE
+
+DELETE statement is used to delete rows from a table.
+
+The following statement deletes an employee with empno7499 from the emp table:
+
+DELETE FROM emp WHERE empno = 7839;
+
+Note that omitting the WHERE clause in a DELETE statement removes all the rows from the table.
+
+MERGE
+
+MERGE statement inserts or updates rows from one table into another table.
+
+Suppose there are two tables, dept_master and dept, with the data given below. Assume that dept_master contains up-to-date information. The dept table needs to be updated based on the dept_master table.
+
+Deptno      Dname
+10          ACCOUNTING
+20          RESEARCH
+30          SALES
+40          OPERATIONS
+    dept master
+
+
+Deptno      Dname       Loc
+10          ACCOUNTING  NEW YORK
+20          R&D         DALLAS
+            dept
+
+MERGE statement can be used to update or insert the new department data into the dept table: 
+
+MERGE INTO dept d 
+USING (SELECT deptno, dname FROM dept_master) dm
+ON (d.deptno = dm.deptno)
+WHEN MATCHED THEN UPDATE SET d.dname =dm.dname
+WHEN NOT MATCHED THEN INSERT (d.deptno, d.dname)
+VALUES (dm.deptno, dm.dname);
+
+After executing the MERGE statement, the rows in dept table will be as follows.
+
+Deptno      Dname       Loc
+10          ACCOUNTING  NEW YORK
+20          RESEARCH    DALLAS
+30          SALES
+40          OPERATIONS
+
+
+Note that the dname column has been updated for deptno= 20 and two new rows have been added.
+
+It is important to execute a COMMIT statement to make the changes made by these DML statements permanent in the database.
+
+LOCK
+
+LOCK statement is used to lock an entire table, preventing other sessions from performing any of the DML statements on the table.
+
+LOCK TABLE emp IN EXCLUSIVE MODE;
+
+LOCK TABLE has to be used cautiously since this increases the chance of deadlocks.
+
+3. Exclusive Row-Level Locks
+
+To modify the data, exclusive row-level locks have to be acquired on the rovws to be modified. 1NSERT, UPDATE, and DELETE statements implicitly acquire the necessary exchusive row-level locks.
+
+Exchusive row-level locks prevent other sessions from modifying or deleting the particular row and also prevents other sessions from acquiring exchusive row-level lock on this row.
+
+Row-level exclusive lock can also be acquired by selecting rorws using FOR UPDATE clause as shown in the following statement:
+
+SELECT empno, ename, sal, deptno FROM emp
+WHERE empno = 7839 F0R UPDATE;
+
+Note that the locks acquired for SELECT FOR UPDATE will only be released once the transaction ends either with a COMMIT or ROLLBACK statement.
+
+4. Summary
+
+-> Data Manipulation Language (DML) statements are used to change data in the database.
+-> INSERT, UPDATE, and DELETE statements implicitly acquire the necessary exclusive rovw-level locks.
+-> LOCK TABLE has to be used cautiously since this increases the chance of deadlocks.

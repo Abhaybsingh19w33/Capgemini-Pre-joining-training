@@ -1,0 +1,131 @@
+DATA MANIPULATION LANGUAGE STATEMENTS INTRODUCTION
+
+-> How to create the different objects in Oracle using Data Definition Language?
+
+DATA MANIPULATION LANGUAGE STATEMENTS -> DEFINITION
+
+DML statements statements used for manipulating the data in the database
+
+INSERT -> Inserts new row into a table
+UPDATE -> Changes the value(s) of column(s) of a table based on zero or more conditions.
+DELETE -> Deletes row(S) from a table based on zero or more conditions
+
+Changes made to the database are not permanent
+INSERT
+UPDATE
+DELETE
+
+Log out
+-> Data may not be saved to the database
+-> Use COMMIT to make the changes permanent
+
+ROLLBACK - undoes the changes
+-> COMMIT and ROLLBACK are mutually exclusive
+
+-> After applying COMMIT On the database ROLLBACK is not possible
+
+--> Manually undo the changes inserted and manually delete it
+
+
+DATA MANIPULATION LANGUAGE STATEMENTS -> INSERT STATEMENT
+
+-> To insert a new row into a table (one row at a time)
+
+-> List of column names  is optional
+
+-> 10 values can be inserted in 10 different columns
+
+-> To insert rows with values in specific columns, column names must be mentioned in the query
+
+-> If it is omitted, values for all columns should be passed in the same order as in the table
+
+-> Mention the specific column names to enter the corresponding values
+
+Values for all mandatory columns (that do not accept NULL value) must be passed in the INSERT statements.
+
+
+Syntax of INSERT statement
+
+INSERT INTO <table_name> [(<column_name/s>)]
+VALUES (<value 1>, <value 2>,..);
+
+-> Column names are optional
+
+-> Mention the values for all the columns of the table if the column names are omitted
+
+-> Specify the corresponding values
+
+
+DATA MANIPULATION LANGUAGE STATEMENTS -> UPDATE STATEMENT
+-> Only one table name can be specified in an UPDATE Statement
+
+-> Ensure all database constraints are satisfied while updating to new values
+
+-> Used for modifying the values of one or more Columns of a table
+
+
+Syntax of UPDATE statement
+
+UPDATE <table name> SET [<column_name> = <value>, <Column_name> = <value>, .. ] [WHERE condition(s)];
+
+-> Only those rows which match these conditions will be updated
+
+DATA MANIPULATION LANGUAGE STATEMENTS -> DELETE STATEMENT
+
+-> Used to delete the rows from a table
+
+-> Cannot delete a column
+
+-> Only one table name can be specified in DELETE statement
+
+-> Only row mentioned will be deleted
+
+-> If conditions are specified, only those rows which satisty the conditions are deleted
+
+DELETE FROM <table name> [WHERE <condition>];
+
+-> The row mentioned only will be deleted
+
+Use DDL statements - ALTER TABLE or DROP COLUMN to delete columns
+
+DATA MANIPULATION LANGUAGE STATEMENTS -> COMMIT AND ROLLBACK
+
+-> COMMIT STATEMENT
+--> COMMIT statement makes the changes made by the DML statements, permanent
+
+-> ROLLBACK STATEMENT
+--> A ROLLBACK will rollback or undo all the changes (but not after COMMIT or a DDL statement)
+
+--> ROLLBACK to <savepoint> will undo the changes till the save point
+
+Bookmarking the transaction
+
+How does the COMMIT and ROLLBACK work ?
+
+Example:
+-> INSERT INTO Books..
+-> UPDATE B0oks SET ..
+-> SAVEPOINT sp1;
+-> INSERT INTO Book_Sales..
+-> DELETE FROM Books..
+-> ROLLBACK TO sp1;
+-> COMMIT;
+-> ROLLBACK will rollback the last 2 INSERT statements
+--> INSERT and UPDATE statement above the SAVEPOINT will be unaffected by the ROLLBACK
+
+Any DDL statement executed after DML statements will implicitly COMMIT the changes.
+
+Exercise caution while using DML and DDL statements together to prevent unwanted implicit COMMITS
+
+DATA MANIPULATION LANGUAGE STATEMENTS -> SUMMARY
+
+Key points discussed in this video:
+
+-> INSERT, DELETE and UPDATE statements are used for manipulating the data in the database
+
+-> INSERT statement is used to insert a new row into a table (one row at a time)
+
+-> UPDATE statement is used for modifying the values of one or more columns of a table
+-> DELETE statement is used to delete the rows froma table
+-> COMMIT statement is used for making the changes permanent
+-> ROLLBACK statement is used to undo all the changes till last COMMIT

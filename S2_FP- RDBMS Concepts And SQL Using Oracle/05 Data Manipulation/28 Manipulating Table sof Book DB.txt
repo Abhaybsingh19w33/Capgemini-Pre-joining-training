@@ -1,0 +1,63 @@
+INSERT INTO Books
+VALUES ('B00215', 'Core Java', 550, 'PR', 2, 'SECOND', 10, '978-8131603285', SYSDATE);
+
+--Example: INSERT INTO
+--Inserting NULL values (to nullable columns):
+
+INSERT INTO Books
+VALUES ('B00216', 'Core Java', 456, 'PR', NULL, NULL, NULL, NULL, NULL);
+
+--Example: INSERT INTO
+--Inserting specific columns:
+INSERT INTO Books (book_id, book_title, book_type)
+VALUES( 'B00217, 'Core Java', 'PR');
+
+--Example : INSERT INTO
+--Inserting using SELECT:
+-- can be used to copy the table to another table
+INSERT INTO Temp_Books
+SELECT * FROM Books WHERE book_type = 'PR';
+
+--Example: UPDATE STATEMENT
+--updating all rowS
+UPDATE Books SET book_discount = NULL;
+
+--Example: UPDATE STATEMENT
+--updating specific rows:
+UPDATE BOoks SET book_discount = 15
+WHERE book_type IN ('GN', 'PR');
+
+--Example : UPDATE STATEMENT
+--Updating multiple columns
+UPDATE Book_Customer
+SET cust_email = 'maheshk@million.in', cust_category = 'A'
+WHERE cust_id = 1009;
+
+--Example: UPDATE STATEMENT
+--updating using conditions involving other tables
+UPDATE Book_Customer c SET Cust_category = 'H'
+WEERE EXISTS (
+    SELECT 1 FROM BooK_Sales s, Books b
+    WHERE s.book_id = b.book_id
+    AND s.cust_id = c.cust_id
+    GROUP BY cust_id
+    HAVING SUM(qty * book_cost) > 10000;
+)
+
+--Example: DELETE FROM STATEMENT
+--Deleting all rows of the table
+
+DELETE FROM Book_Shipment;
+
+--Example: DELETE FROM STATEMENT
+--Deleting specific rows:
+
+DELETE FROM Books WHERE book_id = 'B0021';
+
+--Example: DELETE FROM STATEMENT
+--Deleting specific rows based on conditions involving other tables:
+
+DELETE FROM Book_Customer C
+WHERE cust_id NOT IN ( 
+    SELECT cust_id FROM Book_Sales
+);
