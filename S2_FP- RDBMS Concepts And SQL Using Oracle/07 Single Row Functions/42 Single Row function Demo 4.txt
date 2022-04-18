@@ -1,0 +1,48 @@
+single-row functions : single-row conversion functions demo
+
+/*******************************************************/
+Program to show the use of TO_CHAR function
+Converts a number or date to a string
+/*******************************************************/
+
+Show title of a given book id by concatenating a number to it
+
+|| is concatenating operator 
+
+SELECT book_id, book_title FROM Books WEERE book_id = 'B0' || TO_CHAR (105);
+
+To compare a formatted date with a date column
+
+SELECT book_id, SUBSTR (book_title, 1, 25) AS book_title, publ_date
+FROM Books
+WHERE TO_CHAR (publ_date, 'MM-YYYY') = '01-2011';
+
+Show today's date in a particular format
+
+SELECT TO_CHAR (SYSDATE, 'Month DD, YYYY HH:MI:SS AM') AS "Today is" FROM DUAL;
+
+/*******************************************************/
+Program to show the use of To_DATE function
+Converts a string into a date
+/*******************************************************/
+
+SELECT cust_fname, cust_lname, cust_reg_date
+FROM Book_Customer
+WHERE TRUNC (cust_reg_date) = TO_DATE ('01/01/2010','DD/MM/YYYY');
+
+Note: TRUNC is required here to ignore the time component
+
+/*******************************************************/
+Program to show the use of To_NUMBER function
+Converts a string into a number
+/*******************************************************/
+
+Extract a number from ISBN and compare it with a, number
+
+SELECT book_id, isbn FROM Books WEERE TO_NUMBER (SUBSTR (isbn, 5,3))= 978;
+
+Add 1 to the year part of customer registration date
+
+SELECT TO_NUMBER (To_CHAR (cust_reg_date, 'YYYY'))+1 AS next_year
+FROM Book_Customer WHERE cust_id = 1010;
+

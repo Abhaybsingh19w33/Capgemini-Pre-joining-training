@@ -1,0 +1,112 @@
+SINGLE-ROW NUMERIC FUNCTIONS -> INTRODUCTION
+Storing data in Oracle
+-> Access tables and the columns of the table
+
+Employee table
+-> Stores
+--> Employee ID
+--> Employee Name
+--> Department ID
+
+Can it be retrieved in the same way it was stored?
+
+Single-row functions
+-> Functions which act on every row of the table that is being queried
+-> Applies on the data in the columns on which the single row functions are applied
+-> Different type single-row functions that applied on different types of data character, numeric, date/time etc.
+
+Single-row unctlons: DUAL table demo
+--Dual table 1s a special one roOW, one column table
+--Oracle executes single-row query functions for every row in a table
+--DUAL table is used for getting single values in queries
+
+/***********************************************/
+-- Program to display dual table
+/***********************************************/
+
+SELECT* FROM DUAL; --DUMMY/X
+SELECT 1 + 2 FROM DUAL; --Output: 3
+SELECT SYSDATE FROM DUAL; --Output: Today's date 
+/***********************************************/
+
+
+Single-row functions: Single-row numeric functions demo
+
+/**************************************/
+-- Program to show the use of ROUND (x, y) function
+-- Rounds off a numeric field x to the no. of decimals specified in y. If y is omitted then rounding is done to zero decimal places.
+/************************************************/
+
+SELECT ROUND (5.75) FROM DUAL;      --Output: 6
+SELECT RoUND (5.75,1) FROM DUAL;    --Output: 5.8
+
+SELECT book_ id, book_cost, book_cost 12 AS total,
+ROUND (book_cost* 12) As rounded_total
+FROM Books
+WHERE book_id = 'B0050';
+
+/*************************************************/
+-- Program to show the use of TRUNC () function
+-- Truncates decimal to specified numbers of digits
+-- Truncates time component from date fields
+/********* ************ **************************/
+
+SELECT TRUNC (123.654), TRUNC(123.654,2), 
+TRUNC (123.654,-1) FROM DUAL;
+
+SELECT book_cost, TRUNC (book_cost,1), TRUNC (book_cost), TRUNC (book_cost, -1)
+FROM Books WHERE Book_Id = 'B0035';
+
+SELECT TRUNC (SYSDATE) FROM DUAL;
+-- Output: Today's date with 00:00:00 for time
+
+
+/************************************************/
+-- Program to show the use or CEIL (X) function
+-- Returns the smallest integer value not less than the argument
+/************************************************/
+
+-Gets the smallest integer >= to x
+
+SELECT CEIL(5.1) FROM DUAL;     --Output: 6
+
+SELECT book_cost, CEIL (book_cost) FROM Books WHERE book_type = 'GN';
+
+-- How many boxes of capacity 20 books each, would be required to pack 50 books?
+-- Assuming all books are of same size and shape
+
+SELECT CEIL (50 / 20) FROM DUAL;    --Output: 3
+/**************************************/
+
+/**************************************/
+-- Program to show the use of FLOOR (x) Function
+-- Returns the largest integer value not greater than the argument
+
+-- Gets the Largest integer <= to X
+-- Ignores the decimal part of the number
+
+SELECT FLOOR (5.8) FROM DUAL;   --Output: 5
+SELECT book_cost, FLOOR (book_cost) FROM Books WHERE book_type = 'GN';
+
+/************************************************/
+-- Program to show the use of MOD() function
+-- Modulus operation: Returns the remainder
+/***********************************************/
+
+-- Returns the remainder of N divided by M
+
+SELECT MOD (10,3), MOD (10,2) FROM DUAL;    --Output: 1     0
+
+SELECT book_cost, book_cost - MOD (book_cost, 100) AS Cost_in_100s
+FROM Books
+WHERE book_type = 'GN';
+
+/************************************************/
+-- Program to show the use of SQRT () function
+-- Returns the square root of the argument
+/************************************************/
+
+-- single-row functions can also be nested
+SELECT SQRT (10), ROUND (SQRT (10), 2) FROM DUAL;   --0utput: 3.16
+
+-- There are many other single-row functions : SIN, EXP, ATAN, LOG, POWER, SIGN, atc.

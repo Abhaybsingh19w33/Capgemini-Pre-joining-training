@@ -1,0 +1,96 @@
+Single-row functions: Single-row character functions demo
+
+/*******************************************************/
+-- Query to show the use of UPPER (String) and LOWER (String) functions
+-- Converts the value or a column to upper case or lower case
+/*******************************************************/
+
+
+SELECT UPPER (cust_fname), LOWER (Cust_city) FROM Book_Customer;
+
+/*******************************************************/
+-- Query to show the use of SUBSTR function
+-- SUBSTR (String, start, no of chars)
+-- Used to extract characters from a text field
+/*******************************************************/
+
+SELECT SUBSTR (book_title,1,20) FROM Books;
+
+/*******************************************************/
+-- Query to show the use of INSTR function
+-- INSTR (string1, string2 [, start_position [, nth_occurrence ]])
+-- Returns locat1on of a subatring in a string
+/*******************************************************/
+
+SELECT INSTR('Oracle Database', 'Data', 1) FROM DUAL;   --Output: 8
+
+/*******************************************************/
+-- Query to show the use of LENGTH function
+-- Returns the length of the value in a text field
+/*******************************************************/
+
+SELECT LENGTH('Oracle Database') FROM DUAL;  --Output: 15
+SELECT book_title, LENGTH (book_title) FROM Books WHERE book_id = 'B0120';
+
+/*******************************************************/
+-- Query to show the use of LPAD and RPAD Functions
+-- Can be used to format and align report fields
+
+-- LPAD (string, width, padding character's )
+-- Right justifies the string within defined width and on LHS pads with padding char
+
+-- RPAD (string, width, padding character's )
+-- Left justifies the string within defined width and on LHS pads with padding char
+/*******************************************************/
+
+SELECT LPAD (Cust_fname, 10,'.'), RPAD (Cust_city, 10,'*') FROM Book_Customer;
+
+/*******************************************************/
+-- Query to show the use of TRANSLATE function
+-- TRANSLATE (string, source, target )
+-- Overwrites source chars with target chars; Helpful in data transformation across DB / OS
+-- not like google TRANSLATE but, simply replacing words provides in target parameter
+/*******************************************************/
+
+SELECT cust_fname, TRANSIATE (cust_fname, 'aeiou', 'xyz') AS tr_name
+FROM Book_Customer;
+
+/*******************************************************/
+-- Query to show the use of REPLACE function
+-- REPLACE (string, source, target)
+-- Replaces source string with target string
+/*******************************************************/
+
+SELECT book_id, REPLACE (book_type, 'DB', 'Data Base') FROM Books;
+
+/*******************************************************/
+-- Query to show the use of CHR function
+-- Returns char equivalent or ASCII value
+/*******************************************************/
+
+SELECT CHR(65) || CHR(66) || CHR(67) AS ABC FROM DUAL;
+
+/*******************************************************/
+-- Query to show the use fo LTRIM and RTRIM functions
+-- Can be used to trim unwanted characters from the output columns (esp. data conversions)
+-- LTRIM (String, char's)
+-- Returns string after trimming with specified chars from left hand side of the string
+
+-- RTRIM (Strgng, char's)
+-- Returns string after trimming with specified chars from right hand side or the string
+/*******************************************************/
+
+SELECT Cust_fname, LTRIM (Cust_fname, 'GChra'), Cust_lname, RTRIM (Cust_lname, 'arth') FROM
+Book_Customer;
+
+/*******************************************************/
+-- Query to show the use of TRIM function
+-- TRIM (char/number FROM string/number)
+-- Trims off leading and preceding char/numbers from string / number
+/*******************************************************/
+
+
+SELECT TRIM (0 FROM 0009878900) FROM DUAL;  --OUTPUT 98789
+SELECT TRIM ('A' FROM 'AAABCDAAEFFAAAA') FROM DUAL;     --OUTPUT BCDAAEFF
+
+SELECT '*' || TRIM(' SPACE TRIMMED ') '"' FROM DUAL;-OUTPUT "SPACE TRIMMED"

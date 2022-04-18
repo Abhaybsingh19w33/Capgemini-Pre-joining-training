@@ -1,0 +1,87 @@
+SINGLE-ROW FUNCTIONS INTRODUCTION
+
+Database
+
+-> Change data in the database
+-> Retrieve data from the database
+
+Book Title can be long and if the programmner wants to display only the first 25 characters of Book Title -> Use DB, PR and OS
+
+Example:
+Book Title
+Book Cost
+Book Type
+
+ORACLE Oracle provides single row function
+
+SINGLE-ROW FUNCTIONS -> SQL FUNCTIONS
+
+What are the SQL functions?
+-> SQL functions are in-built in Oracle database
+-> SQL functions help to transform data
+
+Categories of SQL Functions
+-> Single-row Functions
+--> Return a single result for every row of a queried table
+--> Appear in SELECT lists, WHERE clauses, START WITH and CONNECT BY, and HAVING clauses
+
+-> Aggregate Functions
+--> Return a single result rOw based on groups of rows
+--> Can appear in SELECT lists, ORDER BY and HAVING clauses
+
+-> Analytic Functions
+-> Object Reference Functions
+-> Model Functions
+-> User-defined Functions
+
+SINGLE-ROW FUNCTIONS -> TYPES
+
+Numeric
+E.g. ROUND, FLOOR, CEIL, ABS
+
+Character
+E.g. UPPER, LOWER, LENGTH
+
+DateTime
+E.g. MONTHS_BETWEEN, NEXT_DAY
+
+Conversion
+E.g. TO_CHAR, TO_DATE, TO_NUMBER
+
+Other types
+E.g.Collection, Data mining
+
+SINGLE-ROW FUNCTIONS -> CONTROL EXPRESSIONS
+
+Control Expressions
+Enable IF ... THEN ... ELSE logic in SQL statements without having to invoke procedures
+
+Example:
+-> Book Type - DB PR
+-> Database displays if the Book type to DB, PR and OS
+
+Provide SWITCH-CASE kind of functionality (like in C programming)
+
+Execute the logic for every selected row
+
+Can returna default option if there is no match
+
+Return NULL if there is no default option
+
+Different control expressions of single-row functions:
+-> DECODE
+-> CASE
+-> Searched CASE
+
+SINGLE-ROW FUNCTIONS -> SUMMARY
+Key points discussed in this video:
+
+-> SOL functions are in-built in Oracle and help to transform data
+
+-> Categories of SQL functions are Single-row functions Aggregate functions, Analytic functions, Object Reference functions, Model functions and User-defined functions
+
+-> Single-row functions return a single result for every row of a queried table
+
+-> Aggregate Functions return a single result row based on groups of rows
+
+-> Control expressions are used to include some processing logic within the SQL statements

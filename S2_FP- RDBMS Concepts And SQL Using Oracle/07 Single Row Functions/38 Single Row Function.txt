@@ -1,0 +1,163 @@
+1. Single-row functions
+1.1 NULL Value Functions
+1.2 Numeric Functions
+1.3 Character Functions
+1.4 Date functions
+1.5 Conversion Functions
+1.6 TO DATE
+1.7 DECODE function
+2. Summary
+
+Introduction
+-> This module introduces us to the usage of single-row functions
+
+Learning Objectives
+Upon completion of this module, you will be able to:
+-> Use various single-row functions in the SQL
+
+1. Single-row functions
+
+A mumber of single-row functions are built into SQL. As the name suggests, they act on every single row being selected by the query. These functions take one or more arguments and return a single value. Various single-row functions are available in SQL. It can be classified into date functions, character functions, numeric functions, null value functions and conversion functions. These functions can be applied to the columns appearing in the SELECT statement as well as to the columns appearing in the WHERE clause.
+
+1.1 NULL Value Functions
+
+NVL and NVL2 are the two NULL value functions that are available.
+
+NVL (v1, v2) - This function takes two arguments. The function returns v2 if v1 is NULL. It returns v1 if v1 is NOT NULL.
+
+NVL2 (v1, v2, v3) - This function takes three arguments. The function returns v3 if v1 is NULL. It returns v2 if v1 is NOT NULL.
+
+Following statement adds up salary and commission of employee records. Since there are a few employees who are not earning any commission, using the commission column without NVL function with salary column will result in NULL being displayed. Note that in the table, commission is given as percentage of salary.
+
+SELECT employee_id, first_name,
+    salary + salary * NVL (commission_pct, 0) Total_Pay
+FROM employees
+WHERE department_id IN (10, 80):
+
+Above query can be written using NVL2 function as follows:
+
+SELECT employee_id, first_name,
+    NVL2 (commission_pct, salary + salary * commission_pct, salary)
+Total_Pay
+FROM employees
+WHERE department_id IN (10, 80);
+
+1.2 Numeric Functions
+
+There are quite a few numeric functions like ROUND, POWER, MOD, SQRT, SIN, CON, TAN, FLOOR etc. Let's take a look at a few of the commonly used numeric function.
+
+ROUND (nl, n2) takes 2 arguments where n1 is a number and the second one is an integer.
+
+In the following example, the ROUND function returns a number rounded to 2 decimal places based on the second argument.
+
+FLOOR(n) takes a single numeric argument and returns the integer that is less than or equal to n. Floor rounds down to a whole number.
+
+CEIL(n) takes a single numeric argument and returns the integer that is greater than or equal to n. CEIL rounds up to a whole number.
+
+
+SELECT
+ROUND (3456.123, 2), 
+FLOOR (3456.123),
+CEIL (3456.123) FROM dual;
+
+ROUND       FLOOR       CEIL
+3456.12     3456        3457
+
+-> DUAL table is used for getting single values in queries
+
+1.3 Character Functions
+
+There are many character single-row functions like, LOWER, UPPER, INITCAP, SUBSTR, REPLACE, RTRIM, LTRIM etc. Let's look at a couple of commonly used character functions with example.
+
+UPPER and LOWER functions take one argument in the form of character string and returns the string in uppercase or lowercase.
+
+SUBSTR (search string, x, y) returns a portion of search string starting from xth position which is y characters long. If y is omitted, the function returns remaining characters starting from xth position.
+
+SELECT employee_id, UPPER (first_name),
+INITCAP (last_name), LOWER (job_id) FROM
+employees
+WHERE LOWER (SUBSTR (job_id, 3))
+LIKE '%clerk%';
+
+EMPL_ID     UPPER       INITCAP     LOWER
+198         DONALD      Oconnell    sh_clerk
+199         DOUGLAS     Grant       sh_clerk
+115         ALEXANDER   Khoo        pu_clerk
+
+Note above that functions can be nested i.e. function can be called within another function.
+
+LTRIM (string, char's) - returns string after trimming specified chars from left hand side of the string.
+
+RTRIM (string, char's) - retums string after trimming specified chars from right hand side of the string.
+
+Following query removes numerals appearing before and after addresses.
+
+SELECT LTRIM (RTRIM (street_address, '0123456789'),'0123456789')
+FROM 1ocations;
+
+1.4 Date functions
+
+Date functions act on DATE datatypes. Some of the date functions are SYSDATE, MONTHS_BETWEEN, LAST_DAY, NEXT_DAY.
+
+MONTHS_BETWEEN date function takes two date arguments and retums the number of months between the two dates.
+
+SYSDATE returns system date.
+
+Following query will retum the records of employees along with the number of months elapsed since they were hired:
+
+SELECT first_name, hire_date,   MONTHS_BETWEEN  (SYSDATE, hire_date)
+FROM employees
+WHERE department_id = 80;
+
+Function LAST_DAY retums the last date of the month for the date argument that is passed.
+
+The NEXT_DAY (date, day of week) takes two arguments. This function returns the next day of week following the date argument.
+
+SELECT NEXT_DAY ('01-JAN-2015', 'Monday') 
+LAST DAY (SYSDATE) FROM dual,
+
+Next Day    Last_day
+05/01/15    31/01/15
+
+1.5 Conversion Functions
+
+Let us look into some of the conversion functions like TO_CHAR and TO-DATE.
+
+TO_CHAR (date value, format) converts a date and formats it according to the format specified in the function.
+
+Following query will spell the date as say MONDAY JANUARY TWENTY FIFTEEN:
+
+SELECT TO_CHAR (SYSDATE, 'DAY MONTH YEAR") FROM dual;
+
+1.6 TO_DATE
+
+This date function converts a date represented in string form to a date datatype in the specified format. This function is usually used while inserting date into the table.
+
+INSERT into test VALUES (1, 'SUNIL', TO_DATE ('11-Dec-2014', 'DD-Mon-YYYY'));
+
+1.7 DECODE function
+
+DECODE function behaves like an IF ELSE statement.
+
+DECODE (expression, search, result [, search, result, ..], default). Here the expression is the value of the column to be compared. Search is the value to be compared against the expression. If the value of the search matches with the value in expression, result is returned. If no match is found, default is returned. If default is not specified, NULL is returmed.
+
+SELECT first_name, DECODE (department_id,   
+    10, 'ADMIN',
+    20, 'MARKETING',
+    30, 'PURCHASING',
+    40, 'HUMAN RESOURCES',
+    50, 'SHIPPING',
+    60, 'IT',
+    70, 'PR',
+    80, 'SALES',
+    90, 'EXEC',
+    100, 'FINANCE',
+    110, 'ACCOUNTING',
+    'NOT ASSIGNED')
+FROM employees;
+
+2. Summary
+Here are the key takeaways:
+
+-> Single-row functions can be applied to the columns appearing in the SELECT statement as well as to the columns appearing in the WHERE clause.
+-> Single-row functions can be classified into date functions, character functions, numeric functions, null value functions and conversion furnctions.

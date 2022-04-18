@@ -1,0 +1,43 @@
+/*******************************************************/
+Program to show the use or ADD_MONTHS function
+ADD_MONTHS (<Date>, No. of months)
+Returns the date <DATE> plus integer montha
+/*******************************************************/
+
+Add 10 months to the cust_reg_date column
+
+SELECT cust_reg ate, ADD_MONTHS (cust_reg _date, 10)
+FROM Book_Customer
+WHERE cust_id BETWEEN 1002 and 1007;
+
+Calculate maturity date of a fixed deposit account opened today, for 5 years
+
+SELECT SYSDATE AS Today, ADD_MONTHS (SYSDATE, 60) AS maturity_date FROM DUAL;
+
+/*******************************************************/
+Program to show the use of MONTHS_BETWEEN function
+MONTHS BETWEEN (Datel, Date2)
+Returns no. of months between two dates.
+/*******************************************************/
+
+SELECT MONTHS_BETWEEN ('01-JAN-1984', '15-JAN-1998') PROM DUAL;     Output: -168.45161 
+
+/*******************************************************/
+
+SELECT MONTHS BETWEEN (01-JAN-1984', '15-JAN-1998') FROM DUAL Output:168 .45161
+
+SELECT SYSDATE, purchase_date,
+MONTHS_BETWEEN (SYSDATE, Purchase_date) As date_diff
+FROM Book_Sales
+WHERE book id = 'B0001';
+
+/*******************************************************/
+Program to show the use of NEXT_DAY function
+NEXT_DAY (x, Day)
+Return the date or the next day following x.
+/*******************************************************/
+
+Displays the date of the next Saturday after 01-Jan-15.
+
+SELECT NEXT_DAY (01-Jan-2015, 'Saturday') AS next_sat
+FROM DUAL;

@@ -1,0 +1,83 @@
+single-row functions on Books DB tables: IF-ELSE demo
+
+The if-then statement is the most basic or all tne control flow Statements.
+
+It tells your program to execute a certain section of code only if a particular test evaluates to true.
+
+/*******************************************************/
+Program to simulate multiple IF-ELSE in SELECT
+/*******************************************************/
+
+If value of Book_Type is 'DB', display it as 'Database'
+
+If the value is 'PR', display it as 'Programming'
+
+If it is 'OS', display it as 'operating system'
+
+Display 'Unassigned' for rest of the book types
+
+SELECT Book_Type,
+    DECODE (Book_Type, 'DB' , 'Database',
+    'PR', 'Programming',
+    'OS', 'operating system',
+    'Unassigned' ) AS Book_Category
+FROBM Books
+WHERE publ_date > '01-Jan-2011';
+
+/*******************************************************/
+
+Single-row functions on Books DB tables: CASE demo
+
+In a simple CASE expression, oracle Database searches for the first WHEN ... THEN pair for which expr is equal to comparison_expr and returns return_expr.
+
+If none of the WHEN ... THEN pairs meet this condition, and an ELSE clause exists, then oracle returns
+else_expr.
+
+/*******************************************************/
+Program to illustrate Simple CASE - expression
+/*******************************************************/
+
+Executes an expression based on the value of the variable or column passed
+
+SELECE book_id, book_type, book_cost, book_discount,
+    CASE book_type
+        WHEN 'GN' THEN book_cost * (1 - (book_discount * 0.01))
+        WHEN 'PR' THEN book_cost * (1 - (book_discount * 0.01))
+        ELSE book_cost
+    END "Actual Cost"
+FROM Books
+WHERE publ_id = 10;
+
+This simple CASE can be converted to an equivalent DECODE function .
+
+/*******************************************************/
+
+S1ngle-row tunctions on Books DB tables: Searched CASE demo
+
+In a searched CASE expression, oracle searches from left to right until it finds an occurrence of condition that is true, and then returns return_expr.
+
+If no condition is found to be true, and an ELSE clause exists, oracle returns else_expr.
+
+/*******************************************************/
+Program to illustrate Searched CASE - expression
+/*******************************************************/
+
+Note the difference between this and the previous CASE
+no column name specified after CASE
+
+SELECT book_id, book_type, book_cost, book_discount
+CASE
+    WHEN book_type IN ('GN','PR') THEN 'has discount'
+    WHEN book_cost > 500 THEN 'Expensive'
+    WHEN book_cost BETWEEN 100 AND 400 THEN 'Reasonable'
+    ELSE 'Not checked'
+END "Cost range"
+FROM Books
+WHERE publ_date > '01-Jan-2011';
+
+If the first THEN clause is in characters, then all the following clauses should also be in characters
+
+Note: output data type should be same in all WHEN clauses
+
+This CASE cannot be converted to an equivalent DECODE function.
+
