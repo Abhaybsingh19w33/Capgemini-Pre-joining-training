@@ -1,0 +1,48 @@
+WORKING WITH AGGREGATE FUNCTIONS -> INTRODUCTION
+
+Single-row functions
+-> Help us to transform the data from every row of a table
+
+Aggregate functions
+-> Act on a group of rows
+-> Applies certain aggregation and gets a single result
+
+What is Aggregation?
+-> To 'aggregate' means to collect, summarize, accumulate   
+
+Example: Sum, Maximum, Minimum, Count
+
+BOOK_TYPE       MAX_COST        COUNT
+PR              8500            9
+DB              7000            12
+NW              12200           5
+
+Aggregate function returns one result or one value
+
+-> Act on multiple rows and return single value
+-> Can appear in SELECT lists and in ORDER BY and HAVING clauses
+-> Commonly used with the GROUP BY clause in a SELECT statement
+-> In such cases, aggregate functions can be applied to each group
+-> If there is no GROUP BY clause, Oracle applies aggregate functions in the select list to all the rows in the queried table
+
+WORKING WITH AGGREGATE FUNCTIONS -> USAGE
+Examples
+General examples of aggregate functions
+-> Sum of numbers
+-> Average salary
+-> Maximum mark
+-> Minimum amount
+-> Count of employees
+
+Important and frequently used aggregate functions in Oracle:
+AVG()       -> Returns the average value
+COUNT()     -> Returns the number of rows
+MAX()       -> Returns the largest value
+MIN()       -> Returns the smallest value
+SUM()       -> Returns the sum
+
+WORKING WITH AGGREGATE FUNCTIONS -> SUMMARY
+Key points discussed in this video:
+-> To 'aggregate' means to collect, summarize and accumulate
+-> The different aggregate functions are AVG, COUNT, MAX, MIN and SUM
+-> Aggregate functions process multiple rows and return single value

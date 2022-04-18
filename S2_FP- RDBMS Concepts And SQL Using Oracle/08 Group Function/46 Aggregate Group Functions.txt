@@ -1,0 +1,58 @@
+Table of Contents
+1. Aggregate functions
+2. Summary
+
+Introduction
+This module introduces us to the usage of aggregate functions.
+
+Learning Objectives
+Upon completion of this module, you vwill be able to:
+-> Use various aggregate functions in the SQL.
+
+1. Aggregate functions
+
+A number of aggregate functions built into SQL Group functions are also known as group functions. Group functions are evaluated on groups of one or more rows that are retrieved.
+
+COUNT (DISTINCT/ALL <column name>) counts the number of rows in the query. By default ALL is taken.
+
+COUNT(*) returns all the rows returned by the query even if there are NULL values in the table.
+
+COUNT(<Column name>) counts the number of rows returned by the query while in this case, rows with NULLs are not counted.
+
+COUNT(DISTINCT <column names>) returns the count of the distinct rows returned by the query.
+
+MAX and MIN functions returm maximum or minimum value in case the argument is numeric, and returns latest or earliest date in case the argument passed is of date datatype.
+
+AVG function returns the average of the rows for a particular column that is passed.
+
+SUM function returns the total of the rows for a particular column that is passed.
+
+AVG, SUM, MAX and MIN ignore NULL value.
+
+DISTINCT can be used with AVG and SUM functions.
+
+Following query uses COUNT aggregate function:
+
+SELECT COUNT(*), COUNT(employee_id), COUNT (commis sion_pet), COUNT (DISTINCT department_id)
+FROM employees;
+
+Output of the above query is as shown below:
+
+COUNT(*)    COUNT(EMPLOYEE_ID)      COUNT(COMIISSION_PCT)       COUNT (DISTINCT DEPARTMENT_ID)
+107         107                     35                          11
+
+
+Following query uses AVG, SUM, MAX and MIN aggregate functions:
+
+SELECT ROUND (AVG (salary), 2), SUM (salary),
+MAX (hire_date), MIN (salary)
+FROM employees;
+
+AVG (SALARY)    SUM(SALARY)     MAX(HIRE _DATE)     MIN (SALARY)
+6461.83         691416          21/04/08            2100
+
+2. Summary
+Here are the key takeaways:
+
+-> Group functions are evaluated on groups of one or more rows that are retrieved
+-> Group functions in a SELECT statement without a GROUP BY clause, considers all the rows retrieved by the query as a single group

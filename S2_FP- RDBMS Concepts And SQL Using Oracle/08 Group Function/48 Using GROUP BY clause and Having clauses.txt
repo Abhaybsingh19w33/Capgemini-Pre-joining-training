@@ -1,0 +1,68 @@
+Table of Contents
+1. Using Group By clause and Having clause
+2. Summary
+
+Introduction
+This module introduces us to the usage of GROUP BY and HAVING clause in SQ
+
+Learning Objectives
+Upon completion of this module, you will be able to:
+-> Use GRoUP BY and HAVING clause in SQL
+
+1. Using Group By clause and Having clause
+
+GROUP BY clause in SELECT statements groups the data on the columns specified in this clause. Group functions in a SELECT statement without a GROUP BY clause, considers all the rows retrieved by the query as a single group. When used in the presence of GROUP BY clause, the group functions returms results for each group that is retrieved.
+
+In the following query each distinct job in the employees table are grouped. The count function is executed once for each of the groups. This query gives the count of employees job wise.
+
+SELECT job_id, COUNT (employee_id)
+FROM employees
+GROUP BY job_1d
+ORDER BY COUNT (employee_id);
+
+Following query demonstrates two level of grouping:
+
+This query gives average salary department wise and job wise:
+
+SELECT department_id, job_id, AVG (salary)
+FROM employees
+WHERE department_id in (50, 90, 100, 110)
+GROUP BY department_id, job_id
+ORDER BY department_id;
+
+Note that Columns appearing in SELECT list has to appear in the GROUP BY clause.
+
+Sample output of the above query is shown below:
+
+DEPARTMENT ID       JOB ID      AVG (SAL)
+50                  SH_CLERK    3215
+50                  ST_CLERK    2785
+50                  ST_MAN      7280
+90                  AD_PRES     24000
+90                  AD_VP       17000
+100                 FI_ACCOUNT  7290
+100                 FI_MGR      12008
+
+Let's say we need to filter only those rows whose AVG (salary) > 10000, to be listed department wise and job wise. We will not be able to achieve this using WHERE clause. Group functions cannot be used in WHERE clause. This is because, the WHERE clause is applied first and the rows are filtered. GROUP BY clause then groups the filtered rows into groups, After grouping. we can apply another filter by using HAVING clause. In the HAVING clause group functions can be used.
+
+SELECT department_id, job_id, AVG (salary)
+FROM employees
+WHERE department_id in (50, 90,100, 110)
+GROUP BY department_id, job_id
+HAVING AVG (salary) >10000
+ORDER BY department_id;
+
+Sample output of the above query is shown below:
+
+DEPARTMENT ID       JOB ID      AVG (SAL)
+90                  AD_PRES     24000
+90                  AD_VP       17000
+100                 FI_MGR      12008
+110                 AC_MGR      12008
+
+2. Summary
+Here are the key takeaways:
+
+-> When group functions are used in the presence of GROUP BY clause, the group functions retum results for each group that is retrieved.
+-> Group functions cannot be used in WHERE clause.
+-> HAVING clause filters rows retumed after grouping. Group functions can be used in HAVING clause.

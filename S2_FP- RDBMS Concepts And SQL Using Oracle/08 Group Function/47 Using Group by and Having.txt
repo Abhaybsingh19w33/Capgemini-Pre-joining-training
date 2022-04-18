@@ -1,0 +1,47 @@
+USING GROUP BY AND HAVING CLAUSES -> INTRODUCTION
+
+Aggregate Functions
+
+Summarizes data and provides one result
+-> average, max and min
+
+Requires additional clause to mention in the Select statement to take the average
+
+USING GROUP BY AND HAVING CLAUSES -> GROUP BY CLAUSE
+
+GROUP BY clause
+-> Aggregates functions, act on multiple rows and return a single value
+
+Need an additional GROUP BY clause
+-> GROUP BY is used in conjunction with aggregate functions to group resulting rows by specified columns
+
+Syntax
+SELECT <column_name(s)>,
+aggregate_function(<column_name>)
+FROM <table_name>
+WHERE <condition>
+GROUP BY <same column_name(s)>;
+
+Illegal GROUP BY Queries
+-> Any column or expression in the SELECT list used along with aggregate function must be in the GROUP BY clause
+
+USING GROUP BY AND HAVING CLAUSES -> HAVING CLAUSE
+
+HAVING clause
+-> Cannot use WHERE clause to restrict groups
+-> No aggregate functions can be Used for Comparison purposes in the WHERE clause
+-> WHERE clause is applied first, and then the aggregation in the HAVING clause
+-> Used to restrict groups in the GROUP BY clause
+-> Used with aggregate functions
+
+HAVING Clause Syntax
+SELECT <column_name(s)>, aggregate_function(<column_name>)
+FROM <table_name>
+WHERE <column_name> <operator> <value>
+GROUP BY <same_column_name(s)>
+HAVING aggregate_function(<column_name>) <operator> <value>;
+
+USING GROUP BY AND HAVING CLAUSES SUMMARY
+Key points discussed in this video:
+-> The GROUP BY clause is used in conjunction with the aggregate functions to group the resulting rows by specified columns
+-> WHERE clause cannot be used to restrict groups; instead HAVING clause should be Used for this purpose

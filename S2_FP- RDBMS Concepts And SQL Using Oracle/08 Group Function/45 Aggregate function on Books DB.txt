@@ -1,0 +1,63 @@
+AGGREGATE FUNCTIONS ON BOOKS DB TABLES -> INTRODUCTION
+
+Aggregate functions
+-> Set of rows
+--> 1 Value
+
+Examples
+-> SUM
+-> COUNT
+-> AVG
+-> MIN
+-> MAX
+
+Result will be always in 1 value irrespective of the number of rows
+
+Single-row Function
+Applies
+-> Every row or Parameter provided
+
+Aggregate function
+Applies
+-> Set of rows
+
+Aggregate functions on Books DB tables
+
+/********************************************************/
+Program to list the total number of programming books available
+
+COUNT returns the number of rows returned by the query
+/********************************************************/
+
+SELECT COUNT (book_id) AS TOTAL_PROG_BOOKS;
+FROM Books
+wHERE book_type= 'PR';
+
+Get distinct count or book types and publishers
+
+SELECT COUNT (DISTINCT book_type) AS book_type_count,
+    COUNT (DISTINCT publ_id) AS publisher_count
+FROM Books;
+
+/********************************************************/
+Program to list the price of most expensive and least expensive 'DB' type of books published by publisher id 11
+
+MAX returns maximum value of expression
+
+MIN returns minimum value of expression
+/********************************************************/
+
+SELECT MAX (book_cost) AS costliest_book, MIN (book_cost) AS cheapest_book
+PROM Books B
+wHERE book_type = 'DB';
+
+/********************************************************/
+Program to list total number of books and average quantity of books bought by cust id 1001
+
+SUM returns the sum of values of expression
+
+AVG returns average value of expression
+/********************************************************/
+SELECT SUM (qty), AVG(qty)
+FROM book_sales
+WHERE cust_id = 1001;

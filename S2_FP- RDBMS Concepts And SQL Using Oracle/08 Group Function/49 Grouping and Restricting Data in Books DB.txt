@@ -1,0 +1,26 @@
+EXampLe: Group By clause
+
+List book type and total count and value of all types of books supplied by publisher id 11:
+
+SELECT book_type, COUNT (book_id), SUM (book_cost)
+FROM Books
+wEERE publ_id = 11
+GROUP BY book_type;
+
+Example: Group By clause
+List average and total quantity of books bought during first two months of the year:
+
+SELECT To_CHAR (purchase_date, 'MM') , SUM(qty), AVG (qty)
+FROM book_sales
+WHERE TO_CHAR (purchase_date, 'MM') = '01'
+OR TO_CHAR (purchase_date, 'MM')= '02'
+GROUP BY TO_CHAR (purchase_date, 'MM');
+
+Example : Group By with Having
+List cities to which more than 20 shipments have been made during year 2011:
+
+SELECT shipping_citY, COUNT (shipment_id)
+FROM book_shipment
+WEERE TO_CHAR (shipment_date, 'YYYY') = '2011'
+GROUP BY shipping_city
+HAVING COUNT (shipment_id) > 20;
