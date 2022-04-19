@@ -1,0 +1,72 @@
+INDEPENDENT SUBQUERIES ON BOOKS DB TABLES -> INTRODUCTION
+-> While writing normal queries different conditions are used
+-> But in some cases, values for conditions may not be specified
+-> Such values can be acquired from some other query
+-> Subquery
+
+Subqueries: Independent subquery Example 1- demo 
+/*********************************************************/
+Query to show details of all generic type of books which are sold during year 2011 using Independent sub-query
+/*********************************************************/
+
+SELECT book_id, book_title, book_cost
+FROM Books
+WHERE book_type = 'GN'
+AND book_id IN
+(SELECT book_id FROM Book_Sales WHERE TO_CHAR (purchase_date, 'YYYY') = '2011');
+
+Subqueries: Independent subquery Example 2 - demo
+
+/*********************************************************/
+Query to show details of all generic type of books which are sold during year 2011 published by 'Penguin books' using independent subquery
+/*********************************************************/
+
+SELECT book_id, book_title, book_cost
+FROM Books
+WHERE book_type = 'GN'
+AND book_id IN
+(SELECT book_id FROM Book_Sales WHERE TO_CHAR (purchase_date, 'YYYY')= '2011')
+AND publ_id IN
+(SELECT publ_id FROM Publisher WHERE publ_name LIKE 'Penguin%');
+
+Corresponding join version or this quer
+
+
+/*********************************************************/
+
+Subqueries: single Row Independent subquery demo
+/*********************************************************/
+Query to list the names and cost of most and least expensive books using single row independent sub query
+/*********************************************************/
+
+SELECT book_id, book_title, book_cost
+FROM Books
+WHERE book_cost = (SELECT MAX (book_cost) FROM Books)
+OR book_cost = (SELECT MIN (book_cost) FROM Books);
+
+Note:Any number of subaqueries can be present in the main query.
+
+Inner query should only return one value as there should be only one operand each on either sides of the equal
+to operator
+
+Same holds good for other operators like <, >, <=, >=, !=
+/*********************************************************/
+
+Subqueries : Muilti-row Independent subquery demo
+/*********************************************************/
+
+Query to list the Publishers name who have supplied operating system books using multi-row independent
+subquexy 
+/*********************************************************/
+
+SELECT publ_id, publ_name
+FROM Publisher
+WHERE publ_id IN
+    (SELECT publ_id FROM Books WHERE book_type = 'OS')
+ORDER BY publ_id;
+
+Note: Here the inner query can return multiple rows; however each row should contain publ_id only
+
+Same holds good for NOT IN clause also
+/*********************************************************/
+

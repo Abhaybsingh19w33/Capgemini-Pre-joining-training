@@ -1,0 +1,65 @@
+Table of Contents
+1. Types of Independent Subqueries
+    Single-row Subquery.
+    Multiple-row Subquery.
+    Multiple-column Subquery
+2. Summary.
+
+Introduction
+This lecture introduces us to the usage of correlated subqueries.
+
+Learning Objectives
+Upon completion of this module, you will be able to:
+-> Use correlated subqueries in SQL.
+
+1. Types of Independernt Subqueries
+
+When subquery references a column from a table used in the parent query, it is a correlated subquery. In a correlated subquery, the subquery or the inner query is executed once for each row of the main query or the outer query. EXISTS or NOT EXISTS are the operators which are commonly used in correlated subqueries.
+
+Following query retrieves rows from employees table who are working for marketing department.
+
+SELECT first_name, manager_id, job_id
+FROM employees e
+WHERE EXISTS (SELECT employee_id FROM departments d
+    WHERE d.department_id = e.department_id
+    AND department_name = 'Marketing');
+
+FIRST NAME          MANAGER ID      JOB ID
+Michael             100             MK_MAN
+Pat                 201             MK_REP
+
+Above query uses EXTSTS operator. EXISTS returms TRUE if the subquery returms at least one row. The outer query returns the rows only if EXISTS evaluates to TRUE.
+
+Following query lists the departments which do not have employees:
+
+SELECT department_id, department_name
+FROM departments d
+WHERE NOT EXISTS
+(SELECT employee_id FROM employees e WHERE e.department_id = d.department_id);
+
+DEPTID  DEPARTMENT NAME
+120     Treasury
+130     Corporate Tax
+140     Control and Credit
+150     Shareholder Service
+
+Above query uses NOT EXISTS operator. NOT EXISTS retums TRUE if the subquery does not return any row. The outer query returns the rows only if NOT EXISTS evaluates to TRUE.
+
+Following query retrieves employees and lists maximum salary in the department to which that employee belongs, using a subquery in the SELECT clause.
+
+SELECT First_name ||' '|| Last_name AS Full_Name,
+salary, department_id deptid,  (SELECT MAX (salary) from employees b WHERE b.department_id = e.department_id) max_salary
+FROM employees e
+WHERE UPPER (last_name) LIKE 'K%';
+
+FULL NAME       SALARY      DEPTID      MAX SALARY
+Steven King     24000       90          24000
+Neena           17000       90          24000
+Alexander       3100        30          11000
+Payam           7900        50          8200
+Janette         10000       80          14000
+Sundita         6100        80          14000
+
+2. Summary
+-> When subquery references a column from a table used in the parent query, it is a correlated subquery.
+-> EXISTS or NOT EXISTS are the operators which are commonly used in correlated subqueries.

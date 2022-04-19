@@ -1,0 +1,94 @@
+Table of Contents
+1. Types of Independent Subqueries
+    Single-row Subquery
+    Multiple-zow Subquery
+    Multiple-column Subquery
+2. Summary
+
+Introduction
+This lecture introduces us to the usagge of independent subqueries.
+
+Learning Objectives
+Upon completion of this module, you will be able to:
+-> Use various independent subqueries in SQL.
+
+1. Types of Independent Subqueries
+
+Independent subquery is executed independent of the main query. In this case, subquery executes only once irrespective of the number of rows fetched by the main query.
+
+Single-row Subquery
+
+Following query retums employees working in IT department.
+
+SELECT First_name ||' '|| Last_name AS Full_Name,
+Department_id deptid,
+hire_Date FROM employees
+WHERE department_id = (SELECT
+department_id FROM departments
+WHERE department_name= 'IT');
+
+FULL_NAME           DEPTID      HIRE_DATE
+Alexander Hunold    60          03/01/06
+Bruce Ernst         60          21/05/07
+David Austin        60          25/06/05
+Valli Pataballa     60          05/02/06
+Diana Lorentz       60          07/02/07
+
+Note that equality operator is used as single-row subquery operator. Depending on the query other comparison operators like >, < etc. can be used as well.
+
+Following query returns details of employee earning highest salary.
+
+SELECT First_name ||' '|| Last_name AS Full_Name, salary,
+hire_Date
+FROM employees
+WHERE salary = (SELECT MAX (salary) FROM employees);
+
+FULL NAME       SALARY      HIRE_DATE
+Steven King     24000       17/06/03
+
+Multiple-row Subquery
+
+Following query retrieves all employees working in USA.
+
+SELECT first_name, last_name, job_id, salary FROM employees
+WHERE department_id IN (SELECT department_id FROM departments
+WHERE location_id IN (SELECT location_id FROM locations WHERE country_id ='US'));
+
+Independent subquery is executed independent of the main query. In this case, subquery executes only once irrespective of the number of rows fetched by the main query.
+
+Multiple-column Subquery
+
+When a subquery contains more than one column in the query it is a multiple-column subquery.
+
+Following query retrieves all employees earning same as minimum salary offered for the job of Clerk.
+
+SELECT first_name, job_id, salary
+FROM employees
+WHERE (job_id, salary) IN ( SELECT job_id, min_salary FROM jobs
+WHERE UPPER (job_title) LIKE '%CLERK%');
+
+FIRST NAME      JOB ID      SALARY
+Karen           PU_CLERK    2500
+Martha          SH_CLERK    2500
+Randall         SH_CLERK    2500
+
+Following query retrieves employees earning top 5 salaries using subquery in the FROM clause.
+
+SELECT last_name, salary
+FROM (SELECT first_name, 1ast_name, salary, department_id
+FROM employees ORDER BY salary DESC) empl
+WHERE rownum <= 5
+ORDER by rownum;
+
+King        24000
+Kochhar     17000
+De Haan     17000
+Russel      14000
+Fartners    13500
+
+(Note: ROWNUM is a pseudocolumn which acts like a serial number in the output)
+
+2. Summary
+-> A single-row subquery is a subquery which returns only one row.
+-> A multiple-row subquery is a subquery which returns multiple rows.
+-> A multiple-column subquery is the one which contains more than one column in it.

@@ -1,0 +1,51 @@
+Table of Contents
+1. Introduction to Subqueries
+
+Independent Subquery
+Singie-Row Subquery
+Multiple-Row Subquery
+Multiple-column Subqueries
+Correlated Subqueries
+
+2. Summary
+
+Introduction
+This module introduces us to the necessity of subqueries.
+
+Learning Objectives
+Upon completion of this module, you wil be able to:
+-> State the needs of subqueries in SQL
+
+1. Introduction to Subqueries
+
+It may not be always possible to mention the filter conditions for a SELECT query directly; like forexample department_id = 10. Such conditions may have to be derived from another query. Such queries are referred as subqueries.
+
+A query within a query is called subquery. It is usually used in the WHERE clause of a SELECT statement. However, it can also appear in SELECT and FROM clauses. A subquery in turm can contain another subquery. This is called nested subquery. There are many types of subqueries which are listed as below.
+
+Independent Subquery
+
+Independent subquery is executed independent of the main query. In this case, subquery executes only ornce irrespective of the number of rows fetched by the main query.
+
+Single-Row Subqueryy
+
+A Single-Row subquery is a subquery which retums only one row.
+
+Multiple-Row Subquery
+
+A multiple-Row subquery is a subquery which retums multiple rows.
+
+Multiple-column Subqueries
+
+When a subquery contains more than one column in the query it is a multiple-column subquery.
+
+Correlated Subqueries
+
+When subquery references a column from a table used in the parent query, it is a correlated subquery. In a correlated subquery, the subquery or the inner query is executed once for each rovw of the main query or the outer query.
+
+2. Summary
+
+-> A query within a query is called a subquery
+-> A single-row subquery is a subquery which returns only one row.
+-> A multple-row subquery is a subquery which returns multiple rows
+-> When a subquery contains more than one column in the query it is a multiple-column subquery.
+-> When subquery references a column from a table used in the parent query, it is a correlated subquery

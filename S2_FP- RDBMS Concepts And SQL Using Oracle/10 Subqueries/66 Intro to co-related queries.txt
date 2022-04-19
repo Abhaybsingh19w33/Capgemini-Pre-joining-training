@@ -1,0 +1,25 @@
+INTRODUCTION TO CORRELATED SUBQUERIES -> DESCRIPTION
+What is correlated subquery?
+-> Both inner and outer query are interdependent
+-> For every row processed by the inner query, the outer query is processed as well
+-> The inner query depends on the outer query before it can be processed
+-> Condition(s) of the inner query accesses the table(s) of the outer query
+
+INTRODUCTION TO CORRELATED SUBQUERIES -> EXISTS AND NOT EXISTS CLAUSES
+
+-> EXISTS and NOT EXISTS are the two clauses that are commonly used in connection with correlated Subqueries
+
+-> The EXISTS condition is set 'to be met' if the Subquery returns at least one row
+
+-> The NOT EXISTS Condition is set 'to be met' if the Subquery returns no rows
+
+Syntax
+SELECT <Column list>
+FROM <table list>
+WHERE EXISTS (Sub-query);
+
+INTRODUCTION TO CORRELATED SUBQUERIES -> SUMMARY
+Key points discussed in this video:
+-> In correlated subqueries, both inner and the outer queries are interdependent
+-> For every row processed by the inner query, the outer query is processed as well
+-> EXISTS and NOT EXISTS are the twoclauses that are commonly used in connection with correlated subqueries

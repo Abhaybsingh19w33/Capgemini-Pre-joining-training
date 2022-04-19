@@ -1,0 +1,28 @@
+NEED FOR SUBQUERIES INTRODUCTION
+-> There are certain cases where the programmers do not know the conditions directly
+-> >DB might be an output of another query
+-> Subqueries
+
+NEED FOR SUBQUERIES -> DEFINITION
+Subquery is a query within a query
+
+-> Called as Inner query or Nested query
+-> Usually added in the WHERE clause of the SQL statement
+-> Can appear in SELECT, FROM and HAVING Clauses
+
+NEED FOR SUBQUERIES -> USAGE
+-> Used when it is known how to search for a value using a SELECT statement, but does not know the exact value
+-> Subqueries are an alternate way of returning data from multiple tables
+-> A query can contain more than one subqueries
+-> A subquery in turn can contain subqueries
+
+NEED FOR SUBQUERIES TYPES
+Subquery
+Independent Subquery
+-> Runs independent of the main query
+-> Runs only once irrespective of number of rows fetched  in the main query
+
+Correlated Subquery
+-> Runs hand-in-hand with the main query
+-> Runs in proportion to the number of rows fetched in the main query
+-> Inner query might access the column of a table which is being accessed in the outer query

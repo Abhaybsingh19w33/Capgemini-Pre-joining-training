@@ -1,0 +1,59 @@
+QUERYING B00KS DB TABLES USING CORRELATED SUBQUERIES -> INTRODUCTION
+Independent subquery
+-> Used when the value to be compared in a condition is unknown and will be acquired through a subquery
+-> Runs independently of the main query
+
+Oracle
+-> Runs a query
+-> Stores its results
+-> Compares with the main query
+
+Correlated subquery
+-> Inner query runs hand-in-hand with the outer query
+-> Runs along with the outer query
+--> Because - There is a joining condition or the inner query Which refers to a column in the table of an Outer query which is a correlated subquery
+
+Example: Querying Books DB Tables using Correlated Sub Queries
+
+Show detalls of those books whose cost 13 more than the average cost of all books of the same type:
+
+SELECT book_id, SUBSTR (book_title, 1, 25) AS book_title, book_type, book_cost
+FROM Books b1
+WEERE book_cost >
+(SELECT AVG (book_cost) FROM Books b2
+WHERE b2.book_type = b1.book_type);
+
+Note: book_type is being compared in both inner and outer queries
+/*********************************************************/
+
+Example: EXISTS sub query
+
+show names of customer who have bought some books:
+
+EXISTS returns TRUE if the sub-query returns even a single row
+
+SELECT c.cust_fname, c.cust_lname
+FROM Book_Customer c
+WHERE EXISTS (
+    SELECT S.cust_id
+    FROM Book_Sales S
+    WHERE S.cust_id = c.cust_id);
+/*********************************************************/
+
+Example: EXISTS sub queery
+
+List titles of Books bougnt by Prashant which were also bought by Rekha Or Sushma
+
+SELECT book_title
+FROM Books b1, Book_Sales s, Book_Customer c
+WHERE b1.book_id = s.book_id
+AND c.cust_id = s.cust_id
+AND c.cust_fname = 'Prashanth'
+AND EXISTS
+    (SELECT book_title
+    FROM Books b2, Book_Customer c, Book_Sales s
+    WHERE b2.book_id = s.book_id
+        AND b2.book_id = b1.book_id
+        AND c.cust_id = s.cust_id
+            AND (c.cust_fname = 'Rekha'
+            OR c.cust_fname = 'Sushma'));
