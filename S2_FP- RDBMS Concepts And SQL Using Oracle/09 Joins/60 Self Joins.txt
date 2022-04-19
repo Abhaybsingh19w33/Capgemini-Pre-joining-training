@@ -1,0 +1,59 @@
+Table of Contents
+1. Introduction to Self Join
+13. Summary
+
+Introduction
+This module introduces you to the usage of self-join.
+
+Learning Objectives
+Upon completion of this module, you will be able to:
+-> Use self joins in SQL
+
+1. Introduction to Self Join
+
+Self-join queries are used to join a table with itself. Same table name is mentioned twice with different aliases in the FROM clause. Related colunmns are joined using the Join condition.
+
+In the employees table, each employee reports to a manager which is given by column manager_id.
+
+The manager also has employee_id and other details like any other employee, which is also present in the same table. The need to list out employees along with the names of their managers can be fulfilled using self-join.
+
+SELECT e.last_name AS emp_name, mgr.lastname AS mgr_name
+FROM employees e, employees mgr
+WHERE e.manager_id = mgr.employee_id ;
+
+Note that the table employees is joined to itself but with a different alias name.
+
+Using ANSI syntax for self-join queries, we need to use JOIN ON instead of JOIN USING clause.
+
+Note that JOIN ON dause is also used if the column names of the relation column in the joining tables are not the same.
+
+SELECT e.last_name emp_name, mgr.last_name mgr_name
+FROM employees e INNER JOIN employees mgr
+ONe.manager_id = mgr.employe_id;
+
+EMP LAST NAME       MANAGER LAST NAME
+Bloom               Cambrault
+Bates               Cambrault
+Hunold              De Haan
+Vishney             Erraziruz
+Bissot              Fripp
+Atkinson            Fripp
+Urman               Greenberg
+
+Following query lists all employees working in the same department as 'BRUCE' using self-join:
+
+SELECT e.first_name ||' '|| e.last_name AS Full_Name,
+e.department_id dept
+FROM employees e, employees br
+WHERE UPPER (br.first_name) = 'BRUCE'
+AND e.department_id = br.department_id
+AND UPPER (e.first_name) <> UPPER (br.first_name);
+
+FULL_NAME           DEPT
+Alexander Hunold    60
+David Austin        60
+Valli Pataballa     60
+Diana Lozentz       60
+
+13 Summaty
+-> Self-join queries are used to join a table with itself.

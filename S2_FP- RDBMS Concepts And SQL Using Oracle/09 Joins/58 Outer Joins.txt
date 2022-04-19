@@ -1,0 +1,79 @@
+Table of Contents
+1. Outer Joins
+2. Summary
+
+Introduction
+This module introduces us to the usage of outer joins.
+
+Learning Objectives
+Upon completion of this maodule, you wil be able to:
+-> Use outer joins in SQL statement.
+
+1. Outer Joins
+
+In employees table there may be rows wherein the department is not yet assigned. Similarly there may be a few records in departments for which employees are not yet assigned. When we do an inner join, such rows will not get queried. Outer join can be used in order to inchude such rows in the result set in addition to the rows retumed by the inner join condition.
+
+A left outer join returms rows based on the inrner join condition as well as rows from the table to the left of the JOIN clause for which there is no match.
+
+Following query lists all employees from employees table including any rows where the department_id column is NULL:
+
+SELECT First_name ||' '|| Last_name AS Full_Name,
+    department_id, department_name
+FROM employees LEFT OUTER JOIN department
+USING (department_id);
+
+Same output can be achieved using traditional Oracle query as below:
+
+SELECT First_name ||' '|| Last_name AS Full_Name,
+    e.department_id, department_name
+FROM employees e, departments d
+WHERE e.department_id = d.department_id(+);
+
+Note that the outer join operator(+) appears on the RIGHT side for LEFT OUTER JOIN while using traditional Oracle query.
+
+
+A right outer join returms rows based on the inner join condition as well as rows from the table to the right of the JOIN cdause for which there is no match.
+
+Following query lists all departments from departments table incduding any rows where there are no employees in the employees table:
+
+SELECT First_name ||' '|| Last_name AS Full_Name,
+    department_id, department_name
+FROM employees RIGHT OUTER JOIN departments
+USING (department_id) ;
+
+Same output can be achieved using traditional Oracle query as below:
+
+SELECT First_name ||' '|| Last_name AS Full_Name,
+    e.department_id, department_name
+FROM employees e, departments d
+WHERE e.department_id (+) =d.department_id;
+
+If there is a need to retrieve all employees from employees table incuding any rows where the department id column is NULL as well as all departments from departments table including any rows where there are no employees in the employees table, we use full outer join.
+
+SELECT First_name ||' '|| Last_name AS Full_Name,
+    department_id, department_name
+FROM employees FULL OUTER JOIN departments
+USING (department_id);
+
+Note that in traditional oracle query, using outer join operator (+) on both sides of the
+comparison operator results in an error.
+
+SL No   FULL NAME       DEPARTMENT ID   DEPARTMENT_NAME
+1       Jack Livingston 60              Sales
+2       Kimberely Grant null            null
+3       Winston Taylor  50              Shipping
+4       null            220             NOC
+5       null            170             Manufacturing
+
+2. Summary
+Here are the key takeaways:
+
+-> Outer join can be classified as left outer join, right outer join, and full outer join.
+
+-> A left outer join returns rows based on the inner join condition as well as rows from the table to the left of the JOIN dause for which there is no match.
+
+-> A right outer join retums rows based on the inner join condition as well as rows from the table to the right of the JOIN clause for vwhich there is no match.
+
+-> A full outer join is a combination of both left and right outer joins.
+
+-> In traditional oracle query, using outer join operator (+) on both sides of the comparison operator results in an error.

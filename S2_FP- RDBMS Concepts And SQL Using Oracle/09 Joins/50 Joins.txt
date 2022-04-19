@@ -1,0 +1,40 @@
+JOINS -> DEFINITION
+
+-> A join is used to query data from two or more tables
+-> It relies on the relationship between columns of tables
+
+The common attribute helps to join back the tables to form the original table
+
+JOINS -> INNER JOIN
+-> Tables in a database are often related to each other with common columns
+-> Two or more tables are joined based on common columns
+-> Names of common columns may not be the same
+-> If N tables are being joined, there would be N-1 joining statements
+
+Syntax for joining tables
+
+SELECT <column_name(s)>
+    FROM <table_name1>
+INNER JOIN <table_name2>
+    ON <table_name1.column_name> = <table_name2.column_name>
+
+[INNER JOIN <table_name3>
+
+    ON <table_name2.column_name> = <table_name3.column_name>
+    ... and so on.]
+
+WHERE <condition(s)> ] 
+-> Use WHERE condition to filter out certain rows
+
+JOINS -> CARTESIAN PRODUCT JOIN
+-> Default join method used by database, if inner join is not specified
+-> Every row of one table is paired with every row in the second table
+-> Happens when relationship between two tables is not defined or there is no common column between them
+
+JOINS -> SUMMARY
+Key points discussed in this video:
+
+-> A join is used to query data from two or more tables. It reles on relationship between columns of tables
+-> Inner join joins two or more tables to query data from them
+-> Cartesian product join is the default join method used by the database, if inner join is not specified
+-> Cartesian join is used to generate large number of rows for testing

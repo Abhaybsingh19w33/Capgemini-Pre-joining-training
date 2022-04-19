@@ -1,0 +1,45 @@
+OUTER JOINS -> DEFINITION
+-> Used when matched rows from one table and all rows (including unmatched) are required from other table(s)
+
+Left Outer Join:
+-> Returns all rows from the left table (Table A), even if there are no matches in the right table (Table B)
+-> Retrieves rows from right table (Table B), that match based on common key
+-> For non-matching rows, only left table columns are retrieved, with right table columns as null
+
+SYNTAX
+SELECT <column_name(s)>
+FROM <table_name1>
+LEFT [OUTER] JOIN <table_name2>
+    ON table_name1.column_name = table_name2.column_name
+[LEFT [OUTER] JOIN <table_name3>
+    ON table_name2.column_name = table_name3.column_name
+...]
+[WHERE <condition(s)>]  
+
+
+
+OUTER JOINS -> RIGHT OUTER JOIN
+-> Returns all rows from the right table (Table B), even if there are no matches in the left table (Table A)
+
+-> Retrieves rows from left table (Table A) that match based on common key
+
+-> For non-matching rows, only right table columns are retrieved, with left table columns as NULL
+
+SYNTAX
+
+SELECT <Column_name(s)>
+FROM <table_name1>
+RIGHT [OUTER] JOIN <table_name2>
+    ON table_name1.column_name = table_name2.column_name
+RIGHT [OUTER] JOIN <table_name3>
+    ON table_name2.column_name = table_name3.column_name
+...
+[WHERE <condition(s)>]
+
+
+OUTER JOINS -> SUMMARY
+Key points discussed in this video:
+-> Outer join is used when matched rows from one table and all (including unmatched) rows are required from other table(s)
+-> Outer joins are of two types: Left Outer Join and Right Outer Join
+-> Left Outer Join returns matched rows from both tables and unmatched rows from the left table
+-> Right Outer Join returns matched rows from both tables and unmatched rows from the right table

@@ -1,0 +1,54 @@
+NEED FOR JOINS -> DEFINING JOINS
+
+What is a Join?
+-> Joins are used to query data from two or more tables based on a relationship between certain columns in the tables
+
+Example
+PUBL ID is a foreign key in Books table
+Publisher_ID
+
+There should be an appropriate relation established with the help of a foreign key constraint
+
+-> Tables in a database are often related to each other with common columns
+
+-> Two (or more) tables are joined based on the common columns among each pair of tables
+
+-> Names of common columns may not be same in tables
+
+How to join two tables?
+-> If N tables are being joined, there would be N-1 joining statements
+
+Example
+Join two tables: One joining condition
+Join three tables: Two joining conditions
+
+Oracle Database performs a join whenever multiple tables appear as a FROM clause of the query
+
+NEED FOR JOINS -> CARTESIAN PRODUCT JOIN
+Cartesian Product Join -> Algebra Concepts
+
+Each row in the first table is paired with all the rows in the second table
+
+-> Do not use Cartesian product join if a joining condition is not specified - Default join
+-> Use Cartesian product join to test large amount of data
+
+NEED FOR JOINS -> TYPES OF SQL JOINS
+Most commonly used join is Inner Join
+
+INNER JOIN - Returns rows that match on common key values, when compared from both tables
+
+LEFT OUTER JOIN
+-> Returns matched rows from both tables
+-> Unmatched rows from the left table
+
+RIGHT OUTER JOIN
+-> Returns matched rows from both tables
+-> Unmatched rows from the right table
+
+NEED FOR JOINS -> SUMMARY
+Key points discussed in this video:
+
+-> A join is a query that combines roWs from two or more tables, viewS, or materialized views
+-> Oracle Database performs a join whenever multiple tables appear as a clause of the query
+-> In Cartesian product join of two sets, each row in the first table is paired with all rows in the second table
+-> Different SaL joins are Inner join, Left Join and Right Join

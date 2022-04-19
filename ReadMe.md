@@ -1,3 +1,8 @@
+all videos are hosted on vimeo site there is possibility to download them
+https://vimeo.com/user19584879
+
+https://vimeo.com/414911754
+
 Used java version - 8u251
 
 In course JAVA version - 8u31

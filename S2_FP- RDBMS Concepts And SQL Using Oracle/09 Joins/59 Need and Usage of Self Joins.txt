@@ -1,0 +1,19 @@
+Need for Self Joins
+
+-> Tables like Employee, contain hierarchical data
+-> Hierarchical data - have a tree structure representing the management reporting line
+
+NEED AND USAGE OF SELF JOINS -> USAGE
+
+Other Scenarios
+-> Identify other books which were also bought along with a given book
+-> Customers who are living in the same city
+-> List the books whose type is same as the given book title
+
+NEED AND USAGE OF SELF JOINS
+SUMMARY
+Key points discussed in this video:
+
+-> Tables like Employee, contain hierarchical data
+-> Information of both employee and his/her reporting manager lie in the same table
+-> To get manager's name of an employee use Self Join manager id of the employee with employee id of the manager

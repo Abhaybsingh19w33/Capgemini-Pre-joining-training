@@ -1,0 +1,56 @@
+outer Joins: LEPT OUTER JOIN EXample 1- demo
+/*********************************************************/
+
+Query to show usage of LEFT oUTER JOIN using ANSI and oracle syntaxes
+
+/*********************************************************/
+
+List id, name, city and book sales details of all customers from the Customer table
+
+/*********************************************************/
+SELECT c.cust_id, c.cust_fname, c.cust_lname, s.sales_id, s.purchase_date
+FROM Book_Customer c
+LEFT OUTER JOIN Book_Sales s ON c.cust_id = s.cust_id
+WHERE c.cust_reg_date > '01-Jan-2011'
+ORDER BY 5;
+
+This is ANSI STANDARD Syntax
+
+SELECT c.cust_id, c.cust_fname, c.cust_lname, s.sales_id, s.purchase_date
+FROM Book_Customer c, Book_sales s
+WEERE c.cust_id = s.cust_id (+)
+AND c.cust_reg_date > '01-Jan-2011'
+ORDER BY 5;
+
+Note: (+) is on the RHS for LEFT OUTER JOIN
+This format may not work in other databases
+
+
+Outer Joins: RIGHT O0TER JOIN Example 1 demo 
+/*********************************************************/
+Program to show usage of RIGHT OUTER JOIN using ANSI and oracle syntaxes
+/*********************************************************/
+
+List all authors along with their book titles even if no books are mapped to their ids
+
+SELECT a.author_id, a.author_name, b.book_id, SUBSTR (b.book_title, 1, 20) AS book_title
+FROM Book_Author ba
+RIGHT JOIN Authors a    -- or RIGHT OUTER JOIN
+ON ba.author id = a.author_id
+RIGHT JOIN Books b      -- or RIGHT OUTER JOIN
+ON ba.book_id = b.book_id
+ORDER BY 3, 2;
+
+Note: OUTER keyword is optional
+
+Three tables are being outer joined here; can be extended further
+
+Same query can be written with LEFT JOIN by interchanging the positions of the tables
+
+List all authors along with their book titles even if no books are mapped to their ids
+
+SELECT a.author_id, a.author_name, b.book_id, SUBSTR (b.book_title, 1, 20) AS book_title
+FROM Books b, Book_Author ba, Authors a
+WHERE a.author_id (+) = ba.author_id
+AND ba.book_id (+) = b.book_id
+ORDER BY 1, 2;

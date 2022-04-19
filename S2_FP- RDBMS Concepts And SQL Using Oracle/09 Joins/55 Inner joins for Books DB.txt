@@ -1,0 +1,60 @@
+SELECT Books.book_id, book_title, book_ type, purchase_date, qty, cust_id
+FROM Books INNER JOIN Book_Sales
+ON Books.book_id = Book_Sales.book_id
+WHERE book_type = 'GN';
+
+SELECT B.book_id, book_title, book_type, purchase_date, qty cust_id
+FROM Books B, Book_Sales S
+WHERE boOk_type = 'GN'
+AND B.book_id = S.book_id;
+
+Inner Joins: Example 2 demo
+/*********************************************************/
+Program to list id, name and total sales made by premium customers i.e. who bought books worth >= Rs. 10000
+using inner join
+/*********************************************************/
+
+/*********************************************************/
+Cust_name is obtained by concatenating Ename & Lname columns of Book_Customer table
+
+Note that same column format is used in GROUP BY clause
+
+Note: Total sales = Qty bought * Book cost
+
+Similarly any no. of tables can be joined together to get required resultss
+/*********************************************************/
+
+SELECT c.cust id, c.cust_fname || '' || c.cust_lname AS cust_name,
+SUM(s.qty * b.book_cost) As total_sales
+FROM Books b, Book_Sales s, Book_Customer c
+WHERE b.book_id = s.book_id
+AND s.cust_id = c.cust_1d
+GROUP BY c.cust_id, c.cust_fname || '' || c.cust_lname
+HAVING SUM (qty * b.book_cost) >= 10000;
+
+
+/*********************************************************/
+
+Inner Joins: Example 1 demo 
+
+/*********************************************************/
+Program to illustrate inner join between two tables and display book id, title and author names of book id 'B0111':
+/*********************************************************/
+
+Specifying b.book_id in SELECT is necessary to avoid 'column ambiguously detined' error
+
+It is advisable to prefix each column with the alias name of its corresponding table
+
+Book_Author table is the common link between Books & Authors tables, which otherwise do not have a common
+column to join
+
+book_id is common between Books & Book_Author tables
+
+author_id common between Book_Author and Authors tables
+
+SELECT b.book_id, b.book_title, a.author_pame
+FROM Books b, Book_Author ba, Authors a
+WHERE b.book_id = 'B0111'
+AND b.book_id = ba.book_id
+AND ba.author_id = a.author_id;
+

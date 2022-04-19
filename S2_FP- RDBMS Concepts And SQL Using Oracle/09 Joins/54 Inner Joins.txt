@@ -1,0 +1,69 @@
+Table of Contents
+1. Inner Joins
+1.1 Cartesian Joins
+2. Summary
+
+Introduction
+This lecture introduces us to the usage of inner joins.
+
+Learning Objectives
+Upon completion of this lecture, we will be able to:
+-> Use inner joins in SQL
+
+1. Inner Joins
+
+In the examples we have dealt with until now, data is fetched from a single table. In practical situations, there arises a need to fetch the data stored in two or more tables using single SELECT statement. This can be achieved by using a join query. In order to join two tables, we need to identify a common column in each of those two tables. This common column relates the two tables.
+
+Following queryjoins employees and departments table to fetch the department name column along with employee name:
+
+SELECT First_name ||' '|| Last_name AS Full_Name,
+employees.department_id, department_name
+FROM employees, departments
+WHERE employees.department_id = departments.department_id;
+
+In the above query, two tables to be joined harve a common column department_id.
+
+The join condition is spedified in the WHERE lause using comparison operator. Since in this query the tivo tables are joined using equality comparison operator, the query is called equality join or equijoin. This query is also a simple join as only the join condition is specified in the WHERE dlause. A simple join is also known as inner join. Since the column department id is present in both the tables, the column name has to be qualified with its table name wherever it appears in the SELECT statement. Alternatively, we can specify table alias in the FROM cdause and use the table alias to quality the common column.
+
+Following query joins employees and departments table to fetch the department name column along with employee name. This query makes use of table alias:
+
+SELECT First_name ||' '|| Last_name AS Full_Name,
+    e.department_id, department_name
+FROM employees e, departments d
+WHERE e.department_id = d.department_id
+AND location_id=l700;
+
+Since the above query also uses another condition to restrict the number of rows returmed, this join is known as complex join.
+
+Following query joins three tables to display the department_name ity and country information.
+
+SELECT First_name ||' '|| Last_name AS Full_Name,
+    department_name, city, country_id AS country
+FROM employees e, departments d, locations l
+WHERE e.department_id = d.department_id
+AND d.location_id = l.location_id;
+
+FULL NAME       DEPARTMENT NAME     CITY                COUNTRY
+Ellen Abel      Sales               Oxford              UK
+Sundar Ande     Sales               Oxford              UK
+Mozhe Atkinson  Shipping            South San francisco US
+David Austin    IT                  Southlake           US
+
+1.1 Cartesian Joins
+
+Cartesian join occurs when we omit the join condition in the WHERE clause.
+
+Following query forms a cartesian join as the join condition is missing in the WHERE clause:
+
+Even though there is only one row in the locations table with city= "Seattle', since the join condition is missing, this row is joined with every other row in the departmernts table.
+
+select city, department_name
+from locations l, departments d
+where UPPER (City) = 'SEATTLE';
+
+2. Summary
+Here are the key takeaways:
+
+-> If two tables are joined using equality comparison operator, the query is called inner join, equality join or equijoin.
+
+-> Cartesian join occurs when we omit the join condition in the WHERE clause.

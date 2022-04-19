@@ -1,0 +1,20 @@
+Example: self Joln
+
+Show employee id and names of employees and their corresponding managers :
+
+SELECT emp.employee_id, emp.first_name, mgr.employee_id, mgr.first_name
+FROM Employees emp, Employees mgr
+WHERE emp.manager_id = mgr.employee_id
+ORDER BY mgr.employee_id, emp.employee_id;
+
+Join the table with itself to retrieve the 'first name' of the managers
+
+Example: Self Join
+List customers and book ids which were bought along with 'B0001'
+
+SELECT s1.cust_id, s2.book_id
+FROM book_sales s1, book_sales s2
+wHERE S1.book_id = 'B0001'
+AND s1.book_id <> s2.book_id    --To avoid BOO01 also getting displayed in the output
+AND s1.cust_id = s2.cust_id     --To get customers who bought book 'B0001'
+ORDER BY 1, 2;
