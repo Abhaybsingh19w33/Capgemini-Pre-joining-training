@@ -1,0 +1,16 @@
+OOAD AND UML -> COURSE INTRODUCTION
+
+Welcome to the course on 00AD and UML
+
+This course is divided into five modules:
+-> 00P Concepts
+-> Introducing UML
+-> Dynamic View Diagram
+-> More Dynamic View Diagram
+-> Static View Diagram
+
+OOAD AND UML -> BENEFITS TO YOU
+-> This program will help you understand the need for methodology, in particular 00AD.
+-> You will understand how to analyse and design a system using a particular methodology.
+-> It will also help you understand the need for Visual Modeling and the usage of UML in Visual Modeling.
+
