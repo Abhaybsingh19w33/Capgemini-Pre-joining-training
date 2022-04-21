@@ -1,0 +1,68 @@
+INDEXING TABLES ON BOOKS DB PART 01 -> INTRODUCTION
+-> Creation of database
+-> Population of data
+-> Insertion of huge number of data rows into tables
+-> Exponential increase of database size
+-> Increase in time required to search data
+
+Index -> Technique used to retrieve the data very quickly
+
+Possible to have multiple number of indexes in a table
+Providing
+There is only 1 index created on a particular column
+
+An already indexed column can not have another index
+
+Indexing tables of Books DB: Normal Index Example 1- demo
+
+Indexes make database search operatlons taster
+
+/***********************************************************/
+Query to create Non-unique index
+/***********************************************************/
+
+CREATE TNDEX book_index ON books (book_type);
+
+/***********************************************************/
+Indexing tables of Boo ks DB: Normal Index Example 2- demo 
+
+Indexex make database search operations faster
+
+/***********************************************************/
+Query to create Unique index
+/***********************************************************/
+
+CREATE UNIQUE INDEX cust_mail_ndx ON Book_Customer (cust_email);
+
+Assuming cust_email column doesn't have UNTQUE constraint in which case it will already have an index
+
+
+
+Indexing tables or Books DB: Composite Index Example 1-demo
+
+Indexes make database search operations taster
+
+/***********************************************************/
+Query to create compsite index
+/***********************************************************/
+
+CREATE INDEX fullname_ndx
+ON Book_customer (cust_fname, cust_lname);
+
+Indexing tables of Books DB: Compos ite Index Example 2- demo
+
+Indexes make database search operations raster
+
+/***********************************************************/
+Query which uses this composite index
+/***********************************************************/
+
+SELECT cust_id, cust_fname, cust_city
+FROM Book_customer
+WHERE cust_fname = 'Ramesh' OR cust_lname = 'khan';
+
+OR
+
+SELECT cust_id, cust_fname, cust _city
+FROM Book_customer
+WHERE cust_fname LIKE 'S%';

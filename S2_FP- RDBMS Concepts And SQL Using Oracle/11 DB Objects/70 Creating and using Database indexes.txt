@@ -1,0 +1,98 @@
+Table of Contents
+1. Creating and Using Database Indexes
+2. Types of Indexes
+3. Creating Indexes
+3.1 Tips on Indexing
+3.2 Examples
+3. Function-based Index
+4. Summary
+
+Introduction
+This module introduces the creation and usage of database indexes.
+
+Learning Objectives
+Upon completion of this module, you will be able to:
+-> Create and use database indexes in SQL
+
+1. Creating and Using Database Indexes
+ORACLE -> DATABASE INDEXES
+
+Oracle indexes provide faster access to table rows by storing sorted values in indexed columns and using those sorted values to easily lookup the associated table rows.
+
+While retrieval is faster, the trade-off is that manipulating data is slower as the index
+needs to be rebuilt whenever data is changed through DML statements.
+
+2. Types of Indexes
+
+UNIQUE/NON-UNIQUE
+
+Unique indexes are created on a unique column, say, a column which contains Aadhaar number. Using unique constraints on such columns wil enable Oracle to create a unique index on those columns.
+
+Unique index can also be created on columns that do not have explicit unique constraint on them but their values are unique. An attempt to insert a duplicate value to this column would fail via the index as it prevents duplicate index entries.
+
+PRIMARY/ SECONDARY
+
+Primary indexes are unique indexes that cannot contain NULL. Oracle automatically creates a primary index on a primary key column.
+
+Secondary indexes are other indexes in the same table that may not be unique.
+
+COMPOSITE
+
+Composite indexes are indexes that contain two or more collumns from the same table. They are useful for enforcing uniqueness where there's no single column that can uniquely identify a row.
+
+3. Creating Indexes
+
+While creating the index object, Oracle first sorts the values of the column(s) on which the index is being created along with the corresponding ROWID (address of the row which is unique to the whole database) of the row.
+
+Only one index can be created ona column or a set of columns.
+
+3.1 Tips on Indexing
+
+-> Create primary keys for all tables as an index will be created by default
+-> Index columns that are involved in join operations
+-> Index columns that are used frequently in WHERE clauses
+-> Columns that are frequently updated are not suitable for indexing
+
+-> Index if the need is to access not more than 10-15% of the data in the table. A full table scan (read all the rows in the table) is better if the intention is to retrieve a high percentage of the table data. This is because an index read requires two reads.
+
+3.2 Examples
+
+The followving statement creates an index on ename column of emp table:
+
+CREATE INDEX emp_ename_idx ON emp (ename);
+
+The above index would be used when using column ename in the WHERE clause:
+
+SELECT empno, ename, deptno FROM emp WHERE ename= 'KING';
+
+The following statement drops an index.
+
+DROP INDEX emp_ename idx;
+
+3. Function-based Index
+
+Traditionally, an index would not be used if a function is performed on an indexed column in the WHERE clause of a query.
+
+When a function-based index is used, rather than indexing the column, the function on that column is indexed, storing the product of the function.
+
+The following statement creates a function-based index on the column ename:
+
+CREATE INDEX emp_name_idx ON emp (UPPER (ename) ) ;
+
+The following query would use the function-based index:
+
+SELECT empno, ename, deptno
+FROM emp
+WHERE UPPER (ename) = 'KING';
+
+Note that this index will not get used if the above WHERE clause uses ename column directly without UPPER in its condition.
+
+The following are some data dictionary tables/views on indexes:
+
+USER_INDEXES        Describes all indexes in the database
+USER_IND_COLUMNS    Describes the columns of all indexes on the tables
+
+4. Summary
+-> Oracle index provides faster access to table rows.
+-> By default, Oracle creates a primary index on a primary key column.
+-> When a function-based index is used, rather than indexing the column, the function on that column is indexed, storing the product of the function.

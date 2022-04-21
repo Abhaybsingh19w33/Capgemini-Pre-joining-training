@@ -1,0 +1,129 @@
+Table of Contents
+1. Database Views
+2. Creating Views
+3. Creating Force Views
+3. Updatable View
+3. Drop View
+4. Summary
+
+Introduction
+This module introduces the usage of database views in Oracle.
+
+Learning Objectives
+Upon completion of this module, you will be able to:
+-> Use views in Oracle database
+
+1. Database Views
+
+Views are knovwn as logical tables. Ihey represent the data of one or more tables.
+
+A view derives its data from the tables on which it is based, knovwn as base tables. Views can be based on tables or on another view.
+
+2. Creating Views
+
+CREATE VIEW statement is used to define a view.
+
+The following statement creates a view based on employees table for employees working in the IT department.
+
+CREATE VIEW IT_staff_view AS
+SELECT employee_id, last_name, email, Hire_Date, job_id, salary, Department_id
+FROM Employees
+WHERE Department_id = 60;
+
+Instead of providing a WHERE condition every time, the following query on views can be used to view employees working in the IT department.
+
+SELECT * FROM IT_staff_view;
+
+SELECT SUM (salary) FROM IT_staff_view;
+
+To alter the definition of a view, the following methods can be used:
+
+-> A view can be dropped and then re-reated.
+-> A view can be replaced by redefining it with a CREATE VIEW statement that contains the OR REPLACE option. This option replaces the current definition of a view but preserves the present security authorizations.
+
+The query that defines the view IT_staff_view references only rows in department 60. Using WITH CHECK OPTION clause in the create view statement creates a view with the constraint that INSERT and UPDATE statements issued against the view are not allowed to create or modify the rovws that the view cannot select.
+
+CREATE OR REFLACE VIEW IT_staff_view AS
+SELECT employee_id, last_name, email,
+Hire_ Date, job_id, salary, Department_id
+FROM Employees HERE Department_id = 60
+WITH CHECK OPTION;
+
+Considering the above example, the following INSERT statement successfully inserts
+a row into the employees table through the view IT_staff_view:
+
+INSERT INTO IT_staff_view (employee_id, last_name, email,
+hire_date job_id, salary, department_id)
+VALUES (300, 'Patel', 'APATEL', TO_DATE ('01-01-2014', 'dd-mm-yyyy'), 'IT_PROG',5000, 60);
+
+However, trying to INSERT a row through the above view with a department_id other than 60 would result in an error because the row for department number other than 60 cannot be selected using the view T_staff_view.
+
+To query employee details along with the name of the departmernt where they work, a join query has to be issued.
+
+Instead of using this join query everytime, we could create a view on these tables by using a CREATE VIEW command as shown below:
+
+CREATE VIEN emp_dept_v
+AS SELECT employee_id, last_name, email, Hire_Date, job_id,
+salary,
+e.department_id, deparcment_name, location_id
+FROM employees e, departments d
+WHERE e.department_id = d.department_id;
+
+Now to see the employee details and department names, one can just type the following simple query.
+
+SELECT last_nane, department_name, location_id FROM emp_dept_v;
+
+3. Creating Force Views
+
+A view can be created even if the defining query of the view cannot be executed, as long as the CREATE VIEW command has no syntax errors.
+
+If a view refers to a non-existent table, the view can still be created by using FORCE VIEWS option.
+
+CREATE FORCE VIEW <View name> AS <SELECT statement>;
+
+When a view is created with errors, Oracle returns a message and leaves the status of the view as INVALID. If conditions charnge later so that the query of an invalid view can be executed, then the view can be recompiled and becomes valid. Oracle dynamically compiles the invalid view when there is an attempt to use it.
+
+To know about the columns that can be modified in a view, query on the data dictionary view USER_UPDATABLE_COLUMNS.
+
+SELECT * FROM USER_UPDATABLE_COLUMNS WHERE TABLE_NAME =
+'EMP_DEPT_V';
+
+4. Updatable View
+
+An updatable view is used to insert, update, or delete base table rows.
+
+With some restrictions, rows can be inserted into, updated in, or deleted from a base table using a view.
+
+DML operations performed on a view affect the base table of the view.
+
+For a view to be updatable, the following conditions must be met:
+
+-> Each column in the view must map to a column of a single table.
+-> If a view is defined with WITH CHECK OPTION, then a row cannot be inserted into or updated in the base table using the view since it cannot select the row from the base table.
+-> If a NOT NULL column that does not have a DEFAULT clause is omitted from the view, then a row cannot be inserted into the base table using the view.
+
+If a view based out of a query containing JON operation has to be updatable, the DML statement must affect only one table underlying the join.
+
+The following example shows an UPDATE statement that successfully modifies the view emp_dept_v.
+
+UPDATE Emp_dept_vSET Salary = Salary * 1.10 WHERE Department_id = 60;
+
+This statement fails vwith the error 'Cannot modify a column which maps to a non key-preserved table'.
+
+This is because it attempts to modify the underlying departments table which is not key-preserved in the view emp_dept_v.
+
+5. Drop View
+
+Once a VTEW has been created, it can be dropped using DROP VIEW Statement.
+
+The syntax for the DROP VIEW statement is:
+
+DROP VIEW <view_name>;
+
+6. Summary
+
+-> Views are known as logical tables. They represent the data of one or more tables.
+
+-> An updatable view is used to insert, update, or delete base table rows.
+
+-> Query on the data dictionary view USER_UPDATABLE_COLUMNS to know about the cohumns that can be modified in a view.

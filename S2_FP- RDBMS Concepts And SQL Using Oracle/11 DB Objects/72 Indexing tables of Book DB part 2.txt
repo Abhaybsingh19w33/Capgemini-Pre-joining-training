@@ -1,0 +1,56 @@
+Indexing tables of Books DB : Function-based Index - demo
+
+/*********************************************************/
+Query to create Function-Based index
+/*********************************************************/
+
+Function-based indexes are indexes on functions and expressions that involve one or more columns in the table being indexed
+
+CREATE INDEX book_price_ndx
+ON Books ((100-NVL (book_discount, 0))*0.01);
+
+CREATE INDEX customer_index
+ON Book_Customer (UPPER(Cust_fname));
+
+Note:This index gets used only if UPPER (cust_fname) is used in the condition
+/*********************************************************/
+
+
+
+Indexing tables of Books DB: Altering an Index - Example 1 - demo
+
+/*********************************************************/
+Program to make an index unusable
+/*********************************************************/
+
+ALTER INDEX fullname_ndx UNUSABLE;
+
+Indexing tables of Books DB: Altering an Index - Example 2 - demo
+
+/*********************************************************/
+Program to make an index useable again
+/*********************************************************/
+
+ALTER INDEX fullname_ndx REBUILD;
+
+Indexing tables or Books DB: Altering an Index Example 3 - demo
+
+/*********************************************************/
+Program to disable function-based index
+/*********************************************************/
+
+ALTER INDEX customer_index DISABLE;
+
+
+Indexing tables of Books DB: Dropping an Index - demo
+
+/*********************************************************/
+Program to drop an index
+/*********************************************************/
+
+If an index is no longer required, it can be dropped:
+
+However, all indexes of a table automatically get dropped when the table is dropped
+
+DROP INDEX customer_index;
+/*********************************************************/

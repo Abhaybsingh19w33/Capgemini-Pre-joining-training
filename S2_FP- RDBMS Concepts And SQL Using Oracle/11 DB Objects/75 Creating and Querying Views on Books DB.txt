@@ -1,0 +1,157 @@
+QUERYING BOOKS DB TABLES USING CORRELATED SUBQUERIES -> INTRODUCTION
+
+View
+-> Feature to hide confidential information
+-> Not a table but is considered a virtual table
+-> Hides data by selecting only non-confidential columns from the set of tables and providing access to the required users so that they will access only those non confidential data
+
+
+Creating and querying views in Books DB: Creating Views Example l - demo 
+
+/*********************************************************/
+Query to create a view for selecting set of entire rows
+/*********************************************************/
+
+CREATE VIEW Sales_in_2011 As
+SELECT * FROM Book_Sales
+WHERE purchase_date
+    BETWEEN '01-Jan-2011' AND '31-dec-2011';
+
+Creating and querying views in Books DB: Creating Views Example 2 - demo
+
+/*********************************************************/
+Query to create a view for selecting all rows of select few columns
+/*********************************************************/
+
+CREATE VIEW Customer_Contact AS
+SELECT cust_id, cust_email, cust _city
+FROM Book_Customer;
+
+Creating and querying views in Books DB: Creating Views - Example 3 - demo
+
+/*********************************************************/
+Query to create a view for selecting few rows and columns
+/*********************************************************/
+
+CREATE VIEW Delhi_Customers AS
+SELECT cust_id, cust_fname, cust_lname, cust email, cust_city
+FROM Book_Customer
+WHERE UPPER (cust_city) = 'DELHI';
+
+Creating and querying views in Books DB: Creatlng Views - Example 4 - demo
+
+/*********************************************************/
+Query to create a view query containing a group BY clauses
+/*********************************************************/
+
+CREATE VIEW Book_Count_View As
+SELECT publ_id, COUNT (book_title) As Book_count,
+FROM Books
+GROUP BY publ_id;
+
+Note: Book_count is a aliased column and such aliased column name will become one of the columns
+
+creating and querying views in Books DB: Creating Views - Example 5 - demo
+
+/*********************************************************/
+Query to create a views based on 2 or more tables joined in their underlying query
+/*********************************************************/
+
+CREATE VIEW Book_Purchase_View as
+SELECT b.book_id,
+SUBSTR (b.book_title, 1, 25) As book_title, cust_fname, cust_lname, qty , qty * b.book_cost AS sale_amount, purchase_date
+FROM Book_Customer C, Book_Sales S, Books B
+WHERE c.cust_id = s.cust_id
+AND s.book_id = b.book_id
+AND c.cust_category = 'H';
+
+Creating and querying views in Books DB: DML Operations Example 1- demo 
+DML operations on a View: Rules
+
+DML Operations are allowed on simple views
+Row cannot be deleted or data cannot be modified if the view contains:
+-> Group functions such as sUM, MIN, MAX, AVG,
+-> A GROUP BY clause
+-> The DISTINCT keyword
+
+Data also cannot be modified if the view contains:
+-> Columns defined by expressions (e.g.: Qty * Unitprice)
+-> The ROWNUM pseudo col umn
+
+Cannot insert rows if:
+-> The view satisfies any of the conditions mentioned above
+-> There are NOT NULL columns in the base tables that are not selected by the view
+
+/*********************************************************/
+Query to insert values in an view
+/*********************************************************/
+
+INSERT INTO Delhi_customers
+VALUES (1021, 'Sunita' Mehra', 'sunita@mil1ion.co.in', 'New Delhi');
+
+/*********************************************************/
+Query to update values in an view
+/*********************************************************/
+
+UPDATE Delhi_Customers
+SET cust_email = 'sunitam@mil1ion.co.in'
+WHERE cust_id = 1021;
+
+/*********************************************************/
+Query to delete values in an view
+/*********************************************************/
+
+DELETE Delhi_Customers
+WHERE cust_id = 1021;
+
+/*********************************************************/
+
+Creating and querying views in Books DB: DML operations on Complex Views Example 2- demo
+
+/*********************************************************/
+query to create a view WITH CHECK OPTION Clause
+/*********************************************************/
+
+Used for ensuring that a DML operation on the view stays within the domain of the view
+
+CREATE VIEW AWBooks AS
+SELECT * FROM Books
+WHERE publ_id = 1
+WITE CHECK OPTION CONSTRAINT AWBookView_Chk;
+
+INSERT INTO AWBooks
+VALUES ('BO0215', 'DB2 Programming', 180.99, 'DB',2, 'THIRD', NULL);
+
+Gives following error if tried to insert other than publ_id = 1;
+
+Error report:
+
+SQL Error: ORA-01402 : view WITH CHECK OPTION where-clause violation
+01402. 00000-
+"view WITH CHECK OPTION where-clause violation"
+
+/*********************************************************/
+
+creating and querying views in Books DB: Denying DML Operations on Views - demo
+
+/*********************************************************/
+Query to deny DML Operations on views using WITH READ ONLY clause
+/*********************************************************/
+
+CREATE VIEW TataMGHBooks AS
+SELECT * FROM Books
+WHERE publ_id = 15
+WITH READ ONLY;
+
+View With Read Only - avoiding manipulation of the View
+
+Try to insert a row into this view
+
+INSERT INTO TataMGHBooks
+VALUES ('B00215', 'DB2 Programming', 180.99, 'DB',15, 'THIRD',NULL);
+
+Gives following error if tried to insert a new row:
+
+Error report:
+
+SQL Error: ORA-01733 :virtual column not allowed here 01733. 00000-virtual column not allowed

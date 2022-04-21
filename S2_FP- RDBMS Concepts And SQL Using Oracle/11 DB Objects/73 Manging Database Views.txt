@@ -1,0 +1,91 @@
+MANAGING DATABASE VIEWS -> INTRODUCTION
+Database
+
+-> Multiple programmers can log into database
+-> Administrator may need to provide a programmer access to a confidential table
+
+Example:
+Employee table that has confidential data such as date
+of birth, salary, and commission details
+
+Administrator needs to provide access to some programmers while restricting access to others
+-> Database Views
+
+MANAGING DATABASE VIEWS -> OVERVIEW
+-> A view is a 'virtual table'
+-> This table does not have its own data
+-> View contents are defined by a query as
+given below
+SELECT book_id, book_title, book_edition
+FROM Books
+WHERE book_type = 'DB';
+
+-> Underlying tables are referred to as 'base tables'
+-> Only query is stored in the database, not its data
+-> The underlying query of the view gets executed every time a view is used
+-> Separate permissions on views can be granted to other users so as to hide confidential data from the base tables
+
+How to create a view?
+
+Example
+CREATE VIEW Book_View AS
+SELECT book_title, book_type, publ_id
+FROM Books
+WHERE book_type = 'DB';
+
+Book view is mentioned in place of a table view
+
+SELECT book_title, book_type
+FROM Book_View
+WHERE publ_id = 10;
+
+The view provides access only t0 columns such as book title, book type, and publisher ID
+
+SELECT book_id
+FROM Book_View
+WHERE publ_id = 10;
+The book ID is not part of the view created. Therefore, it throws error 'Invalid ldentified'
+
+MANAGING DATABASE VIEWS -> CREATING VIEW
+Can only one table be included in the FROM clause?
+-> Any number of tables can be included in FROM clause
+
+Example
+CREATE VIEW Book_Publisher_View AS
+SELECT b.book_id, b.book_title, p.publ_name
+FROM Books b, Publisher p 
+WHERE b.publ_id = p.publ_id;
+
+MANAGING DATABASE VIEWS -> AN UPDATABLE VIEW
+A view is updatable if the query that defines it meets all these restrictions:
+
+Views that meet these conditions are updatable
+
+-> DISTINCT is not specified
+-> FROM clause must specify only one updatable table
+-> SELECT list cannot contain expressions, calculated columns, or column functions
+-> WHERE clause must not include a subquery
+-> Should not include GROUP BY or HAVING or WITH READ ONLY clauses
+
+MANAGING DATABASE VIEWS -> ADVANTAGES AND DISADVANTAGES
+
+ADVANTAGES
+Security: Can restrict rows columns to be viewable only to certain users
+
+Information hiding: Original schema name, table name can be hidden from user
+
+Simplification of query: Complex queries underlying a view are simplified for user
+
+DISADVANTAGES
+Performance issues: Every time a view is called, its underlying query is executed. Performance issues will Surface if the query is Complex
+
+Restrictions: Not all views are updatable
+
+
+MANAGING DATABASE VIEWS -> SUMMARY
+Key points discussed in this video:
+
+-> A view is a virtual table which does not have its own data
+-> A view is created using a SELECT statement which gets executed every time the view is used
+-> A view is updatable if the query that defines the view meets certain conditionsS
+-> Original schema name, table name can be hidden from users view and complex queries underlying a view are simplified for the user

@@ -1,0 +1,89 @@
+CREATING AND USING DATABASE INDEXES INTRODUCTION
+Database
+-> There are lots of user transaction in the database
+
+Railway reservation system
+-> Handles lots of transaction
+-> How to search for a particular record in the database?
+
+It takes time to search a record from a database that has humongous data
+-> Use index to retrieve data from the database
+
+CREATING AND USING DATABASE INDEXES OVERVIEW
+An index allows faster retrieval of records
+-> Use index entries on last pages to search for words
+-> Use catalogs to search for books in the library
+
+Difficult to locate a word in a book without the help of Index
+
+CREATING AND USING DATABASE INDEXES -> DEFINITION
+A database index is a schema object that contains an entry for each value that appears in the indexed column(s) of the table Or cluster and provides direct and fast access to rows.
+
+CREATING AND USING DATABASE INDEXES -> USAGE
+-> Index can be created on one or more columns of a table
+
+-> Index is defined as Unique or Non-unique
+
+-> Indexes are automatically created on primary key and unique columns
+
+-> A unique index prevents duplicate entries in the table and hence the table
+Example: Employee Email
+
+-> Index is used when the column indexed is referred in the conditions of a query in a WHERE OR HAVING Clause
+
+CREATING AND USING DATABASE INDEXES USAGE
+What happens if the data changes?
+-> Oracle automatically rebuilds the index when the value of the indexed column changes (through any of the Data Manipulation Languages (DMLs))
+
+-> Many indexes can be created on one table; however only one per column or a set of columns
+
+Example:
+Book ID Only one index can be created
+
+If table has 10 columns, create 10 different indexes
+
+CREATING AND USING DATABASE INDEXES -> INDEX TYPES
+Index Types
+-> Normal
+--> Unique
+--> Non-unique
+
+-> Composite
+-> Function-based
+-> Others
+
+Syntax
+CREATE [UNIQUE] INDEX
+    <index_name>
+ON
+    <table_name>(columns(s)
+
+When does the index get used?
+Accessing Index
+-> An index cannot be directly accessed like a table
+-> An index is accessed indirectly via a query which uses the column in its condition
+-> Queries without search conditions will never use index
+-> Indexes can also be created on a set of columns
+
+Composite Index
+Example:
+SELECT book_id, book_title, book_cost FROM Books;
+
+CREATING AND USING DATABASE INDEXES -> ADVANTAGES AND DISADVANTAGES
+
+Advantages
+-> Fast data retrieval hence provide better performance
+-> Easier sorting for the database
+-> Unique indexes guarantee unique values in the table even if the table doesn't have this constraint
+
+Disadvantages
+-> Gets rebuilt every time table's data is changed
+-> May degrade the performance if there are too many DMLs
+-> Consumes some additional disk space to store index entries. Hence, indexes should be created after proper due diligence
+
+CREATING AND USING DATABASE INDEXES SUMMARY
+Key points discussed in this video:
+-> Database index is a schema object that contains an entry for each value that appears in the indexed column(s) of the table or cluster and provides direct and fast access to rows
+-> Types of Index are Normal, Composite, Function-based and Others
+-> Retrieve data faster and more efficiently by using index; However, index entries need additional disk storage space as these get rebuilt every time the table's data is changed
+

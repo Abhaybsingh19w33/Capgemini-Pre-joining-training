@@ -1,0 +1,63 @@
+SEQUENCE DEFINITION CREATING AND USAGE INTRODUCTION
+Database Application
+-> Programmer may need to create unique numbers continuously
+-> Example: Bill number - In a retail shop, each purchase will have a unique bill number
+-> Bill numbers may get duplicated
+
+Integrity Constraint Violation
+-> Database sequence
+
+SEQUENCE DEFINITION CREATING AND USAGE -> DEFINITION
+Database sequence
+-> An object in Oracle used to generate a number sequence
+-> Useful if unique numbers are required to generate primary keys
+
+Need sequential algorithm
+-> Bill Number
+-> Order ID
+-> Customer ID
+-> Employee Number
+-> Bank Account Number
+-> Invoice Number
+
+Do not need sequential algorithm
+-> Debit Card Number
+-> Credit Card Number
+
+Database sequence
+-> Used when inserting records to tables
+
+CREATE SEQUENCE sequence_name
+MINVALUE value
+MAXVALUE value
+START WITH value
+INCREMENT BY value
+CACHE value;
+
+SEQUENCE DEFINITION CREATING AND USAGE -> CREATION
+What happens when a sequence is created?
+-> Applications can make use of the sequence every time
+-> Increments CACHE value
+-> Data is stored based on incremented CACHE value
+
+Example
+CREATE SEQUENCE bill_num_seq
+MINVALUE 1
+MAXVALUE 99999
+START WITH 1000     --First bill number starts with 1000
+INCREMENT BY 1
+CACHE 20;           -- Stores value in memory after incrementing by 20
+
+INSERT INTO BILLBOOK
+VALUES (bill_num_seq.NEXTVAL,
+Col2_value, col_3_value,... );
+
+Use NEXTVAL instead of bill numbers
+
+NEXTVAL increments work like autometer in vehicles
+Used for primary key columns     
+
+SEQUENCE DEFINITION CREATING AND USAGE -> SUMMARY
+Key points discussed in this video:
+-> Database sequence is an object in Oracle that is used to generate a number sequence
+-> It is useful when unique numbers are required for columns, especially primary keys
