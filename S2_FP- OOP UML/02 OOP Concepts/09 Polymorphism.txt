@@ -1,0 +1,49 @@
+POLYMORPHISM -> INTRODUCTION
+Polymorphism = many forms
+-> It provides a single interface to different types of entities.
+
+POLYMORPHISM -> OVERVIEW
+-> Greek term (Poly + Morph)
+-> Many forms
+-> Provides single interface to entities of different types
+
+POLYMORPHISM -> TYPES
+The three types of Polymorphism are:
+-> Ad hoc
+-> Parametric
+-> Subtyping
+
+POLYMORPHISM -> AD HOC
+Function Overloading:
+-> int add(int num1, int num2)
+-> String add(String firstName, String lastName)
+-> Date add (Date source, int numberOfDays)
+
+POLYMORPHISM -> AD HOc
+-> Operator Overloading:
+
+Employee scott, miller;
+scott+= "Ross
+scott += 500.0
+scott> miller
+scott> 6500.0
+
+POLYMORPHISM -> PARAMETRIC POLYMORPHISM
+-> Allows a function or a data type to be written generically
+-> Can handle values identically without depending on their type
+-> a.k.a. generics or templates
+
+POLYMORPHISM -> SUBTYPING
+-> a.k.a. inclusion Polymorphism
+-> Involves a super-subtype relationship
+
+-> A Subtype always overrides a method from the super type
+-> Polymorphic method
+
+POLYMORPHISM> SUMMARY
+Key points discussed in this video:
+-> Polymorphism is a Greek term which means 'many forms
+-> Polymorphism provides a single interface to different entities.
+-> Ad hoc, Parametric and Subtyping are the three types of Polymorphism.
+-> Parametric Polymorphism allows a function or a data type  to be written generically.
+-> In Subtyping Polymorphism, the Subtype overrides a method from the super type.

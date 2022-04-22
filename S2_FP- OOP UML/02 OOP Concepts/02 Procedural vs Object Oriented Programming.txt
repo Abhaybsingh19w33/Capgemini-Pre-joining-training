@@ -1,0 +1,44 @@
+Programming paradigm are based in procedural calls or real life objects.
+
+PROCEDURAL VS OBJECT ORIENTED PROGRAMMING -> PROCEDURAL PROGRAMMING
+Programming paradigm
+-> Derived from structural programming
+-> Emphasizes on modular programming
+-> Based on procedure call
+
+PROCEDURAL VS OBJECT ORIENTED PROGRAMMING -> PROCEDURES
+Contains steps of an algorithm
+-> a.k.a. routines, subroutines, methods, and functions
+-> Can be called at any point during program execution
+-> C, Fortran, BASIC, and Pascal
+
+PROCEDURAL VS OBJECT ORIENTED PROGRAMMING -> OBJECT ORIENTED PROGRAMMING
+Programming paradigm based on the concept of "Objects":
+-> Groups data and related procedures inside an object
+-> Emphasizes on reducing complexity and increasing code reusability, maintainability
+
+PROCEDURAL VS OBJECT ORIENTED PROGRAMMING -> 0BJECT
+-> Data in the form of variables (a.k.a. fields, attributes)
+-> Code that operates on the data, in the form of functions (a.k.a. methods, procedures)
+
+PROCEDURAL VS OBJECT ORIENTED PROGRAMMING -> OBJECT
+LinkedList represents a collection of books.
+-> Maintains data about:
+--> The book itself
+--> References to the next and previous nodes
+-> Some operations:
+--> Append, Prepend, Insert, and Delete
+--> Check for empty, size
+--> Get by position, GetFirst, and GetLast
+
+PROCEDURAL VS 0BJECT ORIENTED PROGRAMMING DESIGN PATTERNS
+-> Design Patterns: Elements of Reusable Object-Oriented Software
+--> A book by Gang of Four, 1995
+--> Explores the capabilities and pitfalls of O0P
+--> Describes 23 Common programming problems and patterns for solving them
+
+PROCEDURAL VS OBJECT ORIENTED PROGRAMMING SUMMARY
+Key points discussed in this video:
+-> Procedures are also known as routines and subroutines.
+-> Object oriented programming tries to reduce complexity.
+-> Design patterns address the common problems in large scale application development.

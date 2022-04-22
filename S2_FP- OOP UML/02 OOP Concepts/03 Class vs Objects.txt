@@ -1,0 +1,45 @@
+CLASS VS OBJECT -> CLASS
+-> Template /Blueprint used for creating Objects
+-> Defines methods and variables to be included in an Object
+
+Example:
+-> Animal
+-> Vehicle
+-> Bank Account
+-> Customer
+
+CLASS VS OBJECT -> MEMBERS IN A CLASS
+State
+-> Attribute
+-> Property
+-> Field
+
+Behavior
+-> Function
+-> Method
+
+CLASS VS OBJECT -> UML CLASS DIAGRAM
+Classname
+-> Fields with access indicators and datatypes
+Methods with access
+-> indicators, parameter types and return types
+
+Minus ( - ) for private
+Plus ( + ) for public
+Protected ( # ) for protected
+
+CLASS VS OBJECT -> OBJECT
+-> a.k.a. instance
+-> Location in memory having a value
+-> Possibly referenced by an identifier
+-> Two Objects of a Class will have the same attributes
+--> But may have different values
+-> Behavior of an Object affects the state of the same Object
+
+CLASS VS OBJECT -> TAXONOMY OF CLASSES
+-> Abstract
+-> Concrete
+-> Final (non-subclassable)
+-> Inner (nested/enclosed)
+-> Anonymous (unnamed)
+

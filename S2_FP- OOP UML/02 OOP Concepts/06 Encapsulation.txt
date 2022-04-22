@@ -1,0 +1,17 @@
+ENCAPSULATION> INTRODUCTION
+-> Encapsulation is a mechanism to restrict access to some components of an object.
+
+ENCAPSULATION -> OVERVIEW
+-> Encapsulation is the process of compartmentalizing the elements of an abstraction
+-> It is the mechanism for restricting access to some components of an object
+-> a.k.a. Data hiding
+
+ENCAPSULATION -> OVERVIEW
+-> Segregate members of an object
+-> Private-accessible to the members of the object only
+-> Public-accessible to other objects (outside world)
+
+ENCAPSULATION -> PROGRAMMING wORLD
+-> setName and setage are functions
+-> They can validate the input, before assigning to target members
+

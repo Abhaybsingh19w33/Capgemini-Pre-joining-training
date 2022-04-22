@@ -1,0 +1,52 @@
+AGGREGATION -> INTRODUCTION
+HAS-A relationship
+-> It represents a type of composition.
+-> It forms critical building blocks of many applications.
+
+AGGREGATION -> HAS-A RELATIONSHIP
+Aggregation represents composition, which means
+-> Whole-part relationship
+-> Object "A" belongs to object "B"
+-> Object "A" is often called as constituted object, part, constituent, and member object
+-> Object "B" is called the composite type
+
+AGGREGATION -> UML (UNIFIED MODELLING LANGUAGE)
+Representing composition through aggregation:
+
+
+AGGREGATION -> USE IN APPLICATIONS
+-> Combines simple objects into more complex ones
+-> Forms critical building block of many basic data structures:
+--> Tagged union
+--> Linked list
+--> Binary tree
+
+AGGREGATION -> POINTS TO NOTICE
+-> When the owning object is destroyed, so are the contained objects.
+
+Example: If the university closes, the departments will no longer exist.
+
+-> A constituent can be a part of only one composite
+
+Example: A department can be a part of only one university.
+
+AGGREGATION -> DIFFERS FROM COMPOSITION
+-> A form of composition where the composite does not imply ownership on the constituent.
+
+AGGREGATION -> POINTS TO NOTICE
+-> Constituent continues to exist even after a composite is destroyed
+
+Example: If the university closes, the departments will no longer exist.
+
+-> But the professors in those departments will continue to exist
+
+AGGREGATION -> POINTS TO NOTICE
+-> A constituent can be a part of more than one composite
+-> A professor could work in more than one department
+
+AGGREGATION> SUMMARY
+Key points discussed in this video:
+->  Aggregation (HAS-A) represents composition.
+-> Aggregation forms a building block of data structures like tagged union, linked list, and binary tree.
+-> The composite does not have ownership on its constituents.
+-> A constituent can be a part of multiple composite and can exist even if the composite is destroyed.

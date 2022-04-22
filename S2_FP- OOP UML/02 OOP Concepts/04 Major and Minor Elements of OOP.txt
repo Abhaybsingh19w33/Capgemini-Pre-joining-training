@@ -1,0 +1,53 @@
+MAJOR AND MINOR ELEMENTS OF OOP -> INTRODUCTION
+-> There are four major and three minor elements that make a programming language object-oriented.
+
+MAJOR AND MINOR ELEMENTS OF OOP -> MOTIVATION
+-> Grady Booch, in his book "Object-Oriented Analysis and Design with Applications", categorized the concepts in Object-oriented development into four major and three minor elements.
+
+A model without any one of these elements is not object-oriented.
+
+Major Elements
+-> Abstraction
+-> Encapsulation
+-> Modularity
+-> Hierarchy
+
+MAJOR AND MINOR ELEMENTS OF 00P -> MINOR ELEMENTS
+Each of these elements is useful, but not essential.
+Minor Elements
+-> Persistence
+-> Typing
+-> Concurrency
+
+MAJOR AND MINOR ELEMENTS OF 0OP -> ABSTRACTION
+-> Denotes essential characteristics of an object that distinguishes it from all the other kinds of objects
+-> Provides crisp defined Conceptual boundaries, relative to the perspective of the viewer
+
+MAJOR AND MINOR ELEMENTS OF 0OP -> ENCAPSULATION
+-> Process of compartmentalizing the elements of an abstraction that constitute its structure and behavior
+-> Serves to separate the contractual interface of an abstraction and its implementation
+-> Popularly known as "Data hiding"
+
+MAJOR AND MINOR ELEMENTS OF OOP -> MODULARITY
+-> The property of a system that has been decomposed into a set of cohesive and loosely coupled modules.
+
+MAJOR AND MINOR ELEMENTS OF 00P -> HIERARCHY
+Hierarchy is a ranking or ordering of abstractions. It can be:
+-> Single inheritance
+-> Multiple inheritance
+-> Composition, Aggregation
+
+MAJOR AND MINOR ELEMENTS OF 00P -> TYPING
+-> Typing is the enforcement of the class of an object, such that objects of different types may not be interchanged
+-> Or at the most, they may be interchanged only in very restricted ways
+-> Early and late binding
+-> Polymorphism
+
+MAJOR AND MINOR ELEMENTS OF 0OP -> CONCURRENCY
+-> Concurrency is the property that distinguishes an active object from one that is not active.
+
+MAJOR AND MINOR ELEMENTS OF OOP -> PERSISTENCE
+Persistence is the property of an object through which its existence transcends time. In case of Persistence:
+-> Object continues to exist after its creator ceases to exist
+-> Objects location moves from the address space in which it was created
+

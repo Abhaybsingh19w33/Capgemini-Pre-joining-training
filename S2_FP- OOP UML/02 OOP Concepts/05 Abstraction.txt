@@ -1,0 +1,24 @@
+ABSTRACTION -> INTRODUCTION
+-> Abstraction distinguishes an object from all other kinds of objects.
+
+ABSTRACTION -> DEFINITION
+-> Abstraction denotes the essential characteristics of an object that distinguish it from all other kinds of objects.
+
+-> It provides crisply defined conceptual boundaries, relative to the perspective of the viewer.
+
+ABSTRACTION -> OVERVIEW
+-> Emphasizes on details that are significant to the viewer
+-> Suppress details that do not matter
+-> Presents an object's view relative to the perspective of who is using it
+
+ABSTRACTION -> IN PROGRAMMING LANGUAGES
+An abstraction is represented in the form of a data type.
+Abstraction
+-> Class
+-> Interface
+
+ABSTRACTION -> SUMMARY
+Key points discussed in this video:
+-> Abstraction provides defined conceptual boundaries relative to the perspective of the viewer.
+-> Abstraction emphasizes on details that are significant to the viewer.
+-> An Abstraction is represented in the form of data types.
