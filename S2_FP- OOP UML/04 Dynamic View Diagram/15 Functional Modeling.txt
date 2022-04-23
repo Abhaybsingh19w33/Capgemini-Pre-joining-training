@@ -1,0 +1,21 @@
+FUNCTIONAL MODELING -> DEFINITION OF FUNCTIONAL MODELING
+Functional Modeling
+-> Captures the functionality of the system
+-> Gives us the scope of the system
+-> Is also termed as Scope modeling
+-> Does not provide any control flow or work flow information
+
+FUNCTIONAL MODELING -> USE CASE DIAGRAM
+Representation of Functional Modeling
+-> Functional modeling is represented by writing use case diagram.
+-> Use case diagram is a UML diagram.
+-> It is a behavioural diagram of UML.
+-> It is written at the analysis phase of SDLC.
+
+FUNCTIONAL MODELING>CHECK YOUR UNDERSTANDING
+1. Which of the following does functional modelling provide?
+a. Scope of the system - answer
+b. Control flow
+C. Work flow
+d. None of the above
+

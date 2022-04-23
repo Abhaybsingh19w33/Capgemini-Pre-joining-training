@@ -1,0 +1,35 @@
+The Activity Diagram
+
+Introduction
+This lecture gives us an overview of achieving workfilow via Activity Diagram.
+
+Objectives
+Upon completion of this lecture, you wil be able to explain:
+-> Overview of the Activity Diagram
+
+Overview of the Activity Diagram
+
+An activity diagram is a replacement for fiow charts.
+-> It captures actions and their resuits
+-> It supports and encourages parallel activities
+-> It is important for business modelling
+-> It is useful for concurent programs
+-> It is used to describe use cases
+
+Uses
+An activity diagram is a replacement for fiow charts. it is used in:
+-> Workfiow modelling
+-> Mutthreaded programming
+-> Analysing a use case
+-> Understanding workflow across different use cases
+
+Swimlane helps us in modelling the workflow of the business process to partition the activity states into groups. Each group is called a swimlane
+
+Summary
+Here are the key takeaways
+
+-> Activity diagrams are used for workflow modelling.
+-> An activity diagram replaces a flow chart
+-> Activity diagrams provide the following extra features when compared to flowch arts:
+--> Concurrency (fork and join)
+--> Swimlane

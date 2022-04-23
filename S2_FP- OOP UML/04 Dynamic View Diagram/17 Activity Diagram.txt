@@ -1,0 +1,103 @@
+ACTIVITY DIAGRAM -> PROCESS FLOW
+Process flow/work flow
+-> Gives us the steps of the process of any functionality to be achieved
+-> Is represented by writing flow charts
+-> Is represented by writing activity diagram in UML
+
+ACTIVITY DIAGRAM -> INTRODUCTION
+
+Activity Diagram
+-> Is a behavioural diagram of UML
+-> Can be written either at the analysis or design phase
+-> Is used to represent process or work flow
+-> Is written at the behavioural view
+
+ACTIVITY DIAGRAM -> ACTIVITY DIAGRAM ESSENTIALS
+An Activity Diagram
+-> Starts with an initial node.
+-> The initial node represents the starting point of the diagram.
+-> It is represented by a filled circle.
+-> It ends with a final node.
+-> The final node represents the ending point of the diagram.
+-> It is represented by a bull's eye.
+-> In between the initial and the final node, are actions.
+-> Actions represent the steps that are taken in an activity.
+-> Actions are represented by rounded rectangles.
+
+In activity diagram
+-> The flow of the activity is shown using arrowed lines called paths.
+-> The diamond box represents the decision symbol.
+-> The vertical or horizontal parallel lines are called SWimlanes.
+
+ACTIVITY DIAGRAM -> ACTIVITIES AND ACTIONS
+
+Actions
+-> Actions are the steps in completion of a process.
+-> Activity is the process, which is being modeled.
+Example: Applying for leave
+-> Action is a step in the overall activity, such as taking the leave form, filling the leave form and more.
+
+ACTIVITY DIAGRAM -> DECISIONS AND MERGES
+Decisions are used when we have to execute a different set of actions, based on a condition.
+
+The branched edge of the decision symbol containsa guard condition written inside a bracket.
+
+ACTIVITY DIAGRAM -> DECISIONS AND MERGES
+
+Concurrency
+-> Is parallel processing, where many actions have to take place together for us to complete an activity
+-> Is represented by Synchronisation bars
+
+-> In our leave application process, to grant leave, the two processes of checking the work load and checking the leaves available, should happen in parallel.
+
+ACTIVITY DIAGRAM -> TIME EVENTS
+Time Event
+-> Used to represent a waiting period
+-> Used to represent schedule jobs
+-> Represented by an hour glass symbol
+-> For example:
+Taking backup of data once in 24hrs and biling process of any service, where the waiting period will be for 30 days
+
+ACTIVITY DIAGRAM -> SWIMLANES AND PARTITIONS
+Swimlanes
+-> Are the logical partitions in an activity diagram, which represent roles or groups
+-> Are used when different groups or departments are needed to complete an activity
+-> Are used to show who is responsible for what actions
+-> In our registration system, for the registration process to get completed, we need registration system and billing system.
+-> These two systems can be represented as two swimlanes.
+
+ACTIVITY DIAGRAM -> MANAGING COMPLEX ACTIVITY DIAGRAM
+-> Complex diagrams can be managed by using connectors.
+-> Connectors can be used to manage complex diagrams, which grow beyond a page.
+-> Connectors are represented as empty circles.
+
+ACTIVITY DIAGRAM -> CHECK YOUR UNDERSTANDING
+1. Which of the following is work flow also called as?
+a. Procedural flow
+b. Control Flow
+c. Process flow - answer
+d. All of the above
+
+2 An activity is a group of which of the following?
+a. Actions - answer
+b. States
+c. Transitions
+d. None of the above
+
+3. Conditional execution is represented by which of the following?
+a. Swimlanes
+b. Decision symbol - answer
+c. Activities
+d. Final state
+
+4. Concurrency is represented by which of the following?
+a. Synchronisation - answer
+b. Transition
+c. Actions
+d. States
+
+5. Which of the following do swimlanes help to represent?
+a. Roles
+b. Group
+c. Sub-process
+d. All of the above - answer

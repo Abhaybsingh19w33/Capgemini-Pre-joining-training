@@ -1,0 +1,44 @@
+USE CASE DIAGRAM: USE CASES AND ACTORS -> USE CASE DIAGRAM
+Let's understand the use case diagram by taking a case study of Student Registration system.
+-> It gives us a list of functionalities to be implemented.
+-> The functionalities would be discussed as we unfold the process of learning use case diagram.
+
+USE CASE DIAGRAM: USE CASES AND ACTORS -> OVERVIEW
+
+Use case diagram is made up of related model elements.
+
+Model Elements
+-> Use Case
+-> Actor
+
+USE CASE DIAGRAM: USE CASES AND ACTORS -> OVERVIEW
+What is a use case?
+-> A use case is any functionality or requirement of the system.
+-> A use case is represented as an ellipse.
+
+What is an actor ?
+-> An actor is an external entity, which falls outside the boundary of the system.
+-> An actor is represented as a stick man.
+
+What all can fall under the category of an actor?
+An actor can be
+-> an end user
+-> any other organisation, system or sub-system
+-> any data repository area
+
+Types of Actors
+-> Primary Actor
+--> A primary actor is one who is responsible for triggering the functionality.
+--> For example: Student, professor
+
+-> Secondary Actor
+--> A secondary actor communicates with the system and there will be information exchange. Secondary actor does not trigger any functionality.
+--> For example: Data repository
+
+USE CASE DIAGRAM: USE CASES AND ACTORS -> CHECK YOUR UNDERSTANDING
+
+1. Which of the following does a use case represent?
+a. Design solutions
+b. External entities
+c. Requirements - answer
+d. None of the above
