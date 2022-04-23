@@ -1,0 +1,261 @@
+OOAD in Detail and Introduction to UML
+
+Introduction
+-> This lecture provides an overview of OOAD and UML
+
+Objectives
+Upon completion of this session, you will be able to explain:
+-> Object Model
+-> Classes
+-> OOP, OOD and 00A
+-> UML
+
+Object Model
+
+Object oriented systems are built on real-time systems, the elements of which are described as the Object Model. The Object Model has seven elements. These elements are: Abstraction, Encapsulation, Modulaity, Hierarchy, Typing. Concurency and Persistence These are brought together in a structured way.
+
+OOAD is ditferent from SSAD. It requires one to think in an object oriented way, as it works in the real worid. In OOAD, no functionality is independent by itself. It is always a behaviour of some object
+
+Fundamentals of the Object Model
+
+Since structured design processes are the primary building blocks of the system, they are built based on the algorithms. Objects and Classes are the building blocks of the object oriented system. Using OOAD requires a good understanding of the real worid.
+
+OOP, OOD, and OOA
+
+Since object orientation is implemented by many languages, the terminologies used will aso be different based on the language. In object oriented programming, the elements are aranged as classes, objects, properties and member functions.
+
+Object Oriented Design (OOD)
+
+Object oriented design is a method of designing the system solution in an object oriented way by following the process of object oriented decomposition and following visual modelling to capture the static and behavioural aspects of the system.
+
+Object Oriented Analysis (OOA)
+
+Object oriented analysis is a form of getting to know the requirements in terms of objects. After knowing the foundations of an object model, now ifs time to throw some light on objects and classes.
+
+What is an Object?
+
+An object can be defined as any real-worid entity. From the human perspective, we can describe an object as one of the folloving
+
+-> Is tangible andior intangible
+-> Can be comprehended intellectually
+
+Tangible objects: Table, chair, cloth and so on
+
+Intangible objects: Visual components like folders, fles, sky, atmosphere and so on
+
+Every object has state, identity and behaviour.
+
+State - It is the value of its property/properties at any given instance of time.
+
+Behaviour - It is the action taken by or on an object when objects are interacting with each other.
+
+Identity - It is the uniqueness of an object
+
+Classes
+
+What is a Class?
+A class is a
+-> Specification
+-> Plan
+-> Template
+-> Group of similar objects
+Example: Reptile is a class. Lizard is an example of reptile, which becomes the object.
+
+Elements of Object Model
+
+This model has four essential components:
+-> Abstraction
+-> Encapsulation
+-> Modularity
+-> Hierarchy
+
+Above elements are mandatory elements, depending on which you can qualify the system to be object oriented or not. This model also includes three minor components:
+-> Typing
+-> Concurrency
+-> Persistence
+
+The minor elements are not mandatory. They do not define object orientation.
+
+Abstraction
+
+Abstraction is selection of only those property and behaviour of any object, which makes sense to that domain. Example: Refrigerator, a user needs to know how refrigerator operates, whereas an engineer needs to know working of refrigerator in detail.
+
+Encapsulation
+
+Encapsulation is all about proving the real data to the real end user. Abstraction and encapsulation are complementary to each other.
+
+Modularity
+
+Modularity is the characteristics of a system that allows us to divide the solution or problem into smaller units or modules. It possesses the quality of couping and cohesiveness. Thus, the principles of abstraction, encapsulation and modularity are synergistic. An object provides a crisp boundary around a single abstraction. Both encapsulation and modularty provide barriers around this abstraction.
+
+Hierarchy
+
+Hierarchy is the relationship between or among the objects. You can set two types of relationships between objects.
+-> "is a"
+-> "has a"
+
+"is a" relationship is the "parent child", "gen/spe" relationship. Here, the specialised object is an extension of the generalised object. For example, rose is a flower, mango is a fruit. "is a relationship is implemented by "Inheritance".
+
+Types of Inheritance
+
+Inheritance is of the folloving types:
+
+-> Single inheritance
+-> Multilevel inheritance
+-> Multiple inheritance
+-> Hierarchical inheritance
+-> Hybrid inheritance
+
+Single Inheritance
+
+If the derived class inherits from a single parent, the inheritance is called a single inheritance.
+
+Base class
+    ^
+    |
+Derived class
+
+
+Multilevel Inheritance
+
+In multilevel inheritance, base class is a derived class of another class. This inheritance results from class hierarchy, where common features are generalised.
+
+Multiple Inheritance
+
+In the case of muitiple inheritance, a derived class inherits from more than one base class.
+
+Hierarchical Inheritance
+
+In hierarchical inheritance, many derived classes can have the same base class.
+
+Hybrid Inheritance
+
+In hybrid inheritance, a class will be derived from muitiple base classes of another base class
+
+
+The derived class (Food) is inherited from two classes (five star and budget), which is inherited from
+the hotel class. Thus, food class has two copies of the hotel class members
+
+
+Aggregation
+
+In "has a" elationship, the object becomes a part of the other object. There is an outer and an inner object. The outer object contains the inner object. The scope and the life time of the inner object will be limited to the scope and the lifetime of the outer object. For example, mouse, keyboard, and modem are different parts of the computer, which work only when they are assembled.
+
+Type
+
+Typing is a concept, where we identify a type for every identified object. It is not new to object orientation. Even in structured programming, we have the concept of typing where every variable has a specific type.
+
+Strong and Weak Type
+
+A given programming language may be typed or untyped. if it is typed, then it can be strongiy-typed or weakly-typed and still be called object oriented. Java is a strongly-typed, which means that typing is enforced strictly. An object cannot call upon an operation unless the exact signature of that operation is defined in the object s class or superclass. In the strongly-typed languages, we can detect any violation of type conformance at the time of compilation.
+
+Scripting languages is an example of untyped language. A client can send any message to any class, even though a class may not know exactly how to respond to the message. violations of type conformance may not be discovered until execution and usualy manifest themselves as execution errors. Languages such as C+* are of a hybrid type. They have tendencies towards strong typing, but it is possible to ignore or suppress the typing rules.
+
+Static and dynamic typing are the two types of typing
+
+The concepts of strong typing and static typing are totally different. Strong typing refers to type consistency, whereas static typing, also known as static binding or early binding refers to the time when names are bound to the types. Static binding means that the types of all variables and expressions are fixed at the time of compilation.
+
+Dynamic binding, also termed as Late Binding9, means that the types of all vanables and expressions are not bound until runtime. Due to the reason that strong typing and binding are independent concepts, a language may be both strongiy and staticaly typed (Ada), strongily-typed and yet support dynamic binding (Object Pascal and C+*), or untyped yet support dynamic binding (Smalltalk).
+
+Polymorphism
+
+Polymorphism comes into picture, when you have the features of inheritance and dynamic binding interacting. It is one of the powerful features of object orientation. Polymorphism qualifies the system to be object oriented.
+
+In polymorphism, there are two types:
+-> Static polymorphism
+-> Dynamic polymorphism
+
+Static polymorphism is achieved by function and operator overloading. In function overloading, as we know, we can have functions with the same name and diferent function signatures.
+
+Let us say, we have a function called add (int, int), which accepts two integer parameters. But at the time of caling the function, instead of passing fvo integers, the user pas ses two characters as the parameter. Now, what does the compiler do? Is it going to be an ambiguous situation, or the compiler will convert char to int? These entities are language dependent. In C++, promotion takes place and the character parameter gets converted to an integer.
+
+Similarly, in virtual functions such as C++ or in dynamic method dispatch such as Java, a base class pointer points to the objects of the derived classes, achieving dynamic polymorphism.
+
+Concurrency
+
+Concurrency is a non-functional requirement, implemented via multi-tasking and threading, which is required in every multi-user system, irrespective of the methodology used. It is not a mandatory element.
+
+Persistence
+A persistent object is one that continues to exist, even after its creator ceases to exist. No data on RAM is persistent. Anything stored on the secondary memory is persistent. It is used by any system where data is needed for the future use, irrespective of the methodology used.
+
+Analysis and Design Elements
+Notation - Language for expressing each model. For example, UML
+
+Process - Activities leading to the orderly construction of the system models. For example, Waterfall model
+
+Tools - A software package that helps us to model easily. For example, Rational Rose
+
+A sound design method is built around a solid theoretical foundation and yet offers freedom for the artistic innovation.
+
+Unified Modelling Language (UML)
+
+The Unifed Modelling Language (UML) is a language for visualising, constructing, specifying and documenting the artefacts of software systems and other non-software systems. Here are a few frequently asked questions, which will serve as a prelude to know more about UML
+
+What is UML?
+
+UML UML is a modeling language. It is not a programing language and one will not be able to code using UML.
+
+Some of the features of the UML include:
+-> Used for communication as a language
+-> Used to communicate "whaf" and "how" of the system
+-> Used for visual modelling
+-> Used for obtaining knowiedge about a system throughout its life cycle
+
+What is not UML?
+UML is not a:
+-> Visual programming language, but a visual modelling language
+-> Tool or repository specification, but a modelling language specification
+-> Process, but enables processes
+
+Different Components of UML
+-> Views: Logical grouping of related diagrams
+-> Diagrams: Logical grouping of related model elements
+-> Model Elements: The single notation of the system that cannot be broken down further
+
+Views
+
+Use Case View
+
+The Use Case View shovs the functionality of the system as perceived by extemal entities or stakeholders (They are actors). It is usually used for the analysis. Use Case Diagram supports Use Case View.
+
+Behavioural View
+
+Behavioural View depicts dynamic aspects of a problem and a solution, and collaborations among problem and elements of the solution. It supports the analysis phase as well as design phase. The diagrams that are supported by this view are sequence, collaboration, state chart and activity diagrams.
+
+Structural View
+
+Structural View contains the static or structural aspects of a problem domain. It is basically a design level view. Class diagrams are supported in this view.
+
+Implementation View
+
+Implementation View shows the organisation of the code components. It is a design-level view diagram. Component diagrams are supported in this view.
+
+Environmental View
+
+Environment View shows the deployment of the system into the physical architecture of computers and other devices. It is a view supported at the requirement phase or at the design phase. Deployment diagrams are supported in this view.
+
+Which companies have submitted or supported this OMG technology adoption?
+-> Rational Software
+-> Microsoft
+-> Hewlett-Packard
+-> Oracle
+-> Sterling Software
+-> MCI Systemhouse
+-> Unisys
+-> ICON Computing
+-> IntelliCorp
+-> Logix
+-> IBM
+-> ObjectTime
+-> Platinum Technology
+-> Ptech
+-> Taskon
+-> Reich Technologies
+-> Softlearn
+
+Summary
+
+Here are the key takeavways
+-> Objects and classes are the key elements of OOAD.
+-> To perfom 00A and oOD, we need to understand the object model.
+-> UML is a visual modelling language

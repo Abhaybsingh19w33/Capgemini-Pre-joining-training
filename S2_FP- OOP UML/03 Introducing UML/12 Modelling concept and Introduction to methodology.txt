@@ -1,0 +1,121 @@
+Modelling Concepts and Introduction to Methodology
+
+Introduction
+-> This lecture provides an overview of Software and its characteristics. This lecture also provides an introduction to Methodology and Modelling
+
+Objectives
+Upon completion of this lecture, you will be able to explain
+-> Software and its characteristics
+-> Methodology
+-> Modelling
+
+Software and its Characteristics
+
+Complexity
+For many companies, as the value of software increases, business will continuously look out for the methods that will help to:
+-> Automate the development process
+-> Enhance the quality
+-> Control the time and cost
+
+These techniques include component technology, visual programming. patterns and frameworks Organisations also try to find the advanced process to handle complex systems as the scope and scale expands. Particularly, they appreciate the demand to resolve recuring architectural problems such as:
+
+-> Physical distribution
+-> Concurrency
+-> Replication
+-> Securty
+-> Load balancing
+-> Fault tolerence
+
+Also, aithough the growth of the Worid Wide Web has eased the way things work, it has aggravated many architectural problems. Object Oriented Analysis and Design methodology are designed in such a way that it can act on these needs. Complexity happens to be one of the indispensable characteristics of software. The points that trigger complexity are
+
+-> Domain complexity
+-> Developmental process complexity
+-> Software flexibility
+-> Behaviour characterisation
+
+Complexity of the Problem Domain
+
+Glitches and complications in software need to be worked out. The problems that need to be solved in software will always be complex. Consider the requirements for an air flight controller or an autonomous robot. The basic functionality of any real-time or embedded domain is difficuit to comprehend as it is.
+
+Intricacy of Managing the Development Process
+
+The primary responsibility of the software development team is to provide simplistic resolutions to make the othervise complex system simple for users.certainy, simplicity can be achieved by less code that is also reusable. Framevworks can be used to achieve design reusability, which takes us to the path of simplicity. On the other hand, the immense volume of a system's requirement varies so often that it compels us to either write a large amount of new code or reuse the exIsting software.
+
+Flexibility of Software
+
+As software offers considerable flexibility, a programmer can communicate through all ways of abstractions. Though this flexibility is an amazing property, it also induces variedness and standardisation becomes a rare commodity, because of which freezing on the design becomes diticult and complexity increases
+
+Cons of ldentifying the Behaviour of Discrete Systems
+
+Within a large application, there might be multiple variables as well as more than one point of control. The variables and its value at that given point of time constitute the current state of an element
+
+Complexity is represented in the form of hierarchy until the atomicity is reached. The choice of components of the system is left to the perspective of the user. Intra-component linkages or cohesion are generally stronger than inter-component linkages or coupling. This makes it easier to separate the components.
+
+Subsystems of a hierarchical system have various arrangements. As the system evolves, more complex systems are added to the primitive systems. The primitive systems evolve over time as the understanding of the system becomes better.
+
+Methodology
+
+Role of Decomposition
+
+One of the well-kn ovn techniques of complexity is divide and rule. It is essential to decompose a system into smaller units when bulding a complex system, which in turn might grow independently. To comprehend any given system hierarchy, one needs to understand its parts.
+
+Algorithmic Decomposition
+
+Algorithmic decomposition believes in the concept of modularity. Here, we divide the problems into sub problems to the level of its atomicity, so that it becomes easier to understand and debugging becomes easier.
+
+Object-Oriented Decomposition
+
+Here, the problem is analysed, designed and implemented via objects. Every functionality will be a behaviour of a particular object.
+
+Each object in the solution is characterised as follows:
+-> It is an entity of the real world
+-> It will process its own unique property and behaviour
+
+From this perspective, an object is any tangible or intangible entity that has its own specific purpose. Here, the division is based on objects and not algorithms or procedures, and it is called Object-oriented Decomposition.
+
+Design
+
+In every engineering discipline, design is the bridge between requirements and implementation. What does Design do?
+
+-> It fulfils a function al and non-functional requirement
+-> It adheres to technical limitations
+-> It meets non-function al requirements
+
+Modelling
+
+Definition of Modelling
+
+Modeling is a phenomenon that allowws us to capture the requirements and the solution much before it is implemented. Modeling helps us visualise the problem and find the solution for it, which in turn, will help us to implement the same successfully.
+
+Characteristics of a Model
+-> Should be realistic
+-> Should be close to the system that implements it
+-> Should be easy to understand
+-> Should be easy to use
+
+Examples: Model of an aicraft, model of a rocket launcher and so on.
+
+Importance of Modelling
+
+Models are essential for the purpose of communication among the team members and the stake holders. Modelling helps in understanding the system better and reduces the complexity. Modelling contributes to project success along with many other factors
+
+A modeling language must include:
+-> Model elements - Basic modeling concepts
+-> Notation-Language needed for visual modelling
+-> Guidelines - ldioms of usage within the domain
+
+Visual Modelling
+
+Visual modelling is a way of representing the system pictorially. diagrammatically or graphicaly. This helps us understand the different aspects of the system easily. Visual modelling also helps us address some of the project management activities, like time, cost and resources, as it is easy to understand the concept graphically.
+
+Summary
+
+Here are the key takeaways
+
+-> For many companies, as the value of softvware increases, business will continuously look out for the meth ods that will help to:
+--> Automate the development process
+--> Enhance the quality
+--> Control the time and cost
+
+-> Modelling is important for any development process as it helps us to visualise the system
+-> Methodologies help us to reduce the complexity of the system

@@ -1,0 +1,66 @@
+GETTING STARTED WITH METHODOLOGY AND ITS TYPES METHODOLOGY
+What is a Methodology?
+-> Methodology is an approach that is taken to solve a problem.
+-> A problem can be solved by different approaches.
+-> Every methodology has got its own advantages and disadvantages.
+-> A methodology is chosen based on one's requirement.
+For example: SSAD, OOAD
+
+GETTING STARTED WITH METHODOLOGY AND ITS TYPES -> USES OF METHODOLOGY
+A methodology
+-> Helps us understand a problem better
+-> Helps us change our perception of looking at a problem and findinga solution to it
+-> Helps us solve the problem in smaller chunks
+
+GETTING STARTED WITH METHODOLOGY AND ITS TYPES TYPES OF METHODOLOGY
+Types of Methodology
+-> SSAD: Structure System Analysis and Design
+-> OOAD: Object Oriented Analysis and Design
+
+SSAD:
+-> Stands for Structured System Analysis and Design
+-> Is a function centric methodology
+
+The problem statement in SSAD is
+-> Analysed via a function
+-> Designed via a function
+-> Implemented via a function
+
+GETTING STARTED WITH METHODOLOGY AND ITS TYPES -> SSAD AND ITS APPLICABILITY
+
+SSAD and Its Applicability
+-> In SSAD, every requirement mentioned is assumed as a function.
+-> The solution is designed in the form of a function.
+-> The implementation of the solution is done via a function
+-> The basic building block or structural element of SSAD is a function.
+-> All structured programming languages, such as C, Pascal and COBOL follow SSAD.
+
+OOAD:
+-> OOAD stands for Object Analysis and Design 
+-> The basi building block or structural element od OOAD is an object and a class 
+
+Object
+Class
+
+Object
+-> Analyse the problem statement
+-> Design the solution
+-> Implement the solution
+
+GETTING STARTED WITH METHODOLOGY AND ITS TYPES -> WHEN TO APPLY METHODOLOGY?
+-> Any methodology that is followed, has to be applied at the beginning of our SDLC.
+-> We need to start using the methodology from the Requirements Engineering Phase itself.
+--> Requirements Engineering Phase
+
+GETTING STARTED WITH METHODOLOGY AND ITS TYPES» CHECK YOUR UNDERSTANDING
+1. Which of the following does methodology refer to?
+a. An approach - answer
+b. A modelling technique
+C. Aprocess
+d. Aprocedure
+
+2. What does SSAD stand for?
+a. Solicitation Supplier Agreement Development
+b. Small Signal Audio Design
+c. Supplier Solicitation Agreement Development
+d. Structured System Analysis and Design - answer

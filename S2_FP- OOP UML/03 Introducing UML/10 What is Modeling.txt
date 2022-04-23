@@ -1,0 +1,45 @@
+WHAT IS MODELING? WHAT IS MODELING?
+-> Modeling is the process of creating the representation of a thing or a structure, which in turn would help us understand the real world entities.
+
+WHY IS MODELING REQUIRED?
+MODEL
+-> Helps us in documenting our decisions
+-> Is a specification, which guides us in building the real system
+-> Helps us visualise a system
+
+PROVIDING A BETTER SERVICE OR A PRODUCT
+-> Model
+-> Helps us reiterate
+-> Helps to work on analysis and design better
+-> Helps plug in and visualise changes
+-> Provides a better product or better service
+
+THE PRIOR PERCEPTION OF SYSTEM MODELING
+-> Inthe earlier days, software modeling was the only targeting data
+-> We were able to see complexity only in terms of identifying anf managing data.
+-> This led us to data modeling
+
+DATA MODELING AND ITS USES
+-> Data modeling is the process of identifying the data required by our system and designing the same
+-> Data Modeling gives us only 20% of the entire information
+
+data modeling
+-> Logical data modeling
+-->  Helps us identify the data required and represent them
+
+-> Physical Data Model
+--> Helps us design the data repository
+
+WHAT IS MODELING? CHECK YOUR UNDERSTANDING
+1. Which of the following does visual modelling refer to?
+a. Pictorial representation - answer
+b. Textual representation
+C. Methodology
+d. Modelling language
+
+2. Which of the following does data modelling refer to?
+a Modelling procedures
+b. Modelling functionalities
+c. Modeling data - answer
+d. Modelling test cases
+

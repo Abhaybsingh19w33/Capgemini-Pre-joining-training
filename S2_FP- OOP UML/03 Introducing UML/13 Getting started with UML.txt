@@ -1,0 +1,70 @@
+GETTING STARTED WITH UML -> OVERVIEW
+
+UML
+
+-> It is a standardised modeling language enabling analysts, designers and developers and testers to specify, visualise, construct and document artefacts of a software system.
+-> It is one of the main tool used in visual modeling.
+-> It is an important aspect involved in software oriented development.
+
+GETTING STARTED WITH UML -> EXISTENCE OF UML
+
+Existence of UML
+
+-> Before UML, there was no standardised way of visual modeling.
+-> There was Booch notation, Rumbaugh notation and more, which led us to lack of standardisation.
+-> To bring in the standardisation, UML came into existence, which was approved by OMG. - Object Management Group
+
+GETTING STARTED WITH UML -> WHAT IS AND WHAT IS NOT UML
+What is UML?
+-> UML is a modeling language.
+-> UML enables processes.
+
+What is not UML?
+-> UML is not a programming language.
+-> UML is not a process.
+
+GETTING STARTED WITH UML -> UML ELEMENTS
+There are three UML elements.
+
+UML Elements
+
+-> Model Element
+--> Single notation, which cannot be broken down further
+
+-> Diagram
+--> Logical grouping of related model elements
+
+-> Views
+--> Logical grouping of related model elements
+
+GETTING STARTED WITH UML -> DIAGRAMS AND VIEWS OF UML
+
+Five views of UML
+-> Use case view
+-> Environmental view
+-> Behavioural view
+-> Implementation View
+-> Structural view
+
+GETTING STARTED WITH UML -> DIAGRAMS AND VIEWS OF UML
+UML Diagrams
+-> Structural Diagram
+-> Behavioural Diagram
+
+GETTING STARTED WITH UML -> DIAGRAMS AND VIEWS OF UML
+-> Structural Diagrams
+--> Class Diagram
+--> Package Diagram
+--> Object Diagram
+--> Component Diagram
+--> Composite Structure Diagram
+--> Deployment Diagram
+
+-> Behavioural Diagrams
+--> Use Case Diagram
+--> Activity Diagram
+--> Communication Diagram
+--> State Machine Diagram
+--> Sequence Diagram
+--> Interaction Overview Diagram
+--> Timing Diagram
