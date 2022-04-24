@@ -1,0 +1,341 @@
+The Design and Modelling System Architecture
+
+Introduction
+-> This lecture provides a detailed understanding of Design Activities and Modelling Architectural Design using Class Diagram.
+
+Objectives
+Upon completion of this lecture, you will be able to explain:
+-> Diferent levels of Design
+-> Diferent types of Design
+-> Class Diagram and its essentials
+
+Different Levels of Design
+
+Design activity addresses the question "How?
+
+There are two different levels of designing:
+-> High-level design - Designing the system at a higher level of abstraction (Example deployment architecture)
+-> Low-level design - Designing the smallest component of a system (ie. every function of the system)
+
+Types of Design
+
+The four types of design are:
+-> Architectural design- Provides the system specification. It is represented by the class diagram
+-> Procedural design - Provides the procedure for every requirement. It is represented by the sequence or collaboration diagram
+-> Data design - Is the design for the data repository. It is represented by a class diagram
+-> Interface design - Design the interface. It has no specific representation
+
+Class Diagrams and its Essentials
+
+A class diagram depicts a group of classes, interfaces and their relationships. Class diagrams are design level diagrams found commonly in modelling object oriented systems. Class diagrams are used to depict the static view of the system. Class diagrams that include active class are used to address the static process view of a system.
+
+These are important for capturing the static view, for implementation, and for forward and reverse engineering.
+
+Example for specification: Plan of a house
+
+
+UML Notation for Class
+Class Name
+- variableName 1: char = value
+# variableName 2: int
++ variableName 3: float
+  variableName 4: bool
+
++ functionName(variableName : int): void
+# functionName2(): int
+- functionName3(): char
+  functionName4(): float
+
+- Private
+# Protected
++ Public
+  Default
+
+A class is represented as in the above image.
+
+Every class is made up of attributes (variables) and functionalities (operations). Every variable and operation have access modes like private, protected, public and default. These access specifiers are language specific.
+
+Finding Classes
+
+One can make use of the noun approach to identify classes. A noun would be:
+
+-> An actor
+-> A class
+-> An attribute of a class
+
+Identify Classes
+
+Nouns are fitered as ALCs (Analysis Level Classes). This list would be categorised as good and bad classes. Bad classes are supposed to be removed. Good classes are supposed to be designed.
+
+Operations
+
+The variables are represented in UML as varName: datatype against datatype varName (i: int) as against (int i).
+
+The operations are represented in UML as funName (varName: datatype): datatype against datatype funName (datatype varName) ( fun(i:int): void) as against void fun(int).
+
+Class Design Steps
+
+The following steps are used to create class design:
+
+i.      ldentify persistent classes
+ii.     Create initial design classes
+iii.    Define operations
+iv.     Define class visibility
+V.      Define methods
+vi.     Define states
+vii.    Define attributes
+viii.   Define dependencies
+ix.     Define associations
+x.      Define generalisations
+
+In design level, class diagrams perform the following functions:
+-> Identify entity level classes
+-> Identify business level classes (control classes)
+-> Identify form level classes (boundary classes)
+-> Identify the attributes of the classes
+-> Categorise these actions into different relationships (association, generalisation, aggregation and dependency)
+
+Stereotype
+
+A stereotype is UML's way of attaching extra classification to model items. It is one of the ways UML is made extensible. Some stereotypes are predefined in UML. These are automatically available and user cannot redefine them. A user can define their own stereotype to express wate ver extra classification is useful.
+
+For example, if you are implementing an application that had persistent classes, you might choose to define a stereotype <persistent> to show which classes are persistent. The project team needs to agree to a standard location where invented stereotypes are documented.
+
+The various levels of the stereotype are:
+-> Class level
+-> Functional level
+-> Variable level
+-> Relation level
+
+Class Level Stereotypes
+
+The three basic class level stereotypes are:
+-> Boundary
+-> Control
+-> Entity
+
+Class Stereotype and Interface
+
+Boundary Classes/User Service Classes
+-> Boundary classes are the end user interaction classes that do the job of accepting and displaying.
+-> Examples: cin and cout object, Command prompt, Swing components and so on
+
+Entity Classes/Data Service Classes
+-> These are data transaction classes. The job of these is to get connected to the back end and perform the data trans action.
+-> Examples: ODBC, JDBC and so on
+
+Control Classes/Business Service Classes
+-> Control level classes are the business service classes whose main job is to process the data or implement the business logic.
+-> Example: Any object that is converting the data to information
+
+Function and Relational Stereotype
+
+Function Level Stereotypes
+As one creates Sequence and Collaboration diagrams, the task of finding operations is simplified.
+
+There are four different types of operations. They are
+
+-> Implementer: Implementer stereotype are tagged operations that implement a business functionality. They can be termed as functions responsible for manipulation or functions that manipulate with the attributes of a paricular class
+
+-> Manager: Managers are those who are responsible for allocation and de-allocation of objects. For example, constructors and destructors
+
+-> Access: Methods that provide access to the private data
+
+-> Helper: Helper stereotypes are tagged for operations that are used for some internal manipulation, that is, functions with private and protected access specifier
+
+Iconic Representation
+
+Interfaces
+-> Interfaces in C++ only mean call to functions outside the class.
+-> For a language such as Java, interface is a collection of reusable function prototypes, which can be implemented by one or more classes.
+
+Packages
+-> Packages are the general mechanism for partitioning models and grouping model elements
+
+-> Package represents a subsystem (modules) in UML If a project is too large, it can be divided into packages and saved individually and integrated into a single model file. The model file is saved with an extension mdl and packages are saved as catalog files with extension .cat.
+
+Utility Classes
+
+Variables and functions are of type static
+
+A utility is a set of operations that provide additional functions for classes. It does not represent a member function. Utilities are used to:
+
+-> Denote one or more free subprograms
+-> Name a class that is static and/or provides static members only
+
+Associations
+
+An association is a temporary relation ship befween two classes, which implies that their instances can send messages to each other.
+
+class A {
+    void fun(B b){
+
+    } 
+}
+
+class A {
+    void fun() {
+        B b;
+    }
+}
+
+class A{
+    void fun (B *b) {
+        b = new B; 
+    }
+
+    void destroy () {
+    }
+    delete b;
+    // }
+}
+
+Role Naming
+
+To additionally explain the nature of participation of an object in realisation of an association, roles clarify the paricipation by behaviour.
+
+Association continued from the previous example
+
+class A {
+    // Association in C++
+    B *b;
+    void fun(){
+        b = new B;
+    }
+
+    void destroy() {
+        delete b;
+    }
+};
+
+Multiplicity or Cardinality in Associations
+
+Multiplicity is the availability of the supplier objects to the client objects. Hence, it is to be shown on a class association diagram. Multiplicity specifies 'one' or 'many'. It can be a specific number or an interval.
+
+*           Many
+1.*         One to Many
+3..10       Three to ien
+4,10        Four or Ten
+3..10,15    Three to 10 or Fifteen
+
+class A {
+    B *b;
+    void fun(){
+        b = new B[10];
+    }
+};
+
+class B {
+    A *a;
+    void fun1(){
+        a = new A[10];
+    }
+};
+
+Unidirectional Association of Classes
+
+Consider an example of an association betvween a student and a professor that is a unidirectional association, that is, the association is viewed from teacher's view. For every teacher there is a minimum of 3 or a maximum of 40 students.
+
+Double Association Lines across Classes
+
+Such relationships exist between two classes, where one has inherited classes. For example, a patient class has two inherited classes: In-patient and Out-patient. It represents the association relationship in compressed format.
+
+Association classes
+
+Consider the association between student and exam. The marks are connected with a pair consisting of both a student and an exam. We would want to introduce an object for each pair. This amounts to treating the association between the student and exam as a class. An instance of the association connects a student with an exam. To obtain marks, attach data and function to that link. The result is both an association and a class, which we term as an association class.
+
+An association class has a reference to the two other classes in association.
+
+There are other ways to record the same relationship between Student and Module.
+
+N-ary Association
+When object of a class is in association with more than one class, it is termed as N-ary Association.
+
+Reflexive Association
+Reflexive ASsociation is equal to dynamic polymorphism in C or dynamic method dispatch in Java. Here, a pointer (or reference) of a base class can point to objects of its own type or of derived type.
+
+Individual
+From the above example, if we are considering a student registration system, a person can represent a teacher, an administrator or a clerk. An individual can have three roles. In code, we represent the individual as a base class. Teacher, administrator, and clerk form the derived classes.
+
+class Student  {
+
+}
+
+class Teacher : public Student {
+
+}
+Student *p; 
+p = new Teacher; //(in C++)
+
+class Teacher extends Student {
+
+}
+Student p; 
+p = new Teacher; // (in Java)
+
+Association Qualifierss
+Consider, two objects are in an association relationship and their multiplicity is of the range one to many. Retrieval of a record from the object with muitiplicity defined as many' is a ifficult task. To reduce the difficulity, one uses an association qualifier that provides the primary key or the unique key, using which a record can be uniquely identified.
+
+Aggregation
+Aggregation is a strong relationship between two objects, where one object is considered to be a part of another object. The phrase part of is used to determine this relationship. There are two types of aggregation
+
+-> Composition
+-> Weak aggregation
+
+Composition 
+class B {
+
+}
+
+class A {
+    B b;
+}
+
+Weak aggregation (association in one direction)
+class B {
+
+}
+
+class A {
+    B *b;
+}
+
+Rules in Aggregation
+-> Aggregation is unidirectional
+-> Objects in aggregation do not have existence of its own. They are of abstract type and have to be used with other objects for their existence.
+
+Composition
+Patient
+Report
+
+Weak Aggregation
+
+For example, in a computer, there is an aggregation of objects such as monitor, keyboard, mouse, and CPU. These objects are the parts of the computer. But, computer is not a part of mouse or CPU (that is, aggregation is unidirectional).
+
+Mouse or monitor does not function by itself. It has to be used with other objects for its function. Hence, mouse or monitor is called composition.
+
+Composite
+Two objects are in composition when the non-existence of an object in part of a relation affects the entire system.
+
+Weak Aggregation
+Two objects are in weak aggregation when the non-existence of an object in part of relation does not affect the entire system extensively.
+
+For example, mouse is ina weak aggreg ation with computer because the non-existence of mouse will not affect a computer extensively.
+
+Generalisation
+
+Generalisation represents inheritance to the level of the design where a person is the base class and patient, doctor and nurse are derived classes.
+
+Inheritance is divided into tvvo categonies (it is language specific)
+-> Single inheritance
+-> Multiple inheritance
+
+Inheritance is explained in the previous sessions
+
+Summary
+Here are the key takeaways:
+
+-> Design is the solution phase of SDLC.
+-> There are two different levels of design, namely, High-level Design and Low-level Design.
+-> There are four different types of design, namely, Architectural Design, Procedural Design, Data Design and Interface Design.
+-> Architectural design is represented by a class diagram.

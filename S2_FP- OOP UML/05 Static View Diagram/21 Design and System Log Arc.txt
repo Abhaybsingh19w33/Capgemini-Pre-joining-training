@@ -1,0 +1,111 @@
+DESIGN AND SYSTEM LOGICAL ARCHITECTURE DEFINITION OF DESIGN
+
+Design
+-> The third phase of SDLC, where the solution is thought of.
+-> The phase where the question how' is addressed.
+-> Gives us the specification or the plan of the system.
+
+DESIGN AND SYSTEM LOGICAL ARCHITECTURE -> LEVELS OF DESIGN
+There are two different levels of design.
+
+Levels of Design
+-> High Level Design
+--> Design the system at higher level of abstraction
+-> Low Level Design
+--> Design each and every atomic component of the system
+
+DESIGN AND SYSTEM LOGICAL ARCHITECTURE > TYPES OF DESIGN
+There are 4 different types of design.
+Types of Design
+-> Architectural Design
+-> Procedural Design
+-> Data Design
+-> Interface Design
+
+DESIGN AND SYSTEM LOGICAL ARCHITECTURE -> ARCHITECTURAL DESIGN
+Architectural Design
+-> It is the process of setting the relationship among the structural elements of the system.
+-> It gives the system specification and plan.
+-> It is represented by writing class diagram in OOAD.
+
+DESIGN AND SYSTEM LOGICAL ARCHITECTURE -> DESIGN CONCEPT
+There are two design concepts, which help us in architectural designing.
+
+Design Concept
+-> Coupling
+-> Cohesion
+
+Coupling
+-> Coupling is the level of dependency among the structural elements of the system.
+-> A good system is the one, which is loosely coupled.
+-> For example: Nested or inner classes
+
+Cohesion
+-> Cohesion is the integrity of a single structural element.
+-> A good system is the one, which is highly cohesive.
+-> For example: A professor user service class
+
+Types of Cohesion
+-> Functional
+-> Coincidental
+-> Sequential
+-> Logical
+-> Communicational
+-> Temporal
+-> Procedural
+
+Functional
+-> In a functionally cohesive module, all the parts of the module work together towards achieving a single task.
+-> For example: A class, which is dedicated to user interaction (professor class)
+
+Sequential
+-> In sequential cohesive module, the parts of the module are grouped, as the output from one part is the input to the other.
+-> For example: A class, where the get and set functionalities are grouped into one module
+
+Communicational
+-> In communicational cohesive module, the parts of the module are grouped, as all the functions of the module refer or update the same data.
+-> For example: A class, where both get and set methods are referring to the same data
+
+Procedural
+-> In procedural cohesive module, parts of the modules are grouped because they always follow some sequence of execution.
+-> For example: A Class Get Set method is grouped, where we accept the data from the end user and then set the data
+
+Temporal
+-> In temporal cohesive module, the parts of the module are grouped based on when they are processed.
+-> For example: A multitasking or a multithreading function
+
+Logical
+-> In logical cohesive module, the parts of the module are grouped, as they are logically categorised to work together.
+-> For example: Grouping all print related functions, even though the outputs are different
+
+Coincidental
+-> In coincidental cohesive module, the parts of the module are grouped arbitrarily.
+-> For example: Utility class
+
+DESIGN AND SYSTEM LOGICAL ARCHITECTURE -> PROCEDURAL DESIGN
+Procedural Design 
+-> Procedural design is writing the procedure for the requirements identified.
+-> Procedural design is represented by writing sequence or communication diagram in OOAD.
+
+DESIGN AND SYSTEM LOGICAL ARCHITECTURE -> DATA DESIGN
+Data Design
+-> Data design is the data repository design.
+-> Data design is represented by writing Class diagram in OOAD.
+
+DESIGN AND SYSTEM LOGICAL ARCHITECTURE -> INTERFACE DESIGN
+Interface Design
+-> Interface design is designing the interface component, which helps two other components to interact with each other.
+-> Interface design does not have any specific representation.
+
+DESIGN AND SYSTEM LOGICAL ARCHITECTURE -> CHECK YOUR UNDERSTANDING
+1. Which of the following does the design phase address?
+a. What
+b. HOW - answer
+c. Why
+d. When
+
+2 Architectural design represents which of the following?
+a. System specification - answer
+b. Procedural design
+c. Data design
+d. Intertace design

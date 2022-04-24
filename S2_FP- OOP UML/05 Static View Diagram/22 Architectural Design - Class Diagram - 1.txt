@@ -1,0 +1,60 @@
+ARCHITECTURAL DESIGN: CLASS DIAGRAM -> CLASS DIAGRAM
+
+The whole process of writing the class diagram is divided into 3 steps.
+-> Identify the classes
+-> Design the classes
+-> Set the relationship among the classes
+
+Identify the classes
+-> Identify classes based on sequence diagram:
+--> Search for repetitive objects and identify a class for it.
+
+Identify the classes
+-> Identify classes based on use cases, which is referred to as Use Case Analysis:
+--> Identily 3 classes per use case: Based on verbs
+---> 1 user service, 1 business service, 1 data service
+--> Identify 1 class per actor: Based on noun
+--> Visit use case description and identify 3 classes per flow (alternate and exception flow, if any).
+--> A sum of all this is called ALC (Analysis Level Classes).
+
+Identify the classes
+-> From the list of ALC, remove unwanted classes:
+--> Remove repetitive classes
+--> Remove classes, which have no functionality
+-> ALC gets divided into Good and Bad classes.
+-> Good classes will be designed.
+-> Bad classes will be excluded.
+
+Designing the classes include 4 steps.
+-> Identity the attributes of the class
+-> Identity the behaviour of the class
+-> Attach access specifiers
+-> Attach stereotypes
+
+
+Design the classes
+-> We apply the concept of abstraction to identity the attributes and behaviour of the class.
+-> Knowing the purpose of having the class will help us identify the attributes and behaviour.
+
+Design the classes
+-> Attaching the access specífiers
+--> The class members are divided into private, public and protected sections.
+--> Private is represented by '-' symbol.
+--> Public is represented by '+' symbol.
+--> Protected is represented by '#' symbol.
+
+Design the classes
+-> Attaching stereotypes
+--> Stereotypes can be attached to classes.
+---> For example: Form, control, entity, table, Java Script and more
+--> Stereotype can be attached to member function of the classes.
+---> For example: Implementer, Manager, Access Helper
+
+ARCHITECTURAL DESIGN: CLASS DIAGRAM -> CHECK YOUR UNDERSTANDING
+
+1. What type of diagram is represented by architectural design?
+a. Class diagram - answer
+b. Sequence diagram
+C. State chart diagram
+d. Use case diagram
+
