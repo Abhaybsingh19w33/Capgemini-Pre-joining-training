@@ -1,0 +1,81 @@
+The State Chart Diagram
+
+Introduction
+This lecture provides an overview of the State Chart Diagram.
+
+Objectives
+Upon completion of this lecture, you will be able to explain:
+The State Chart Diagram
+
+Overview of the State Chart Diagram
+
+The state chart diagram holds good for any system. As a system interacts with users and with other systems, the object that makes up the system go through the necessary changes to accommodate the interactions. The state chart diagrams are used to model change in a system.
+
+Some real worid examples:
+
+When you turn a switch, a light changes from 'off to 'on'. When you press a button of a remote control, a television changes ts state by switching from one channel to another channel.
+
+The state diagram shows the state of a single object. For a state change to occur, an event has to be performed, which in turn invokes the functionalities.
+
+Event
+
+An event is an occurrence of a stimulus that can trigger a state transition in the context of a state machine.
+
+Kinds of Events
+The different kinds of events are:
+-> External
+-> Internal
+
+External Events
+External events are the events that pass between the system and the actor, as for example, push button, radio button, enter key pressed; that is, when a GUl object is used, an event is generated.
+
+Internal Events
+Internal events are the events that pass among the objects that live inside the system. For example, overfiow exception.
+
+Types of Events in UML
+The various types of events in UML are:
+-> Signals
+-> Call events
+-> Time events
+-> Change events
+-> Send and receive events
+
+Signals
+A signal is an asynchronous event th at does not send an acknowledgement
+
+Call Event
+A call event represents the dispatch of an operation. A call event is generally synchronous. The receiver transits into a new state and control returns to the sender. It sends back an acknowledgement
+
+Time Events
+Time events represent the passage of time. The keyword after is used, which is followed by an expression that benchmarks the period of time. For example, after 5 seconds or after 2 minutes since exiting a state (idle).
+
+Change Event
+A change in state on satisfying a condition is called a change event. The keyword when is used to change the events. For example, when time = 12.00 or when aititude < 100.
+
+Send and Receive Events
+Signals and call events involve at least fwo objects - the object that sends the signals or invokes an operation and a receiver object.
+
+State machines are used to model an entire system, a use case or an instance of a class. It is usually used in dynamic systems.
+
+Every state has a set of activities. Each activity consists of a set of events and actions. The activities
+are categorised into three types:
+
+Entry
+-> An activity is categorised as on entry, when actions are performed on an object that enters into a state
+
+Exit
+-> An activity is categorised as on exit, when actions are performed on an object that exits from one state and moves to another state
+
+Entry until exit 
+-> An activity is categorised as on entry until exit, when actions are performed on an object that is in some state for a period of time
+
+Upon Event
+An object is said to be upon event when it moves from one state to another based on conditions and actions performed.
+
+Nested State
+State within a state is called 'Nested State'.
+
+Summary
+Here are the key takeaways:
+-> State chart diagram is a dynamic and behavioural diagram.
+-> State chart diagram captures the dynamic behaviour, states and transitions of an object.

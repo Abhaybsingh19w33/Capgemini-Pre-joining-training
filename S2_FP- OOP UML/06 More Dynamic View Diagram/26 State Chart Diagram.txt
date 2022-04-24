@@ -1,0 +1,112 @@
+STATE CHART DIAGRAM -> STATE
+State
+-> Every object has a state.
+-> State is the value of the properties of the object at a given instance of time.
+-> Objects can get into more than one state during its life time.
+--> For example: The 'pass and fail' state of a student
+-> Whenever the objects change the state, at least a few of the behaviours of the object will surely change.
+
+STATE CHART DIAGRAM -> DYNAMIC BEHAVIOUR
+-> Changing behaviour of an object is called as dynamic behaviour.
+-> Dynamic behaviour is modelled by using state chart or state transition diagram.
+
+STATE CHART DIAGRAM -> PURPOSE
+State Chart Diagram
+-> Is a behavioural diagram
+-> Is written to capture the changing behaviour of an object or the entire system
+-> Can be written either at the analysis or at the design phase
+
+STATE CHART DIAGRAM -> ESSENTIALS
+State chart diagram has four essential elements.
+
+State chart diagram
+
+States
+-> The value of property of an object at any given instance of time
+
+Transitions
+-> External events which push the object from one state to another
+
+Dynamic behaviour
+-> Behaviour of an object that is shown in a particular state
+
+Initial and final states
+-> Pseudo states, which represent the starting and ending point of state chart diagrams
+
+STATE CHART DIAGRAM -> CAPTURING DYNAMIC BEHAVIOUR
+Dynamic behaviour can be captured at four different instances of time.
+
+On Entry
+-> Behaviour is captured when an object enters a particular state
+
+On exit
+-> Behaviour is captured when an object exits a particular state
+
+entry until exit
+-> Behaviour is captured as long as an object stays in a particular state
+
+On event
+-> Behaviour is captured on an event
+
+STATE CHART DIAGRAM -> STATE TYPES
+States are of three types.
+
+States
+
+Simple state
+-> A state that does not contain any sub-states.
+
+Composite state
+-> A state, which contains either sub-states or is divided into orthogonal regions
+
+Sub-state
+-> A state machine into which a composite state is decomposed
+
+STATE CHART DIAGRAM -> TRANSITION TYPES
+
+Types of Transition
+
+Simple Transition
+-> Transition occurring between the source and target state
+
+Return Transition
+-> The source and target states are the same state (transition to self)
+
+Local Transition
+-> Transition indicating transitions between any sub-states of a composite state
+
+External Transition
+-> Transition leaving a composite state and directed to another state or pseudo-state
+
+Complex Transition
+-> Chain of transitions joined or forked, linked by a junction or decision node
+
+Automatic Transition
+-> Transition without any associated event or condition
+
+STATE CHART DIAGRAM -> BUILDING A STATE CHART DIAGRAM
+-> Identification of objects, whose dynamic behaviour has to be captured
+--> Identification of possible states of a state machine
+---> Determination of the hierarchy of states, sub-states and orthogonal regions
+----> Linking the states and their Sub-states with transitions
+-----> Application of adequate pseudo-states
+
+STATE CHART DIAGRAM -> CHECK YOUR UNDERSTANDING
+1. A state chart diagram is written at which of the following phase(s?
+a. Analysis phase
+b. Design phase
+c. Both a and b - answer
+d. None of the above
+
+2. Which of the following is also called as a simple state?
+a Pseudo state
+b. Concurrent state
+C. Both a and b
+d. None of the above - answer
+
+3. Which of the following can transitions be?
+a Simple
+b. Return
+c. Local
+d. All of the above - answer
+
