@@ -1,0 +1,166 @@
+Table of Contents
+1. RegularExpression
+1.1 Introduction
+1.2 Matcher Class
+1.3 Pattem Class
+1.4 PattemšyntaxException cdass
+1.5
+1.6.
+
+2 Regular Expression Syntax
+2.1 ATOMS
+2.2 Quantifier
+
+3. Summary
+
+Regular Expression
+
+1.1 Introduction
+
+The Java Regex or Regular Expression is provided by java.util.regex package in java API. Using this API we can define pattern which helps for searching or manipulating strings. It can be combination of a character or a string or a complex expression with special characters describing a particular pattern, Input given from a console or from a file may or may not match the pattern provided.
+
+What is a Regular Expressions
+-> Most of the programming languages are integrated with RegularExpressions.
+-> Regular Expressions are a language within a language.
+-> It is a powerful search engine.
+-> Regular expressions allows us to write short code
+
+Java API provide a package (java.util.regex) which consist of classes and interfaces to work with regular expressions.
+1. MatchResult interface
+2. Matcher class
+3. Pattern class
+4. PatternsyntaxĒxception class
+
+1.2 Matcher Class:
+Match Result interface are implemented in Matcher class. It acts like an engine that reads the pattern provided on a sequence of characters to perform match operations. By calling matcher method of a Pattern, we can obtain a matcher.
+
+Following are the functionalities performed by matcher:
+
+matches(): verifies whether expression matches with the pattern and returns boolean value depending upon the match.
+
+lookingAt() : checks for the matching pattern of the given string starting at the beginning.
+
+find(): After the verification of input sequence, it helps us to locate the next subsequence to match the pattern.
+
+The return type of all these methods are Boolean, which verifies success and failure for the given input.
+
+1.3 Patterm Class:
+It is a regular expression in compiled form. Any reguiar expression are represented as a string and gets compiled as an object ofa Pattern ciass. This pattern object can be used to access the matcher|jmethod of that ciass and returns a Matcher object
+
+Matcher object can be Used to access matches() method which in turn returns a boolean value based on the condition.(i.e) the sequence of characters matches against the regular expression provided. Entire state of an operation is stored inside the matcher object, henceforth many matchers can share the same pattern.
+
+EXample is as shown below:-
+
+Pattern pt = Pattern.compile("p*q");
+Matcher mr = pt.matcher("ppppq");
+boolean bn = mr.matches();
+
+Following syntax is equivalent to above three statement:
+
+boolean bn = Pattern.matches("p*q", "ppppq");
+
+1.4 PattermSyntaxĒxception class
+It is an unchecked exception class that occurs during the syntactical error defined inside pattern.
+
+Regular Expression Syntax
+The structure of a regular expression can be divided into 3 sections as mentioned below:
+
+Section-1: can contain zero (0) or more branches
+Section-2: Every branch must have one (1) or more parts
+Section-3: Each part has an atom with quantifier which is not mandatory.
+
+2.1 ATOMS:
+Describe one or more characters.
+
+Following are the classes which helps us to create an Atom.
+
+Character class: A character class can be defined as a sequence of individual letters or alphabets which are encdosed within [square brackets]. It tells the parsers that the characters will successfully match any single character from a given input text or word.
+
+
+[abc]
+Finds a match for letter a or b or c
+
+[^abc]
+Finds a match for any character, except a, b & c
+
+[a-zA-Z]
+Finds a match for a letter between a to z & A to Z
+
+A|B
+Finds a match for A or B
+
+AB
+Finds A followed by B
+
+[a-z&&[^de]]
+Finds a match between a to z, except d and e
+
+[a-z&&[^x-z]]
+Finds a match between a to z, except letters ranging from x to z
+
+Metacharacters:
+Metacharacters will work as a small piece of code which has predefined meaning and common patterns that are easier to use.
+
+* - Matches any single character except new line
+\d - Finds a match ranging from 0 to 9
+\D - Finds a match except numbers
+\s - Search for a match for whitespace character
+\S - Searches any non-whitespace character
+\w - Searches for any matching word character(s)
+\W - searches for any non-matching word character(s).
+\z - searches a match at the end of the given word or string
+\A - searches a match at the beginning of the given word or string
+
+2.2 Quantifier
+Quantifiers tells us about number of instances of a character, group, or character class should be present in the given text for a match to be traced.
+
+
+? - Searches for a character that occurs zero or one time in the character group.
++ - Searches one or more time of the occurrence of the character group.
+* - identifies zero or more times.
+{n} - Exactly matches or suits n times.
+{n,} - Finds for at least n times of the character group to occur
+{y,z} - Matches from y to z times of the text
+
+Regular Expression with String Class Methods
+String Class in Java API have built-in support for regular expressions.
+
+s.matches("expression")
+-> Returns true if the String matches expressions
+
+s.split("text")
+-> Creates an array of String, using the text as delimeter
+
+s.replaceFirst("exp"), "Content"
+-> Replaces first occurance of "exp" with "Content"
+
+5.replaceAll("exp"), "Content"
+-> Replaces all occurances of "exp" with "Content"
+
+DemoProgram on Regular Expression
+
+Given:
+
+public class PatternMatchEx {
+    public boolean isPatternMatching(String line){
+        Pattern pattern = Pattern.compile("\D{5}$");
+
+        Matcher match = pattern.matcher(line);
+        if(match.find()) {
+            return true;
+        }
+        return false;
+    }
+
+    public static void main(String a[]){
+        PatternMatchEx patternMatchEx = new PatternMatchEx();
+
+        System.out.println("Checks for a String with characters which has a minimum length of five chars " + patternMatchEx.isPatternMatching("REGEX"));
+
+        System.out.println("Checks for a String with characters which has a minimum length of five chars " + patternMatchEx.isPatternMatching("REG"));
+    }
+}
+
+Output:
+Checks for a String with a minimum length of five chars:true
+Checks for a String with a minimum length of five chars:false
