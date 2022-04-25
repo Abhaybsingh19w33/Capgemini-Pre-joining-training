@@ -1,0 +1,106 @@
+CALENDAR UTILITY CLASS
+-> Calendar Basics
+-> Creating calendar object
+-> Getting and Setting fields of Calendar
+-> Manipulating fields of Calendar
+-> Calendar and Date conversions
+-> List of some important methods of Calendar
+-> Summary
+
+CALENDAR BASICS
+
+Calendar is a utility class present in java.util package. Calendar class helps in dealing with date time in java. It provides functionalities for manipulating date and time.
+
+Calendar is an abstract ciass that provides methods for converting between a specific instant in time and a set of calendar fields such as YEAR, MONTH, DAY_OF_MONTH, HOUR, and so on, and for manipulating the calendar fields, such as getting the date of the next week. An instant in time can be represented by a millisecond valiue that is an offset from the Epoch, January 1, 1970
+00:00:00.000 GMT
+
+CREATING CALENDAR OBJECT
+
+Calendar is an abstract class, hence we cannot use the constructor to create its object. The Calendar class has overioaded static methods named getinstance(..) to instantiate an object of its sub class. GregorianCalendar is a concrete subclass of Calendar and provides the standard calendar system used by most of the world.
+
+Calendar now = Calendar.getInstance ();
+
+Calendar's getinstance method returns a Calendar object whose calendar fields have been initialized with the current date and time.
+
+GETTING AND SETTING FIELDS OF CALENDAR
+
+Calendar class has various static fields like YEAR, MONTH, HOUR, MINUTE etc which represent different portions of Date and Time. These fields are used to get and set the corresponding values in the calendar object. If there are any calendar fields whose values haven t been set in the selected field combination, Calendar uses their default values. See the below example for setting and getting values from calendar.
+
+// Creating calendar object with current date and time
+Calendar now = Calendar.getInstance ();
+
+// Getting year value from calendar object
+int year= now.get (Calendar.YEAR);
+System.out.println (year);
+
+// clearing the current values from calendar
+now.clear();
+System.out.println(now.get (Calendar.YEAR)); //prints 1970 -default
+
+// Setting various fields using overloaded setter methods
+now.set (2015, Calendar. JANUARY, 15); //sets the year, month & date
+now.set (Calendar.HOUR, 10); // sets the hour
+now.set (Calendar.MINUTE, 30); // sets the minute
+System.out.println(now.get (Calendar.YEAR)); //prints the year
+System.out.println(now.get (Calendar .DATE)); // prints the date
+
+
+MANIPULATING FIELDS OF CALENDAR
+
+Fields of the calendar object can be incremented or decremented using the below method 
+
+add (f, delta) adds delta to field f.
+
+add(..) forces an immediate recomputation of the calendar's milliseconds and all fields
+
+// creating calendar object and setting date and time
+Calendar now = Calendar.getInstance();
+now.set (2019, Calendar.MARCH, 15, 10, 30); // Hour: 10 Manutes: 30
+
+// Add 2 years and 13 months, subtract 10 days
+now.add (Calendar.YEAR, 2); // Date is 15th March 2021
+now.add (Calendar.MONTH, 13); // Date changed to: 15th April 2022
+now.add (Calendar.DAY_OF_MONTH, -5); // Date changed to: 10th April 2022
+
+CALENDAR AND DATE CONVERSIONS
+
+// Creating calendar with current date and time
+Calendar now = Calendar.getInstance();
+
+// Converting Calendar to Date
+Date today = now.getTime();
+
+//Converting from Date to Calendar
+now.setTime(today);
+
+LiST OF SOME IMPORTANT METHODS OF CALENDAR
+
+add(int field, int amount)
+-> Adds or subtracts the specified amount of time to the given calendar field, based on the calendars rules
+
+after(Object when)
+-> Returns whether this Calendar represents a time after the time represented by the specified Object
+
+before(Object when)
+-> Returns whether this Calendar represents a time before the time represented by the specified Object
+
+clear()
+-> Sets all the calendar field values and the time value (millisecond offset from the Epoch)
+
+get(int field)
+-> Returns the value of the given calendar field.
+
+getTime()
+-> Returns a Date object representing this Calendar's time value
+
+getTimeInMillis()
+-> Returns this Calendar's time value in milliseconds
+
+set(int field, int value)
+-> Sets the given calendar field to the given value
+
+setLenient(boolean lenient)
+-> Specifies whether or not date/time interpretation is to be lenient
+
+SUMMARY
+Calendar class is a replacement for Date object and is used for working with dates in java. It is an abstract class. GregorianCalendar is the sub class of calendar. It has fields which contain the values for various parts of date and time. Calendar has methods using which individual fields of calendar can be manipulated

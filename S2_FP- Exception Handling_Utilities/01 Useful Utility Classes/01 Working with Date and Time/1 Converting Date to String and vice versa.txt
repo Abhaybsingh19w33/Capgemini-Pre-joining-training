@@ -1,0 +1,93 @@
+CONVERTING DATE TO STRING AND VICE VERSA -> INTRODUCTION
+-> User inputs will generally be in String format, but applications need data of appropriate types
+-> The classes java.text.DateFormat and java.text.SimpleDateFormat provide many convenient ways to convert String to Date and Date to String
+
+CONVERTING DATE TO STRING AND VICE VERSA -> Date and Calendar
+-> The class java.util.Date is an abstraction for representing the date values
+-> Allows the interpretation of date as year, month, day, hour, minute and second values
+-> The date is represented as a Date object or as milliseconds as determined from January 1, 1970, 00:00:00 GMT
+
+-> Date class was introduced in JDK 1.0
+-> Most of the methods are deprecated
+-> It is suggested that java.util.Calendar is used
+
+-> The Calendar class is abstract
+-> Provides many methods for conversion between an instant in time and a set of calendar fields such as YEAR, DAY OF MONTH, HOUR etc.
+-> Instant in time can be represented by a millisecond value, offset from the Epoch
+--> January 1, 1970 00:00:00.000 GMT
+
+Converting a Date to a Calendar instance is done using the milliseconds represented by the Date instance
+Date dt = ...
+Calendar cal = Calendar.getInstance ()
+cal.setTime(dt.getTime ())
+
+CONVERTING DATE TO STRING AND VICE VERSA> java.text.DateFormat
+-> To convert a date value in string format, use the abstract class java.text.Date Format
+-> Allows for formatting (i.e., date > text) and parsing (text-> date)
+
+-> DateFormat provides many static methods for obtaining the default date/time formatters
+--> It is based on the default locale, a given locale and/or a number of formatting styles
+
+-> The formatting styles include:
+--> FULL (Tuesday, February 3, 2015)
+--> LONG (February 3, 2015)
+--> MEDIUM (Feb 3, 2015)
+--> SHORT (2/3/15)
+
+DateFormat getDateInstance ()
+DateFormat getDateInstance (int style)
+DateFormat getDateInstance(int style, Locale aLocale)
+
+DateFormat getDateTimeInstance ()
+DateFormat getDateTimeInstance (int datestyle, int timestyle)
+DateFormat getDatteTime Instance (int dateStyle, int timeStyle, Locale aLocale)
+
+DateFormat getInstance ()
+
+DateFormat getTimeInstance ()
+DateFormat getTimeInstance (int style)
+DateFormat getTimeInstance (int style, Locale aLocale)
+
+-> DateFormat provides a method parse() to parse text from the beginning of the given string to produce a date
+
+-> The method may not use the entire text of the given string
+String text = "1/20/74 is my date of birth";
+DateFormat df = DateFormat.getDateInstance ( DateFormat.SHORT);
+Date dt = df.parse (text);
+
+CONVERTING DATE TO STRING AND VICE VERSA -> java.text.SimpleDate Format
+-> The class java.text.SimpleDateFormat is an extension of DateFormat
+-> It is a concrete class and provides constructors to specify patterns
+
+
+Patterns include a letter for each date component.
+
+d - Day in month
+M - Month in year
+y - Year
+h - Hour in am/pm (1-12)
+H - Hour in day (0-23)
+m - Minute in hour
+
+s - Second in minute
+S - Millisecond
+a - Am/pm marker
+Z - Time zone
+E - Day name in week
+
+Format a Date instance to a String:
+
+String pattern = "d/M/yyyy h:m:s";
+SimpleDateFormat sdf = new SimpleDateFormat (pattern) ;
+Date dt = new Date ()
+System. out.println (sdf.format(dt));
+
+Convert the date value in a String to a Date instance:
+
+String pattern = "d/M/yyyy h:m:s" ;
+SimpleDateForma t sdf = new SimpleDateFormat (pattern);
+String value = "3/2/2015 6:10:43";
+Date dt = sdf.parse (value);
+
+-> The method parse() from both DateFormat and SimpleDate Format throws java.text.ParseException when converting a String into a Date
+-> ParseException is a checked exception and needs to be handled
