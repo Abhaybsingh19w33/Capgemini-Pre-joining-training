@@ -1,0 +1,97 @@
+WRAPPER CLASSES INTRODUCTION
+
+Java's primitive data types allow us to create variables with static memory allocation
+
+There are no methods to operate on the value represented by a primitive
+
+WRAPPER CLASSES -> OVERVIEW
+Wrapper classes in Java generally refers to classes representing primitives such as:
+
+java.lang.Byte
+java.lang.Short
+java.lang.Integer
+java.lang.Long
+java.lang.Float
+java.lang.Double
+java.lang.Boolean
+java.lang.Character
+
+WRAPPER CLASSES -> CONVERSION METHODS
+-> The classes Byte, Short, Integer, Long, Float and Double inherit from java.lang.Number
+-> The class Number provides abstract conversion methods such as:
+byte byteValue()
+short shortValue()
+int intValue()
+long longValue()
+float floatValue()
+double doubleValue()
+
+WRAPPER CLASSES -> FIELDS
+-> All the wrapper classes, except Boolean provides the following public static final fields:
+--> MIN_VALUE
+--> MAX_VALUE
+--> SIZE
+
+-> All the wrapper classes include a public static final field called TYPE of java.lang.Class data type
+
+WRAPPER CLASSES -> PARSING
+All the wrapper classes, except Character, provides a parse..() method to convert a String into the respective primitive type:
+
+byte Byte.parseByte(String)
+short Short.parseShort(String)
+int Integer.parselnt(String)
+long Long.parseLong(String)
+float Float.parseFloat(String)
+double Double.parseDouble(String)
+boolean Boolean.parseBoolean(String)
+
+WRAPPER CLASSES -> PARSING
+
+Example:
+String str = "12.45";
+double d = Double.parseDouble (str);
+
+str = "45AB";
+int i = Integer.parseInt (str, 16) ;
+
+str = "true"; // " TRUE"
+boolean tf = Boolean.parseBoolean (str);
+
+WRAPPER CLASSES -> BOXING AND UNBOXING
+-> A primitive value can be converted into an instance of its wrapper class - Boxing
+
+Integer num = new Integer (12);
+
+-> An instance of a wrapper class can be converted into its primitive equivalent - Unboxing
+
+int n = num.intValue ();
+
+WRAPPER CLASSES -> AUTO-BOXING AND AUTO-UNBOXING
+-> In JDK 1.5, converting primitives to wrapper instances and vice versa can be done without explicit statements
+
+-> Auto-Boxing:
+Integer num = 100;
+
+-> Auto-Unboxing:
+int n = num;
+
+Auto-boxing creates an immutable object and stores it in an internal pool
+
+Integer num1, num2;
+
+numl = new Integer(100);
+num2 = new Integer(100);
+S.o.p(num1==num2); // FALSE
+
+num1 = 100;
+num2 = 100;
+S.o.p (num1==num2) // TRUE
+
+Using wrapper objects in frequent arithmetic operations may affect performance
+
+for (Integer i=0; i<100000; i++) {
+    //..
+}
+
+i++ is the same as:
+i = new Integer (i.intValue() +1);

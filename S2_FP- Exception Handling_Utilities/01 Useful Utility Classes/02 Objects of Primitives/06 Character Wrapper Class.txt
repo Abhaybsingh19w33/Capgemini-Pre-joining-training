@@ -1,0 +1,87 @@
+CHARACTER WRAPPER CLASS
+-> Character Wrapper Class
+-> Creating Character Object
+-> Methods OF Character Class
+-> Summary
+
+CHARACTER WRAPPER CLASS
+The Character class wraps a value of the char primitive type in to an object. A Character object contains a single field whose type is char. Character clas is immutable
+
+This class provides several methods for examining a character (lowercase letter, digit, etc.) and for converting characters from uppercase to lowercase and vice versa.
+
+CREATING CHARACTER OBJECT
+Character ch = new Character('m');
+
+The above statement creates a Character object which contains the character 'm. Character wrapper class has only one constructor with parameter of type char.
+
+METHODS OF CHARACTER CLASS
+The following static methods of character class are used for examining a character
+
+boolean isLowerCase (char ch)
+-> Determines if the specified character is a lowercase character
+
+boolean isupperCase(char ch)
+-> Determines if the specified character is an uppercase character
+
+boolean isDigt(char ch)
+-> Determines if the specified character is a digit. [0-9]
+
+boolean isLetter(char ch)
+-> Determines if the specified character is a Letter. [A-Z][a-z]
+
+boolean isLetterOrDigit(char ch)
+-> Determines if the specified character is a letter or digit [A-Z][a-z][0-9]
+
+boolean iswhitespace(char ch)
+-> Determines whether the specified character is white space. A whitespace inciudes space, tab, or new line.
+
+boolean isSpaceChar( char ch)
+-> Determines whether the specified character is space character.
+
+See examples below
+
+//Check for upper case or lower case
+char ch = 'M';
+System.out.println(Character.isUpperCase(ch)); // true
+System.out.printIn(Character. islowerCase(ch)); // false
+
+//Check whether it is a digit, letter
+system.out.println(Character.isDigit('5')); // true
+System.out.printIn(Character.isletter('g')); // true
+
+//Check for whitespace
+System.out.println(Character.isWhitespace(' '); //true
+System.out.printIn(Character.iswhitespace('\t'); //true
+System.out.println (Character. iswhi tespace('\n')); //true
+
+//Check only for space
+System.out.printIn(Character.isSpaceChar(' ')); //true
+System.out.printIn(Character. isSpacechar('\t'); // false
+
+The following methods are used to convert the character or get its value
+
+toLowerCase(char ch)/ toUpperCase (char ch)
+-> Converts the character argument to lowercase/uppercase
+
+toString(char ch)
+-> Returns a String object representing this Character's value
+
+digit(char ch, int radix)
+-> Returns the numeric value of the character ch in the specified radix
+
+Examples
+
+//Convert to upper case or lower case
+char ch= 'm';
+System.out.printIn(Character.toUpperCase(ch)); // prints M
+System.out.printIn(Character.tolowerCase('G')); // prints g
+
+//Convert to String
+String aChar = Character.tostring('A');
+
+//Get numeric value
+int i = Character.digit('6',10);
+System.out.printIn(i); // prints 6
+
+SUMMARY
+-> Character class is a wrapper class for primitive type char. It has functionalities which can be used to examine characters and convert characters.
