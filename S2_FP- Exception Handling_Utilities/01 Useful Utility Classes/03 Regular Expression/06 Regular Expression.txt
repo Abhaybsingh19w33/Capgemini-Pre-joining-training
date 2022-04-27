@@ -29,7 +29,7 @@ Java API provide a package (java.util.regex) which consist of classes and interf
 1. MatchResult interface
 2. Matcher class
 3. Pattern class
-4. PatternsyntaxĒxception class
+4. PatternsyntaxException class
 
 1.2 Matcher Class:
 Match Result interface are implemented in Matcher class. It acts like an engine that reads the pattern provided on a sequence of characters to perform match operations. By calling matcher method of a Pattern, we can obtain a matcher.
@@ -59,7 +59,7 @@ Following syntax is equivalent to above three statement:
 
 boolean bn = Pattern.matches("p*q", "ppppq");
 
-1.4 PattermSyntaxĒxception class
+1.4 PattermSyntaxException class
 It is an unchecked exception class that occurs during the syntactical error defined inside pattern.
 
 Regular Expression Syntax

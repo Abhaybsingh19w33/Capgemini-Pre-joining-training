@@ -1,0 +1,57 @@
+JAVA'S APPROACH TO HANDLE EXCEPTIONS -> INTRODUCTION
+-> You can shield one or more statements in a try block
+-> If an exception is thrown, it is passed on to the catch block for handling it
+
+JAVA'S APPROACH TO HANDLE EXCEPTIONS -> OVERVIEW
+-> When an exception occurs, an object of some Throwable type is thrown
+-> If there is no protection to that statement, then rest of the statements in that method will be skipped
+-> The object is further thrown to the caller
+-> This process is repeated until there is a handler or it reaches the runtime
+-> The runtime exits the application and displays the error details
+
+JAVA'S APPROACH TO HANDLE EXCEPTIONS -> TRY-CATCH
+-> A try block groups all the statements that need to be executed as a single unit
+-> If any of the statements in the try block encounter a runtime error, an object is thrown
+-> All statements following this within the try block are skipped
+
+-> The catch block is a part of the try block
+-> A catch block has a parameter of type Throwable (or its subtypes)
+-> The object thrown from the try block is received as a parameter to the catch block
+
+JAVA'S APPROACH TO HANDLE EXCEPTIONS -> THROWABLE OBJECT
+The class java.lang.Throwable has many useful methods:
+String getMessage();
+String getLocalizedMessage();
+Throwable getCause();
+void printStackTrace();
+void printStackTrace(java.io.PrintStream);
+void printStackTrace(java.io.PrintWriter);
+int getStackTraceDepth();
+
+-> Since all exception classes inherit from Throwable, these methods are accessible using any exception object
+-> In the catch block, you can make use of these methods to handle the current error situation
+
+JAVA'S APPROACH TO HANDLE EXCEPTIONS -> TRY-CATCH
+double sum = 0;
+while (true) {
+    System.out.println ( "Enter a number (0 to stop): ");
+    double n = scanner.nextDouble(); // possibility of error
+    if (n==0) break;
+    sum += n;
+}
+System. out.println("Sum = " + sum);
+
+
+double sum = 0;
+while (true) {
+    try{
+        System.out.print("Enter a number (0 to stop): ");
+        double n = scanner.nextDouble();
+        if (n==0) break;
+        sum += n;
+    }
+    catch (Exception e) {
+        System.out.println ("Invalid entry. Try only numbers.")
+    }
+}
+System.out.println ("Sum = " + sum);

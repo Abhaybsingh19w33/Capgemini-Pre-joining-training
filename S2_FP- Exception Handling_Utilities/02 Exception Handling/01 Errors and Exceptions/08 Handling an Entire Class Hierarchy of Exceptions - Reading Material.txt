@@ -1,0 +1,160 @@
+Table of Contents
+1 Handling an Entire Class Hierarchy of Exceptions
+1.1 The Exception Hierarchy in Java
+1.2 Java Error Class Hierarchy
+1.3 Java Exception Class Hierarchy
+1.4 Handling an Entire Class Hierarchy
+1.5 Summary
+
+1.1 The ExcEption Hierarchyin Java
+Exceptions in a Java program are organized in a hierarchy of exception classes. The Throwable dass, which is an immediate subclass of Object, is at the root of the exception hierarchy. Throwable has two immediate subelasses: ExcEption and Error.
+
+java.lang
+Object
+Throwable
+-> Error
+-> Exceptions
+--> Runtima Exception
+--> Other Exception
+
+The standard error classes defined in java.lang package is as follows:
+
+Error
+-> Virtual Machine Error
+-> Assertion Error etc
+
+public class Error extends Throwable
+
+An Error is a subclass of Throwable that indicates serious problems that a reasonable application should not try to catch.
+
+Most such errors are abnormal conditions.
+
+The standard exception cdasses defined in java.lang package is as follows:
+
+Exceptions
+-> CheckedExceptions
+Example: IO or Compile time Exception
+
+-> UncheckedExceptions
+Example: Runtime or Null Pointer Exceptions
+
+public class Exception extends Throwable
+
+The class Exception and its subclasses are a form of Throwable that indicates conditions that a reasonable application might want to catch.
+
+The class Exception and any subclasses that are not also subclasses of RuntimeException are checked exceptions.
+
+The class RuntimaException and all is subclasses are unchecked excaptions.
+
+
+1.2 Java Error class hierarchy:
+Throwabie
+-> Error
+--> AssertionEror
+--> LinkageError
+---> BootstrapMethodError
+---> ClassCircularityError
+---> ClassFormatError
+----> UnsupportedClassVersionError
+---> ExceptionInInitializerError
+---> IncompatibleClassChangeError
+----> AbstractMethodError
+----> IllegalAccessError
+----> InstantiationError
+----> NoSuchFieldError
+----> NoSuchMethodError
+---> NoClassDefFoundError
+---> UnsatisfiedLinkError
+---> VerifyError
+--> ThreadDeath
+--> VirtualMachineError
+---> InternalError
+----> OutOfMemoryError
+----> StackOverflowError
+
+13 Java exception class hierarchy
+
+Exception
+-> CloneNotSupportedException
+-> InterruptedException
+-> IOException
+--> FileNotFoundException
+--> SocketException
+---> ConnectException
+--> UnknownHostException
+-> ReflectiveOperationException
+--> ClassNotFoundException
+--> IllegalAccessException
+--> InstantiationException
+--> InvocationTargetException
+--> NoSuchFieldException
+--> NoSuchMethodException
+
+RuntimeException
+-> AnithmeticException
+-> ArrayStoreException
+-> ClassCastExcoption
+-> ConcurentModificationException
+-> EnumConstantNotPresentException
+-> IllegalArgumentException
+--> IllegalThreadStateException
+--> NumberFormatException
+-> IllegalMonitorStateException
+-> IllegalStateException
+-> IndexOutOfBoundsException
+--> ArrayIndexOutOfBoundsException
+--> StringIndexOutOfBoundsException
+-> NegativeArraySizeException
+-> NullPointerException
+-> SecurityException
+-> TypeNotPresentException
+
+1.4 Handling Entire Class Hierarchy
+We need to keep the hierarchy of exceptions in mind when writing exception handlers for our program. For example, let us provide two catch blocks for the program.
+
+public class ReadConsole2 {
+    public void input2(){
+        int a = 0, b = 0;
+        try{
+            InputStreamReader ir = new InputStreamReader(System.in);
+
+            BufferedReader br = new BufferedReader(ir); } // auto close
+        {
+            System.out.println("Enter the value of a ");
+            a = Integer.parseInt(br.readLine());
+
+            System.out.println("Enter the value of b ");
+            b = Integer.parseInt(br.readLine());
+        }
+        catch(Exception e) {
+            e.printStackTrace();
+        }
+        catch(NumberFormatException | IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
+
+When you compile the above java program you will receive an unreachable code error saying that the second catch handler can never be reached by the program.
+
+why does this happen?
+
+The type of Exception thrown in the try block will be compared with the types specified in the catch clauses in a sequential order. So, the type NumberFormatException or IOException would be compared with the type Exception. Since NumberFormatException or IOException are subclasses of Exception, a match has occurred. The first catch block will be executed. Once a catch block is executed, the remaining blocks would be skipped and control would pass onto the finally block if it exists. So, in conclusion the second catch block would never be executed. That is why the unreachable code compilation error was genarated.
+
+We need to catch subclass exceptions before catching superclass exceptions. The proper way to define the
+above code is to catch NumberFormatException | IOException first followed by Exception as shown below.
+
+catch (NumberFormatException | IOException e) {
+    e.printStackTrace();
+}
+catch(Exception e) {
+    e.printStackTrace();
+}
+
+
+1.5 Summary
+A try block can be handled by multiple catch handlers.
+
+Hierarchy of exception classes has to be followed by the catch handlers as the subclass exceptions can be caught by the superclass exceptions
+
+Therefore subclass exceptions should be caught first followed by super class exceptions else compile time error "unreachable code" is raised.

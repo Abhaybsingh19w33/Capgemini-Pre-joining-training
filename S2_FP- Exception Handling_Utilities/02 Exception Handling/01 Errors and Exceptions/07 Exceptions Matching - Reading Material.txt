@@ -1,0 +1,93 @@
+Table of Contents
+1 Exception Matchings
+1.1 Exception in Java
+1.2 Exception Matching
+1.3 Summary
+
+1.1 The Exception in Java
+Exceptions in Java are objects that passes message to a calling method that an abnormal condition has occurred. When a method encounters an abnormal condition (an exception condition) then the respective exception object is created and thrown.
+
+Exceptions are only those objects twhose classes descend from Throwable. Throwable serves as the base class for an entire family of exception classes, declared in java.lang. Thus Exception handling ensures that the flow of the program doesn't break when an exception occurs
+
+1.2 Exception Matching
+Exceptions are caught by catch block whose parameters match with the exception object, and program control enters into the handier block. Therefore the cateh blocks are called as exception handler blocks. When you program in Java, you must position catchers (the exception handlers) strategically, so your program will catch and handle all exceptions from which you want your program to recover.
+
+Consider the following example
+
+public class Main {
+    public static void main(String[] args){
+        int res = 0;
+        try {
+            int[] arr = new int[3];
+            int[] iarr = null;
+
+            int a = Interger.parseInt(args[0]);
+            int b = Interger.parseInt(args[1]);
+
+            res = a/b;
+
+            arr[20] = 150;
+            iarr[0] = 10;
+        }
+        catch (ArithmeticException a) {
+            System.out.println("Division by zero " + a);
+        }
+        catch (NumberFormatException a1) {
+            System.out.println("Enter Interger values as input " + a1);
+        }
+        catch (ArrayIndexOutOFBoundException a2) {
+            System.out.println("Index out of bound " + a3);
+        }
+        catch (NullPointerException a3) {
+            System.out.println("Array not intialized " + a3);
+            System.out.println(res);
+        }
+    }
+}
+
+The example above the code within the try block is anticipated to throw different exception objects.
+
+1. If command line arguments passed are zero it raises ArrayIndexOutOfBoundsException
+
+2. If non numeric value passed as command line argument it raises NumberFormatException
+
+3. If the second argument passed is zero it raises ArithmeticException
+
+4. arr[30] = 150; raises ArrayIKIndexOutOfBoundsException
+
+5. iarr[0] = 10; raises NullPointerException
+
+When the code in try block is executed, first encountered exception object ciass is created and thrown. The exception is caught by whichever catch block parameter natches with it. This is called as exception matching. After the catch handler is executed the program recovers from the excaption and resumes it in usual phase. In any case only one catch block is executed followed by the finally block statements.
+
+Prior to Java 7, we had to cateh only one exceptiomn type in each catch block. So whenerer we needed to handle more than one specitic exception, but pass the same message Éor all exception then we had to have more than one catch block containing the same code.
+
+Starting from Java 7.0, it is possible for a single catch block to catch multiple exoeptions by separating each with | (pipe symbol) in catch block
+
+publc class Test {
+    public static void main (String args[]) {
+        Scanner scn =  Scanner(System.in);
+        try {
+            int n = Integer.parseInt(scn.nextLine());
+
+            if(99 % n == 0) {
+                System.out.println(n + " is a factor of 99 ");
+            }
+        }
+        catch (NumberFormatException | ArithmeticException ex) {
+            System.out.println("Exception encountered " + ex);
+        }
+    }
+}
+
+If all the exceptions belong to the same class hierarchy, we can be catching the base exception type. However, to catch each exception, i.e, to have fine grain information they need to be done separately in their own catch blocks. However, the subclass and baseclass exceptions cannot be caught in one statement
+
+For Example
+
+catch (ArithmeticException | RuntimeException ex) //compile
+
+In the above example, ArithmeticException is subclass of RuntimeException in Exception hirerchary.
+
+1.3 Summary
+Exceptions are objects created and thrown. They pass message to the calling program about the unexpected operations that has occurred within their block during execution.
+
+Exception matching is to select the correct exception handler and execute it. This is done by matching the catch block parameter with the exception object being thrown.

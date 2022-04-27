@@ -1,0 +1,114 @@
+USING MULTIPLE CATCHES WITH ONE TRY BLOCK -> INTRODUCTION
+-> A try block can have multiple catch blocks associated with it
+-> This helps us to take different steps when different exceptions are thrown from the try block
+
+-> A try-catch block stops a statement from terminating the application execution abruptly
+-> A try block attempts to execute each statement in the block
+-> When an error occurs, an exception is thrown from that statement
+
+-> The try block then transfers the control to the catch block, assigning the object thrown to the parameter of the catch block
+-> They can do error recovery, prompt the user to make a decision, or propagate the error up to a higher-level handler using chained exceptions
+
+public static void main (String []args) {
+    int n, d, q;
+    try {
+        // ArraylndexOutOfBoundsException
+        // NumberFormatException
+        n = Integer.parseInt (args [0]);
+        d = Integer.parseInt (args [1]);
+        q = n/d; // ArithmeticException
+        S.o.p("Quotient = " + q);
+    }
+    catch (Exception e) {
+        S.o.p("There was an error!");
+    }
+}
+
+USING MULTIPLE CATCHES WITH ONE TRY BLOCK -> DEFAULT CATCH
+-> Since java.lang.Exception is the super class for all these exceptions, the reference in the catch block parameter can refer to objects of any of these classes
+-> A single catch block of this type can handle exceptions of any types
+-> Generally called as default catch block
+
+USING MULTIPLE CATCHES WITH ONE TRY BLOCK -> MULTIPLE CATCHES
+-> A try block can have more than one catch blocks
+-> This is useful when multiple exceptions are expected from the same try block
+
+try {
+        // ArraylndexOutOfBoundsException
+        // NumberFormatException
+        n = Integer.parseInt (args [0]);
+        d = Integer.parseInt (args [1]);
+        q = n/d; // ArithmeticException
+        S.o.p("Quotient = " + q);
+}
+catch (ArraylndexOutOfBoundsException e) {
+    S.o.p("two inputs required!");
+}
+catch (NumberFormatException e) {
+    S.o.p("only works with integers");
+}
+catch (ArithmeticException e) {
+    S.o.p("Second number cannot be zero");
+}
+
+-> A try block may contain many statements that may throw exceptions
+-> Only the first throw is executed
+-> The thrown object is then compared with the parameter of each of the catch block
+
+-> If a matching catch block is found, then the control is handed over to that catch block and the rest of the catch blocks are ignored
+-> If no matching catch is found, then it is treated as unhandled exception, and further thrown from the current function
+
+When multiple catches are used for a single try block, generally the order does not matter
+
+try {
+    // ...
+}
+catch (NumberFormatException e) {
+
+}
+catch (ArrayIndexoutofBoundsException e) {
+
+}
+catch (ArithmeticException e) {
+
+}
+
+Order of catch blocks matter when inheritance is involved among the exceptions in the catch block.
+
+try {
+    // ...
+}
+catch (ArrayIndexOutofBoundsException e){
+
+}
+catch (Number FormatException e) {
+
+}
+catch (Arithme ticException e) {
+
+}
+catch (Exception e) {
+
+}
+
+-> If a catch block with super class exception reference is placed before others, then it can handle any kind of exception
+-> Compiler would result in an error indicating that the other catch blocks are not needed
+
+try {
+    // ...
+}
+catch (Exception e) {
+
+}
+catch (ArrayIndexoutOfBoundsException e) {
+
+}
+
+USING MULTIPLE CATCHES WITH ONE TRY BLOCK -> CATCHING MORE THAN ONE EXCEPTIONS
+-> In Java SE 7 and later, a single catch block can handle more than one type of exception
+-> This feature can reduce code duplication
+-> In the catch clause, specify the types of exceptions it can handle, and separate each one of them with a pipe symbol
+
+catch (IOException | SQLException ex) {
+    // ...
+}

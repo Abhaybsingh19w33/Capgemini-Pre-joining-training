@@ -1,0 +1,151 @@
+CHECKED AND UNCHECKED EXCEPTIONS -> INTRODUCTION
+-> Compiler can check and force a code to handle any potential exceptions
+-> Exceptions which must be handled by the code are called checked, and the ones which do not need to be handled are called unchecked
+
+CHECKED AND UNCHECKED EXCEPTIONS -> OVERVIEW
+-> An exception is a runtime error that occurs during the execution of an application
+-> An exception may be caused by a statement being interpreted by the runtime or by a method call
+
+CHECKED AND UNCHECKED EXCEPTIONS -> OVERVIEW
+
+Example:
+q = n / d;
+
+-> The above statement is interpreted by the runtime and if the value of d is 0, then runtime causes an exception
+
+in = new FileInputStream ("somefile.txt");
+
+-> The above statement invokes the constructor of FilelnputStream class, which might cause an exception, if the filename is not a valid one
+
+-> In both the cases, if the exception is not handled by the code, runtime would stop the execution of the program abruptly
+
+-> Even though both the statements could cause the halt of execution, the compiler treats both the statements differently
+
+For:
+q = n/d;
+compiler does not force the code to handle exception.
+
+For:
+in = newFileInputstream (. .)
+the compiler forces the code to handle the possible exception.
+
+CHECKED AND UNCHECKED EXCEPTIONS -> UNCHECKED EXCEPTIONS
+-> Objects of java.lang.Runtime and its subclasses are known as unchecked exceptions
+
+-> Compiler ignores the exception situations involving Runtime Exception
+
+CHECKED AND UNCHECKED EXCEPTIONS -> UNCHECKED EXCEPTIONS
+-> Unchecked exceptions are often thrown while the runtime is evaluating some operators
+-> a/b  java.lang.ArithmeticException
+-> a[n] java.lang.ArrayIndexOut01BoundsException
+-> a = new int[-4] java.lang.NegativeArraySizeException
+-> a.f() java.lang.NullPointerException
+
+Unchecked exceptions are also thrown by some of the common API functions.
+
+-> java.lang.NumberFormatException
+Integer.parseInt("abc")
+Double.parseDouble("abc")
+
+-> java.lang.IndexOutOfBoundsException
+"vinod".charAt(10)
+
+-> java.util.IllegalFormatException
+System.out.printf("..")
+
+CHECKED AND UNCHECKED EXCEPTIONS -> CHECKED EXCEPTIONS
+-> Objects of Throwable and its subclasses that do not inherit from RuntimeException are known as checked exceptions.
+
+CHECKED AND UNCHECKED EXCEPTIONS -> CHECKED EXCEPTIONSs
+-> The compiler checks if a statement (that possibly causes a checked exception), is protected by an exception handling mechanism
+--> Handle using try-catch
+--> Specify in the 'throws' clause of the method prototype
+
+-> If no such mechanism exists, then the compilation fails
+
+import java.io.*;
+class A {
+    void f(String fname) {
+        Inputstream in;
+        in = new FileInputStream (fname);
+        // ...
+    }
+}
+
+Error: unreported exception
+FileNotFoundException; must be caught or declared to be thrown
+
+In the statement:
+in = new FileInputStream ("somefile.txt");
+
+The constructor for FilelnputStream has the following prototype:
+
+public FileInputstream (String name) throws java.io.FileNotFoundException
+
+Since, java.io.FileNotFoundException does not inherit from java.lang.RuntimeException call to this constructor must be in a protected block or the method in which call to this constructor is made, must declare that it throws java.io.FileNotFoundException
+
+Solution 1:
+class A {
+    void f(String fname) {
+        InputStream in;
+        try {
+            in = new FileInputStream (fname);
+            // ...
+        }
+        catch (FileNotFoundException e) {
+        }
+    }
+}
+
+Solution 2:
+class A {
+    void f (String fname) throws FileNotFoundException {
+        InputStream in;
+        in = new FileInputStream (fname);
+        // ...
+    }
+}
+
+-> Call to the method f() of class A is a candidate for throwing FileNotFoundException
+-> Call to this method must be in a protected (try/catch) block or the calling method should be declared to throw FileNotFoundException
+-> If an exception is thrown from main method, it would be handled by the runtime
+-> The runtime simply displays the exception stack trace and stops the execution of the application
+
+Solution 1:
+public class B {
+    public static void main (String[] args) {
+        A a1 = new A();
+        try {
+            a1.f("file1.txt");
+            //...
+        }
+        catch (FileNotFoundException e){
+        }
+    }
+}
+
+Solution 2:
+class B {
+    public static void main (String [] args)  throws FileNotFoundException
+    {
+        A a1 = new A();
+        a1.f("filel.txt");
+    }
+}
+
+CHECKED AND UNCHECKED EXCEPTIONS -> CUSTOM EXCEPTIONS
+You may create a custom exception class by extending an appropriate exception class.
+
+public class InvalidSalaryException extends Throwable {
+    // ...
+}
+
+public class InvalidSalaryException extends Exception {
+    // ...
+}
+
+// for framework developers
+public class InvalidSalaryException extends  RuntimeException {
+    // ...
+}
+

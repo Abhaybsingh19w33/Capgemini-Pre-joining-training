@@ -1,0 +1,110 @@
+ERROR HANDLING AND JAVA EXCEPTION API -> INTRODUCTION
+-> There are different types of errors
+-> Exceptions represent runtime errors wich can be handled by a program, so that the program does not collapse
+-> Java has a vast exception handling API
+
+Different kinds of errors:
+
+Syntax errors:
+-> Occur due to wrong grammar
+-> Compilation fails
+
+Logical errors:
+-> Problem with algorithm
+-> Results in unexpected output
+
+Runtime errors:
+-> Occur during execution of the application
+-> Break the execution abruptly
+
+Traditionally an erroneous situation at the runtime is indicated by exiting the program with an indicator
+
+The "grep" command in Unix, would exit with a status
+-> 0 -> If everything went okay
+-> 1 -> if no lines were selected
+-> 3 -> If an error occured
+
+ERROR HANDLING AND JAVA EXCEPTION API -> OVERVIEW
+
+-> In Java, an error situation can be indicated by creating an object of a class and throwing it
+
+if (isInvalid) {
+    throw new SomeException ();
+}
+
+-> Not all objects can be thrown
+
+-> Only objects of classes that inherit from java.lang.Throwable can be thrown
+
+ERROR HANDLING AND JAVA EXCEPTION API -> HIERARCHY
+
+Throwable:
+-> An object of this type can be thrown using the "throw" keyword
+
+Error
+-> Indicates serious problems
+-> A reasonable application should not try to handle it
+-> Most of these errors are abnormal conditions
+
+Exception
+-> Most applications might want to catch
+-> Categorized as checked and unchecked
+
+ERROR HANDLING AND JAVA EXCEPTION API -> EXCEPTION
+When an exception occurs, the statement responsible for that would have "thrown" an object of Throwable (or one of its subclass)
+
+-> An object that is thrown must be caught using a try-catch block
+-> If not, the statements in the current function are skipped, and the exception object is thrown to the previous function in the call stack
+-> This process is repeated until an exception handling code is encountered
+-> If there is no exception handling mechanism, then the object is thrown to the Java runtime
+-> The runtime, then displays a stack of all the methods that did not handle exception, and quits the application
+
+public void someMethod () {
+    try {
+        a = b/c;
+        // ...
+    }
+    catch (Exception e) {
+        S.o.p("There was an error!");
+    }
+    S.o.p("After try-catch")
+    // ...
+}
+
+ERROR HANDLING AND JAVA EXCEPTION API -> INDICATING AN EXCEPTION
+-> You may also want to indicate an error situation from a method by throwing an exception object
+-> The caller of your method may receive the excep tion and may have to handle it
+
+-> Use the 'throws' clause in the method prototype to declare that the method may throw an exception, and the caller must be prepared to receive it
+
+public void doSomething () {
+    throws SomeException {
+        //...
+    }
+}
+
+ERROR HANDLING AND JAVA EXCEPTION API -> THROWING AN EXCEPTION
+
+-> The actual throwing of an object happens using the "throw" keyword
+-> It is similar to the "return' keyword, except that throw is associated only with objects of Throwable classes
+
+public void doSomething() throws SomeException {
+    // ...
+    if (isInvalid) {
+        throw new SomeException ("...");
+    }
+    // ...
+}
+
+ERROR HANDLING AND JAVA EXCEPTION API -> CUSTOM EXCEPTIONS
+public class InvalidSalaryException extends Exception {
+    public InvalidSalaryException () {
+
+    }
+    public InvalidSalaryException (String message) {
+        super (message);
+    }
+    public InvalidSalaryException (Throwable cause) {
+        super (cause);
+    }
+}
