@@ -1,0 +1,142 @@
+WHY CUSTOM EXCEPTION CLASSES -> INTRODUCTION 
+-> Exceptions are errors that may occur during the execution of the application
+-> Unlike the traditional approach of representing an error situation using an int value, Java allows us to represent it in the form of an object
+
+WHY CUSTOM EXCEPTION CLASSES OVERVIEW
+public class Employee {
+    private int id;
+    private String name;
+    private double salary;
+
+    //.... 
+}
+
+public Employee (int id, String name, double salary) throws Exception {
+    if (id < 0){
+        throw new Exception ("Invalid id");
+    }
+
+    if (name==null || name.trim().length() ==0)  {
+        throw new Exception ("Empty name!");
+    }
+
+    if (salary<15000) {
+        throw new Exception ("Salary too low");
+    }
+    this.id = id;
+    this.name = name;
+    this.salary = salary;
+}
+
+WHY CUSTOM EXCEPTION CLASSES -> OVERVIEW
+try {
+    Employee e = new Employee(..);
+    // ...
+}
+catch (Exception e) {
+    // ...
+}
+
+How can we find the cause of the error?
+Incorrect id
+Empty name
+Wrong salary
+
+try {
+    Employee e = new Employee (..);
+    // ...
+}
+catch (InvalidIdException e) {
+    // ...
+}
+catch (EmptyNameException e) {
+    // ...
+}
+catch (LowSalaryException e) {
+    // ...
+}
+
+WHY CUSTOM EXCEPTION CLASSES -> NAMING
+Custom exceptions help us differentiate different errors that might be thrown from the same try block
+
+The name of the exception class are descriptive enough to understand the erroneous situation
+
+NullPointerException
+Arraylndex0ut01BoundsException
+InputMismatchException
+
+WHY CUSTOM EXCEPTION CLASSES -> SUPER CLASS
+To create a custom exception class, create an ordinary class with meaningful name, and extend one of the following:
+
+java.lang.Throwable
+java.lang.Exception
+java.lang.RuntimeException
+
+-> java.lang.Throwable classes are generally not used as super classes
+--> most often used in the catch block
+
+-> If your exception class extends java.lang.Exception, then it is qualified as a checked exception
+--> compiler forces the user to handle it
+--> try-catch or throws
+
+-> If your exception class extends to java.lang.RuntimeException, then it is considered as an un-checked exception
+--> Compiler ignores the statements which may throw this exception
+-> Application developers should create checked exceptions
+-> Framework developers should create unchecked exceptions
+
+WHY CUSTOM EXCEPTION CLASSES -> CUSTOM EXCEPTION
+An exception class generally does not contain any code.
+
+public class InvalidIdException extends Exception {
+    // ..
+}
+
+It is a good practice to add constructors that can invoke the constructors from java.lang.EXception
+
+public class InvalidIdException extends Exception {
+    public InvalidIdException () {
+
+    }
+    public InvalidIdException (String msg) {
+        super (msg);
+    }
+    public InvalidIdException (Throwable t) {
+        super (t);
+    }
+}
+
+public Employee (int id, string name, double salary)
+throws InvalidIdException, EmptyNameException, LowsalaryException {
+    if (id<0) {
+        throw new InvalidIdException ("Invalid id");
+    }
+
+    if (name==null || name.trim().length() ==0) {
+        throw new EmptyNameException (" Empty name! ");
+    }
+    if (salary<15000)  {
+        throw new LowsalaryException ("Salary too low");
+    }
+    this.id = id;
+    this.name = name;
+    this.salary = salary;
+}
+
+A constructor that takes another Throwable object as the parameter helps in exception funnelling.
+
+public void addNewProduct (Product p) throws DaoException {
+    try {
+        // ...
+    }
+    catch (Exception e) {
+        throw new DaoException(e);
+    }
+}
+
+
+WHY CUSTOM EXCEPTION CLASSES -> SUMMARY
+Key points discussed in this video:
+
+-> By using a specific exception type in the catch block, we can have specific error handlers.
+-> Custom exception class can be created by just extending java.lang.Throwable or one of its subclasses.
+-> Custom exception classes don't have any code, but constructors.

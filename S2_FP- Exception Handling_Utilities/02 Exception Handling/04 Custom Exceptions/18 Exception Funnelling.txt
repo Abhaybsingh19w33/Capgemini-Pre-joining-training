@@ -1,0 +1,121 @@
+EXCEPTION FUNNELLING -> INTRODUCTION
+-> Handling exceptions is a very important aspect of an application development
+-> It becomes even more critical in a distributed multi-tiered architecture
+
+EXCEPTION FUNNELLING -> MULTI TIERED APPLICATIONS
+An enterprise application has various logics and processes involved such as:
+
+Business Logic 
+Data Access Logic
+Storage access nad maintenance
+System services
+Security
+Transactions
+Presentation logic
+
+EXCEPTION FUNNELLING -> MULTI TIERED APPLICATIONS
+Each of these can be grouped into separate layers
+-> Presentation logic
+-> Business logic
+-> Data access layer
+-> Data storage + access
+
+EXCEPTION FUNNELLING -> MULTI TIERED APPLICATIONS
+Some of these are spread across different layers
+-> System services
+-> Security
+-> Transactions 
+
+An application developer would code these layers
+-> Presentation logic
+-> Business logic
+-> Data access layer
+
+An application developer may also address these (or may be handled by frameworks)
+-> Security
+-> Transactions
+
+EXCEPTION FUNNELLING -> SERVICE AND DAO LAYERSS
+public class AccountService {
+    AccountDao dao = ...
+    public void createNewAccount (Account a) {
+        dao.add(a);
+    }
+    // ...
+}
+
+public class AccountDao {
+    public void add (Account a) {
+        // JDBC code to
+        // insert new record in the DB
+    }
+}
+
+EXCEPTION FUNNELLING -> EXCEPTION DUCKING
+
+public class AccountDao {
+    public void add (Account a) {
+        try {
+            // JDBC code to
+            // insert new record in the DB
+        }
+        catch (Exception e) {
+        }
+    }
+}
+
+The exception thrown during the JDBC statement execution is passed on to the catch block, which does not do anything - Exception Ducking.
+
+EXCEPTION FUNNELLING -> PASSING EXCEPTIONS
+-> An exception received in one layer should not be ducked (or swallowed or suppressed)
+-> It should be propagated to the layer that invoked
+this layer
+--> If the service layer invokes the dao layer, then any exception received by the dao layer should be passed on to the service layer
+--> Service layer should not expect JDBC related exception, because dao layer could be replaced with a different implementation
+
+-> To maintain the loose coupling, the service layer should only expect an exception which is independent of the dao layer's implementation
+
+-> Create a custom exception class (DaoException) to represent any exceptions occurred at the dao layer
+
+public class DaoException extends Exception {
+    // constructors
+}
+
+EXCEPTION FUNNELLING -> PASSING EXCEPTIONS
+
+Convert the exception received in the dao layer into a DaoException and re-throw the same to the service layer
+
+public class AccountDao {
+    public void add (Account a) throws DaoException {
+        try {
+            // JDBC code to
+            // insert new record in the DB
+        }
+        catch (Exception e) {
+            throw new DaoException (e);
+        }
+    }
+}
+
+The service layer will catch DaoException and throws ServiceException to the presentation layer.
+
+public class AccountService {
+    AccountDao dao = ..
+    public void createNewAccount (Account a)  throws ServiceException {
+
+    }
+    try {
+        dao.add (a) ;
+    }
+    catch (DaoException e) {
+        throw new ServiceException (e);
+    }
+}
+
+EXCEPTION FUNNELLING -> SUMMARY
+Key points discussed in this video:
+
+-> An exception received by one layer should be propagated to the invoking layer.
+-> Generaly the presentation layer handles the exception by displaying to the user.
+-> Exception should not be ducked
+-> Custom exception should be used between layers for loose coupling.
