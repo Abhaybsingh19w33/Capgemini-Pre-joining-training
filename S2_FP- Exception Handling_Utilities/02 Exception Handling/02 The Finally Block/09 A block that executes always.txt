@@ -1,0 +1,86 @@
+A BLOCK THAT EXECUTES ALWAYS -> INTRODUCTION
+-> When an application encounters anexception, the control is usually transferred out of the current context
+-> But we may also need to close some resourceslike files and db connections, and release the memory associated with them
+
+A BLOCK THAT EXECUTES ALWAYS -> OVERVIEW
+-> When an exception occurs, it can be handled using a try-catch block
+-> A try block must either have a catch block or a finally block
+
+A BLOCK THAT EXECUTES ALWAYS -> TRY-CATCH
+Syntax:
+try {
+    // ...
+}
+catch(...) {
+    // ...
+}
+
+A BLOCK THAT EXECUTES ALWAYS -> TRY-CATCH-FINALLY
+Syntax:
+try {
+    // ...
+}
+catch(...) {
+    // ...
+}
+finally {
+    // ...
+}
+
+A BLOCK THAT EXECUTES ALWAYS -> TRY-FINALLY
+Syntax:
+try {
+    // ...
+}
+finally {
+    // ...
+}
+
+A BLOCK THAT EXECUTES ALWAYS -> FINALLY
+The finally block is executed in all cases
+-> When try block does not throw an exception and skips all the associate catch blocks
+-> When try block throws an exception, and there is no catch block to handle it
+
+-> When 'return' statement is executed from within try or catch block, and the control is about to be transferred out of the function in which this code exists
+-> When 'throw' statement is executed from within a catch block, and the control is about to be transferred out of the current try-catch block
+
+The finally block is not executed.
+-> When JVM exits because of a System.exit() call
+-> When the current thread is interrupted or killed, in case of a multithreaded environment
+
+A BLOCK THAT EXECUTES ALWAYS -> USES
+The finally block is useful when you want to do some clean up work even if the work is not done due to an exception.
+
+
+A typical usage of finally would be like:
+// declare variables to represent resources
+try {
+    // open the resources
+    // use the resources
+}
+catch (SomeException e) {
+    // log exceptions
+    // update the UI with exception cause
+    // provide the user with some alternates
+}
+finally {
+    // if the resources are still open,
+    // close them and release the memory
+    // associated with them
+}
+
+Example:
+Connection conn = null;
+Statement stmt = null;
+try {
+    conn = ...
+    stmt = ...
+    stmt.execute (...)
+}
+catch (SQLException e) {
+    e.printstackTrace ();
+}
+finally {
+    if (stmt != null) stmt.close ();
+    if (conn != null) conn.close ();
+}
