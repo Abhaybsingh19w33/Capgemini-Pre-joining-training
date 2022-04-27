@@ -1,0 +1,85 @@
+THE 'throw' AND 'throws' KEYWORDS -> INTRODUCTION
+-> Cause an exception and transfer the control back to the caller of your code
+-> Keywords'throw' and 'throws' are used in this regard
+
+THE 'throw' AND "throws' KEYWORDS -> OVERVIEW
+-> A method written in one class is usually used by another part of the application
+
+-> Such methods may indicate an error situation to the user
+
+Example:
+public class Employee {
+    // ...
+    private double salary;
+    public Employee () { }
+
+    // ...
+    public void setSalary (double salary) {
+        this.salary = salary;
+    }
+}
+
+Example:
+Employee emp = new Employee ();
+// ...
+emp.setSalary (-2000.0);
+
+How can we ensure that such values are rejected from the object?
+
+THE 'throw' AND 'throws' KEYWORDS -> throw
+The 'throw' keyword can be used to transfer the control away from the current method, in case of an error situation.
+
+if (salary < 15000) {
+    throw new Exception();
+}
+
+Since java. lang.Exception is a checked exception, the throw statement itself needs to be protected using a try-catch block.
+
+try {
+    if (salary<15000) {
+        throw new Exception ();
+    }
+}
+catch (Exception e) {
+    // ...
+}
+
+Throwing an exception is for the caller to get the idea of an exception
+
+The 'throws' is used in the method's prototype to specify the exceptions thrown by that method
+
+public void setSalary (double salary) throws Exception {
+    if (salary<15000) {
+        throw new Exception ();
+    }
+}
+
+The throws clause is not necessary for unchecked exception
+public void setSalary (double salary) {
+    if (salary<15000) {
+        throw new RuntimeException ();
+    }
+}
+
+It is a good practice to specify all possible exceptions in the method's prototype
+
+This will help the caller to be prepared to use appropriate exception handlers
+
+public static int parseInt (String s) throws NumberFormatException {
+    // ...
+}
+
+-> You can specify more than one exception types in the 'throws' clause
+-> By looking at the method's prototype, one can understand the types of exceptions to catch
+
+public void init (int id, String name, double salary) throws InvalidIdException, InvalidSalaryException {
+    // ...
+}
+
+The 'throws' clause can be used with the constructors also
+
+public Employee (String name, double salary) throws InvalidSalaryException {
+    // ...
+}
+
+If a constructor throws an exception, instance creation fails and there will be no memory allocation for that object

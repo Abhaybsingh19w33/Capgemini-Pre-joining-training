@@ -1,0 +1,131 @@
+Table of Contents
+1. Exception Declaration and the Public Interface
+1.1 Insight of Layered Application and their exceptions
+1.2 Decoupling of layers with their exceptions handling blocks
+1.3 Summary
+
+1.1 Insight of Layered Application with exceptions
+
+The Layered Application follows layered architecture pattern which is Called as n-tier architecture.
+
+The architects, designers and developers of any Java or Java EE application widely follow n-tier architecture during business application development.
+
+Components within the layered architecture pattern are organized into horizontal layers, each layer performing a specific role within the application. Most layared architectures consist of three standard layers: presentation, business, persistence & database. Thus, some applications may have only three layers, twhaereas larger and more complex busine ss applications may contain fve or more layers
+
+-> A presentation layer would be responsible for handling all user interface and browser communication logic
+-> A businass layer would be responsible for executing specific business rules associated with the request
+-> The persistence layer, performs operations for storing and organizing the data to be processed by the business layer.
+
+When a layered application is created, there is always a user layer and another used layer like
+
+Presenation layer -> uses service Layer -> uses DAO layer.
+
+An application architecture with neatly divided tiers is decouplad, ie the changes inside the layers / modules do not affect the other layers that are using it. This fix contract between the layers in Java is achieved by Interfaces.
+
+Exceptions, or error conditions, are also part of contract. A layer can throw many excaptions depending on functionalities at the granular level.
+
+Defining a fixed set of aceptions per layer is good practice. Howerer when the Presentation layer calls the Service layer, it knows that it can potentially encounter Service Layer Excaption. so thare should be a process by which it can handle these exceptions. The same is true for interactions between the Service layer and the DAO layer.
+
+1.2 Decoupling of layers with their exceptions handling blocks
+
+Consider Admin saving Product data into the database. The request goes from Presentation layer via Service layer to the DAO layer (Persistence Layer)
+
+Lets assume the following exceptions from each layer:
+-> DataException (DAO Layer exception)
+-> InvalidUseExoception (Sevice Layer exception)
+
+Defining the DAO Layer exception:
+
+public class DataException extends Exception {
+    private static final long serialVersionUID = 11;
+
+    public DataException() {
+        super("Exception occured while connecting to database");
+    }
+
+    public DataException(String message) {
+        super(message);
+    }
+}
+
+Defining the Service Layer exception:
+
+public class InvalidUserException extends Exception {
+    private static final long serialVersionUID = 1L;
+
+    public InvalidUserException() {
+        super("The Userid or Password is invalid");
+    }
+}
+
+Interface definition of the DAO layer could be:
+interface DAO {
+    String storeProduct(Product product) throws DataException {
+        try {
+            // Code related to get connecting with DB
+            con = DBManager.getConnection();
+            // Code related to query the DB
+        }
+        catch( ClassCastException e) {
+            throw new DataException();
+        }
+        catch(SQLException e) {
+            throw new DataException("Invalid Insert Query " + a);
+        }
+    }
+}
+
+The Service layer could be using:
+
+public class ServiceClass{
+    void serviceOperation(Product product) throws InvalidUserException, DataException { 
+        try {
+            // Business operation (to check for the user and than save the product data)
+
+            if (user.getRole().equals("ADMIN")){
+                DAOImpl ob = new DAOImpl();
+
+                String str = ob.storeProduct(product);
+
+                // Calling DAO layer method
+            }
+            else {
+                throw new InvalidUserException("Invalid User");
+            }
+        }
+        catch (NullPointerException e) {
+            throw new InvalidUserException(" " + a);
+        }
+    }
+}
+
+The Presentation layer could be using:
+
+public class PresentationClass {
+    public static void main(String args[]) {
+        try {
+            // Presentation operation for getting the data of User and Product 
+            try {
+                sob.serviceMethod (product, user);
+            }
+            catch(InvalidUserException e) {
+                System.out.println(e.getMessage());
+            }
+        }
+        catch(DataException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+}
+
+1.3 Summary
+
+While architecting an application, it's good practice to divide the appication into different layers or tiers where each layer is assigned a specific function.
+
+Each layer can define its own fxed set of axception.
+
+Exception are wrapped from one layer to another layer.
+
+Each layer knows about the potential exception it can encounter and handles it.
+
+Use of customized exceptions for wrapping and rethrowing exception objects leads to high level of abstraction while handling it.

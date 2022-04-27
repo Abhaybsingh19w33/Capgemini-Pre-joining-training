@@ -1,0 +1,110 @@
+Table of Contents
+1. Rethrow Exceptions
+1.1 Rethrovwing the same Exception
+1.2 Why Rethrowing the same Exception
+1.3 Using of throw keyword &Working of Catch handlers for Rethrowing
+1.4 Summary
+
+1.1 Rethrowing the same Exception
+
+An exception can be rethrown in a catch block. This action will cause the exception to be passed to the calling method.
+
+If the rethrow operation occurs in the main method then the exception is passed to the JVM and displayed on the console.
+
+catch (IOException | SQLException e) {
+    System.out.println("I\O Exception.. ");
+    throws e;
+}
+
+1.2 Why Rethrowing the same Exception?
+
+It is good practice to catch an exception within a method. This makes to decide whether you can reasonably handle that condition at your level. If not, then you re-throw the exception to the calling method. Given below is an example.
+
+try {
+    callService();
+}
+catch (HTTPException ex) {
+    if(e.getStatusCode() == 401) {
+        // Unauthorized, but I know how to send the needed user credentials, so handle it here
+    }
+    else {
+        // Other HTTP errors need higher- level decisions or inputs to handle, so pass them up
+        throw ex;
+    }
+}
+
+Rethrowing the same exception is useful if you want to log the exception, but not handle it.
+
+There are time when you need to handle the exception, and just retoss the same thing back out which is wrapping the exception without consuming it.
+
+public void wrapException (String input) throws MyException {
+    try {
+        // do something
+    }
+    catch (NumberFormatException e ){
+        throw new MyException("A message that describe the error.", e);
+    }
+}
+
+1.3 Using of throw & throws keywords and working of catch handlers for Rethrowing
+
+Java SE 7 compiler and above performs more precise analysis of rethrown exceptions. This enables you to specify more specific exception types in the throws clause of a method declaration.
+
+Given is an example of Rethowing Exception:
+
+public class Rethrowclass{
+    public void rethrowmethod(String str ) throws NumberFormatException, ArithmeticException, Exception {
+        try {
+            if(str.equals("First")) {
+                throw new NumberFormatException("First exception");
+            }
+            else {
+                if(str.equals("Second")) {
+                    throw new ArithmeticException("Second exception");
+                }
+                else {
+                    throw new Exception();
+                }
+            }
+        }
+        catch (NumberFormatException | ArithmeticException e) {
+            System.out.println(" N or A exception occured");
+        }
+        catch (Exception e ){
+            throw e; // rethrowing the exception
+        }
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Rethrowclass ob = new Rethrowclass();
+        try {
+            ob.rethrowmethod("Third");
+        }
+        catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
+}
+
+The above example
+public void rethrowmethod(String str) specifies three different types of exception in its declaration clause and handles only two them and rethows the exception object e.
+
+The main() method which calls the rethrowmethod(String str) handles the rethrown exeception.
+
+The catch(NumberFormatException | ArithmeticException e ){} can also rethrow the respective exception which can be handled by the calling method i.e. main() method
+
+1.4 Summary
+A try block is can throw exceptions
+
+If a catch block handles more than one exception types, then the catch parameter is implicitty final and cannot assign any values to it within the catchblock.
+
+The exception can be rethrown within the catchblock.
+
+The Java SE 7 and above version compiler allows you to specify the different exception types in the throws clause in the method declaration and a rethrow an exception
+
+-> that is of speciic type
+-> a supertype of any of the types declared
+
+The exceptions rethrown from the catch blocks are handled by the calling method.

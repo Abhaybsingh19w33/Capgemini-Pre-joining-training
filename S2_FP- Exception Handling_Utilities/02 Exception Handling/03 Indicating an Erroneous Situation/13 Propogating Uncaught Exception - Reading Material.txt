@@ -1,0 +1,86 @@
+Table of Contents
+1 Propagating Uncaught Exception
+1.1 What is propagating uncaught exceptions
+1.2 Using throws keyword for propagating exceptions
+1.3 Using catch handlers for propagated exceptions
+1.4 Summary
+
+1.1 What is propagating uncaught exceptions
+
+A method can throw an exception back to its calling method. In case a exception occurs and it not handled, the method throws the exception to its calling method.
+
+Consider the call tack of a program to understand the
+method invocation
+-> Exception occurring in method b() is thrown to a(), and a() to main
+
+-> Whenever methods are called stack is formed and an exception is first thrown from the top of the stack.
+
+If it is not caught, it starts coming down the stack to previous methods until it is not caught.
+
+If exception remains uncaught even after reaching bottom of the stack it is propagated to JVM and program is terminated.
+
+1.2 Using throws keyword for propagating exceptions
+
+A method can decare that it can propagate an exception to its calling method. If a method does not handle a checked exception, it must decare it using "throws" clause. Exception propagated must be handled by the calling method using try-catch or the method has to declared using throws clause. Finally the exception will have to be handled by the main() method else JVM will halt the program
+
+import java.io.*;
+
+pubiic class ReadConsole {
+    public void input () throws NumberFormatException, ArithmeticException, IOException {
+        InputStreamReader ir = new InputStreamReader(System.in);
+
+        BufferedReader br = new BufferedReader(System.in);
+        System.out.println("Enter the value of a " );
+
+        int a =  Integer.parseInt(br.readLine());
+
+        System.out.println("Enter the value of b " );
+
+        int b =  Integer.parseInt(br.readLine());
+
+        System.out.println("Sum = " + (a + b) );
+
+        if(b == 0) {
+            throw new ArithmeticException("Division by zero");
+        }
+
+        System.out.println("result = " + (a/b) );
+    }
+}
+
+1.3 Using catch handlers for propagated exceptions
+
+import java.io.IOException;
+
+pubiic class Main {
+    publc static void main(String[] args) {
+        ReadConsole ob = new ReadConsole();
+
+        try {
+            ob.input();
+        }
+        catch (NumberFormatException e ){
+            System.out.println(e.getMassage());
+        }
+        catch (ArithmeticException e ){
+            System.out.println(e.getMassage());
+        }
+        catch (IOException e ){
+            System.out.println(e.getMassage());
+        }
+    }
+}
+
+Note:
+1. Checked and Unchecked Exceptions can be propagated.
+2. Checked exceptions are compelled by the compiler to be propagated.
+
+1.4 Summary
+
+A method an propagate exception to its calling method using throws keyword.
+
+Stack is formed whenever methods are called and exceptions are propagated from top to bottom of the stack.
+
+If exception handlers are found the exception is caught else it is propagated till main() method
+
+The main() method should handle the exceptions propagated else JVM wvil abort the program
