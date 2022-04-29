@@ -1,0 +1,51 @@
+alter session set current_schema=bank;
+SET heading OFF;
+
+-- SELECT * FROM BANK_SB_ACCOUNT;
+-- DESC BANK_SB_ACCOUNT;
+
+-- Name					   Null?    Type
+--  ----------------------------------------- -------- 
+--  ACCOUNT_NO				   NOT NULL NUMBER(15)
+--  PRIMARY_CUST_ID			   NOT NULL NUMBER(6)
+--  SECONDARY_CUST_ID				    NUMBER(6)
+--  CURR_BAL_AMT				   NOT NULL NUMBER(20,2)
+--  ACC_STATUS				   NOT NULL VARCHAR2(10)
+--  START_DATE				   NOT NULL DATE
+--  END_DATE					    DATE
+
+-- SELECT * FROM BANK_CUSTOMER;
+-- DESC BANK_CUSTOMER;
+
+--  Name					   Null?    Type
+--  ----------------------------------------- --------
+--  CUST_ID				   NOT NULL NUMBER(6)
+--  CUST_FNAME				   NOT NULL VARCHAR2(25)
+--  INITIALS					    VARCHAR2(5)
+--  CUST_LNAME					    VARCHAR2(20)
+--  CUST_SEX					    VARCHAR2(1)
+--  CUST_DOB					    DATE
+--  CUST_TYPE				   NOT NULL VARCHAR2(4)
+
+-- SELECT * FROM BANK_CUST_CONTACT;
+-- DESC BANK_CUST_CONTACT;
+
+-- Name					   Null?    Type
+--  ----------------------------------------- --------
+--  CUST_ID				   NOT NULL NUMBER(6)
+--  CUST_PHONE				   NOT NULL NUMBER
+--  CONTACT_TYPE				   NOT NULL VARCHAR2(10)
+--  CUST_ADDR_LINE1				    VARCHAR2(30)
+--  CUST_ADDR_LINE2				    VARCHAR2(30)
+--  CUST_CITY					    VARCHAR2(25)
+--  CUST_STATE					    VARCHAR2(25)
+--  CUST_PIN					    NUMBER(6)
+
+SELECT SB.ACCOUNT_NO, BC.CUST_ID, BC.CUST_FNAME, BC.CUST_LNAME, BCC.CUST_PHONE
+FROM BANK_SB_ACCOUNT SB, BANK_CUSTOMER BC, BANK_CUST_CONTACT BCC 
+WHERE (SB.PRIMARY_CUST_ID = BC.CUST_ID OR SB.SECONDARY_CUST_ID = BC.CUST_ID) 
+AND SB.PRIMARY_CUST_ID IS NOT NULL
+AND SB.SECONDARY_CUST_ID IS NOT NULL
+AND BC.CUST_ID = BCC.CUST_ID
+AND BCC.CONTACT_TYPE = 'HOME'
+ORDER BY SB.ACCOUNT_NO, BC.CUST_ID;
