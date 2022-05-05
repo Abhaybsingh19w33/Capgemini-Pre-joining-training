@@ -1,0 +1,141 @@
+BYTE STREAMS -> INTRODUCTION
+A byte stream converts data as a series of bytes, sends them to targets, or reads from sources.
+
+BYTE STREAMS -> OVERVIEW
+Byte or binary streams:
+-> Represented by two super classes java.io.InputStream and java.io.OutputStream
+-> Both are abstract
+
+BYTE STREAMS -> INPUT STREAM
+java.io.InputStream defines the basic contract for reading from an input stream involving bytes
+
+int available()
+void close()
+int read()
+int read(byte[])
+int read(byte[], int, int)
+void reset()
+long skip(int)
+
+All the subclasses have names ending with InputStreams
+
+Some of the most commonly used subclasses:
+FileInputStream
+FilterInputStream
+    DataInputstream
+    BufferedInputStream
+BytleArrayInputStream
+ObjectInputstream
+
+BYTE STREAMS -> FILE INPUT STREAM
+java.io.FileInputStream
+-> A FileInputStream obtains input bytes from a file in a file system
+-> What files are available depends on the host's environment
+-> FileInputStream is meant for reading streams of raw bytes such as image data
+-> For reading streams of characters, consider using FileReader
+
+You can create an object, FileInputStream to open a file for reading using a String path or a File object.
+
+String fname = "D:/Work/names.txt";
+
+FileInputstream file = new FileInputStream (fname);
+
+File f = new File (fname);
+FileInputStream file = new FileInputstream (f);
+
+// -------------------------------------------------
+Reading raw bytes is usually useful only for characters.
+
+int ch;
+while ( (ch=file.read()) !=-1) { 
+    System.out.print ((char) ch);
+}
+file.close ();
+
+// -------------------------------------------------
+Read chunks of bytes
+
+int a = file.available ();
+byte [] bytes = new byte [a];
+
+while (file.read(bytes)!=-1) {
+    String s = new String(bytes).trim();
+    System.out.print(s);
+
+    a = file.available();
+    bytes = new byte [a];
+}
+
+BYTE STREAMS -> DATA INPUT STREAM
+java.io.DataInputStream
+
+-> Inherits from FilterInputStream, which contains another input stream, on which all the methods are delegated
+
+-> Provides methods to read primitive data after converting the bytes into appropriate primitive types
+--> For example, the readDouble() method reads 8 bytes from the underlying input stream, and converts them into a double value
+
+Methods to work with primitives:
+byte readByte()
+short read Short()
+int readlnt()
+long readLong()
+float readFloat()
+double readDouble()
+char readChar()
+boolean readBoolean()
+
+Read numbers in a file
+
+DataInputStream in = new DataInputStream (new FileInputStream ("numbers.data"));
+
+while (true) {
+    try {
+        double d = in.readDouble();
+        s.o.p(d);
+    }
+    catch (EOFException e) {
+        break;
+    }
+}
+
+BYTE STREAMS -> OTHER INPUT STREAMS
+
+java.io.ByteArrayInputStream
+-> Constructed using an array of bytes
+-> Allows to use the 10 Stream API on byte[]
+
+java.io.ObjectInputStream
+-> Constructed using another input stream, such as FileInputStream
+-> Reads and converts bytes into objects
+-> Used for deserialization
+
+BYTE STREAMS -> OUTPUT STREAM
+java.io.OutputStream defines the basic contract for writing to an output stream involving bytes.
+
+void close()
+void flush()
+void write(int)
+void write(byte [])
+void write(byte [], int, int)
+
+All the subclasses have names ending with OutputStream.
+
+Some of the most commonly used subclasses:
+FileOutputStream
+FilterOutputStream
+    DataOutputStream
+    BufferedOutputStream
+    PrintStream
+ByteArrayOutputStream
+ObjectOutputStream
+
+All these classes are the output stream versions of their corresponding input streams
+
+BYTE STREAMS -> SUMMARY
+Key points discussed in this video:
+
+-> Byte streams work with any data types and treat them as a bunch of bytes.
+-> InputStream and OutputStream are two abstract super classes for all others.
+-> Use BufferedInputStream and BufferedOutputStream for a better performance.
+-> DataInputStream and DataOutputStream are used with primitives.
+

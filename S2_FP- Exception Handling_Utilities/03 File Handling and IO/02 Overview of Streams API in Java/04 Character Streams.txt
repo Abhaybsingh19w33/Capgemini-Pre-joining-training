@@ -1,0 +1,95 @@
+CHARACTER STREAMS -> INTRODUCTION
+-> Character strings are the most widely used data type in Java
+-> Java 1.1 introduced a special set of classes to work with reading and Writing of character strings
+
+CHARACTER STREAMS -> OVERVIEW
+Character streams
+-> Represented by two super classes java.io.Reader and java.io.Writer
+-> Both are abstract
+
+CHARACTER STREAMS -> READER
+java.io.Reader defines the basic contract for reading from an input stream involving characters
+
+int available()
+void close()
+int read()
+int read(char[])
+int read(char[], int, int)
+int read(CharBuffer)
+void reset()
+long skip(int)
+
+All the subclasses have names ending with Reader
+
+Some of the most commonly used subclasses:
+BufferedReader
+CharArrayReader
+StringReader
+InputStreamReader
+    FileReader
+
+CHARACTER STREAMS -> FILE READER
+java.io.FileReader
+-> Convenience class for reading character files
+-> FileReader is meant for reading streams of characters
+-> Inherits from java.io.InputStreamReader
+-> Does not provide any additional methods
+-> Assumes that the default character encoding and the default byte-buffer size are appropriate
+
+CHARACTER STREAMS -> CHAR ARRAY READER
+java.io.CharArrayReader
+-> This class implements a character buffer that can be used as a character-input stream
+-> Does not provide any additionalmethods
+-> Constructors take char[] as arguments
+-> Use this class to treat char[] as an input stream of characters
+
+CHARACTER STREAMS -> STRING READER
+java.io.StringReader
+-> A character stream whose source is a string
+-> Does not provide any additional methods
+-> The only constructor takes String as argument
+-> Use this class to treat String as an input stream of characters
+
+CHARACTER STREAMS -> BUFFERED READER
+java.io.Buffered Reader 
+-> Reads text from a character-input stream, buffering characters so as to provide for the efficient reading of characters, arrays, and ines
+-> The buffer size may be specified, or the default size may be used
+-> The default is large enough for most purposes
+-> In addition to the inherited methods, a method to read complete line is given - public String readLine()
+
+-> Any Reader can be converted into a BufferedReader
+
+BufferedReader in = new BufferedReader (new FileReader ("some.txt"));
+
+-> Without buffering, each invocation of read() or readLine() could cause bytes to be read from the file, converted into characters, and then returned, which can be very inefficient
+
+CHARACTER STREAMS -> WRITER
+java.io.Writer defines the basic contract for writing to an output stream involving characters
+
+Writer append(char)
+Writer append(CharSequence)
+Writer append(CharSequence, int, int)
+void close()
+void flush()
+void write(int)
+void write(char[])
+void write(String)
+
+All the subclasses have names ending with Writer
+
+Some of the most commonly used subclasses:
+BufferedWriter
+CharArrayWriter
+StringWriter
+OutputStreamWriter
+    FileWriter
+PrintWriter
+
+-> The classes BufferedWriter, CharArrayWriter, StringWriter, FileWriter are the Writer counter part of the corresponding Readers
+-> PrintWriter, in addition to the inherited methods, provides many convenient overloaded print, printin and printf methods
+
+CHARACTER STREAMS SUMMARY
+Key points discussed in this video:
+-> Character streams are lead by two super classes - Reader and Writer.
+-> Use Buffered Reader and BufferedWriter for efficient reading and writing of characters
+-> PrintWriter provides many useful print, println and printf methods.

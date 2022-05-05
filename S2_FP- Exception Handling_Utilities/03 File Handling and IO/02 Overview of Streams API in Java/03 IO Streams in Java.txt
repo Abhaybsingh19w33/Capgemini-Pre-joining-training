@@ -1,0 +1,128 @@
+IO STREAMS IN JAVA -> INTRODUCTION
+-> Java has a strong API support for reading and writing data from/to various devices
+-> The APls are written in a device independent format
+-> A stream represents a mediator between program and source/target
+
+IO STREAMS IN JAVA -> STREAMS
+-> A stream represents an object to mediate data flow from a program to a target or from a source to a program
+-> In Java, all 10 related classes are based on streams
+
+IO STREAMS IN JAVA -> CATEGORIES
+In Java 1.0 the streams are divided into two categories:
+-> Input streams, for reading data from a stream
+-> Output streams, for writing data to a stream
+
+-> The char data type in Java is represented by two bytes
+-> Some of the stream API methods do not properly convert two bytes into one char
+-> Character strings are the most widely used data type in Java
+-> In Java 1.1 character streams were introduced to exclusively handle the reading and writing of characters
+
+Java IO streams can be categorized as:
+-> Byte streams : Streams to work with all data types, including characters
+-> Character streams : Streams to work with characters exclusively
+
+IO STREAMS IN JAVA -> BYTE STREAMS
+Byte or binary streams:
+-> Represented by two super classes
+    java.io.InputStream
+    java.io.OutputStream
+
+-> Both are abstract
+
+IO STREAMS IN JAVA -> INPUT STREAMS
+java.io.InputStream defines the basic contract for reading from an input stream involving bytes.
+
+int available()
+void close()
+int read()
+int read(byte[])
+int read(byte[], int, int)
+void reset()
+long skip(int)
+
+IO STREAMS IN JAVA -> INPUT STREAMS
+All the subclasses have names ending with InputStream
+
+Some of the most commonly used subclasses:
+FileInputStream
+FilterInputStream
+    DataInputStream
+    BufferedInputStream
+ByteArrayInputStream
+ObjectInputStream
+
+IO STREAMS IN JAVA -> OUTPUT STREAMS
+java.io.OutputStream defines the basic contract for writing to an output stream involving bytes.
+
+void close()
+void flush()
+void write(int)
+void write(byte[])
+void write(byte[], int, int)
+
+IO STREAMS IN JAVA -> OUTPUT STREAMS
+All the subclasses have names ending with OutputStream
+
+Some of the most commonly used subclasses:
+FileOutputstream
+FilterOutputstream
+    DataOutputStream
+    BufferedOutputStream
+    PrintStream
+ByteArrayOutputStream
+ObjectOutputStream
+
+IO STREAMS IN JAVA -> CHARACTER STREAMS
+-> Represented by two super classes java.io.Reader and java.io.Writer
+-> Both are abstract
+
+IO STREAMS IN JAVA -> READER
+java.io.Reader defines the basic contract for reading from an input stream involving characters.
+
+int available()
+void close()
+int read()
+int read(char[])
+int read(char[], int, int)
+int read(CharBuffer)
+void reset()
+long skip(int)
+
+IO STREAMS IN JAVA -> READER
+All the subclasses have names ending with Reader
+
+Some of the most commonly used subclasses:
+BufferedReader
+CharArrayReader
+StringReader
+InputStreamReader
+    FileReader
+
+
+IO STREAMS IN JAVA -> WRITER
+java.io.Writer defines the basic contract for writing to an output stream involving characters
+
+Writer append(char)
+Writer append(CharSequence)
+Writer append(CharSequence, int, int)
+void close()
+void flush()
+void write(int)
+void write(char[])
+void write(String)
+
+All the subclasses have names ending with Writer
+
+Some of the most commonly used subclasses:
+BufferedWriter
+CharArrayWriter
+StringWriter
+OutputStreamWriter
+    FileWriter
+
+IO STREAMS IN JAVA -> SUMMARY
+Key points discussed in this video:
+-> Streams in Java act as channels of data flow from a program to a target or from a source to a program.
+-> Byte streams work with all data types, and data is treated as a group of bytes.
+-> Character streams work with the character data alone.
+-> InputStream, OutputStream, Reader and Writer are super classes for the entire IO API
