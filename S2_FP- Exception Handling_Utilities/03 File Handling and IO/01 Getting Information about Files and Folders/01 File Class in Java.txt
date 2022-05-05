@@ -1,0 +1,91 @@
+FILE CLASS IN JAVA -> INTRODUCTION
+-> The class java.io.File can represent a file or a directory in the file system
+-> Not only can we get information about an existing file or directory, we can also create them
+
+FILE CLASS IN JAVA ->  OVERVIEW
+-> The class java.io.File is a representation of the file and directory pathnames
+-> Typically, user interfaces and operating systems use system-dependent pathname strings to name files and directories
+-> This class presents a system-independent view of hierarchical pathnames
+
+An abstract pathname has two components:
+-> An optional system-dependent prefix string:
+/ for unix
+\\ for windows
+
+-> A sequence of zero or more string names
+
+-> The first name in an abstract pathname may be:
+--> A directory name or, in the case of Microsoft Windows, UNC pathname
+--> Hostname
+\\servername
+
+-> Each subsequent name in an abstract pathname denotes a directory
+--> The last name may denote either a directory or a file
+
+-> For local paths, you can use Unix style pathnames
+String path = "D:/Work/sample.txt";
+
+-> The paths can be absolute or relative
+String path = "sample.txt";
+
+FILE CLASS IN JAVA -> CREATING
+-> Instances of the File class are immutable
+--> Once created, the abstract pathname represented by a File object will never change
+
+-> Creating a File object can be done using the constructor File(String)
+
+String path = "D:/Work";
+File d = new File(path);
+
+FILE CLASS IN JAVA -> USEFUL METHODS
+Methods to check the existence and type:
+public boolean exists()
+public boolean isDirectory()
+public boolean isFile()
+
+if (d.exists ()) {
+    // if it is not a directory then it is a file
+    if (d.isDirectory ()) {
+        // ...
+    }
+    else {
+        // ...
+    }
+}
+
+-> To find the disk space available
+public long getTotalSpace()
+public long getUsableSpace()
+
+-> If the path does not represent any partition, it returns 0
+long fs = d.getTotalSpace ();
+long us = d.getUsableSpace ();
+
+Get the attributes of a resource
+public boolean canRead()
+public boolean canWrite()
+public boolean isHidden()
+public long length()
+
+Creating directories:
+public boolean mkdir()
+public boolean mkdirs()
+
+Deleting a resource:
+public boolean delete()
+public void deleteOnExit()
+
+Rename a resource:
+public boolean renameTo(File)
+
+Listing files and subdirectories:
+public String[] list()
+public File[] listFiles()
+
+Getting filenames:
+public String getAbsolutePath()
+public File getAbsoluteFile()
+public String getName()
+public String getPath()
+public String getParent()
+public File getParentFile()
