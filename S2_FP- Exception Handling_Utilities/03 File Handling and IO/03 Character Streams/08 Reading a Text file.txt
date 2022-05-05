@@ -1,0 +1,114 @@
+READING A TEXT FILE -> INTRODUCTION
+-> Java provides many mechanisms to read files
+-> Java 1.1 introduced character streams to read and write text data in the form of character streams
+-> Java 1.5 introduced Scanner class to read different types of data from streams, including files
+
+READING A TEXT FILE -> READER
+The class java.io.Reader provides these method contracts for reading character data
+
+int read()
+int read(CharBuffer)
+int read(char[])
+int read(char[], int, int)
+
+The first three of them delegate the call to the last method, which is abstract
+
+READING A TEXT FILE -> FILE READER
+-> The class java.io.FileReader is a convenience class for reading character files
+-> The constructors of this class assume that the default character encoding and the default byte-buffer size are appropriate
+-> To specify these values yourself, construct an InputStreamReader on a FileInputStream
+-> FileReader is meant for reading streams of characters
+-> For reading streams of raw bytes, consider using a FilelnputStream
+
+
+FileReader has these useful constructors for reading a text file:
+
+FileReader (File)
+FileReader(String)
+
+FileReader file = new FileReader ("somefile.txt");
+
+-> FileReader internally uses a java.io.FileInputStream instance and extends java.io.InputStream Reader
+-> The actual read(..) method is delegated to another object of class sun.nio.cs.StreamDecoder
+-> This method properly converts the bytes from the internal InputStreamReader into char values
+
+Reading 1 KB of data ata time from a text file
+
+FileReader file = new FileReader ("somefile.txt");
+char [] chars = new char [1024];
+while (file. read(chars) !=-1) {
+    String str = new String(chars).trim();
+    System.out.println (str);
+}
+file.close();
+
+READING A TEXT FILE -> BUFFERED READER
+-> Each read operation would access the disk
+-> Instead, we can make use of the class java.io.BufferedReader
+-> BufferedReader is created using another Reader
+
+FileReader file = new FileReader ("somefile.txt");
+BufferedReader in = new BufferedReader (file);
+
+-> BufferedReader contains a char array as a buffer of size 8KB
+-> Apart from buffering the data, it also provides an additional useful method readLine() that reads a complete line and returns as a String.
+
+String txt;
+while ((txt=in.readLine()) !=null) {
+    System.out.println (txt);
+}
+in.close ();
+file.close ();
+
+READING A TEXT FILE -> SCANNER
+-> Java 1.5 introduced the class java.util.Scanner
+-> Provides many useful methods for reading streams
+-> Converts the data into appropriate data types
+
+Scanner provides many constructors to work with files such as:
+
+Scanner(File)
+Scanner(File, String)
+
+Scanner(InputStream)
+Scanner(InputStream, String)
+
+Scanner provides many methods to check and read data.
+
+A method of pattern hasNextXxx() for each data type returns boolean.
+-> hasNextint()
+-> hasNextDouble() etc
+
+A method of pattern nextXxx() for each data type returns value of the same type.
+-> int nextint()
+-> double nextDouble() etc
+
+-> Most of the methods throw java.lang.IllegalStateException if the scanner is not initialized or is closed
+-> The nextXxx() methods throw java.util.NoSuchElementException if the input is exhausted
+
+The method next() can be used to read the next token, delimited with the pattern set.
+-> The method useDelimiter(String) can be used to set the pattern
+-> Default pattern is a White space
+
+String fname = "HelloWorld.java";
+
+FileInputStream file = new FileInputstream (fname);
+Scanner sc = new Scanner (file);
+while (true) {
+    try {
+        String line = sc.nextLine ();
+        System.out.println (line);
+    }
+    catch (NoSuchElementException e) {
+        break;
+    }
+}
+sc.close ();
+
+READING A TEXT FILE -> SUMMARY
+Key points discussed in this video:
+
+-> The class java.io.Reader provides the basic contract for reading character data.
+-> Use java.io.FileReader to read the content from a file.
+-> The class java.io.BufferedReader maintains a buffer of 8 KB byte array, reduces the disk access and improves performance.
+-> Scanner class was introduced in Java 1.5 to provide reading of different types of data from a source stream.

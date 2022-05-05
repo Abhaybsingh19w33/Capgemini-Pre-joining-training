@@ -1,0 +1,114 @@
+CREATING A TEXT FILE -> INTRODUCTION
+-> Text files are the most common types of files you create
+-> Java has a very good API support for creating a text file
+
+CREATING A TEXT FILE -> OVERVIEW
+-> Java 1.1 introduceda set of classes to work with character strings exclusively
+-> Together these are known as character streams
+-> Separate classes are available for reading and writing
+
+CREATING A TEXT FILE -> WRITER
+-> For writing characters, all the classes inherit from java.io.Writer
+-> Writer is abstract and objects cannot be created directly
+-> It defines the contract for writing character data into targets such as files
+-> Two useful methods for writing data:
+--> append
+--> write
+-> Both these methods are overloaded
+
+-> The append() method internally calls the write() method
+-> The difference is that it returns the current instance itself, so that it can be used for statement changing
+
+out.write (name);
+out.write (city);
+out.write (phone);
+
+out.append(name). append(city) .append(phone);
+
+-> The method Write(..) is abstract and actually implemented by subclasses of Writer, such as BufferedWriter or OutputStreamWriter
+-> The class java.io. FileWriter extends OutputStreamWriter, and creates FileOutputStream for the intended file
+-> OutputStreamWriter uses an instance of sun.nio.cs.StreamEncoder to do the write operations
+
+CREATING A TEXT FILE -> FILE WRITER
+Important constructors and methods in FileWriter class:
+FileWriter(File)
+FileWriter(File, boolean)
+FileWriter(String)
+FileWriter(String, boolean)
+append(char), append(CharSequence)
+flush()
+close()
+write(char[]), write(String)
+
+Creating a text file
+FileWriter file = new FileWriter ("names.txt") ;
+file. write ("Vinod \n");
+file. write (" Shyam\n") ;
+
+file.append (" Scott \n") .append ("Miller\n") . append("John\n") ;
+
+file.close ();
+
+
+CREATING A TEXT FILE -> BUFFERED WRITER
+-> Each 'write' operation involves disk access
+-> This results in poor performance
+-> To avoid this, use java.io.BufferedWriter
+
+FileWriter file = new FileWriter ("names.txt");
+BufferedWriter out = new BufferedWriter (file);
+
+out.write ("Vinod")
+out.append ("Scott").append ("Miller");
+
+out.close ();
+file.close ();
+
+-> BufferedWriter uses an internal buffer of 8KB and writes the data to the target only if the buffer is full or if flush() or close() is called
+-> The buffer size, in bytes, can be specified during the construction
+-> Does not provide any additional methods, but each method would delegate to the aggregated Writer
+-> Using BufferedWriter improves performance
+
+CREATING A TEXT FILE -> PRINT WRITER
+java.io.PrintWriter
+-> Prints formatted representations of objects to a text-output stream
+-> This class implements all of the print methods found in PrintStream
+-> It does not contain methods for writing raw bytes, for which a program should use un-encoded byte streams
+-> Methods in this class never throw I/O exceptions
+
+Useful constructors:
+PrintWriter(String)
+PrintWriter(String, String)
+PrintWriter(File)
+PrintWriter(File, String):
+PrintWriter(Writer)
+PrintWrite(Writer, boolean)
+PrintWriter(0utputStream)
+PrintWriter(OutputStream, boolean)
+
+Useful methods:
+PrintWriter format(String, Object...)
+overloaded versions of:
+void print(..)
+void printin(.)
+void printf(..)
+
+Creating a file using PrintWriter
+PrintWriter out = new PrintWriter ("names.txt");
+out.println ("Hello and Wel come!") ;
+out.printf ("My name is 8s and I am *d years old", name, age);
+out.close ();
+
+
+CREATING A TEXT FILE -> APPENDING
+-> If the file needs to be opened for appending, use the constructor of the class
+java.io.FileWriter
+FileWriter file = new FileWriter ("names.txt", true);
+
+-> Then create PrintWriter representing the same
+
+PrintWriter out = new PrintWriter (file);
+.. 
+..
+out.close();
+
