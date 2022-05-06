@@ -1,0 +1,122 @@
+OBJECT SERIALIZATION -> INTRODUCTION
+-> Object's state is represented by internal fields, which may be primitives or references to other objects
+-> An object's complete data is scattered in the memory
+-> Converting an object's state into a series of bytes is known as serialization
+
+OBJECT SERIALIZATION -> OVERVIEW 
+-> Serialization is a process where the state of an object is converted into a series of bytes
+-> Once it is in the form of bytes, you may save them to a file or send them across network
+
+OBJECT SERIALIZATION -> OBJECT OUTPUT
+The interface java.io.ObjectOutput defines the contract to serialize an object data.
+
+public void writeObject(Object obj);
+public void write(int b);
+public void write(byte b[]);
+public void write(byte b[], int off, int len);
+public void flush();
+public void close();
+
+OBJECT SERIALIZATION -> OBJECT OUTPUT STREAM
+-> The class java.io.ObjectOutputStream is one of the implementing classes for the interface java.io.ObjectOutput
+
+-> Use the write Object(..) method from java.io.ObjectOutputStream class to serialize an object
+
+Product pl = new Product (..);
+ObjectOutput out = new ObjectOutputStream(...);
+out.writeObject (p1);
+
+-> The class ObjectOutputStream does not represent any target device
+-> It should be created using another stream
+
+FileOutputStream file = new FileOutputstream ("products.data");
+ObjectOutputStream out = new ObjectOutputStream (file);
+
+OBJECT SERIALIZATION -> SERIALIZABLE
+-> Not all objects can be serialized
+-> Only objects of classes that implement java.io.Serializable can be serialized
+
+public class Product implements Serializable {
+    // ...
+}
+
+Serializable interface does not impose any method-overriding on the implementing class
+
+Methods that serialize an object check if the object being serialized is an instanceof Serializable
+
+public void writeObject (Object obj) {
+    if (!obj instanceof Serializable) {
+        throw new NotSerializableException (..);
+    }
+    // ...
+}
+
+-> When an object is serialized, by default all the fields will be taken into consideration
+-> Primitive fields are automatically serializable
+-> Fields of reference types need to be of Serializable types
+--> If a reference of a non-serializable class is used as a field, then serialization fails
+
+
+-> if the object has a field that is not of a serializable type, then you must mark that field as a transient
+
+public class Category {
+    // ...
+}
+
+
+//FAILS
+public class Product implements Serializable {
+    private String name;
+    private double price;
+    private Category category; // non-serializable
+    // ...
+}
+
+//pass
+public class Product implements Serializable {
+    private String name;
+    private double price;
+    private transient Category category; // non-serializable
+    // ...
+}
+
+-> During the serialization, only non-transient fields will be serialized
+--> name, price
+
+-> When the object state is restored from serialized state, transient fields will be initialized to null
+--> category
+
+-> Static members of a class do not belong to the object
+-> When an object is serialized, static data will not be serialized
+
+-> If a class does not have a no-arg constructo, then objects of this class cannot be deserialized
+-> If a class extends serializable class, then the subclass automatically becomes a serializable
+-> If a serializable class extends a non-serializable class, only the fields in the subclass wll be serialized
+--> Members of super class will be treated as transient
+
+OBJECT SERIALIZATION -> OBJECT INPUT
+The interface java.io.Objectlnput defines the contract for reading serialized objects.
+
+public Object readObject();
+public int read();
+public int read(byte b[]);
+public int read(byte b[], int off, int len);
+public long skip(long n);
+public int available();
+public void close();
+
+OBJECT SERIALIZATION -> OBJECT INPUT STREAM
+-> The class java.io.ObjectInputStream is one of the implementation classes for the interface java.io.ObjectInput
+
+ObjectInput in = new ObjectInputstream (...);
+Product p1 = (Product) in.readobject ();
+
+-> When there is no object to read, calling readObject() method will throw java.io.EOFException
+
+OBJECT SERIALIZATION -> SUMMARY
+Key points discussed in this video:
+
+-> Converting an object's state into a series of bytes is called serialization.
+-> A class must implement java.io.Serializable for its object to be serialized.
+-> java.io.ObjectOutput defines the contract for serialization.
+-> java.io.ObjectInput defines the contract for deserialization.

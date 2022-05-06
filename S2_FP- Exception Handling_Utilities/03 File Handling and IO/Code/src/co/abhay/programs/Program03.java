@@ -1,5 +1,6 @@
 package co.abhay.programs;
 
+import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.Scanner;
 
@@ -13,14 +14,22 @@ public class Program03 {
 		
 		FileReader reader = new FileReader(path);
 		
-		int ch;
-		while((ch = reader.read()) != -1) {
-			System.out.println((char) ch);
+////		read character by character
+//		int ch;
+//		while((ch = reader.read()) != -1) {
+//			System.out.println((char) ch);
+//		}
+		
+//		read line by line
+		BufferedReader in = new BufferedReader(reader);
+		String line;
+		
+		while((line = in.readLine()) != null) {
+			System.out.println(line);
 		}
 		
 		reader.close();
 		sc.close();
-		
 	}
 
 }

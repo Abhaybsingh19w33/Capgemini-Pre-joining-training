@@ -1,0 +1,99 @@
+READING FROM KEYBOARD -> INTRODUCTION
+-> In Java, we seldom read data from the keyboard
+-> Upto Java 1.5, reading from the keyboard was not given much importance
+-> The Scanner class was introduced in Java 1.5 to facilitate easy access to many streams, including keyboard
+
+READING FROM KEYBOARD -> SYSTEM.IN
+-> For a keyboard, the standard console input is represented by System.in
+-> "in" is a public static field in the java.lang.System class
+-> "in" is a reference of java.io.InputStream
+
+The class java.io.InputStream has the following public methods for reading data:
+
+int read()
+int read(byte b[])
+int read(byte b[], int off, int len)
+
+Using the read() method
+// one character at a time
+int ch;
+String input = "";
+while ( (ch=System.in.read() ) !=' \r') {
+    input += (char) ch;
+}
+S.o.p(input);
+
+Using the read (byte []) method
+byte []bytes = new byte [100];
+System.in.read (bytes);
+String input = new String(bytes).trim():
+
+READING FROM KEYBOARD -> BUFFERED READER
+-> To read a complete line, the class java.io.BufferedReader can be used
+-> It has a method readLine() that returns the String being read
+-> BufferedReader is a Reader and System.in is an InputStream
+-> To convert an InputStream to a Reader object, use java.io.InputStreamReader
+
+Using BufferedReader readLine() method
+InputStreamReader isr = new InputStreamReader (System.in);
+BufferedReader in = new BufferedReader (isr):
+
+String name, city;
+System.out.print ("Enter name: ");
+name = in.readLine ();
+System.out.print ("Enter city: ");
+city = in.readLine ();
+
+-> BufferedReader work only with characters
+-> If you need to read other types of data, such as int, long or double from the keyboard, BufferedReader cannot be used directly
+--> You have to use the readLine(), store the result in a String and convert them using the parseXxx(..) methods
+
+READING FROM KEYBOARD SCANNER
+-> Java 1.5 introduced Scanner class for reading data of different types
+-> Scanner class is a part of the java.util package
+-> The constructor Scanner(InputStream) can be used to create a scanner object to represent System.in (keyboard)
+
+Scanner sc = new Scanner(System.in);
+
+The nextXxx() methods allow to read data of different types from the input stream:
+nextByte(), nextShort(), nextlnt(), nextLong()
+nextFloat(), nextDouble()
+nextBoolean()
+next(), nextLine()
+
+-> Most of the methods for reading throw java.util.InputMismatchException
+-> Scanner is a very useful utility class
+--> After reading numerical data, if you read a String, then an empty string is returned
+-> We can create our own utility class to simplity application development
+
+public class KeyboardUtil {
+    public static int getInt (String msg) {
+        Scanner sc = new Scanner (System.in);
+        System.out.print (msg);
+        return sc.nextInt();
+    }
+
+    public static double getDouble (String msg) {..}
+    public static Date getDate (String msg) {..}
+    public static String getString (String msg) {..}
+}
+
+Using the KeybaordUtil
+
+public class Main {
+    public static void main (String [] args) {
+        String name;
+        int age;
+        double height;
+
+        name = KeyboardUtil.getString ("Enter name: ");
+        age = KeyboardUtil.getInt ("Enter age: ");
+        height = KeyboardUtil.getDouble ("Enter height: ");
+    }
+}
+
+READING FROM KEYBOARD -> SUMMARY
+Key points discussed in this video:
+-> System.in represents a standard console Keyboard.
+-> BufferedReader can be used as a decorator on System.in to read a line from the keyboard.
+-> Scanner class is a very useful utility class to read data of different types.
