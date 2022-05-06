@@ -77,7 +77,7 @@ Class Design Steps
 
 The following steps are used to create class design:
 
-i.      ldentify persistent classes
+i.      Identify persistent classes
 ii.     Create initial design classes
 iii.    Define operations
 iv.     Define class visibility

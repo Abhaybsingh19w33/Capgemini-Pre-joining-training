@@ -574,7 +574,7 @@ java.lang.default
 
 Ans - All classes and interfaces from java.lang package are automatically imported to every class.
 
-Q - ldentify the incorrect statement.
+Q - Identify the incorrect statement.
 
 correct - A class must implement all the methods declared in the interface
 

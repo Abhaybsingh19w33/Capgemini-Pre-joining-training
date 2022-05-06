@@ -58,8 +58,6 @@ Oracle Database 11g Release 2 combines cluster and standalone server grid infras
 -> Improved overall performance
 
 Launched with enhancements to Overcome limitations in the previous version
-
-
 -> Provides better performance
 -> More table partitioning options - static SQL
 -> Enhancements to dynamic SQLs
@@ -68,5 +66,4 @@ Launched with enhancements to Overcome limitations in the previous version
 -> Supports virtual columns in tables
 -> Enhancements to PL/SQL
 -> Query result cache
--> And much more...
-
+-> And much more..

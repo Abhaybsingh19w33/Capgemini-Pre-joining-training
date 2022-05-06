@@ -26,7 +26,7 @@ COURSE INTRODUCTION ORACLE ORACLE DATABASE
 --> Latest developments have made it faster and more efficient
 
 COURSE INTRODUCTION-ORACLE LEARNING OBJECTIVES
--> ldentify how to retrieve, transform, and group data from Oracle database
+-> Identify how to retrieve, transform, and group data from Oracle database
 
 -> Use different types of SQL statements to manage and manipulate data
 
@@ -54,5 +54,4 @@ COURSE INTRODUCTIONORACLE CoURSE CURRICULUM
 --> How to get appropriate database objects in Oracle?
 
 -> Basic PL/SQL programming
---> How programming features of PLSQL augment the
-usage of SQL?
+--> How programming features of PLSQL augment the usage of SQL?

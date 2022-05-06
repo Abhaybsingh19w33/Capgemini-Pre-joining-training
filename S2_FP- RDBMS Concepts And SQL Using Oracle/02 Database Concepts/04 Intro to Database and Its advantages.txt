@@ -13,7 +13,7 @@ Database system
 -> Computerization
 --> Computerized record-keeping system
 --> Electronic filing cabinet
---->Stored the files
+---> Stored the files
 
 Database System
 -> Adding new files
