@@ -1,0 +1,247 @@
+Problem Statement
+
+XT Info Systems is a company wants to build a carpooling application for its employees, the purpose of carpooling is the sharing of car journey so that more than one employee can travel in a car. The greatest advantage of carpooling is the feeling of relaxation while reaching to office. You don't need to struggle all the way driving to office and feel relaxed - No Parking Traffic tensions. The feeling of relaxation rejuvenates you to start your work fresh. Also Carpooling reduces the costs involved in car travel by sharing journey expenses between the employees travelling, Carpooling is also seen as a more ecologically, friendly, and sustainable way to travel as sharing journeys reduces carbon emissions, traffic on the roads, and the need for parking spaces. So, it builds virtual relationships in our organization among the people commuting.
+
+Your company ABC Corp, India has been awarded this project and you are chosen as one of the developers, to provide solution for the XT Info Systems.
+
+At a very high level the Business Analyst has captured the atributes of the business shown in Figure 1.0
+
+Below is the list of requirements captured by a Business Analyst. Requirements are in terms of business outcome and use cases. Learning outcomes will be the takeaway for you (developer) as you implement these requirements. You will be graded on the learning outcomes that you will achieve.
+
+
+STAGE 2A
+Foundation Plus Stream
+-> RDBMS Conce pts and SQL Using oracle
+-> Exception Handing Using Java
+-> HTML 5, CSS 3, and JavaScript
+
+Sprint Outcome
+Topic Name  
+-> RDBMS and SQL
+
+Sprint  
+-> 3 
+
+Learning Outcome    
+-> Perform CRUD operations with DBMS, and know the importance of keeping the data clean
+-> Understand the basics of RDBMS design
+-> Understanding the need of critical data for business
+-> Normalizing data and specifying proper data type
+-> Handling proper constraints inter and intra table
+-> Organize data in relative table and store data in rows and column
+-> Maintain data consistency through appropriate integrity constraints
+-> Handling DB Objects and indexing
+-> Cenerating various types of reports for the stake holder
+
+Business Outcome
+-> Identify the Rides wihich are posted by the same user
+-> Better predictions for the ride providers on the riders based on the history
+-> Reports on Ride takers and Ride providers behaviours based on ride cancellation
+-> Demand of service based on the timing
+
+
+
+Topic Name  
+-> Exception Handling using Java
+
+Sprint  
+-> 4
+
+Learning Outcome    
+-> Handling Runtime erors/ Exception with the help of try/catch and throw
+-> Creating user defined exceptions and handling those exceptions
+
+Business Outcome
+-> Provides meaning full information to the user when the unexpected event occurred
+-> Generating customized information for the invalid data
+
+
+
+Topic Name  
+-> HTML5, Css 3, and JavaScript 
+
+Sprint  
+-> 5
+
+Learning Outcome    
+-> Create HTML pages, with basic design, write custom designs with CSS 3.
+
+Perform cent-side vaidation, event based actions.
+
+-> Understand the need of GUI
+-> Design interactive pages
+-> Connect multiple HTML pages to form web site
+-> Do colour coding
+-> Create elegant forms with validation, and reduce need of Java Script
+-> Write custom vaidation on HTML fields with Java Script
+-> Client-side validation with custom code or RegExp
+-> Understanding DOM and manipulating
+
+Business Outcome
+-> The Stakeholder, product owner can see the prototype of the application (wireframe). This gives insights on UI before development starts.
+-> Misinterpretation of data is minimized at initial stage (through validation) so that common errors can be avoided
+
+Below is the list of requirments captured by a Business Analyst. Requirements are in terms of business outcome and use cases. Learning outcomes will be the takeaway for you (developer) as you implement these requirements. You will be graded on the learning outcomes that you will achieve.
+
+Sprint 3
+RDBMS and SQL
+
+Business Outcome: Reports on Ride inventory and customer data
+Learning Outcome: Ability to write simple queries and sort the output
+
+1. Display the users
+2. Display the users in the ascending order (alphabeticaly by their name)
+3. Display all the rides for which the travel duration is less than an hour
+4. Display the total number of users based on the city
+
+--> use group by clause
+
+Business Outcome: Reports on current inventory and Ride revenue from the Rides
+Learning Outcome: Ability to write queries based on a condition and sort the output
+
+5. Fetch the users who have offered rids as less than 5 for a month
+6. Display the rides which have more than two seats left, and the ride status is not started
+7. Display the ides which have more than 1 passenger and less than 3
+
+Business Outcome: Reports on Ride details, most active / preferred customers, inactive customers,
+customers who have defaulted payment return.
+Learning outcome: Ability to write complex queries by fetching data from multiple tables.
+
+8. Display the rides on 20/11/2020
+--> use to_char to_data function
+9. Display the uses who have taken more than two rides in a week
+--> use inner join
+10. Display all the users who have offered ride at least 1 with the details of ride and the user 
+--> use inner join
+11. Fetch the users first_name, city and number of rides taken during the current month
+--> Use inner join and group function
+12. Fetch the ride provider whose rides were most used by the ride by the ride takers
+--> Use inner join and group function
+13. Identify the user who have offered but have not started the ride even once
+--> Use inner join
+14.Fetch the User information who has not offered any ride.
+--> Use inner join and subquery
+15. Display the user information and Ride information for the ride id/s which was offered on 25th of Nov 2020
+--> Use inner join and date function
+16. Display all the users with the ride taken history even they don't avail the ride.
+--> Use left join
+17. Display the users whose rides are maximum for the month.
+--> Use joins and group function
+
+Business Outcome: Reports to help maximize revenue (Best busines months, moxt preferred Rides, most preferred customers)
+Learning Outcome: Ability to write queries using aggregate functions.
+
+18. Display number of rides and the month when the maximum number of rides were offered
+--> use group function and group by clause
+19. Fetch the rides which travel has maximum duration
+--> use group function and group by clause
+20. Fetch the rides for which ride seats were full.
+--> use sub query
+21. Identify the top 3 users in descending order of maximum rides were offerad
+--> use group function, join and sorting
+22. Identify the top 2 preferred users in descending order of rides were taken.
+--> use group function, join and sorting
+
+
+Sprint 4
+
+Exception Handling using Java
+
+Business Outcome: Reports meaningful information to the user when unexpected events occur
+Learning Outcome: Ability to handle the Runtime error and understand different ways of Exception Handling Mechanism
+
+1. setter method and the constructor of the User class must throw an InvalidNameException if the length of the firstName and lastName is less than six and has numbers/special characters.
+2. Define an invalidLocationException when toLocation matches with fromLocation and invalidCapacityException when sestsLeft exceeds totalseats of the Ride ciass.
+
+Business Outcome: Define exceptions of all accessors upon unwarranted data entry
+Learning Outcome: Complex Programming using OOP and Exception Handling
+
+3. Create an interface as Userservice and add methods such as requestRide, search and display, implement user defined exceptions for each method for invalid data entry
+
+
+
+Sprint 5
+HTML5, CSS3, and JavaScript
+
+1. User Registration Form in a span element by applying the stye (Given in Style Guide)
+
+Business Outcome: Record user data which will be an asset for the organization
+Learning Outcome: Create a HMTL form which records and validates data
+
+In the customer registration form have following fields
+
+First_name
+Last_name
+email
+Password
+Confirm Password
+Mobile Number
+Gender (Radio button)
+Country (Dropdown List [INDIA, USA, GERMANY, FRANCE default INDIA)
+City (Dropdowm list [Bengaluru, Chennai, Delhi, Mumbai])
+Date of Birth (input type Date)
+Submit form is a button with label "Submit"
+
+
+validation
+a. First Name must be minimum of 4 characters
+b. Password must be alphanumerical and with a special character
+c. Password and confirm password must be same
+d. Mobile number must be a valid 10-digit number the first digit to be between 6 to 9
+
+2. create the Add Ride page on the application as below
+
+Business Outcome: inventory and stock management of Rides
+Learning Outcome: create a HMTL form which records data and validates the data using RegExp
+
+1. Define the add Rides in a span eement by applying the style. (Given in 5tyle Guide)
+2. The above element should be inside the h2 element and apply style.
+3. Addition of Rides should have following fields
+
+From
+To
+Total No of seats
+Start Date and Time
+End Date and Time
+Ride_Amount
+Submit form is a button with label "Submit"
+
+validation
+a. Rides From and must be minimum of 3 character (Use RegExp for validating)
+
+b. Rides type should be minimum of 5 characters (Use RegExp for validating)
+c. Total number of seats should be a number and it should be greater than "o".
+d. Ride_Amount Amount should be minimum of 35
+e. Start date and End Date should be greater than 2 hours from the current date and time
+
+
+
+3. Request Ride Form
+Business Outcome: "Request Ride" - A page for users to avail the ride
+Learning Outcome: Create a HMTL form which records and validates input data, manipulate DOM elements and write custom functions.
+
+1. Define the Request Ride in a span element by applying the style (Given in Style Guide)
+2. The above element should be inside the h2 element and apply style.
+3. Create a form which accepts below fields
+Ride id
+Username
+Ride Start Date
+Number of seats Required
+Number of Seats available
+Ride Cost
+Submit form is a button with label "Submit"
+
+
+validation
+a. "Usename" is input text box should be minimum of 5 characters and should take only characters and space (Use OnBlur event)
+b. "Ride Start Date" is input date field, and the date selected should be current or future date time
+c. "Number of seats Required" is number field should not accept more than 6, when entered more
+than 6 display a text "you cannot book more than 6 seats SORRY
+d. "Number of Seats available"
+(to be hardcoded in Javas cript function which will be cal at onLoad event, for all the Rides the max value availiabie is 6)
+
+
+Additional Note
+-> Load 10 Rides in the field Ride ID (Drop down)
+-> When User clicks on submit, do the following checks
+--> Show the total Ride Amount which is cost of number of seats recquired and Ride Cost. When user clicks on cofirm box as "Yes", then a message to be shown "Thank you for order Mr/Ms/Mrs: <username>"
