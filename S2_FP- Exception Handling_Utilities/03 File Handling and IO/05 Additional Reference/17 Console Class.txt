@@ -1,0 +1,89 @@
+Table of Contents
+1 The java.io.Console class
+1.1 java.io.Console class
+1.2 Using java.io.Console class
+1.3 Important methods of Console class
+1.4 Summary
+
+1.1 Thejavaio.Console class
+The Java.io.console ciass can access the character-based console device, any, associated with the current Java virtual machine using its methods. The Console class is induded into java.io by JDK 6.
+
+public final class: Console extends Object implement Flushable
+
+If the virtual machine has a console, then it is represented by a unique instance of this class which can be obtained by invoking the System.console() method. If no console device is available then an invocation of that method will return null. It is used to read from and write to the console, if one exists. Console is primarily a convenience class because most of its functionality is available through System.in and System.out. Console supplies no constructors. Instead, a Console object is obtained by calling System.console(), which is shown here: static Console console().
+
+1.2 Using java.io.Console class
+
+public class Main {
+    public static void main (String[] args) {
+        String str;
+        //Obtaining a reference to the console
+        Console con = system.console ();
+
+        // Checking there is no console available, then exit
+        if (con == null){
+            System.out.print ("No console available");
+            System.exit (0);
+        }
+
+        // Read a string and then display it.
+        str = con.readLine ("Enter your name");
+        con.printf ("Here is your name : %s\n", str);
+
+        //to read password and then display it
+        System.out.println ("Enter the password: ");
+        char[] ch = con.readPassword ();
+
+        //converting char array into string
+        String pass = String.valueOf(ch);
+        System.out.println("Password is: " + pass);
+    }
+}
+
+Note: When you run a Java app in Eclipse, System.console () returns null, because it's not a "normal" console. Open a console ("command prompt" in Windows) and run the code there to get the output.
+
+1.3 Important methods of Console class
+
+public PrintWriter writer()
+-> Retrieves the unique PrintWriter object associated with this console.
+
+public Reader reader()
+-> Retrieves the unique Reader object assodated with this
+console.
+
+public Console format(String fmt, Object.. args)
+-> Parameters:
+fmt - A format string as described in Format string syntax
+args - Arguments referenced by the format specifier in the format string
+
+If there are more arguments than format specifiers, the extra arguments are ignored.
+Throws: IllegalFormatException
+
+public String readLine(String fmt, Object.. args)
+-> 
+Parameters:
+fmt - A format string as described in Format string syntax
+args - Arguments referenced by the format specifiers in the fomat string.
+
+If there are more arguments than format specifiers, the extra arguments are ignored.
+
+Returns: A string containing the line read from the console, not inciuding any line-termination characters, or null if an end of stream has been reached.
+Throws: IllegalFormatException
+IOError - If an I/O error occurs
+
+
+public String readLine()
+-> Returns: A string containing the line read from the console, not including any line-termination characters, or null if an end of stream has been reached.
+Throws: IOError
+
+public char[] readPassword()
+-> Returns: A character array containing the password or passphrase read from the console, not including any line-termination characters, or null if an end of stream has been reached.
+Throws: IOError
+
+public void flush()
+-> Flushes the console and forces any buffered output to be written immediately. flush() in interface Flushable
+
+Summary
+-> The Java Console class is be used to get input from console.
+
+-> The Java.io.Console class provides methods to access the character-based console device. It provides methods to read texts and passwords.
