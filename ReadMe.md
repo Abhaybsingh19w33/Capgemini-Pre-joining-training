@@ -1,3 +1,7 @@
+to toggle word wrap in eclipse - use alt+shift+y
+
+
+https://github.com/iamsomraj/Adapt-Solutions
 https://github.com/topics/capgemini
 
 all videos are hosted on vimeo site there is possibility to download them
