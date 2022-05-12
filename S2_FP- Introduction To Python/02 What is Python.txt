@@ -1,0 +1,70 @@
+Python is a multi-paradigm programming language invented by Guido Van Rossum.
+
+WHAT IS PYTHON? -> CHARACTERISTICS
+
+Python:
+-> is a high-level, procedural/structured and an object oriented programming language
+-> is functional, imperative, and reflective in nature
+-> is aspect oriented
+
+Python supports:
+-> Dynamic typing
+-> Cross platform development
+-> Structured Exception Handling (SEH)
+-> Multithreading
+-> Sockets
+-> GUI
+-> Database programming
+
+Python's objective is to emphasise on code readability, and its syntax allows programmers to express concepts in fewer lines of code as compared to other languages such as C++ or Java.
+
+WHAT IS PYTHON? -> LATEST VERSIONS
+The two latest versions of Python are:
+3.4.x (known as Python 3000)
+2.7.x (known as Python 2000)
+
+WHAT IS PYTHON? -> TYPING SYSTEMS
+Python supports:
+-> Duck typing
+-> Dynamic typing
+-> Strong typing
+
+WHAT IS PYTHON? -> MAJOR IMPLEMENTATIONS
+Some of the important Python implementations are:
+-> CPython
+-> PyPy
+-> Jython
+-> IronPython
+-> RPython (Python to java bytecode, MSIL, C)
+-> Stackless Python
+-> Pyjamas (Python to Javascript)
+
+WHAT IS PYTHON? -> LANGUAGES INFLUENCED PYTHON
+Python has been influenced by many languages:
+ABC
+LISP
+ALGOL 68
+PERL
+C
+Haskell
+C++
+Modula-3
+Java
+
+
+WHAT IS PYTHON? -> LANGUAGES INFLUENCED BY PYTHON
+Python has influenced the following languages:
+F#
+Ruby
+GO
+D
+Groovy
+JavaScript
+Swift
+
+WHAT IS PYTHON? -> PROGRAMMING PERSPECTIVE AND STYLE
+Beautiful is better than ugly.
+Explicit is better than implicit.
+Simple is better than complex.
+Complex is better than complicated.
+Readability counts.
