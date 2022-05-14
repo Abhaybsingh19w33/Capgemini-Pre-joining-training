@@ -1,0 +1,24 @@
+UNIX KERNEL SUBSYSTEM I > PROCESS MANAGEMENT
+
+CREATE PROCESS
+-> EXECUTING PROCESS
+--> TERMINATE PROCESS
+
+UNIX KERNEL SUBSYSTEM I > SCHEDULER
+
+-> Time sharing of CPU resources
+-> Scheduling Algorithm
+-> Multi processor support
+
+UNIX KERNEL SUBSYSTEM I > MEMORY MANAGEMENT
+
+-> Virtual Memory
+-> Slab Allocator
+-> Swapping of pages
+
+UNIX KERNEL SUBSYSTEM I > SUMMARY
+Key points discussed in this video:
+
+-> Process Management focuses on the various aspects of execution of UNIX processes.
+-> Scheduler provides the means to effectively share CPU resources between processes.
+-> Memory Management module provides a faster and efficient means to allocate memory to a process.

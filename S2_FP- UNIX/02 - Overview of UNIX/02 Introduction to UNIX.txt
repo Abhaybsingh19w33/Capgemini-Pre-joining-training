@@ -1,0 +1,36 @@
+INTRODUCTION TO UNIX -> OPERATING SYsTEM
+UNIX Operating System
+-> Manages system resources
+-> Provides a set of services
+-> User interface
+--> Command line interface (CLI)
+--> Graphical user interface (GUI)
+
+INTRODUCTION TO UNIX -> FEATURES OF UNIX
+-> Multi User
+-> Multi Tasking
+-> Efficiency
+-> Security
+-> Stability
+-> Portability
+-> Developers Paradise
+-> Toolbox
+
+INTRODUCTION TO UNIX > UNIX PRINCIPLES
+Ease of use
+Robustness
+Modularity
+Efficient utilization of resources
+Security
+
+SIMPLICITY
+-> Encapsulates complexities
+-> Intuitive command names
+-> Follows "Do one thing, but do it best"
+-> Inbuilt collaboration
+
+CONSISTENCY
+-> Interface
+-> Behavior
+-> Incentive for interpolation
+-> Development interface

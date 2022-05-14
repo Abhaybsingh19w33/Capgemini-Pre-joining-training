@@ -1,0 +1,20 @@
+UNIX KERNEL SUBSYSTEM II > VIRTUAL FILE SYSTEM
+-> Common Interface for accessing files
+-> Buffer Cache
+-> Encapsulates various device drivers
+
+UNIX KERNEL SUBSYSTEM II > NETWORK STACK
+-> Layered architecture
+-> Interface for networking protocols
+-> Managing internetwork connections
+
+UNIX KERNEL SUBSYSTEM II > DEVICE DRIVERS
+-> Major part of UNIX Kernel
+-> Make hardware usable by the software
+-> One driver for each device
+
+UNIX KERNEL SUBSYSTEM II > SUMMARY
+Key points discussed in this video:
+-> Virtual File System provides a common abstraction layer over all types of UNIX files.
+-> Network Stack is the heart of internetworking capabilities of a UNIX system.
+-> Device Drivers are the basic Kernel modules that help programs interact with hardware devices.

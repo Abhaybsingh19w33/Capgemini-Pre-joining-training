@@ -1,0 +1,18 @@
+UNIX KERNEL > KERNEL
+Core of the Operating System
+Controls system resources
+Modular architecture
+Manages processes
+Maintains communication
+
+UNIX KERNEL > KERNEL VARIANTS
+System V
+BSD
+Linux
+-> Kernel version: 3.16.10
+
+UNIX KERNEL > SUMMARY
+Key points discussed in this video:
+-> UNIX Kernel has a layered architecture.
+-> UNIX Kernel provides the basic functionalities to execute programs and accessfiles.
+-> UNIX Kernel is available in various variants and versions.

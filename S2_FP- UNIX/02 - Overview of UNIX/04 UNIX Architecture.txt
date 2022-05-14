@@ -1,0 +1,113 @@
+Introduction
+This lecture will help you understand UNIX architecture
+
+Objectives
+Upon completion of this lecture, we will be able to:
+-> Identify the major components of UNIX
+-> Define the function of each major module
+-> Appreciate the philosophy of the architecture
+
+Components of UNIX
+-> HARDWARE
+--> KERNEL
+---> Shell
+----> USER
+----> X-WINDOW
+----> SPREAD SHEETS
+----> DATABASES
+----> COMPILERS
+----> TEXT PROCESSORS
+----> BROWSERS
+
+Central to UNIX system is the hardware layer that consists of CPU, RAM, Hard disk, Keyboard and other peripherals.
+
+The software that interacts with this hardware layer is called the Operating System. In UNIX parlance, it is called Kernel. In fact, the Kernel is what we call UNIX. The kernel has various modules that individually interact with specific hardware components. These modules collaborate with each other to give a simple and consistent interface to the upper layers of software. All the code that is executed by the kernel, is said to be residing in the kernel address space.
+
+The software layer that lies just above the kernel is called the application layer. This consists of various applications like UNIX commands, Database applications, Compilers, X Window system, etc. The X Window system provides the Graphical User Interface to the system. Users interact with the system using this Graphical User Interface. UNIX applications provide the foundation for developing software on UNIX.
+
+The application layer contains a special application called the UNIX shell. It acts as an interface to the user. The user interacts with the system using the command line provided by the UNIX shell. This is also called the Command Line Interface. Each user is given his own login shell. Once the user logs in to the system providing his username and password, they can execute various UNIX Commands to perform their tasks on UNIX.
+
+UNIX comes buit in with a bundle of functional utilities. These are called the developer's toolbox. They can be combined to build complex solutions. No wonder that UNIX is called a developers paradise. Each UNIX command uses all the underlying layers, application layer and Kernel layer through the Shell to execute the command on the processor.
+
+UNIX follows a modular architecture that makes it both flexible and robust at the same time. This modularity philosophy permeates entirely through its Kernel architecture, file system structure, design of utilities and commands.
+
+Kernel
+
+UNIX Kernel is the Ring Master of the entire UNIX system. It runs the entire show. It manages and controls all the system resources like the Central Processing Unit, Random Access Memory, Storage devices, Printers, Keyboard, Screen, and all other peripherals.
+
+UNIX Kernel itself follows a layered architecture. All its function alities have been split up into various modules that cater to functionality each. They are buit over each other. These modules interact with each other to provide a consistent interface to all the other user level programs and commands.
+
+Following the distribution of code of these various modules, we can broadly depict the major components of UNIX Kernel as shown below.
+
+One set of sub systems in the UNIX kernel provide services that help in managing the processes.
+And another set of sub systems of the UNIX kernel provide services that help in managing the
+resources and communication capabilities of the system.
+
+The major modules that help in managing the processes are:
+-> Process Management module
+-> Scheduler module
+-> Memory Management module
+
+The modules that help in managing the resources and system communication capabilities are:
+-> Virtual File System module
+-> Networking module
+-> Device Drivers
+
+Process Management Module
+
+Process Management module provides various services that help in creating, executing and
+terminating processes. Any instance of execution of a program is called a process. When a user enters a command to be executed, the shell interacts with the process management module to create a new process. The user command is executed as part of this process. The Process Management module takes care of maintaining the execution states of all the processes on the system. Users can use various utilities that interact with the Process Management module to find the list of processes that are currently running on the system. Users can also use utilities that can stop the execution of these processes or even teminate these processes. All the utilities interact with the Process Management module to perform these operations for the user.
+
+Schedule Module
+
+Scheduler module interacts with the Process Management module to decide which process should get the next available time slot of the processor.
+
+Each process is given a fixed time slot interval during which its instructions are executed on the processor. Once the time slot interval is over, or the process executes any blocking call, it is removed from processor, and the next available process is given the opportunity to execute on the processor.
+
+The Scheduler follows various scheduling algorithms to find the best possible utilization of CPU resources. It might follow a Round Robin algorithm where in each process that is ready to run is made to wait in a simple queue. Each process waiting in this queue is allocated a slot on the CPU on a first come first serve basis.
+
+The Scheduler might also allocate the CPU resources based on the priority of the processes waiting in queue. Scheduler module also has capabilties to manage processes on a muiti processor machine.
+
+Memory Management Module
+
+Each process on UNIX is given its separate address space. All the code and data used by a particular process is present in its own address space. Each address space is unique to its process. The address space of one process cannot be accessed by any other process, unless specifically allowed for sharing data. The erors in one process do not affect the functionality of other processes. This makes UNIX a very robust system.
+
+The entire address space is virtual and is created and managed by the Memory Management module. It maps the contents of this virtual address space to the real physical memory. It divides the entire virtual address space into small blocks of 4 kilobytes each called pages. These pages are grouped together into sections that define the code segment, data segment, heap segment and stack segment of the process.
+
+Memory Management module uses various memory allocation algorthms to decide which page to use for allocating any new memory that is requested by the process. One such very famous algorithm is the slab allocator algorithm. When the process requests for memory, this module checks the state of existing pages. If it can find a page where the requested memory can be allocated as a chunk of
+
+contiguous memory locations, then it uses this page. If not, then it allocates a new page for this memory. It thus maintains the state of each page as being used, free or dirty. Based on the code and data being used by the current set of instructions in the process, the memory management module decides to load only the required pages on to the real memory. Unwanted and idle pages are swapped to the hard disk in what is called as a swap area. Using these techniques, memory management module provides efficient means to allocating memory to a process.
+
+Virtual File System Module
+
+Everything is a fle on UNIX. Every device that is connected to the system is represented as a file to all the layers above the Kernel. It is the kernel's Virtual File System module that creates this abstraction on the system. In fact, not just the layers above kenel, but most of the Kernel modules themselves access devices as files via the Virtual File System module.
+
+The Virtual File System module is one of the main central pieces of the UNIX kenel. It has an extensible, plug in like architecture that helps map any device as a file on UNIX. It provides an abstract layer that contains a common set of APIs or kernel functions that can be used to open and close fles; read data from files; and also write data to files. All the kernel modules use these common APIs to access files.
+
+Files are stored on various devices using various file system formats. The Virtual File System module has the intelligence to understand more than 50 types of file system formats. It maintains a file system layer that has the intelligence to implement the various APIs needed by abstract layer. Each file system format is plugged in to this common file system layer. Any new file system that is added to the kernel will have to plug-in to this common file system layer.
+
+Along with the common abstract layer provided by the Virtual File System, it also maintains a Buffer Cache. This buffer cache stores the data that is to be written to the underlying devices. This Buffer Cache lies in between the file system layer and the low level device drivers. The main function of this Buffer Cache is to delay write operations, in anticipation of future requests to write data to the same device. That way, all the stored data in the Buffer Cache is written at once to that device. This reduces the number of costly I/O read-write operations that are needed for writing data on the devices. This drastically improves the efficiency of the system. In the same manner, the Buffer Cache also reads ahead of the data requested by the user. It stores this extra data in anticipation of future read requests from the user for the same device.
+
+Network Stack
+
+UNIX was the first operating system that came with an inbuit Network Stack for enabling communication between various machines connected to a network. The founders of UNIX had the vision to realize the importance of making computers communicate with each other. It was the presence of this Network Stack that made the present day networking capabilities like electronic email, remote login, file sharing and internet browsing an integral part of our connected lives.
+
+UNIX Network Stack provides a set of APIs through the socket layer that acts as a common interface to the user processes. This socket layer is used to provide commands for managing connections and accessing data on the network Users can use the socket layer to select the type of networking protocol they want and also specify various connection parameters to fine tune the connection.
+
+The UNIX kernel implements the Network Stack. It implements almost all the universally available networking protocols supported on the Link layer, Internet Layer, Transport Layer and so on up to the Application Layer. The implementation of these various networking protocols follows a layered architecture resembling the OSI model. Raw data packets from the network wire, travel up the network stack through various layers to be finally interpreted as some meaningful text, image, video, etc by the user.
+
+In the same manner all data sent by the user travels through the underlying networking layer to be finally sent as an inteligent data packet to the destination host.
+
+Each layer on the Network Stack implements its respective protocols and provides the capabilities to create and manage simultaneous network connections. It also provides communication capabilites for the processes that are running on the same system as well. All diferent types of network or inter-process connections that are maintained by the Network Stack can be individually fine tuned by using the various parameters that are passed through the socket layer APIs.
+
+Device Drivers
+
+Majority of the code written in the UNIX kernel is made up of Device Drivers. Device Drivers are UNIX kernel modules [special libraries] that provide the low level interface to interact with the underlying devices. They translate the kernel functions and APIs to the respective commands of the individual devices and vice versa. Each device type that is atached to the UNIX System has its own device driver. This device driver when loaded into the UNIX kernel acts as the crucial bridge between the software components of the UNIX operating system and the hardware instructions for the device.
+
+Device drivers thus make the hardware devices usable to the UNIX System.
+
+Summary
+Here is the key takeavway
+-> The major components of UNIX are kernel, Application Layer and Shell
+-> UNIX kernel is the heart of the UNIX Operating System
+-> The UNIX Kernel modules can be broadly grouped into a group of modules that help in managing processes, and another group of modules that help in communication.

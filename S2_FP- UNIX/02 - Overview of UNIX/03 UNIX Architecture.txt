@@ -1,0 +1,4 @@
+-> UNIX Kernel is the heart of the Operating System.
+-> UNIX applications provide the foundation for developing software on UNIX
+-> UNIX Shell is the interface between a user and the UNIX system.
+

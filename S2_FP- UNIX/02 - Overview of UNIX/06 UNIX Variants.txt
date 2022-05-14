@@ -1,0 +1,118 @@
+Flavours of LINUX
+
+Introduction
+This lecture wil help you familiarise with the wide variety of Linux distributions available and the unique features of each.
+
+Objectives
+Upon completion of this lecture, we will be able to:
+-> List variety of Linux distributions
+-> Identify the unique features of each
+
+LINUX Distributions
+UNIX was written to create a platform for developers to easily build software that can run on almost any hardware. The fundamental method to achieve this platform was to port UNIX, or the UNIX kernel to be more precise, to different hardware systems. UNIX has moved from running on the earliest PDP machines, to x86 machines and now runs even on various microcontrollers as well. UNIX is the only operating system that can boast of runining on almost all hardware systems. This porting effort leads to the formation of various variants of UNIX. These variants of UNIX were specialised for a given hardware system.
+
+Since UNIX was designed to have a consistent interface to the users, all the complexities of accessing the underlying hardware components were abstracted from the user. Irrespective of which hardware system the operating system is running on, the user interface always remains the same. So, if a user has used UNIX on a particular hardware system, then he does not have to relearn anything new when he uses UNIX on some other hardware system.
+
+In fact, since UNIX source code was freely available for anyone who was interested to research it and modify it, there were many changes that were done in the software that ran on the same hardware itself. Researchers and UNIX enthusiasts could come up with their own unique implementations for the underlying functionalities of UNIX. They only had to make sure that the interface always remained unchanged. This was another reason why we see so many different variants of UNIX.
+
+Each UNIX variant has its own pros and cons and is specifically built for a particular set of use cases or functionalities. A real time machine might use a variant of UNIX that runs with minimalistic memory footprint and consumes the least amount of power. A supercomputer might use a variant of UNIX that is optimised for faster calculations and parallelism.
+
+One such popular UNIX like operating system is the Linux Operating system. I would strongly recommend you to install Linux on your systems and use it on a daily basis. It is free to download and instll. You can use Linux to learn about UNIX, since it is very much similar to UNIX in most aspects.
+
+Linux was created by Linus Torvalds in 1991. According to Linus, Linux is actually the name of the operating system. Other software are only bundled along with it to make the system complete. Linus Torvalds has made the source code of Linux freely available to all to use and add on. Various commercial and non commercial companies have used Linux source code to combine it with various sets of software to create their own bundle. These bundles of software are called Linux Distributions.
+
+There are 100s of Linux Distributions that are currently available. They come in various sizes and flavours. These distributions provide various features that make them suitable for a particular set of user communities. Some Linux distributions bundle educative software and make Linux available for kids and students. Some other Linux distributions bundle software which supports a particular language set. And some bundle software that runs efficiently on specific hardware platforms, and so on.
+
+Some of these very popular Linux distributions that are currently prevalent have been discussed below:
+
+SUSE Linux Enterprise
+SUSE Linux Enterprise is a commercially priced distribution from SUSE that is shipped as a premier Linux operating system for the enterprise. It provides interoperability with Windows and other platforms for mission-critical computing needs of a business.
+
+This was first released in 1994 under the name of SUSE Linux by the Geman company SUSE. SUSE Linux was later banded as Novell Linux Desktop when Novell acquired SUSE in 2004. But then in 2010, Novell was acquired by Attachmate, and was again split up into two separate enties, Novell and SUSE.
+
+This time the product was also rebranded as SUSE Linux Enterprise. This comes in two different flavours: SUSE Linux Enterprise Desktop and SUSE Linux Enterprise Server
+
+SUSE Linux Enterprise Desktop: This is a desktop-oriented Linux distribution for the enterprise market. This comes bundled with all the special software that has been customised to work efficiently on the desktop platforms.
+
+SUSE Linux Enterprise Server: This is a senver-oriented Linux distribution, marketed for the IT infrastructure solutions of enterprises in the business market. This comes bundled with various specialised services that can be customised to run on any server hardware platform.
+
+The latest version is SUSE Linux Enterprise 12. It provides a reliable, scalable and secure platform for efficiently deploying and managing highly available enterprise-class IT services in physical, virtual or cloud infrastructure.
+
+Some of the important distinguishing features of SUSE Linux Enterprise distribution when compared to other Linux distributions are listed below.
+
+Installation mechanism
+-> A very easy to use Graphical Installation process
+
+Live CD Support
+-> Live CD support for GNOME and KDE4
+
+File system
+"ext3" file system is the default file system provided at installation time. Users can also change this to other file system types like ext4, reiserfs, etc during installation
+
+Init system 
+-> Provides system for launching various services and startup daemons
+
+Desktop Envirnoments 
+-> Provides GNOME Desktop Environment as default option during installation
+
+Hardware Platform support
+-> Full support for 32-bit i586 [ x86 instruction set ] .64-bit x66-64 PC hardware, PPC and ia64 architectures
+
+Package Format
+-> Uses the RPM packaging format for creating and installing its software
+
+Package Management Tools
+-> Installing software and their dependencies are easily managed through YaST and Zypper
+
+Product Support
+-> Subscription based Support contracts available for enterprise
+
+
+openSUSE Linux
+
+In 2006, Novell open sourced the SUSE distribution and rechristened it as openSUSE.
+
+Unlike SUSE Linux, openSUSE is a freely download able operating system. It is a GNU/Linu distribution that is developed by a community of users and supported by the openSUSE Project Novell uses openSUSE as a test bed for its other commercial SUSE Linux Enterprise distribution New features are first role based on the openSUSE distribution and after being thoroughly tested by the open source community, they are included in the commercial SUSE Linux Enterprise distribution.
+
+Great care is taken to make sure that all the standard installable software including the Linux kernel shipped as part of openSUSE contain only Open Source software that are freely available to use. The first version called openSUSE 10.2 was released in 2006 as a single downloadable ISO image. openSUSE follows a policy of releasing a new release every 8 months and each release is supported for a period of 18 months. The latest stable release freely available for download from the openSUSE website is openSUSE 13.2. It was released in November 2014.
+
+openSUSE comes with a very user friendly desktop environment. This made it the most loved and popular desktop Linux distribution, until Ubuntu beat it to get that coveted position.
+
+opensUSE provides various mechanisms to install, including a very easy to use Graphical
+Installation process. openSUSE also supports a Live CD version where users can launch
+openSUSE and use it from a CD without actually installing it on the system.
+
+Some of the important distinguishing features of openSUSE distribution when compared to other Linux distributions are listed below
+
+Installation mechanism 
+-> A very easy to use Graphical Installation process
+
+Live CD Support
+-> Live CD support for GNOME and KDE4.
+-> It also provides the ability to run opensusE from a Live USB image without actually instaling it on the system
+
+File System
+-> "btrfs" file system is the default file system provided at installation time. Users can also change this to other file system types like ext4, reiserfs, etc during installation
+
+Init system 
+-> Provides system for launching various services and startup daemons
+
+Desktop  Environments
+-> openSUSE provides he following desktop environments for a user to choose from during its installation process
+1. KDE Plasma workspace
+2. GNOME
+3. Xfce
+
+Hardware Platform  support
+-> Full support for 32-bit i586 [ x86 instruction set ] and 64-bit x86-64 P hardware
+
+Package Format
+-> opensusE USes the RPM packaging format for creating and installing its Software
+
+Package Management Tools
+-> Installing software and their dependencies are easily managed on openSuSE through YaST and zypper
+
+Product Support
+-> Huge support community can be contacted online through mailing groups. Support websites with FAQs and solved problems are also available.
+
+openSUSE-Edu Li-f-e (Linux for Education) is another distribution that is built using openSUSE. It includes software for students, educators and parents. Its first release was in January 2012 and its latest release 13.2 was in December 2014.
