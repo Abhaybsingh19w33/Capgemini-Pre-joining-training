@@ -1,0 +1,22 @@
+Vi is insanely configurable
+
+Vi CONFIGURATION -> FILE FOR CONFIGURATION IN VI
+vimrc file is located at $HOME/.vimrc
+
+Typical settings of Vi editor
+-> set autoindent
+-> set nu
+-> set incsearch
+
+Sample vimrc file
+-> set tabstop=4
+-> set shiftwidth=4
+-> set expandtab
+-> set hlsearch
+-> set incsearch
+
+Vi CONFIGURATION -> SUMMARY
+Key points discussed in this video:
+-> vimrc is used for configuring Vi.
+-> "set hlsearch" is used for highlighting the searched text.
+-> The numbers shown in Vi editor when using "set nu" command are not actually written to the file.

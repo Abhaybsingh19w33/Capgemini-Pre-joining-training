@@ -1,0 +1,47 @@
+VIEWING A FILE IN VI -> INTRODUCTION
+
+Browsing a file in VI is a pleasant experience.
+
+VIEWING A FILE IN VI -> OPENING A FILE IN VI
+-> vi = vim
+-> vi [options] filename
+-> vi-- help
+-> Status bar
+
+VIEWING A FILE IN VI -> LINE TRAVERSIING IN VI
+key h to move left
+key l to move right
+key j to move down
+key k to move up
+
+key 0 to move to start of line
+key $ to move to end of line
+
+key H to move to top left of the screen
+key M to move to bottom of the screen
+
+key ctrl + f to move forward one screen
+key gg to move to the start of the file
+key G to move to the end of the file
+
+key 34G to move to 34th line
+
+VIEWING A FILE IN VI -> DELETING FUNCTION IN Vi
+To remove text
+-> Use x once or multiple times
+-> Use dw to delete a word
+-> Use de to delete up to end of word
+-> Use dd to delete a line
+-> Use u to undo a delete
+
+VIEWING A FILE IN VI -> YANK AND PASTE IN Vi
+To Copy and Paste
+-> Use y to yank / copy
+-> Use p to paste below cursor
+-> P to paste above cursor
+
+VIEWING A FILE IN VI -> SUMMARY
+Key points discussed in this video:
+-> Almost every key on the keyword has a special meaning in Vi.
+-> Combining numbers with commands makes editing files easy in Vi.
+->  We can do almost unlimited number of undo operations in Vi.

@@ -1,0 +1,252 @@
+VI Modes
+
+Introduction
+This lecture will help you understand the different modes of Vi as well as the important command keys associated  with each.
+
+Objectives
+Upon completion of this lecture, we vill be able to:
+-> Identify the different modes of Vi
+-> Identify the command keys and the function associated with each
+
+List of Modes
+
+The real power of Vi editor lies in the efficient utilization of its various modes. Only when you start using commands in all these modes, will you be able to appreciate the usefulness of Vi as an editor. Mode is a certain state of Vi editor where in you can perform a limited type of operations. These operations are performed by giving it specific commands. These commands can be combined in various ways to accomplish large amount of editing. Once you start discovering more and more innovative ways of combining these commands to accomplish your editing needs, you will start falling in love with Vi editor.
+
+Some of the important modes of Vi editor are:
+-> Normal mode
+-> Command mode
+-> Insert mode
+-> Replace mode
+-> Visual mode
+
+Normal Mode
+
+Nomal mode is the default mode in vhich Vi opens your file for editing. When Vi opens a file, it first loads the file into a private buffer. All the modifications we perform are executed on this buffer. Only when we give the command to save the frile, these changes are written to the actual file and stored on storage device.
+
+Press Escape key to move to Nomal mode from any other mode. In Nomal mode, when you type the keys on your keyboard you will not see their respective characters being displayed on the screen. Inste ad, each key that you type on your keyboard in this mode, gives special editing commands to Vi editor.
+
+Some of the important commands that you can perform in Normal mode are listed here:
+
+h
+Move cursor to the left by one character. Combining this with a number, like 5h, will move the cursor 5 characters to the left
+
+j
+Move cursor one line down. Combining this with a number, like 5j, will move the cursor 5 lines down
+
+k
+Move cursor one line up. Combining this with a number, like 5k, will move the cursor 5 lines up
+
+l
+Move cursor to the right by one character. Combining this with a number, like 5l, will move the cursor 5 characters to the right
+
+
+An easy trick to remember these keys is to remember their positions on the keyboard
+
+Another set of keys can be used as specific commands for traversing across words in the file. By using these keys, the cursor does not move in units of characters, but it moves in units of words. You can use the keys mentioned below to move the cursor to one of more words at a time.
+
+w
+To move the cursor to the beginning of the word on the right.
+
+Combining this with a number, like 5w, will move the cursor 5 words on the right
+
+a
+To move the cursor to the end of the word.
+
+Combining this with a number, like 5e, will move the cursor 5 words on the right, including the word that the cursor is present.
+
+b
+To move the cursor to the beginning of the word on the left.
+
+Combining this with a number, like 5b, will move the cursor 5 words on the left.
+
+
+In Nomal mode, you can also use specific keys to move the cursor to specific positions on the same line itself. Some of the important and useful commands keys for moving the cursor across the same line are listed below:
+
+0
+To move the cursor to the first character of a line
+
+$
+To move the cursor to the last character of a line
+
+f
+To move the cursor to the 1st occurrence of the character {ch} on the right. Where, {ch} can be any character that you want to move to on the line. Combine this with a number like, 5f{ch} to move to the 5th occurrence of the character on the same line on the right.
+
+F
+To move the cursor to the 1st occurrence of the character {ch} on the left. Where, {ch} can be any character that you want to move to on the line. Combine this with a number like, 5F{ch} to move to the 5th occurrence of the character on the same line on the left.
+
+;
+Repeat the latest f, or F command in the same direction
+
+'
+Repeat the latest f, or F command in the opposite direction
+
+Vi, by defaut displays only a limited number of lines from the file on the screen. This is defined by the window size and screen resolution. You can use specific commands in Normal mode to move the cursor to specific positions on the lines that are visible on the screen. Some of the useful commands that you can use in Normal mode to move across the screen are listed below:
+
+H
+To move the cursor to the top line of the visible window screen
+
+M
+To move the cursor to the middle line of the visible window screen
+
+L
+To move the cursor to the last line of the visible window screen
+
+Ctrl + f
+To move the file one screen forward
+
+Ctrl + b
+To move the file one screen backwards
+
+gg
+To move the cursor to the first line of the file
+
+G
+To move the cursor to the last line of the file. Combine this with a number to move to the specified line number of the file. For type 10G to move the cursor to the 10th line of the file.
+
+
+Command Mode
+
+Command mode is a Vi mode, where in you can give commands that affect the entire file that is loaded in Vi You can perform various operations like saving a file, opening a new file, searching a file, indenting a file, setting specific settings for the Vi editor, or even quitting Vi editor using the commands in Command mode.
+
+To give a command in Command mode, you need to first reach Normal mode by pressing the Escape key and then pressing the : key. This key [Esc + :] will now create a new line on the bottom of the Vi screen, where you can enter commands that impact the entire file or Vi editor itself.
+
+/
+This command is used to search for the first occurrence of the pattern that follows /. It will search for the first occurrence of the pattern in the forward direction beginning from the current positionof the cursor.
+
+?
+This command is used to search for the first occurrence of the pattern that follows "?". It will search for the first occurrence of the pattern in the backward direction beginning from the current position of the cursor
+
+n
+Repeat the latest / or ? search in the same direction
+
+N
+Repeat the latest / or ? search, but in the opposite direction
+
+*
+This command is used to search for the first occurrence of the entire word that the cursor is over or nearest to. It will search for the first occurrence of the word in the forward direction beginning from the current position of the cursor. Both the command "n" and "N" here too work the same way as they work for "/"
+
+#
+This command is used to search for the first occurrence of the entire word that the cursor is over or nearest to. It will search for the first occurrence of the word in the backward direction beginning from the current position of the cursor. Both the command "n" and "N" here too work the same way as they work for "?"
+
+\<
+This is a very useful patten that can be used with "/" and "?" to represent the beginning of a word. To search in the forward direction all words that begin with "print" you could use the search patten /\<print
+
+\>
+This is a very useful pattern that can be used with "/" and "?" to represent the end of a word. To search in the forward direction all words that end with "ed" you could use the search pattern /ed\>
+
+\<..\>
+This is a very useful pattern that can be used with "/" and "?" to represent a word. To search in the forward direction an occurence of the word "the", you could use the search pattern /\<the\>. By using this command, other words that contain the characters "the" like "then", or "there" or "theater" are not selected. Only words that have the characters "the" surrounded by one or more spaces are selected
+
+:q
+This command is used to indicate that you want to quit the Vi editor. This may fail when you have made changes to the buffer that has not been saved yet. To quit Vi editor without saving any changes made to the burfer, you need to give the command :q! This will overvrite the default behavior of :q and forcefully quit by abandoning the changes done in the buffer.
+
+:w
+This command is used to indicate that you want to save the changes made in the buffer. You can also specify the name of file that you want the buffer to be written to after :w This may fail when the file is read-only, or when you do not have write permissions for the file you are trying to save. To forcefully write the file you need to use the command :w! This will try to forcefully write the file.
+
+:wq
+This command is used to save the changes made in the buffer and quit Vi editor. This may fail when the file is read-only, or when you do not have write pemissions for the file you are trying to save. To forcefully write the file and quit Vi editor you need to use the command :wq! This will try to forcefully write the file.
+
+:e
+This command is used to reload the buffer with the file from the hard disk. By providing a name after :e, you can also specity a new file to be opened in the same buffer.
+
+:e#
+This command is used to reload the previous buffer. This is usually used after you have opened a file using :e and providing the second file's name. When you want to go back to the first file's buffer you would use :e#
+
+:n
+This command is used to move to the next file in the argument list of Vi. For this to work, you need to provide more than one file name as arguments to Vi command
+
+:p
+This command is used to move to the previous file in the argument list of Vi. For this to work, you need to provide more than one file name as arguments to Vi command
+
+
+Insert Mode
+
+Insert mode is the Vi mode in which you see the characters being displayed in the Vi buffer, when you type them on the keyboard. This is usually the default behavior that new users of Vi expect to see. But Vi, by default opens a file in Normal mode. Only when we key in some special keys in Normal mode, are we moved to the Insert mode.
+
+In the insert mode, we can add new text to a file, or append text to some existing text in a file, or even add new lines for inserting text in those new lines.
+
+The special keys that we can use to move from Normal mode and Insert mode are:
+
+i
+Small i [ eye ] command is used to insert text before the current position of the cursor
+
+I
+Capital I[ eye ] command is used to insert text at the beginning of the line where the cursor is currently present
+
+a
+Small "a" command is used to insert text after the current position of the cursor
+
+A
+Capital "A" command is used to insert text at the end of the line where the cursor is currentily present
+
+o
+Small "o" command is used to create a new line below the curent line where the cursor is present. We can then start adding text in this new line
+
+O
+Capital "O" command is used to create a new line above the current line where the cursor is present. We can then start adding text in this new line
+
+Esc
+Once you are inside the insert mode, you can start typing text. To get out of the insert mode and move back to the Normal mode, you need to press the Escape key
+
+
+Replace Mode
+
+Replace mode is a Vi mode in which, you can replace existing characters with new characters. The total number of characters in a line remains the same, unless you start adding text after the new line character. In that case, the characters types after the end of the line also become part of the line and thus, the total number of characters gets changed. Wthout this mode, you would have to first delete the existing characters and then insert the new characters. Replace mode, makes it more efficient to perform such operations.
+
+Some of the simple commands that you can use to switch from Normal mode to Replace mode are:
+
+r
+Small command is used to replace a single character. You need to be in Normal mode and then move to the character that you want to replace. You then need to type "r" and then type the new character that you want to be replaced at the current position of the cursor.
+
+R
+Capital "R" command is used to replace a string of characters. You need to be in Normal mode and then move to the beginning of the list of characters that you want to replace. You then need to type "R" and then type the new characters that you want to be replaced with starting from the current position of the cursor. Once you have completed replacing the string of characters, you need to type "Escape" key to end the replace mode and move to Normal mode
+
+Backspace
+This command is used to undo the changes done in Replace mode. You need to enter Replace mode by typing "R" and be present in the Replace mode, while using this command. All the changes done in this instance of Replace mode, get undone by one change at a time for each time you type a "backspace" key
+
+Visual Mode
+
+Visual mode is one of the most powerful modes of Vi editor, where in you can combine commands from all other modes and apply them to a complete block of text. This is particularly helpful when you do not want to count the number of characters or lines that you want to modify. Instead, you can select the characters or lines using special commands in Visual mode and then apply operation commands, like delete or copy from Normal mode to this selected block of text.
+
+Some of the ways in which you can use Visual Mode are as follows:
+
+v
+Small "v" command is used to enter from Normal mode to Visual mode by selecting the character present under the current position of the cursor
+
+V
+Capital V command is used to enter from Normal mode to Visual mode by selecting the entire line present under the current position of tne cursSor
+
+ve
+This command is only an example of how to combine "v" with other command. In this example, small "v" is used to enter from Normal mode to Visual mode by selecting the characters beginning from the current positon of the cursor to the end of the word. This can further be combined with h or l keys to select more characters. This can also be combined with w, e, or b keys to select more words. Once, the set of characters you are interested in have been selected and shown with some highlighted color, you can then press various commands like d for deleting these selected characters or y, to copy the selected characters.
+
+Vj
+This command is only an example of how to combine V with other command. In this example, capital "V" is used to enter from Normal mode to Visual mode by selecting the lines at the current position of the cursor and the one below it. This can further be combined with k or others keys to select more lines. Once, the set of lines you are interested in have been selected and shown with some highlighted color, you can then press various commands like d for deleting these selected lines or y, to copy the selected lines
+
+v%
+This command is only an example of how to combine v with other command. In this example, small v is combined with % key to enter from Normal mode to Visual mode and select the characters between an opening brace and a closing brace. The cursor should be present on either the opening or closing brace for this to work. Once, the set of characters you are interested in have been selected and shown with some highlighted color, you can then press various commands like d for deleting these selected characters or y, to copy the selected characters.
+
+VG
+This command is only an example of how to combine V with other command. In this example, capital V is combined with G to enter from Normal mode to Visual mode and select the lines from the current position of the cursor to the end of the file. This can further be combined with specific line numbers like V10G, to select all lines from the present position of the cursor to the 10th line of the file. Once, the set of lines you are interested in have been selected and shown with some highlighted color, you can then press various commands like d for deleting these selected lines or y, to copy the selected lines.
+
+vgg
+This command is only an example of how to combine v with other command. In this example, small v is combined with "gg" key to enter from Normal mode to Visual mode and select the characters from the current position of the cursor to the beginning of the file. Once, the set of characters you are interested in have been selected and shovn with some highlighted colour, you can then press various commands like d for deleting these selected characters or y, to copy the selected characters.
+
+Esc
+Anytime, after entering Visual mode, and selecting the characters or lines that you are interested in, you decide not to perform any operation on them, then you can press the "Escape" to deselect the selected characters and lines and return back to Normal mode
+
+
+vimtutor
+
+Along with installing Vim, you can install the "vimtutor" program. This is an excellent tutorial program that can be used to very easily learn Vi. In fact, it is a highly recommended program for Vi new corners. I strongly suggest you to install this on your system and use it to learn and practice all the commands of Vi editor.
+
+Summary
+
+Here are the key takeaways:
+The different modes in Vi are
+-> Normal mode
+-> Command mode
+-> Insert mode
+-> Replace mode
+-> Visual mode
+
+Vimtutor is a an excellent tutorial program that can be used to easily learn Vi

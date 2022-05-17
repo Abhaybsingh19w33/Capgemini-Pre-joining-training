@@ -1,0 +1,28 @@
+INTRODUCTION TO VI -> UTILITY OF AN EDITOR
+-> Add new text
+-> Modify text
+-> Delete text
+
+INTRODUCTION TO VI -> editors in non-unix world
+Editor in the non-UNIX world
+-> Notepad
+-> Word Processors
+-> IDE
+
+Editor in the UNIX world
+Line editors
+-> ed
+-> ex
+
+Screen Editors
+-> emacs
+-> vi
+-> vim
+
+INTRODUCTION TO VI -> Features of vi editor
+Simple key strokes
+Unlimited undo
+Syntax highlighting
+Auto indentation
+Customization
+Automation

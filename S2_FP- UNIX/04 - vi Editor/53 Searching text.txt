@@ -1,0 +1,27 @@
+Searching text in Vi is a piece of cake.
+
+SEARCHING TEXT IN VI -> SEARCHING TEXT IN VI
+highlighting search results
+-> :set hlsearch
+
+Command for finding text
+/ - forward search
+n - show next
+N - show previous
+? - backward search
+
+SEARCHING TEXT IN Vi -> CONTEXTUAL SEARCH IN Vi
+Search based on context
+* - Find same word, forward direction
+n and N - repeat search
+# - find same word, backword direction
+
+Search based on context
+% - Match a closing bracket
+
+SEARCHING TEXT IN Vi -> SUMMARY
+Key points discussed in this video:
+-> / and * are for forward search in Vi.
+-> ? and # are for backward search.
+-> n: repeats search in the same direction.
+-> N: repeats search in the opposite direction.

@@ -1,0 +1,129 @@
+Vi Maps and Plug-ins
+
+Introduction
+This lecture will help you understand about a Vi Maps -a powerful feature of Vi
+
+Objectives
+Upon completion of this lecture, we will be able to:
+-> Define Vi Maps
+-> Appreciate the poer that this feature provides
+-> List the commands used to define and activate Vi Maps
+
+Vi Maps
+
+The real power of UNIX lies not in its individual utilities, but in the various combinations that one can have with these individual utilities. These combinations can then be used to solve different sets of problems.
+
+In the same manner, Vi can be turned into a powerful workhorse by combining its various individual commands. You can perform operations like trimming every line to the 10th column, or adding some specific text after each title, or alter some text in a bunch of files, all with a single key stroke
+
+Vi has 2 powerful features that make this possible. They are called:
+-> Vi maps
+-> Vi plug-ins
+
+Vi maps help us to define new commands based on some already existing commands. YOu can define the key or key combination that will trigger this new command. You can also define what operations, or set of operations this new command will perfom using maps.
+
+One simple example as mentioned in the help text of Vi editor is shown below
+
+:map <F5> i{<Esc>ea}<Esc>
+
+The command to define a new key is called "map". You need to enter into Command mode to be able to execute this map command.
+
+In the above example, a new key mapping is defined. The F5 key is used as the new map key here. It is being mapped to perform some operations. Note that, the string <F5> is not a single key stroke but a set of 4 individual characters typed one after another. This is how you write the characters to define a new map key.
+
+The set of characters that follows the space after <F5> defines the set of operations that must be performed when the F5 key is pressed by the user.
+
+In this example, the set of operations to be performed can be broken down as below:
+
+i{
+
+These 2 characters perform the operation of moving into insert mode and inserting a { character just before the cursor position.
+
+<Esc>
+
+The string <Esc> is a set of 5 distinct characters that are typed here. This is treated as a single Escape key by Vi when this key combination is executed. This Escape key will move us out of insert mode and take us to the safety of the Normal mode. And in this Normal mode, we perform the "e" command. This takes us to the end of the current word.
+
+a}
+
+These 2 characters, perform the operation of moving into insert mode and appending a } character right after the cursor position, i.e., right after the end of the word.
+
+<Esc>
+
+This last command works exactly as the earlier <Esc> command and moves us out of the insert mode and takes us to the safety of the Nomal mode.
+
+Thus, once the user places the cursor at the beginning of a word in the text file and presses a single key F5 all the above actions are performed. The result of all those operations is that the word under which the cursor was present, is now surounded by an open flower bracket and a close flower bracket.
+
+For example, some text "name" would become "{name}" by performing the above operations with a Single key stroke of F5.
+
+You can of course think of various other operations that you perform on a daily basis and create special map keys for them. This will help you avoid erors and also drastically improve your productivity. The map keys can be simple keys as we saw in the earlier example, or they can be a string of keys as well.
+
+One such recommendation made by Vi, is to combine a set of characterS with a \ key. So, you could create a new map key called \{ to surround the words with flower brackets, using the operations mentioned in the earlier example. You may also create another new map key called \[ and modify the earlier mapping example to surround the words with square brackets.
+
+You can also use map keys to use your favorite keys for performing Vi operations. If you are not happy with using ? key for perform a reverse search in Vi, you could probably map any other key to behave like ?.
+
+For instance, if you want to use Space bar to perform reverse searches, you can map Space bar
+key to ? to do this. But, beware that once the key has been mapped, it will lose the ability to
+perform any other operation that it was performing earlier. Of course, you need to store these
+mapping in vimrc for them to be available to you every time you launch Vi editor. lf not, then they
+will be available only for the current Vi session.
+
+To know all the mappings that are currently present in your vi session, you can type the command map without any arguments. It will list all the mappings that Vi is current aware of.
+
+One interesting use of map keys when you are new to Vi, and are trying to make yourself comfortable with Vi commands, is to disable the arrow keys. You can disable all the four arow keys using the following map keys:
+
+:map <up> <nop>
+:map <down> <nop>
+:map <left> <nop>
+:map <right> <nop>
+
+You can now use only h, j, k and l keys to navigate across Vi. You can use these settings till you make yourself comfortable with these Vi command keys.
+
+
+Vi Plug-ins
+
+Vi plug-ins were built with the intention to make vi extensible.
+
+This is exactly wwhat Vi plug-ins have been doing for the past 20 odd years or so. With new programming languages being written and new paradigms of programming being invented, Vi has still been able to keep itself relevant in these times of change, only because of its huge number of plug-ins.
+
+There is plug-ins for almost any new programming language or any nevw feature that you would like to emulate in Vi editor.
+
+Vi plug-ins help in enhancing the existing feature of Vi to support cases and solutions that never existed earlier. When you start using Vi for your project, you should look for your project specific requirements and understand them well. Once you know the destination of where you want to reach with Vi, it is very easy to find a plug-in that will fill up all the gaps that exist
+
+Vi plug-ins are available for almost al scenarios that you might think of. You can brovwse through the various plug-ins and install the ones that you find helpful from either GitHub or www.vim.org websites
+
+In recent years, instaling plug-ins for Vi has become streamlined and is much easier than what it was a few years ago. You can find tools like Pathogen and Vundle that help you in installing and maintaining these Vi plug-ins. Vundle is the most recent plug-in manager and is considered to be the most easy and popular plug-in manager as of today
+
+Few very useful plug-ins that you might want to consider for your project are listed below:
+
+
+CtrlP [ https://github.com/kien/ctrip.vim ] is an excellent plug-in for Vi
+You can use CtriP to easily locate files from within the Vi editor itself. It makes it easy to group al the files of your project. This makes t very easy to search specific content within these project files.
+
+The NERDTree [ https://github.com/scrooloose/nerdtree ] is one of the most popular Vi plug-ins out there. Using this plug-in you can get a nice tree like hierarchical view of all the files and directories on your file system. You can manipulate this tree structure using special keys and mouse as well. Different types of files are highlighted with different colors to make it easy to distinguish one file from the other. This whole tree is shown in a separate window which makes it a very clean interface to have. It comes in very handy when you want to read code that has been distributed across various files, based on either functionality or classes or other programming constructs.
+
+Surround.vim [ htfps:/github.com/tpopelvim-surrOund is a veny nifty plug-in that you can use for doing work that is related to "surrounding" as in adding parenthese or quotes, or brackets around some text, or the more popular use case of adding XML tags across some text.
+
+You can use this plug-in to add C-style comments across a block of code, or even C++ style of comments. In fact, it intelligently supports all different types of commenting syntax that makes life very easy for a programmer. Using special keys you can delete such "surrounding" or even modify them and add them.
+
+Repeat.vim
+
+In Vi editor, to repeat the last action, you can use the very friendly "." command.
+
+If you replaced one word with another and want to do the same change to another word, you do not have to repeat the entire change.
+
+You can move your cursor to the second word and then press ".".
+
+This command will replay just the same changes that you did with your previous command [that introduced a change in the buffer] One drawback of using this "." command with plug-ins is that it replays only the last native command inside the plug-in map. To make "." become more aware of other plug-in maps, you need to install "Repeat.vim" helps to extend "." command to be easily used by other plug-ins. or to repeat commands done using map keys from other plug-ins.
+
+There is a bundle of plug-ins for syntax highlighting and making the entire Vi window more aesthetically good looking as per your preferences. Some of the popular plug-ins for coloring your Vi editor are
+
+Less [ https://github.com/groenewege/vim-less ]
+Markdown [ https:/lgithub.com/plasticboy/vim-markdown ]
+Thematic [ https://github.com/reedes/vim-thematic ]
+
+Apart from some of the very simple and popular plug-ins mentioned above there are thousands more plug-ins that is available out there on the internet. You can use http://vimawesome.com to easily browse through them and pick the ones that you need for your project requirements.
+
+Summary
+
+Here are the key takeaways
+-> Existing Vi commands can be combined together to create new Vi commands using Vi maps
+-> Vi maps can also be used to map existing Vi keys to your favorite keys
+-> Vi plug-in can be used to enhance the existing features of Vi editor

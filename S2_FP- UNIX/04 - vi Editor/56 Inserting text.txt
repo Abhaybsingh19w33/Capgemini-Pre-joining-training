@@ -1,0 +1,16 @@
+INSERTING TEXT IN VI -> INTRODUCTION
+Inserting text is Vi is different in comparison to other editors
+
+INSERTING TEXT IN VI > INSERT TEXT UsING SMALL CASE
+Inserting text using i
+Appending text using a
+Inserting new line using o
+Inserting text at beginning of line using I
+Appending text to end of line using A
+Inserting new line above using O
+
+INSERTING TEXT IN VI -> SUMMARY
+Key points discussed in this video:
+-> Use i to insert text at the current location of the cursor
+-> Use a to append text after the current location of the cursor
+-> Use o to add text in a new line below the current line

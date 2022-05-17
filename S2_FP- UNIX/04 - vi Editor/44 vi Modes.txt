@@ -1,0 +1,33 @@
+Modes in vi -> Introduction
+
+VI is powerful because of its various modes
+
+Modes in vi -> Basic Modes in VI
+-> Normal Mode
+-> Command mode
+-> Insert mode
+
+Modes in VI -> Normal mode
+-> Viewing
+-> Traversing
+-> Deleting
+-> Copying
+-> Pasting
+
+Modes in VI -> Command mode
+-> Saving a file
+-> Searching entire file
+-> Configuring VI editor
+-> Quitting VI editor
+
+Mode in VI -> Insert Mode
+-> Inserting text
+-> Appending text
+-> Adding new line
+
+MODES IN Vi -> SUMMARY
+Key points discussed in this video:
+-> Set of editor functions grouped together is called as a mode in Vi
+-> Normal mode, Command mode and Insert mode are the 3 basic modes of Vi editor
+-> Insert mode is used to add text to a file
+-> Esc key always brings you to the normal mode
