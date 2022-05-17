@@ -1,0 +1,62 @@
+Utilities form the backbone of a UNIX system
+
+FILE COMMANDS -> UTILITIES
+-> Special programs
+-> Made for a specific task
+-> Handy functions
+-> Work in combination with each other
+
+FILE COMMANDS -> LISTING FILES
+ls [options] [file name]
+    ls Downloads/
+    ls /home/remo/Pics/background.jpg
+    ls ../joe/common.txt
+    man ls
+
+FILE COMMANDS -> LONG LISTING OF FILES
+ls -l hello.sh
+- rwxr-xr-x 2 joe dev 5867 Jan 21 17:20 hello.sh
+
+- File type
+rwxr-xr-x File Permission
+2 Links
+joe owner
+dev group
+5867 Size
+Jan 21 17:20 - last modified time stamps
+hello.sh file name
+
+ls -options
+
+ls -a - show hidden files
+ls -r - reverse alphabetical order
+ls -S - in size order
+ls -t - order of timestamps
+
+File Commands -> Touch Files
+touch [options] filename
+-> touch test.txt
+-> touch -a begin.html -> modify the access time of the file
+-> touch -m poem.pdf story.pdf -> modify the last access time of the files
+
+File Commands -> Copy Files
+
+cp [optional] sourcefile destinationfile
+-> cp hello.java hello.java.bkp
+-> cp ../Downloads/flower.jpg Pictures/
+-> cp a.txt b.txt c.txt ../backup/
+-> cp -i  -> interactive
+-> cp -r  -> recursive, all path in the current directory
+
+File Commands -> Rename Files
+
+mv [optional] oldname newname
+-> mv icon.png bad_icon.png
+-> mv bad_icon.png /tmp/
+-> mv a.c b.c z.c newProject/
+
+FILE COMMANDS -> SUMMARY
+Key points discussed in this video:
+-> ls-I command gives us the long listing of files in the curent directory.
+-> cp-r command is used to recursively copy files from one directory to another.
+-> mv command is used for moving and renaming files.

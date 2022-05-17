@@ -1,0 +1,17 @@
+Better data throughput.
+
+COMPRESSING FILES -> COMPRESSING FILES
+-> gzip
+-> Lempel-Ziv coding
+
+gzip [options] filename
+-> gzip -d filename
+
+gunzip [options] filename
+
+
+COMPRESSING FILES -> SUMMARY
+Key points discussed in this video:
+-> Compression of files helps in improving data throughput, while wrting to hard disk or while transmiting over internet.
+-> gzip is a very powerful UNIX utility that is used to compress files on UNIX.
+-> gunzip is used to decompress files compressed by gzip, zip, compress or pack commands.

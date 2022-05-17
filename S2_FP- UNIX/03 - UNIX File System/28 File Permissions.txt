@@ -1,0 +1,83 @@
+Special File Permissions
+
+Introduction
+This lecture will help you understand the feature of UNIX that allows for special permissions to be set on the files.
+
+Objectives
+Upon completion of this lecture, we will be able to:
+-> Explain the special file permissions supported by UNIX
+-> List the commands that set these special permissions on a file
+
+Special File Permissions
+
+UNIX Apart from the "read", "write" and "execute" permissions that we can give for a file, UNIX provides 2 more permissions that we can use to alter the behavior of executable files and public directories. These special file permissions are called
+-> Setuid bit
+-> Sticky bit
+
+Setuid bit
+"setuid bit" can be applied to files that already have executable permissions. Usually, these are binaries. To set the "setuid bit" on a file, we give the command:
+
+chmod 4xxx executable-file
+
+Here xxxx represent any possible octal values for read, write and execute permissions of the file.
+
+chmod u+s executable-file
+
+This option is visible as a "s" character in place of "x" pemissions for the file when listed using the long listing option of "ls" command.
+
+$ ls -l /usr/bin/passwd -r-sr-xr-x 1 root root 12387 Feb 3 12:01 /usr/bin/passwd
+
+To remove the "setuid bit", we give the command:
+
+chmod u-s executable-file
+
+"setuid bit" stands for "set user id on execution bit". When a UNIX user executes a binary that has its "setuid bit" set, the binary will execute as if it is being executed by the owner of the file. The effective user id of the process will be set to the owner of the file. Assume that root user owns a binary file and the root user have set the "setuid bit" for this file. Then any non-root user who executes this file will be executing this file as if it were being executed by the "root" user itself. This might lead to security loop holes. So, be very cautious when applying the "setuid bit" on a binary.
+
+One very famous example where this can be used is the /usr/bin/passwd binary file. Any user can execute this file to change his password. This binary then executes as root user and modifies the /etc/passwd file which is ovwned by "root" user.
+
+Setgid bit
+
+Similar to how we set the "setuid bit" for the user, we can also set the "setuid bit" for the group of the file as well. This is called as "setgid bit". To set the "setgid bit" on a file, we give the command:
+
+chmod 2xxx executable-file
+
+Here xxxx represent any possible octal values for read, write and execute permissions of the file.
+
+chmod g+s executable-file
+
+This option is visible as a "s" character in place of "x" permissions of the group for the file when listed using the long listing option of "ls" command.
+
+$ ls -l /usr/bin/mail -r-xr-sr-x 1 root root 7732 Feb 1 17:52 /usr/bin/mail
+
+To remove the "setgid bit", we give the command:
+
+chmod g-s executable-file
+
+
+Sticky bit
+
+Sticky bit is a special file permission that is usually applied to directories and not regular files. It can be applied to regular files, but does not make much sense. When a "sticky bit" is applied to a directory, the files in that directory can only be deleted by the owner of that file and not by anybody else.
+
+You will find this applied on most of tmp directories. /tmp directory is accessible to all users. Everyone can temporarily store some files in that command directory /tmp. Since the "sticky bit" is applied to /tmp directory, you can delete a file onily if you own it. This adds some safety to your temporary files on /tmp.
+
+To set the sticky bit on a directory or any other file, you can give the command:
+
+chmod 1xxx directory
+
+Here xxx represent any possible octal values for read, write and execute permissions of the directory
+
+chmod o-t directory or chmod +t
+
+This option is visible as a "t" character in place of "x" pemissions of the others category for the file when listed using the long listing option of "ls" command.
+
+$ ls -ld /tmp drwxrwxrwt 3 root root 4096 Feb 5 12:01 /tmp
+
+To remove the sticky bit, we give the command:
+
+chmod o-t directory or chmod -t
+
+Summary
+Here are the key takeavways
+-> setuid bit is used to execute a program with the user id of the owner of the program file
+-> When the setuid bit is applied to the group of the file, it is called the setgid bit
+-> Sticky bit on a directory makes the files stick to the directory, so that only the owner of the file can remove it

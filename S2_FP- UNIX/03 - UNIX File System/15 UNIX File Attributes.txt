@@ -1,0 +1,40 @@
+UNIX FILE ATTRIBUTES -> INTRODUCTION
+-> File attributes help in distinguishing one file from the other
+
+UNIX FILE ATTRIBUTES -> ATTRIBUTES OF A UNIX FILE
+Every file has the following properties
+-> Type
+-> Ownership
+-> Permission
+-> Size
+-> Timestamp
+
+Different file types
+-> Ordinary
+-> Directory
+-> Character
+-> Symbolic link
+
+Ownership of a file
+-> Owner
+-> Group of users
+
+Different file permissions
+-> Read
+-> Write
+-> Execute
+
+Access categories
+-> User
+-> Group
+-> Other
+
+Timestamp on a file reveals
+-> Creation time
+-> Modified time
+-> Access time
+
+UNIX DIRECTORY STRUCTURE -> SUMMARY
+Key points discussed in this video:
+-> File attributes help us in distinguishing one file from the other
+-> Some important file atributes of a UNIX file are its type, permissions and timestamps.

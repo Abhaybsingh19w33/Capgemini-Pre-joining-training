@@ -1,0 +1,94 @@
+Primitives of data security
+
+FILE PERMISSIONS -> PERMISSIONS
+Access Rights
+-> chmod
+-> umask
+
+Ownership Rights
+-> chown
+-> chgrp
+
+FILE PERMISsiONS -> ACCESS RIGHTS
+Output of the command
+ls -l hello.sh
+- rwx rwx rwx 2 joe dev 5867 Jan 21 17:20 hello.sh
+
+rwx rwx rwx - File PERMISSIONS
+rwx - owner
+rwx - group
+rwx - others
+
+r - read
+w - write
+x - execute
+
+File PERMISSIONS -> change mode
+
+chmod [who] [operation] [PERMISSIONS] filename..
+
+chmod u+w main.c
+
+who
+-> u - owner
+-> g - group
+-> o - others
+-> a - all categories
+
+operation
+-> + - give permission 
+-> - - revoke permission
+
+permission
+-> r - read
+-> w - write
+-> x - execute
+
+Octal Mode
+Owner   Group   Others
+r w x   r w x   r w x
+4 2 1   4 2 1   4 2 1
+
+Octal Mode Truth Table
+
+r w x 
+0 0 0 0
+0 0 1 1
+0 2 0 2
+0 2 1 3
+4 0 0 4 
+4 0 1 5
+4 2 0 6
+4 2 1 7
+
+Octal Mode Example
+-> chmod 520 helper.h
+-> 5 = r - x
+-> 2 = - w -
+-> 0 = - - - 
+
+r - x - w - - - - helper.h
+
+File permission -> umask
+-> Default file permissions
+-> Deines the permissions to be denied
+-> 0021 
+-> 777 - 021 = 756
+-> rwx r-x rw-
+
+File permission -> change owner
+chown owner filename
+-> chown george jungle.txt
+-> chown batman:comics darknight.mp4
+
+File permission -> change group
+chgrp group filename
+-> chgrp test index.html
+-> chgrp admin mango.txt ../apple.txt
+-> chgrp -R dev sources/
+
+FILE PERMISSIONS -> SUMMARY
+Key points discussed in this video:
+-> Files have ownership and access level rights.
+-> chmod is used to modily access level rights of a file.
+-> chown and chgrp are used to moditly ownership properties of a file.

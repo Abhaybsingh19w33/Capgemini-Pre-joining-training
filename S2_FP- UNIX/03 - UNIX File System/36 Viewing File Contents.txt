@@ -1,0 +1,102 @@
+Browsing Source Code
+
+Introduction
+This lecture will help you understand the features of UNIX tools that help you read, browse and edit code in different programming languages
+
+Objectives
+Upon completion of this lecture, we will be able to:
+-> Appreciate the intrinsic UNIX features that help developers
+-> List the tools that help a developer browser code
+
+Tools for Browsing Code
+
+UNIX was developed by software programmers for softvware programmers. Its evident that UNIX comes with buit-in source code browsing tools. UNIX comes with very popular and powerful edtors like Vi, Vim, emacs, xemacs, etc that can be used for browsing source code files. These editors have very powerful features that help us integrate various source code files that give us a clear understanding of what the source code is trying to do. They come with very nifty plugins and extensions that help us use the same editor for various new programming languages. This drastically reduces the learning time needed when compared to using a separate editor for different programming languages.
+
+Apart from these great editors, UNIX also comes with some very powverful tools that are specifically created to reference source code files. They provide means to easily traverse and locate code definitions from within a large set of files. Some of the very famous source code browsing tools that are available on UNIX are
+-> ctags
+-> cscope
+
+ctags
+
+ctags is a program binary on UNIX that can be used to generate tag files from source code files. These tag files contains tags for various programming objects like, variable names, function names, class names, member function names, typedefs, macros, enumeration names, etc. These tag files can then be very easily integrated with a text editor like Vi, to quickly locate and view these programming objects.
+
+You need to provide the list of source code files as input to this utility.
+
+Using this input, ctags generates a file called "tags" in the current working directory. When you launch Vi from the same directory to browse source code files, you can use special Vi keys and commands to traverse through the various programming objects.
+
+You can move from the "main" function in your C code to another function that is called from "main". And you can then move from this function to other functions that are internally called to read and understand their operations. While browsing these functions, you can also locate and find out the definitions of various macros and variables that are used in the functions. Once you have a decent understanding of what these variables are, you can come back to the location where you started this search. You can unwind back through all the functions you went in till you reach back the first function where you first began.
+
+ctags supports various programming languages. It supports almost 40 programming languages including C, C++, C#, Java, Perl, Python, PL/SQL, Shell scripting and others.
+
+The syntax for using ctags to generate the tags file is
+
+ctags [options] files
+
+An easy ay to provide the list of files to ctags is by using the find command as follows:
+
+ctags 'find. -name *.[c]'
+
+The "find" command in the above example will print the file names of all the files that have a .c or a .h extension starting from the curent working directory or you could simply use a simple option of ctags command:
+
+ctags-R*
+
+This command runs ctags recursively from the current working directory. Make sure you read through the man page of ctags to understand various options that you can come handy for your project requirements.
+
+To be able to use the "tags" file for this source code tree, you should remember to always launch Vi
+from the same directory that contains the "tags" file. You can launch Vi to open a particular tag by
+using the "-f" option as shown below.
+
+vi -t <tagname>
+
+Once you launch vi, you can also use the following command to go to a particular tag
+
+:ta <tagname> or :ts <tagname>
+
+To find the tag under the cursor use the key combination: Ctrl - ]
+To return to the previous location press Ctrl - t
+
+cscope
+
+cscope is one of the oldest source code browsing utility that is available on UNIX. It is a very developer friendly utility that has been used for projects that have more than 20 million lines of code. It can be integrated within Vi editor and thus allows us the use its features without leaving th comfort of Vi editor.
+
+cscope builds its own database that is used to reference text in source code files. This database improves the speed of searches. Once this database has been built, cscope can be used for performing various search operations such as:
+
+-> Finding all the references to a symbol
+-> Finding global definitions
+-> Finding the functions that are called by a function
+-> Finding the functions called by a function
+-> Finding a simple text string in the source code
+
+When run outside an editor, cscope uses a "curses" based text screen to display its results. This screen has very handy shortcuts for performing various operations.
+
+To use cscope, one will have to first build its database using the command:
+
+cscope -R -b
+
+The -R option makes cscope recursively parse all subdirectories for source code files. The -b option is to be used only when we want to build the database.
+
+Once this database has been buit, you can launch cscope using the command:
+
+cscope or cscope
+
+The "-d" option is given to inform cscope to not rebuild the database. Once cscope is launched, you will be shown the cscope's "curses" based text screen. You can then perform various search operations based on the menu options present in that window. You will have to always rebuild cscope database every time a file has been modified in your source code.
+
+There are various simple keystrokes that you can use to invoke cscope from within Vi editor. All the information about doing this is available in the cscope project webpage on sourceforge.net.
+
+Though cscope was majorly written for browsing C program code, you can also use it as a simple
+grep database of code written in different programming languages like C++ and Java. You will have
+to create a file that contains the list of all your source code files using something like the command
+below:
+
+find. -name "*.java" > project.files
+
+Then pass this file as input to cscope using the -i option as shown below:
+
+cscope -i project.files -b
+
+Summary
+Here are the key takeaways:
+
+-> Source code browsing tools help create a cross reference of source code content that saves precious time while browsing source code
+-> "ctags" command supports more than 40 programming languages including C and C++
+-> "cscope" can be integrated with Vi editor and browse source code that is more than 20 million lines of code as well

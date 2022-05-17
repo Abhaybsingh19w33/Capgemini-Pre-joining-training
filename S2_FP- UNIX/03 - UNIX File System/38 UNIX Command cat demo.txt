@@ -1,0 +1,125 @@
+More or Less?
+
+Introduction
+In this lecture you will be introduced to two very powerful UNIX utilities that you can use to effectively view the contents of text files
+
+Objectives
+Upon completion of this lecture, we will be able to:
+-> Explain "more" and 1ess command
+
+more
+
+UNIX Comes with a lot of handy tools for viewing text files. One of the simplest utilities is the cat command. You can also use various text editors to view text files on UNIX. UNIX also comes with two very povwerful and popular utilities that can be used for viewing the contents of a text file. They are:
+-> more
+-> less
+
+"more" is a primitive UNIX utility that is used for viewing text files one screen at a time. It is a very old utility and has been replaced by "less" utility. You may come across some machines that are running a very old version of UNIX. And only on such machines you might find "more".
+
+The syntax for using more is:
+
+more [options] file
+
+You can also pipe the output of a command to more for viewing one screen of output at a time like this:
+
+ls -l | more
+
+In the above example, we are passing the contents of ls -l command to "more". This way, we can see the output of ls -l command, one screen at a time.
+
+"more" uses special keys to scroll through the contents on the screen. These are very limited in their usefulness though. Some of the keys that you can use when viewing a file using "more" are:
+
+H
+To display a summary of the various commands that you can use with "more"
+
+SPACE
+To advance the file by one screen size in the forward direction
+
+RETURN
+To advance the file by one line in the forward direction.
+
+B
+To move the file backwards by one line [moving towards the top of the file].
+This feature works only while viewing text files and not when "more" is combined with other commands using pipe.
+
+/pattern
+To search for first occurrence of the word specified in the pattern
+
+N
+To repeat the previous search
+
+q or Q
+To quit or exit out of more
+
+less
+"less" is a very powerful UNIX utility that is similar to "more". It is usually said that "less" is better than "more" [UNIX command]. The most important feature that is not provided by "more" but is provided by "less" is moving backwards while viewing a file. Another benefit of "less" utility is that i can be used to quickly and easily view very large files, even few GBs in size. Most text editors like Vi take enormous amount of time to open such large files.
+
+"less" uses commands that are similar to "more" and 'vi'.
+
+The syntax for using less is very similar to that of "more".
+
+less [options] file
+
+You can also pipe the output of a command to "less" for viewing one screen of output at a time like this:
+
+ls -l | less
+
+
+In the above example, we are passing the contents of ls -l command to "less". This way, we can see the output of ls -l command, one screen at a time.
+
+Very much like "more", less" also uses special keys to scroll through the contents on the screen. These are much powerful than the ones available for "more". Some of the keys that you can use when viewing a file using "less" are:
+
+H
+To display a summary of the various commands that you can use with "less".
+
+SPACE or f for CTRL-f 
+To advance the file by one screen size in the forward direction
+
+b or CTRL - b
+To move the file backwards by one screen size
+
+D
+To advance the file by half a screen in the forward direction.
+
+U
+To scroll the file backwards by half a screen.
+
+RETURN or j
+To advance the file by one line in the forward direction. The screen is advanced, even if it reaches the end of file
+
+york
+To scroll backwards by one line
+
+Right Arrow
+To scroll the screen horizontally to the right by half the screen width size
+
+Left Arrow
+To Scroll the screen horizontally to the left by half the screen width size
+
+G
+To go to the first line of the file. You can also follow "g" with a number N to go to line number "N" in the file
+
+G
+To go to the end of the file
+
+/pattern
+To search for first occurrence of the word specified in the pattern in the forward direction. You can provide regular expressions for pattern matching. You can also use up and down arrow keys after "/" to scroll through your earlier search pattens.
+
+?pattern
+To search for first occurrence of the word specified in the pattern, in the forward direction. You can provide regular expressions for pattern matching. You can also use up and down arrow keys after "?" to scroll through your earlier search patterns
+
+N
+To repeat the previous search
+
+N
+To repeat the previous search in the reverse direction
+
+q or Q
+To quit or exit out of more
+
+Summary
+There are plenty of useful options and key bindings that you can use with "less". Make sure you read through the man page of "less" to find out which option you should use for your specific needs.
+
+Here are the key takeaways:
+
+-> UNIX "more" command is a primitive UNIX utility that is used to view the contents of a text file, one screen at a time
+-> UNIX "less" command is very similar to "more", but has plenty more powerful capabilities than "more" command
+-> UNIX "less" command uses key strokes very similar to the Vi editor to navigate through the contents of a text file

@@ -1,0 +1,16 @@
+Code is the best form of documentation.
+
+VIEWING FILE CONTENTS -> READ FILE CONTENTES
+
+cat [options] filename1 [filename2...]
+-> cat main.c
+-> cat vegetables.txt fruits.txt
+
+VIEWING FILE CONTENTS -> editors
+-> vi
+-> emacs
+
+VIEWING FILE CONTENTS -> SUMMARY
+Key points discussed in this video:
+-> cat is one of the simplest utilities on UNIX, used for displaying the contents of a file.
+-> Vi and Emacs are two of the most popular editors on UNIX.

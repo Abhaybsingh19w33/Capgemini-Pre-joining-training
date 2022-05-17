@@ -1,0 +1,89 @@
+UNIX File Types
+
+Introduction
+This lecture will help you understand the different file types supported by UNIX. You will also gain an understanding of how these files are stored and the method used by UNIX to locate the files on a hard disk.
+
+Objectives
+Upon completion of this lecture, we will be able to:
+-> Identify the diferent classification of files on UNIX
+-> Explain the uses of various file types on UNIX
+
+UNIX File Types
+
+UNIX distinguishes files based on their data. There are four different basic types of files on UNIX.
+They are:
+-> Regular Files
+-> Directory Files
+-> Device Files
+-> Special Files
+
+Regular Files
+
+Most of the files we use on a daily basis on Linux are regular files. Text files, documents, pdf files, program files, executables, etc are classified as regular files. These files can again be sub classified as ASCII files and binary files. ASCIi files are files that have ASCII characters in them. They store characters as bytes that range from 0 to 127. While binary files store data as values that range from 0 to 255, most of the programs and applications like Vi editor and "cat" command only display ASCll files.
+
+If you try to open binany files with these programs, you will not be able to understand their contents and will not be readable by a human.
+
+Binary Files
+
+There are various types of binary files. They can be sub classified as
+-> Program files
+-> Library files
+-> Data files
+
+Program files are what we call as executables on UNIX. You need to give them execute permissions in order to execute them on UNIX. They contain machine instructions that can be executed on a processor.
+
+These files are usually a combination of various object files. Object files are files that are created by a compiler when your source code is compiled. There are various formats for creating these program files. The standard format for UNIX is called the ELF format. It stands for Extensible and Linkable Format. It has a specific file layout to distinguish machine instructions from program data. There are various special UNIX utilities that can be used to read these files. Some popular utilities are "readelf and "objdump".
+
+Library files are very similar to binary files. They are also stored using the ELF format on UNIX. The main difference being that, program files can execute on their own, while library files cannot execute on their own. Library files are also made up of a group of object files. The linker component of the compiler is used to associate a library with the program executable or simply called the binary file.
+
+Libraries come in two different types.
+-> Static libraries
+-> Shared libraries
+
+Static libraries when linked with the binary are embedded within the binary itself. So, the file size of a binary that is linked with a static library drastically increases.
+
+A shared library when linked with the binary is only mentioned as a reference point to the binary. When the binary is executed, the loader on the system tries to locate the libraries on the system. Once the binary is loaded with all the libraries that it depends on, the program execution begins as normal. You can use the "Idd" command to find out the list of shared libraries that are linked to a program.
+
+Data files are also binary files based on the byte range that is used to store information. Typical examples of data files are the database table files, web browser cache, etc.
+
+Directory Files
+
+Directories on UNIX contain files and other sub directories. They are used to separate files and arrange them in a hierarchal fashion. Directories are stored as files on a UNIX system. They are called directory files. This file contains a list of files that make up the directory. It basically contains a mapping of the file name of the inode number of the file on the disk partition.
+
+
+Device Files
+
+Everything is a file on UNIX. All the devices and peripherals that are attached to a UNIX system are represented as a file on UNIX. These files are called device files since they represent devices on the system. Most of these files reside under the /dev directory. One of the advantages of representing these devices as files is that we can now apply security pemissions to them as we d for files. And we can thus decide which user can perform read or write operations on these devices.
+
+There are various types of device files. Major ones include
+-> Character files
+-> Block files
+
+Character files represent devices that contain a stream of data. while reading and writing to these files, we work with only one character at a time. Data is usually not buffered while accessing these character files. Keyboard and terminal are typical examples for character devices on UNIX. These are identified by the "c" character that is shown in the first column of the output of the "ls -f" command.
+
+Block files represent devices that contain blocks of data. Data on these devices is accessed in blocks of bytes. They allow random access to data. Their data is usually buffered by the UNIX system to improve throughput.
+
+Hard disk and USB drives are typical examples of block devices on UNIX. These are identified by the "b" character that is shown in the first column of the output of the "ls -f" command.
+
+Special Files
+
+Special files are files on UNIX that do not necessarily have a physical object that they represent. Some examples of these special files are:
+-> Socket files
+-> Pipes
+-> Links
+
+Networking capabilities are in-buit in UNIX. Two nodes on a network communicate through a communication channel using end points known as sockets. These sockets are represented by files on UNIX. You can use these sockets to either communicate between two separate machines, or communicate between two processes that reside on the same machine. The representation of the file for both these two types of communications is still the same, the socket file. Socket files are identified by the "s" character that is shown in the first column of the output of the "is -l" command.
+
+UNIX provides a very powerful feature, where we can combine two commands together using pipes. Pipes provide a means to transfer data from two related commands. One end of the pipe is used for sending output of the first command, and the other end of the pipe is used to send data as input to the second command. These pipes are also called as FIFO : First In First Out. UNIX uses special files called "pipes" to make this possible. Pipes are identified by the "p" character that is shown in the first column of the output of the "ls -l" command.
+
+Links are special files that are used to create shortcut names to other existing files or directories. You can create links to any type of the earlier mentioned files. Links are pseudo files and they don't necessarily represent a real physical file. They exist only in the directory file where they are created. Links are only a simple entry in the directory vhich maps to the inode number of the target object (any type of a file) that it points to. There are two types of links that we can create on UNIX.
+-> Hard link
+-> Soft link
+
+Both hard link and soft link are almost the same with only one difference. A hard link can link to files that reside on the same partition. But, a soft link can link to files that reside on other partitions as well.
+
+Summary
+Here is the key takeaway :
+-> The different types of files on UNIX can be classified as Regular fles, Directory files, Device files and Special files.
+-> Binary files are used to programs and their data on UNIX
+-> Links are used to create shortcut names to other files or directories

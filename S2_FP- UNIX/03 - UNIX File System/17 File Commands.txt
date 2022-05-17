@@ -1,0 +1,74 @@
+Listing Files on UNIX
+
+Introduction
+This lecture will help you understand how to list contents of a directory, and get detailed information about the files
+
+Objectives
+Upon completion of this lecture, we will be able to:
+-> Explain the UNIX Command used to list contents of a directory
+-> List various options of the command and its usage in finding out detailed information of a file
+
+Listing Files on UNIX
+
+UNIX provides a very powerful utility called "ls" to list the contents of a directory. This is used to list all the files in a directory. By default, ls prints one entry per line on standard output. Various variants of UNIX support "ls" utility. But, all of them do not necessarily support all the options of ls. Some of them even use different options to accomplish the same task. Some variants also provide options that are for backward compatibilty or for compliance with some standards. Make sure you read through the man page of your version of UNIX to find out about the supported options for ls.
+
+Let's look at some of the most common options that are available on almost all the variants of UNIX and UNIX-like operating systems.
+
+-a
+-> List all the hidden files in the directory. Hidden files are fles and directories hose names begin with a dot (.).
+
+-d
+-> List directories as plain files. Directories are not searched recursively when this option is used
+
+-F
+-> Append characters at the end of the files that help in distinguishing the type of the file.
+- display a '/' immediately after each file that is a directory
+- display a '*' immediately after each file that is an executable
+- display a '@' immediately after each file that is a symbolic link
+- display a '=' immediately after each file that is a socket
+- display a '|' immediately after each file that is a pipe
+
+-G
+-> Display the list of files using separate colors for different types of files
+
+-H
+-> Follow any symbolic links that are provided as arguments to ls and show the contents of the files or directories that these symbolic links point to
+
+-h
+-> When used with -l option, displays file sizes in units of Byte, Kilobyte, Megabyte, Gigabyte, Terabyte and Petabyte in order to represent the size in three or less than three digits.
+
+-i
+-> This option is used to print the inode number of a fle that is passed as an argument to "ls" command
+
+-k
+-> When used with -s option, print the file size allocation in kilobytes and not blocks
+
+-l
+-> This option first prints the total sum of all the file sizes in a directory and then prints long listing of all the files specified as arguments.
+
+-P
+-> If the argument given to ls command is a symbolic link, then list it as a symbolic link instead of listing the contents of the object [ file or directories ] that it might point to
+
+-R
+-> This option is used to recursively print the sub directories that are contained within a directory
+
+-r
+-> This option is used to reverse the order of sort. It prints the list of file names in reverse lexicographical order, or lists the oldest file first, or largest file last, based on the options that this is combined with
+
+-S
+-> This option lists the files sorted accoding to their sizes
+
+-t
+-> This option is used to sort the list of files based on their modified time. The most recently modified file is shown first.
+
+-u
+-> When used with -t or -l option, this sorts the list of files based on their last access time
+
+-U
+-> When used with -t or -l option, this sorts the list of files based on their creation time
+
+Summary
+Here are the key takeaways:
+-> "ls" is a powerful UNIX command to list contents of a directory
+-> There are a multitude of options associated with "ls" command to view different information associated with a file
+-> Options are available to format the output of 1s

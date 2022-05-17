@@ -1,0 +1,66 @@
+UNIX File System Formats
+
+Introduction
+This lecture will help you understand the different file system formats supported by UNIX
+
+Objectives
+Upon completion of this lecture, we will be able to:
+-> Gain a basic understanding of file systems
+-> List the various frile system fomats supported
+
+File System
+
+When seen by the user, a file is an object that contains some text or data in it. But, for UNIX, internally, each file is a set of data that is stored on some storage device. UNIX uses a single hierarchical structure to represent all the files on the system to the user. This is the logical view of the data that is stored on the hard disk.
+
+UNIX uses various intenal modules to give this simple and consistent view to the user. The user always accesses the files in the same manner, irrespective of the files being on the hard disk, DVD, USB drive, or a network server.
+
+Each of the storage devices has their own scheme of storing data. Various aspects like security, reliability, consistency, space restrictions, etc are used to decide the scheme or format that is to be chosen to store data on these devices. UNIX kernel encapsulates all the complexities of reading data from various data layout formats on variety of devices and provides a simple and consistent interface for accessing data represented as files to the user.
+
+It is recommended to divide a storage device into partitions. Partitions are separate areas within a single storage device. Each partition has a file system on it. There can be different types of file systems on different partitions. Each partition can be attached to any directory in the logical hierarchical directory structure. This process of attaching a partition to a directory is known as "mounting". You can use the "mount" UNIX command to mount a partition on UNIX. While mounting you can either specify the file system format type on that partition or let the system detemine it on its own. Usually, one of the partitions is defined as the root partition. This root partition is mounted to the root directory "/" of a machine. Every other partition is then mounted to some other directory under this single logical directory structure. One can define various attributes, like read-write access, access control lists, etc to the partition while it is being mounted on the system.
+
+A file system defines the structure and layout of data on the partition of the storage device. It represents the mechanisms that are needed to store and retrieve blocks of data from the device. It defines the locations and structure of how a file will be stored on the storage device.
+
+Some of the popular file system formats available on UNIX machines are:
+-> ext2
+-> ext3
+-> reiserfs
+
+ext2 File System Format
+
+ext2 file system format is one of the oldest and also the most popular file system formats on UNIX and UNIX-like operating systems. It was designed and implemented on Linux. It provides standard UNIX file semantics.
+
+Under ext2 file system, the partition on a storage device is divided into blocks. Each block is of the same size. Usually the sizes are configurable and range from 1 KB to 8 KB. The maximum file system size is determined based on the individual block size. These blocks are grouped together into block groups that are usually located close to each other to reduce the number of disk reads.
+
+When possible, a directory is placed within the same block group as its parent directory. And when possible, a file is placed within the same block group as its directory. This is done to improve the efficiency of the file system.
+
+Each file on UNIX is split up into two objects. One object holds the file properties and is called the inode and the other object contains the actual data to be stored in the file.
+
+The actual data of the file is stored in blocks. All the inodes of all the files on the partition are stored in separate group of blocks called the "inode blocks".
+
+There are special blocks on the storage device that are called the "super blocks". These "super blocks" contain meta data about other blocks on the system. They store the information that helps in distinguishing data blocks from inode blocks. The information needed by the system at boot up time is usually present in these super blocks.
+
+ext2 file system supports file names that can have 255 characters. The maximum file size supported by ext2 file system format is 2 TB.
+
+This is a very simple and stable file system.
+
+ext3 File System Format
+
+ext3 file system is exactly similar to ext2 file system but comes with an added advantage of providing a "journaling feature".
+
+All the read and write operations that are done on the file system are stored in a journal before they are actually executed. When a system is shutdown abruptly due to power failures or other reasons, this journal comes in very handy. This journal can be used to replay the actions that were last performed on the file system to restore the file system to its previous stable state.
+
+This protects the data and helps in avoiding any loss of data.
+
+reiserfs File System Format
+
+reiserfs file system was the first file system to come with the buit-in features of journaling. It is a very fast and efficient file system for accessing both small and large files on a system. It introduced the feature of increasing the file system size on the fly or online. It supports very long file names of up to 4032 bytes.
+
+It also supports file size up to 8 TB.
+
+Summary
+Here are the key takeaways:
+-> We need to use the "mounf" UNIX command to attach a UNIX file system partition to a directory in the UNIX directory structure
+
+-> ext3 file system is very similar to the ext2 file system, except that it has the added advantage of providing the "journaling" feature
+
+-> reiserfs file system supports the feature of increasing the file system size while the file system is in use

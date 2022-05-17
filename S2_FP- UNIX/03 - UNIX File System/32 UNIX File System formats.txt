@@ -1,0 +1,30 @@
+Persistant storage makes UNIX a robust system.
+
+FILE SYSTEM FORMATS -> DISKS storage
+-> PARTITIONS
+-> File System
+--> ext2
+--> ext4
+--> reiserfs
+-> Mounting file systems
+
+File system formats -> free disk space
+df [options] [filename]
+-> df
+-> df -t <file system type>
+-> df -k
+-> df -h
+
+File system formats -> disk usage statistics
+du [options] [filename]
+-> du /home/joe
+-> du -c
+-> df -k
+-> df -h
+-> du -s
+
+FILE SYSTEM FORMATS -> SUMMARY
+Key points discussed in this video:
+-> UNIX uses a very scalable architecture to represent its files.
+-> di -kh provides information on free disk space available on each file system in a human readable format.
+-> du -khs can be used to find out the files that use the maximum amount of disk space.

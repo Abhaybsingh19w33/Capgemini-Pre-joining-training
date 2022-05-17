@@ -1,0 +1,40 @@
+UNIX FILE SYSTEM -> INTRODUCTION
+-> All devices are represented as files in UNIX
+
+UNIX FILE SYSTEM -> FILE TYPES IN UNIX
+Different file types in UNIX
+-> Regular Files
+-> Directories
+-> Binary Files
+-> Special Files
+
+Regular Files
+-> Source Code
+-> Documents
+-> Text Files
+-> Links
+
+Directories
+-> List of Files
+-> Sub Directories
+-> "/" is the root directory
+
+Binary Files
+-> Program Files
+-> Library Files
+-> Data Files
+
+Special Files
+-> Block Files
+-> Character Files
+-> Socket Files
+-> Pipes
+
+UNIX FILE SYSTEM > FILE PATHNAMES
+Files can be accessed by
+-> Absolute Path
+--> /home/george/projects/pslv/launcher.c
+
+-> Relative Path
+--> ./coding.html
+--> ../samuel/shared/videos/intro.mp4

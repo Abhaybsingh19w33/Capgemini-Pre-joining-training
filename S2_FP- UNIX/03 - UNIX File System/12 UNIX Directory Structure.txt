@@ -1,0 +1,110 @@
+UNIX Directory Structure
+Introduction
+This lecture will help you understand UNIX File System Hierarchy and default directories available.
+
+Objectivees
+Upon completion of this lecture, we will be able to:
+-> Explain the File System Hierarchy Standard
+-> Identify important directories defined by the FSH standard
+
+Directory Structure
+UNIX and many UNIX-like operating systems follow a single hierarchy directory structure to represent files that may reside on various partitions, hard disks or even network file systems.
+
+With the explosion of the number of variants for UNIX and Linux (one of the most popular and widely used UNIX-like systems), there was a need for defining what each directoy in the UNIX directory structure should contain.
+
+This standard could then be complied by all the variants, allowing for a sharp learning curve.
+
+File System Hierarchy
+The File system Hierarchy Standard, also called the FHS document, was created for this very reason.
+
+FHS lists the directory structure and the contents of each directory in this structure on UNIX and UNIX-like operating systems. This document is currently maintained by the Linux Foundation. Majority of the UNIX variants and Linux distributions adhere to this standard. You may still come across some systems that have directories not mentioned in the FHS for storing files, but, these are very few.
+
+A good study and understanding of the FHS wil help you in easily locating files on your system. It will also become the basis for any new software that you might want to install on your client's machine.
+
+
+
+Below is a brief list of some of the important and well known directories and their contents as mentioned by the FHS document.
+
+/
+-> Root directory of the entire file system. All other directories are sub directories of this root directory.
+
+/bin
+-> Essential command binaries like Is, cp, cat, etc. This usually contains binarnes that should be available in the  single user mode.
+
+/sbin
+-> Essential system binaries like init and mount. This usually contains binaries that are statically linked to their libraries. These binaries are also expected to be available in the single user mode.
+
+/lib
+-> Library fles that are needed by the binaries on the system. This directory contains both the static libraries and the dynamic libraries.
+
+/boot
+-> This directory contains files that are needed to boot the system. This contains files like the boot loader, kernel, etc. The contents of this directory are local to the machine and are not shared with other machines on the network.
+
+/dev
+-> This directory contains all the files that represent various devices on the system. It contains files that represent physical as well as logical files on the system.
+
+/etc
+-> This directory contains host-specific system wide configuration fles.
+
+/home
+This directory contains user's home directories. These home directories contain files that are specific to each user, like their system preferences, personal files, etc
+
+/root
+-> This directory is the root user's home directory
+
+/media
+-> This directory contains mount points for removable media such as USB drives, DVDs, etc.
+
+/mnt
+-> This directory contains mount points for temporarily mounting of file systems or their partitions
+
+/opt
+-> This directory contains various sub directories that contain optional software packages that are installed on the system. The data in this directory is usually static in nature. And it also contains files that can be shared across various other machines on the network.
+
+/proc
+-> This is a special directory that does not physically exist on the system. It is created on the fly when tne machine comes up as a virtual file system. It provides intormation about the kernel and all the various processes curently running on the system. Studying the contents of this directory can us to analyze the system.
+
+/tmp
+-> This directory contains temporary files needed or created by the system. The contents of this directory are usually lost when the system is rebooted.
+
+/usr
+-> This directory represents a secondary hierarchy that is used for storing read-only user data. This usually contains multi-user utilities and applications. The data in this directory is usually static in nature. And it also contains les that can be shared across various other machines on the network.
+
+/usr/bin
+-> This directory contains most of the binaries that you will typically use on a system. They are refered as non-essential command binaries that are available for all the users on the machine. This directory contains binaries that are not needed in single-user mode.
+
+/usr/include
+-> This directory contains the standard header files, also called the include files that are needed while building [ compiling ] essential programs and software on UNIX.
+
+/usr/lib
+-> This directory contains libraries that are used by binaries in /usr/bin and /usr/sbin. This directory contains both the static and dynamic libraries.
+
+/usr/local
+-> This is a tertiary hierarchy directory that contains files that are specific to the local host. This contains various subdirectories like bin, lib, share, etc. This typically contains binaries and programs that are buit by the root user and not installed through packages.
+
+/usr/sbin
+-> This directory contains non-essential system binaries. This directory typically contains the daemon binaries that are used for running various services on the system.
+
+/usr/share
+-> This directory contains architecture-independent data files
+
+/usr/X11R6
+-> This directory contains all the fles that are essential for X Window system
+
+/var
+-> This directory represents all the fles that are variable in nature. Files that are continually expected to change during the normal execution of the system. This directory may also contain files, like emails, that can be shared with other machines on the network.
+
+/var/cache
+-> This directory contains application cache data. This data is generated by the system to improve I/O throughput or various calculations. Data in this directory is used to regenerate or restore an application or the entire system to its previous state.
+
+/var/lib
+-> This directory contains files that maintain the state infomation of applications. This also contains persistent data that is modified by the applications during the course of their execution. Typical example of files in this directory are the database files or the packaging system metadata files.
+
+/var/log
+-> This directory contains all the log files that are generated by the system and also various applications that are running on the system
+
+Summary
+Here is the key take away:
+-> File System Hierarchy or the FHS document lists the directory structure and the contents of each directory in this structure on UNIX and UNIX-like operating systems
+-> /etc directory contains the host specific system wide configuration files
+-> /media directory contains mount points for removable media such as USB drives, DVDs, etc.

@@ -1,0 +1,47 @@
+Organizing files bring order to our thoughts.
+
+DIRECTORY COMMANDS -> DISK LAYOUT OF FILES
+-> File data in blocks
+-> File properties in inode
+-> A directory maps filenames to inode numbers
+
+DIRECTORY COMMANDS -> DIRECTORY STORAGE
+Inode
+-> Stores file attributes
+-> Points to the start of file data on disk
+-> Unique inode number for each file
+-> Lacks file name
+-> A directory maps filename to inode numbers
+
+DIRECTORY COMMANDS -> DIRECTORY OPERATIONS
+-> Creating a directory
+-> Navigating to a directory
+-> Removing a directory
+
+DIRECTORY COMMANDS -> CREATE DIRECTORY
+
+mkdir [options] directoryname
+-> mkdir Projects
+-> mkdir ../Pictures/Convocation
+-> mkdir -p Projects/telco/switch
+-> mkdir {src, include, objects}
+
+DIRECTORY COMMANDS > NAVIGATE TO A DIRECTORY
+cd [options] directoryname
+-> cd Projects
+-> cd . ./Pictures/Convocation
+-> cd /home/stanley/Projects/source
+-> cd
+-> cd -
+
+DIRECTORY COMMANDS -> REMOVE A DIRECTORY
+rmdir [options] directoryname
+-> rmdir temp
+-> rmdir -p bad/temp
+
+DIRECTORY COMMANDS -> SUMMARY
+Key points discussed in this video:
+-> A directory maps filenames to inode numbers.
+-> mkdir command is used to create a directory.
+-> cd command, by detault, navigates to the home directory.
+-> rmdir command removes an empty directory.

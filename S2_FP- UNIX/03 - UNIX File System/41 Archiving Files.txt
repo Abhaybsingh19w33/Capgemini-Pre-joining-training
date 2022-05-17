@@ -1,0 +1,43 @@
+Backup your data as frequently as you can.
+
+ARCHIVING FILES -> TAR UTILITY
+-> Backup and restore idiom
+-> Tape drives were used for storing ARchive files
+
+ARCHIVING FILES -> TAR FEATURES
+-> Create and manipulate tape archive files
+-> Archive both files and directories
+-> Supports gzip, cpio archiving formats
+-> Supports multiple destination devices
+
+ARCHIVING FILES -> TAR MODES
+tar modes
+-> tar -c           // Create Archive
+-> tar -t           // List Contents
+-> tar -x           // Extract Contents
+
+ARCHIVING FILES -> TAR OPTIONS
+-f [tar filename]
+-v : verbose
+
+-z : gzip
+-> only in create mode
+
+-p : preserve
+-> only in extract mode
+
+ARCHIVING FILES -> TAR MULTIPLE OPTIONS
+-cz create and compress
+-xz extract with verbose output
+-tf List contents
+
+ARCHIVING FILES -> TAR Example
+-> tar -cvf bkp.tar main.c header.h docs/
+-> tar -tvf bkp.tar
+-> tar -xvf bkp.tar
+
+ARCHIVING FILES -> SUMMARY
+Key points discussed in this video:
+-> tar is the standard archiving tool on UNIX.
+-> tar backs up files and directories to all types of devices.
+-> The three main modes of operation of tar are create, list and extract.

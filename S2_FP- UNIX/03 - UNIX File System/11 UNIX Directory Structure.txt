@@ -1,0 +1,13 @@
+Structure brings harmony
+
+UNIX DIRECTORY STRUCTURE -> FILES IN UNIX
+-> Everything is a file
+-> Files do not have extensions
+-> Text and Binary file types
+-> Programs are binary files or shell scripts
+-> Library files help program files
+
+UNIX DIRECTORY STRUCTURE -> SUMMARY
+Key points discussed in this video:
+-> Files are organized in an hierarchical structure in UNIX.
+-> /bin, /home, /dev and /tmp are some important directories on UNIX that store binaries, user home directories, devices and temporary files respectively.
