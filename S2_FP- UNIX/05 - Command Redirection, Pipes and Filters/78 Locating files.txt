@@ -1,0 +1,49 @@
+Always keep meaningful names to your files.
+
+LOCATING FILES: RANGE OPERATOR
+[] : Brackets
+
+b[aei]t
+bat
+bet
+bit
+
+c[oA][rK]e
+core
+coKe
+cAre
+cAKe
+
+[^] : Negative selection of characters
+b[^aei]t
+but
+bot
+bxt
+
+[-] : Character Range
+[a-zA-Z][0-9]
+a4
+W2z
+ba9
+
+LOCATING FILES : CHARACTER CLASS
+[:lower:]   [:upper:]   [:alpha:]   [:digit:]   [:alnum:]   [:blank:]
+same as     same as     same as     same as     same as     same as
+[a-z]       [A-Z]       [a-zA-Z]    [0-9]       [a-zA-Z0-9] Space or tab
+
+LOCATING FILES: FIND COMMAND
+find [options] path [expressions]
+
+find /home/joe -name "*.h" -print
+/home/joe/Project/ips/common.h
+/home/joe/backup/backend.h
+
+find /home/joe -name "[Cc]heck.png" -print
+/home/joe/Pictures/Check.png
+/home/joe/check.png
+
+find /home/joe -type f -name "chap[0-9][0-9].pdf" -print
+/home/joe/book/chap01.pdf
+/home/joe/book/refrence/chap21.pdf
+
+LOCATING FILES -> SUMMARY

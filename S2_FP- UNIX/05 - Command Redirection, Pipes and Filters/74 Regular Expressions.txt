@@ -1,0 +1,34 @@
+REGULAR EXPRESSIONS -> REGULAR EXPRESSIONS
+-> Utilize the maximum power of Shell
+-> Specify a pattern
+-> Meta characters represent the pattern
+
+REGULAR EXPRESSIONS -> METACHARACTERS
+-> Character set
+--> Match themselves int he specified sequence
+
+REGULAR EXPRESSIONS -> grep COMMAND
+-> Search strings in text files
+-> Displays lines that match a pattern
+
+grep [options] pattern file
+
+grep good poem.txt
+
+REGULAR EXPRESSIONS -> grep OPTIONS
+
+grep -c apple fruits.txt
+number of lines
+
+grep -i apple fruits.txt // ignore the case
+
+grep -v apple fruits.txt // do not have the word apple
+
+grep -l sachin india australia america  // list the name of the file which contain the pattern
+
+grep -n error messages.log // line number of the pattern
+
+REGULAR EXPRESSIONS -> SUMMARY
+Key points discussed in this video:
+-> Regular Expressions are patterns that represent the string we are trying to search.
+-> grep command is used to search text in a text file.

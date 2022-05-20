@@ -1,0 +1,13 @@
+REGULAR EXPRESSIONS -> META CHARACTERS
+
+* Asterix / star
+eg "a*"
+
+. Dot
+"a."
+
+^ Caret
+"^a"
+
+$
+"a$"

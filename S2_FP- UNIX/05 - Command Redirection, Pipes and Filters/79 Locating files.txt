@@ -1,0 +1,60 @@
+Uses of "find" command
+
+Introduction
+This lecture will help you understand the uses of find" command in an UNIX environment.
+
+Objectives
+Upon completion of this lecture, we will be able to:
+-> Appreciate the utility of the "find" command
+-> Identify the different options for the "find" command
+
+"find" command
+
+"find" UNIX command has a number of uses in UNIX. It performs the basic task of locating files. You can then couple this output to other commands using UNIX pipes to solve a large number of problems.
+
+To do this effectively, one should learn to use "find" command so that it gives the output that exactly matches the list of files that one is interested in. You need to fine tune the "find" command to make it work the way you want it. Once you get the hang of it, and learn to use "find" effectively, you will start noticing its utility as one of the most basic commands.
+
+Here is a small list of ways in which you can use "find" command to get things done on UNIX.
+
+You can specity multiple file hierarchies to be searched by "find" command. This can be done by
+specifying mulitiple file hierarchies as multiple arguments to "find" command. In this way, you can
+perform the operation on all these files by using a single find command.
+
+While searching for files with specific names, you can use the -iname option of find command to specify that the file name search should ignore the case and look for files with names in various combinations of upper case and lower case characters.
+
+You can limit the results of "find" command to files that have an upper limit on their size using the "-size" option. For example, you can search for all video files that have a size less than 30MB and so on, or even search for all photos that are larger than 1MB in size.
+
+You can specify "find" command to list all files that do not contain a particular name using the "!" operand before the "-name" option. This is very helpful when you have a directory or file hierarchy that is filled with lots of files, but the maximum number of these files is of a single type only. For example, you have a directory structure where more than 90% of the files are images and you want to find out all the files in a file hierarchy that are not image files.
+
+find command uses various attributes of a file while locating them. One such attribute is used by find command is the file's last access time or modified time. Using the "-main', "-atime, -mmin, mtime options of find command, one can locate files in a file directory hierarchy that have been either accessed or modified in the last n units of time. One can speciy the units of time in seconds, minutes, hours, days and even weeks.
+
+A more practical way of using the "-mtime" option of find option files that have been modified within a range of minimum and maximum time. For example, you might be interested in finding out the files that were modified in the previous week. For this, you can use the "+7" value for "-mtime" option to specify all files that were modified more than 7 days back. And then use the "-14" value for "-mtime" option to specify all files that were modified less than 14 days back. Combining these two values and options would give us the list of files that have been modified in the previous week.
+
+Another important atribute of a file that the "find" command uses to locate files on the system is the file permission attribute. Using the -perm option of "find" command one can look for files that have specific file permissions. One can look for all executable files under a file hierarchy structure, or read only files, or files that have their "setuid" set, or the ones that have permissions that you do not want user to usually have on their files, like the 777 pemissions.
+
+find command is very useful when you want to find out all the "empty" files in a directory structure. To do this operation, one needs to use the -empty option of find command. You can then perform various operations on this list of files. You could decide to either move them out to some location, or simply delete them.
+
+Usually, one encounters a situation where one would like to find out all the files that are linked to a file, or what is also known as "links" to a file. All links to a file share the same inode number. This fact is used to solve this problem. For doing this, you need to find out the inode of the file using ls -i command and then use the "inum" option of find command to locate all the files that have the same inode number
+
+"xargs" with "find" command
+
+One of the most commonly used UNIX command with find command is the "xargs" command. In its most basic form, "xargs" command executes a UNIX command on the input that is passed to it. The defauit UNIX command executed is the "echo" command. You can of course specify any other UNIX Command as well. This feature is made use of when we combine find command with xargs.
+
+We use find command to get a list of files that we are interested in, and then use xargs command
+to execute a command over this set of selected files. You can execute various commands like grep,
+or rm using xargs. The command given to xargs is executed for each file that is given as the output
+of find command.
+
+A typical example to search for a certain pattern in a set of text files is an shown below:
+
+find -/Downloads -name "*.txt" | xargs grep "money"
+
+This command will search for the pattern "money" in all the files in "~/Downloads" directory that has a txt string in their name.
+
+Be very careful when using "rm" command with xargs since it does not print the list of files being operated on. Only if you are very sure about the files that will be sent as arguments to rm command, should you use it with "xargs" command.
+
+Summary
+Here are the key takeaways:
+-> UNIX "find" command can be used to locate files based on their various file properties
+-> UNIX "find" command can be used to locate links to a file
+-> UNIX "find" command can be combined with "xargs" command to specify operations that can be performed on the files located by "find" command

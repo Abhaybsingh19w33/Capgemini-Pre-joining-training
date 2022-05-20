@@ -1,0 +1,47 @@
+FILTERING TEXT -> 
+
+
+FILTERING TEXT -> UNIX PIPES
+
+errors.lst -> cmd -> ... -> sort -> ...
+
+Combine commands using UNIX pipe |
+
+cmd ...  | sort ...
+
+cat error.lst | sort
+
+FILTERING TEXT -> UNIX FILTERS
+-> Manipulate data
+-> Meaningful representation of data
+-> UNIX Filters
+--> head
+--> tail
+--> sort
+
+FILTERING TEXT -> head
+head [options] filename
+
+head names.txt
+
+head -n 5 names.txt
+
+FILTERING TEXT -> tail
+tail [options] filename
+
+tail names.txt
+
+tail -n 5 names.txt
+tail +30 names.txt
+tail -f messages.log
+
+FILTERING TEXT -> sort
+cat players.txt
+sort players.txt
+sort -k 1 players.txt
+sort -rk 1 players.txt
+
+FILTERING TEXT -> SUMMARY
+Key points discussed in this video:
+-> Pipes are used to glue two commands together.
+-> Some simple filters on UNIX are head, tail and sort.

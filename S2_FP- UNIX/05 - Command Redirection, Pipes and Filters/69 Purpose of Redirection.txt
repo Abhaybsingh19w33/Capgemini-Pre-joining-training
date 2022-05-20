@@ -1,0 +1,19 @@
+PURPOSE OF REDIRECTION -> STANDARD I/O DEVICES
+KEYBOARD : STDIN
+SCREEN : STDOUT
+SCREEN : STDERR
+
+PURPOSE OF REDIRECTION -> OUTPUT REDIRECTION
+command > output.txt
+cat songs.lst | head 1 > top10.report
+cat songs.lst | head > top10.report
+
+PURPOSE OF REDIRECTION -> INPUT REDIRECTION
+cat < poem.1
+cat < storyline > story.bkp
+
+PURPOSE OF REDIRECTION -> SUMMARY
+Key points discussed in this video:
+-> Redirection is used to associate the input and output of a command to a file.
+-> > symbol is to redirect command output.
+-> < symbol is to redirect command input.

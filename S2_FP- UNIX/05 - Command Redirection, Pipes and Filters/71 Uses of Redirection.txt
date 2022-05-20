@@ -1,0 +1,39 @@
+USES OF REDIRECTION -> USES OF REDIRECTION
+-> Combining commands to files
+-> Separating errors from output
+
+command1 > output.txt 2 > errors.log
+
+errors.log
+this is an error from command
+asdfjlk jllj jjljl 
+
+command2 > output.txt 2 > errors.log
+
+overwritten output
+
+command2 >> output.txt 2 >> errors.log
+
+append output
+
+USES OF REDIRECTION -> HERE DOCUMENTS
+cat << END
+This is a short story
+END
+
+This is a short story
+
+cat << END > story.txt
+This is a short story
+END
+
+USES OF REDIRECTION -> MULTIPLE REDIRECTION
+command > prog.log 2 > prog.log
+command > prog.log 2 > &1
+command 2 > error.log | head > result.txt
+
+USES OF REDIRECTION -> SUMMARY
+Key points discussed in this video:
+-> Redirection operators are best for suppressing the errors shown on the screen.
+-> >> symbol is used to append output to a file.
+-> 2>&1 syntax is used to redirect the standard error output to the same location as that of the standard output.

@@ -1,0 +1,140 @@
+UNIX Filters
+
+Introduction
+This lecture will help you understand the need, usage and different flters available in UNIX.
+
+Objectives
+Upon completion of this lecture, we will be able to:
+-> Explain the need for filters
+-> Identify many of the filter commands available in UNIX
+
+Need for Filters
+
+One of the most common tasks for a programmer is to wade through someone else's code or through some huge log files to diagnose a problem. More often than not it requires various text processing techniques. UNIX was buit for programmers and vith the intention to tackle this very problem. These "Filters were speciically buit to make this a piece of cake.
+
+Filters are special UNIX utilities that take in input through an input stream, process the text and send Out the modified text to the output stre am. Combining these filters vith pipes you can do wonderful things with your text. Some of the important and most handy fliters are discussed below:
+
+cat
+
+"cat" command stands for concatenation and is a very powerful utility when it comes to viewing the contents of a text fie. Its most basic function is to concatenate multiple files together and print them out in a single output stream. By default, cat expects input from stdin, but can accept input from various files as well. By defauit, cat prints out the contents of either a single file or muitiple files, all listed one after another, on stdout.
+
+There are a number of cool options that you can use with cat command to print non-printin characters and also prefix numbers to each of the line in the output. "cat" command is usually used to provide text as input to other filter commands. These filter commands are combined with cat using pipes. Using the redirection operators, we can use cat command to create new files that are created by concatenating various files in different orders.
+
+
+head
+
+"head" command is an excellent UNIX filter for viewing only some lines in the beginning of an optput. Most of the time, commands print so many lines of text on the output that you need to scroll the screen to read the start lines. "head" command comes in very handy in these situations. You can specify the exact number of lines from the beginning of the output that you want to be printed out by using the head command.
+
+Next time you see your screen scrolling quickly with large amount of text, remember to use head command.
+
+tail
+
+"tail" command does the opposite of head command
+
+It prints out the few lines at the end of an output. This comes in very handy when you want to print out specific lines that have special meaning towards the end of the output.
+
+For example, when you sort the text in some order and find that the text you are interested in is at the end of the output, then you can use tail command to filter out the unwanted output. You can then pint only the last few lines that you are interested in.
+
+"tail" also comes with a very special option, +n, using which you can specify the line number [n] from which you want to view the lines. tail will then print all the lines from that line to the end of the file. So, irrespective of the length of the file, you will always see the lines that start from a particular location in the file.
+
+Another powerful option, -f, of tail is to print the contents of a file, while it is being written to by another process. This is usually the case, when you want to keep a track of things through the log file of processes. The executing process continuously prints important log messages to its log files. If you use any standard utility like cat to view the contents of this log file, you will only see the contents as a snapshot of the file at the moment you started the cat command.
+
+While cat is printing the output and you are viewing it, the process is busy updating the log file. But, cat is unaware of this and it does not report the new changes on the screen. This is where this powerful option of tail comes in handy. It not only shows you the file contents at the moment it was opened, but also keeps updating the contents on the output screen as they are being written towards the end of the file by the running process.
+
+sort
+
+'sort' is one of the most versatile UNIX utilities that one is bound to use at least once every day.
+
+One of the most basic ways of making some meaning out of a set of text is to order the text in a particular manner. "sort" utility helps do just that. It sorts the text in order.
+
+The most obvious way to use "sort" utility is to sort the lines of a text file in either alphabetically increasing or decreasing order based on of the first character of each line. "sort" utility can also sort text based on different columns of text in the file. "sort" assumes an empty space to be a delimiter and breaks each line into columns, each separated by the delimiter.
+
+Using this feature, one can now sort the lines of a text file based on any column in the text. Not only this, but sort also provides the ability to define your own delimiter.
+
+If you have a text file that has some other character apart from space as a delimiter, then you can specify that delimiter to sort and ask it to sort the text file based on any column.
+
+Usually the output of various commands on UNIX is text. But, most of the time, this text is either not fomatted or is not fomatted according to your liking. This may be because you are interested in sorting the output in a decreasing order, but the utility displays the output sorted in an ascending order by default. In such situations, you can pipe the output of this utility to "sort" command and then reverse its order.
+
+You can also specify which column is part of the output and should be used to define the sorting criteria.
+
+A common usage is to sort a list of files in a directory based on the column that you are interested in. You could also sort the output of commands like du, and df in a particular order based on specific columns in the output of these commands. "sort" comes with a bunch of options that define the sorting order and criteria.
+
+Make sure you go read the entire man page of sort to find out the exact option that you need to sort the text in the manner that you are interested in.
+
+cut
+
+"cut" is a very crafty tool that you can use when you have to selectively print portions of texts from within a line.
+
+In fact, this operation can be performed on a number of files by passing them as arguments to the same command. You can define how "cut" command should interpret the text of each line in the text file.
+
+You can mention the specitic character that should be considered as the delimiter to break the line into various fields. You can then specify the field number or the range of fields that should be printed out by "cut" command.
+
+For example, if you are passing /etc/passwd file as input to "cut" command, then you can specify that "." character should be used as the delimiter. You can specify field number 3 to print out the user id from that file. Apart from this, you can also specify byte position or the character position in each line from where the fields should be extracted.
+
+One very useful way of using "cut" command is to pipe the output of various commands, like "who" or "ls -l" to cut and then specify the particular field or list of fields that you are interested in, to be printed on the screen.
+
+This allows you to concentrate on specific portions of the output that makes sense to you. You can then use this data to make further decisions.
+
+tr
+
+tr utility is one of the simplest fiters on UNIX.
+
+It translates characters by substituting input characters with new characters, or deleting them. You can specify various types of characters for substitution. You can specify simple ASCII characters, or special characters that are prefixed with backslash, like "\n" character that represents a new line, or even use various character classes like [:alpha:], or [:blank:], or [:digit:] and others.
+
+One very simple use of tr command is to translate all lower case characters in a file to upper case characters.
+
+Another example is to split individual words of a line into single words per line, or do the opposite and combine a list of lines of words into a single line.
+
+A scenario is when you want to operate on a string of input words using some Shell loops. "tr" utility comes in very handy in such scenanios since it converts these separate words from input string to single words per line. These individual words are then taken one at a time per iteration of the shell loop.
+
+sed
+
+"sed" command stands for "stream editor".
+
+This utility edits a stream of inputs. This is one of the simplest, yet most powerful tools that you will come across on UNIX.
+
+It is especially helpful when you have a file and want to do minimalistic changes to the file without opening it in an editor like Vi or emacs. Its best use is in substituting one set of characters with some other. "sed" UNIX utility looks very simple, but it has a load of options that one can use to perform complex operations. You will be surprised with the number of things one can accomplish using this single utility. Here is a list of some operations that are often performed using "sed" utility.
+
+The most obvious operation as mentioned earlier is to do word substitutions in all the lines of a file where a particular word is found. This substitution can either be performed for the first word of every line that contains it, or for any specific instance of the word, or for all occurrences of the word in all the lines that contain it.
+
+You can define a pattern to be searched in a file and then replace this pattern with mutiple instances of the same pattern or add a suffix to this pattern, or append some constant text to this pattern.
+
+-> Easily reverse the order of words in all the lines of a file
+-> Detect duplicated words in a file
+-> Perform mutiple substitutions by using muitiple "sed" commands joined together by pipes
+-> Perform substitutions to only specific lines or range of lines of a text file that contain a pattern. You can also extend this to perform the substitutions on only those lines that do not contain a specific pattern
+-> Delete lines of text file that contain a specific pattern of text
+-> Print out specific lines or range of lines of a text file, or only those lines that contain a specific pattern.
+-> Perform a set of operations on a range of lines defined by a pattern. You define a pattern that forms the beginning of the range, and another pattern that forms the end of the range.
+-> Insert, change and add new lines to a fle at particular locations in the text file
+
+This list is not exhaustive and is only a teaser so that you can get a feel of the power of "sed" command. There are many more innovative ways in which you can use sed. Never miss an opportunity to use sed and save precious time for you and your team.
+
+awk
+
+If you felt like saying "Wow!" when you read or worked with "sed", then I would say that you haven't even seen anything yet.
+
+"awk" is another extremely powerful UNIX utility which is a pattern scanning programming language in itself. There are huge books written on how to use "awk" and its sister utilities like "gawk", "nawk", etc.
+
+"awk" utility when as a filter can be very useful for generating reports. When you have a file that has various fields in it and you want to add the values in some columns, or generate some statistics for each column and such, then awk is your friend.
+
+It has tremendous programming power and can easily perform all these operations straight from the command line. You do not have worry about witing a C program and then compile it. You can do it in very simple and easy steps using the simple programming constructs of awk command. It has various programming constructs for arithmetic operations and string manipulation that come in very handy for generating reports.
+
+Like "sed", here are some operations that one can perfom with "awk.
+
+-> Find the average of the values in each row of a text file
+-> Reformat the text fle so that each word is aesthetically aligned at specific columns
+-> Perfom a set of operations on selected lines in the text file that match a given pattern. Print a count of number of lines that contains a pattern. Print only specific fields of lines that contain a pattern.
+-> Print header and footer text while generating reports
+-> Generate various text formats like XML, or HTML types using the data from text files
+-> Generate a report that mentions the number of occurrences of all the words in a given column in the text file
+
+Apart from trying to do these operations using awk and learning it, I would strongly recommend you to read more about "awk" and keep using it for solving your daily programming problems. There is no substitute for practice on UNIX.
+
+Summary
+
+Here are the key takeaways:
+
+-> Fiters are powerful text processing UNIX utilities that can be used to transform text to the desired content or format
+-> UNIX "cut" command can be used to selectively print portions of texts within a file
+-> UNIX "sed" and "awk" are two very powerful fiters that have their own special programming syntax for performing very complex text processing
