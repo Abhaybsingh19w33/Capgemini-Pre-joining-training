@@ -1,0 +1,79 @@
+Shell Built In Variables
+
+Introduction
+In this lecture you willearn about the various built-in variables that are available on a UNIX shell
+
+Objectives
+Upon completion of this lecture, we wil be able to:
+-> Learn the command used to list the shell built-in variables
+-> List some of the important shell buit-in variables on UNIX
+
+Built In Variables
+
+Shell buit-in variables are also called Shell Environment variables. These variables define the properties of the shell. They also alter the way various programs execute on the shell. Most of the applications and utilities on UNIX use the shell buit-in variables to decide their course of action. A program may define the maximum number of simultane ous user inputs it can take in a shell built-in variable and accordingly ether accept or reject new user inputs based on the count of user inputs it is already processing
+
+To list the present shell environment variables, you can type the "env' command. This willist all the shell built-in variables with their present values. A typical UNIX shel alvays comes ith a set of built-in variables that are already set when you launch the shell. Some of the most common shell environment variables are listed here for your reference
+
+
+$EDITOR
+This variable stores the default text editor. Ex : /usr/bin/vim
+
+$HISTFILE
+This variable stores the name of the file that stores the history of commands typed in the shell. Unset this variable to disable command history feature. The defauit value of this variable is ~/.bash_history
+
+$HISTFILESIZE 
+This variable stores the maximum number of lines to be stored in the command history file
+
+$HOME
+This variable stores the full path of the user's Home directory
+
+$HOSTNAME
+This variable stores the name of the user's computer
+
+$IFS
+This variable stores the Internal Field Separator. This is used to split text into words. The default value of this contains the space, tab and newline characters
+
+$LANG
+The value in this vanable is used to determine the locale category when a specific category in the group of LC_ variables is unset
+
+$LC_CTYPE
+The value in this variable detemines hovw characters and character classes are interpreted within pathname expansion and pattern matching
+
+$MAIL
+This variable contains the absolute path of the file that stores the user's mails. This value is used only when MAILPATH variable is unset
+
+$PATH
+This variable contains a colon [] separated list of directories which the shell uses to search for commands
+
+$PS1
+This variable contains the string that is used to create the user's primary prompt string. Some characters have special meaning in this variable. EX \h expands to hostname, \W expands to current working directory and \u expands to user name
+
+$PWD
+This is a special variable that gets updated with the current working directory the user is. It gets updated every time the user navig ates from directory to another
+
+$SHELL
+This variable contains the full pathname of the shell. If this is not set. then bash shell is launched for the user and this variable is set to the full pathname of the users login shell
+
+$TEMP
+This variable contains the name of the directory that should be used to store temporary files on the system
+
+$TERM
+This variable specifies the type of terminal emulator in use by the shell. This is usuaily set to vtT00, dttem, etc
+
+$USER
+This variable contains the user name of the user running the shell
+
+$OLDPWD
+This variable stores the name of the directory that the user was present before moving to the present working directory. This value of the previous working directory is set by the cd command
+
+$OPTARG
+This variable contains the value of the most recent "option argument" processed by the getopts builtin shell command
+
+$OPTIND
+This variable contains the index of the next argument to be processed by the getopts buit in shell command
+
+Summary
+Here are the key takeaways:
+-> UNIX "env command is used to list all the shell built-in variables on UNIX
+-> $HOSTNAME shell buit-in variable stores the user's computer name
+-> $OPTARG and $OPTIND shell buit-in variables are updated by the get opts buit in shell command

@@ -1,0 +1,28 @@
+CREATING SHELL SCRIPTS -> INTRODUCTION
+Automate repetitive tasks
+
+CREATING SHELL SCRIPTS -> SHELL SCRIPTS
+-> List of command
+-> Shell interprets the command
+
+CREATING SHELL SCRIPTS -> USES OF SHELL SCRIPTS
+-> Fully utilize the power of UNIX
+-> Customize user's work environment
+-> Automate daily tasks
+-> Automate repetitive tasks
+-> Carry out important administrative tasks
+-> Duplicate operations on a group of files
+
+CREATING SHELL SCRIPTS -> SHELL SCRIPTS EXAMPLE
+#!/usr/bin/bash
+
+CREATING SHELL SCRIPTS -> PHILOSOPHY OF WRITING SHELL SCRIPTS
+-> Small scripts
+-> Do one thing at a time
+-> Invoke one script from the other
+
+CREATING SHELL SCRIPTS -> SUMMARY
+Key points discussed in this video:
+-> UNIX Shell scripts enable us to utilize the maximum power of a system.
+-> Shell scripts help in automating repetitive tasks.
+-> The first line of every shell script must be a interpreter line that begins with a #!

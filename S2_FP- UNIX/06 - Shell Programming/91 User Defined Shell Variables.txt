@@ -1,0 +1,56 @@
+USER DEFINED SHELL VARIABLES -> SHELL VARIABLES
+name="value"
+
+friend="joe"
+echo $friend
+joe
+
+name=$friend
+echo $name
+joe
+
+USER DEFINED SHELL VARIABLES -> UNSET SHELL VARIABLES
+manager="george"
+echo $manager
+george
+
+unset manager
+echo $manager
+-----
+
+USER DEFINED SHELL VARIABLES -> NAMING CONVENTION
+String starts with alphabet
+item=10
+city="Bangalore"
+
+Case Sensitive
+count=5
+Count=98
+COUNT=200
+
+Numbers
+Player1="Joe"
+3des="true"
+
+Underscore allowed
+_member="home"
+First_name="george"
+
+Good Practice
+-> Lower case for user variable
+-> Upper case for system variables
+
+USER DEFINED SHELL VARIABLES -> COMMAND SUBSTITUTION
+
+oldpwd=`pwd`
+echo $oldpwd
+/home/joe/work
+
+files=`ls *.c`
+echo $files
+main.c foo.c
+
+USER DEFINED VARIABLES -> SUMMARY
+Key points discussed in this video:
+-> All shell variables are of string type.
+-> Backticks are used to assign output of a command to a variable.

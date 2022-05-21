@@ -1,0 +1,54 @@
+BUILT IN VARIABLES -> INTRODUCTION
+
+BUILT IN VARIABLES -> ENVIRONMENT VARIABLES
+-> Controls system behavior
+-> Can be set and reset
+-> name=value
+-> env variable
+
+$HOME
+User's Home
+HOME = /home/surf
+
+$PWD
+Present Working Directory
+PWD = /home/surf/Projects
+
+$SHELL
+The user's current shell
+SHELL=/bin/shell
+
+$PATH
+Command Search Path
+PATH=/usr/bin:/usr/local/bin
+
+$PS1
+The prompt string 1
+PS1="Abhay > "
+
+BUILT IN VARIABLES -> ECHO
+echo "this is echo"
+echo -n "this is echo"
+
+BUILT IN VARIABLES -> USES FOR ECHO
+-> Display a message
+-> evaluate shell variables
+--> echo $HOME
+-> Print tracing messages in shell scripts
+-> Displaying prompts for accepting user input
+
+BUILT IN VARIABLES -> EXPORTING VARIABLES
+BASEDIR=/user/local/bin
+echo $BASEDIR
+/user/local/bin
+export BASEDIR
+
+bash
+echo $BASEDIR
+/user/local/bin
+
+BUILT IN VARIABLES -> SUMMARY
+Key points discussed in this video:
+-> UNIX Shell environment variables impact the behavior of applications.
+-> echo command is used to display variable contents.
+-> export command is used to make variables visible in the child shell.

@@ -1,0 +1,39 @@
+CONFIGURING SHELL -> INTRODUCTION
+
+CONFIGURING SHELL -> USER ENVIRONMENT
+-> Shell Environment Variables
+-> Command aliases
+-> Shell settings
+-> Shell prompt
+
+CONFIGURING SHELL -> ENVIRONMENT VARIABLES
+PATH
+CDPATH
+TERM
+SHELL
+PS1
+
+CONFIGURING SHELL -> ALIASES
+alias nickname='text_or_command'
+Nickname cannot have
+/, $, `, = , shell meta characters or quotes
+can be used to fix typos as well
+
+alias ll = 'ls -l'
+
+CONFIGURING SHELL -> TWEAKING SHELL
+set [optional] arguments
+set -o vi
+set -x
+
+CONFIGURING SHELL -> STARTUP FILES
+/etc/profile
+$HOME/.bash_profile
+$HOME/.profile
+$HOME/.bashrc
+
+CONFIGURING SHELL -> SUMMARY
+Key points discussed in this video:
+-> Environment variables, aliases and shell variables are parameters that can be cofigured for a shell.
+-> alias and set commands can be used to configure a shell.
+-> profile and bashrc are two files that can be used to store shell configuration settings.

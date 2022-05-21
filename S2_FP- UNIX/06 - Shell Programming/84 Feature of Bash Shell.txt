@@ -1,0 +1,49 @@
+FEATURE OF BASH SHELL -> FEATURES
+-> Command Auto Completion
+-> Command History
+-> Command line editing
+-> Command Aliasing
+-> New Programming Constructs
+
+FEATURE OF BASH SHELL -> AUTO COMPLETION
+ba [TAB]
+banner basename bash
+
+bas [TAB]
+basename bash
+
+ls my-very
+ls my-very-long-named-file
+
+FEATURE OF BASH SHELL -> COMMAND HISTORY
+~/.bash_history
+!-n : current command line minus n
+!string : most recent command startiing with string
+
+FEATURE OF BASH SHELL -> COMMAND LINE EDITING
+set -o emacs : default
+set -o vi
+ln emacs mode
+up key
+down key
+ctrl + r
+
+ctrl + a
+|command
+
+ctrl + e
+command|
+
+alt + .
+ls long_file_name.txt
+vi long_file_name.txt
+
+FEATURE OF BASH SHELL -> COMMAND ALIASING
+alias cdp="cd ~/Project"
+unalias cdp
+alias function names
+
+FEATURE OF BASH SHELL -> NEW PROGRAMMING CONSTRUCTS
+new Syntax for redirection
+command > output.log 2 > &1
+command >& output.log

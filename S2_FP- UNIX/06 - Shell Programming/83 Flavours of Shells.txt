@@ -1,0 +1,112 @@
+Flavours of Shell
+
+Introduction
+In this lecture you will be introduced to a host of Shell programs that you can use on UNIX. Learn them to get familiansed with them and then choose the one that suits the best for your project or liking
+
+Objectives
+Upon completion of this lecture, we will be able to:
+-> List the various flavors of UNIX shell
+-> Understand the distinguishing features of each UNIX shell
+
+UNIX Shell
+
+A UNIX shell provides the Command Line Interface [CLI] to the system. Users use this Command Line Interface to provide commands to the system. The shell then executes these commands on the users behalf on the system. All the complexities of finding the command, executing it, fetching the results, etc are handled by the shell.
+
+Over a period of time, there have been many flavors of shell that have been designed to satisfy a particular need of users. Some shells were very basic when they were launched or performed only a limited number of operations. This lead to the development of newer shells that added these missed out operations. The earlier shells were left as it is for backward compatibility.
+
+Here is a list of the some of the famous shells that are available in the UNIX world as of today. A good study of these shells will make you well equipped to work in various projects that have these different types of shells on your legacy systems.
+
+"sh" Shell
+
+"sh" shell is the default UNIX shell for UNIX Version 7. It was developed by Steve Bourne of Bell Labs in 1977. "sh" shell constructs were strongly influenced by ALGOL68 programming language. It provided basic Shell features that included:
+-> Joining commands using Pipes
+-> Input and output redirection
+-> Executing shell scripts as nomal UNIX commands
+-> Ability to write "here documents
+-> Command substitution feature using back ticks
+-> Shell variables (These did not exist in earlier versions of shell programs)
+-> Control structures for
+--> Conditional testing
+--> Looping
+-> Wild card substitution of file names by the shell
+
+"csh" Shell
+
+While "sh" shell was being developed by Steve Bourne, "csh" shell was being developed in parallel by a graduate student at University of California, Berkeley called Bill Joy. He is the same Bill Joy who later on went to co-found Sun Microsystems in 1982 along with others. He is also the original author of vi editor. "csh" shell was released in 1978 on the BSD UNIX system.
+
+"csh" shell was built to improve the interactivity of the shell. "csh" was the pioneer in introducing new features that have been borrowed heavily by other shells as well. Most the features mentioned below for "sh" shell were also provided by "csh" shell. Some of the very important shell features that were uniquely available on "csh" when compared to the other shells in late 1970s was:
+
+-> More readable syntax since it looked very similar to C programming language
+-> History feature to recall previously typed commands
+-> Alias feature to create short names for long commands or simple scripts
+-> Tilde notation [~] for specifying the user's home directory
+-> Job control, by providing a facility to run commands in the background, allowing the user to execute muitiple commands at the same time.
+
+"tcsh" Shell
+
+"tcsh" shell was developed by Ken Greer and its code was released in 1983. tcsh was basically an improvement over the csh shell. "tcsh" is the default root shell of FreeBSD and was also available on earlier versions of Mac OS X. The main improvements provided by "tcsh" shell over csh shell are.
+
+-> Command line editing
+-> Auto completion of file names and vaniable names on the command line
+-> Command history feature enhancements
+
+"ksh" Shell
+
+The Korn Shell was developed by David Korn of AT&T Bell Labs and was released in 1983. The "ksh" shell was backward compatible with Bourne shell and included many of the features from "C" shell. "ksh" shell is the default shell on AIX Operating system, a UNIX variant from IBM. Some of the important features that were added in "ksh" when compared to "sh" shell are:
+
+-> Command line editing modes based on Vi and emacs editors
+-> Associative arrays
+-> Floating point arithmetic support
+-> Job control for running commands in the background
+-> Command aliasing feature
+-> Command history feature like the one prevalent in C shell
+
+"bash" Shell
+
+Bash shell was written as a replacement for the Bourne shel [ sh ] as part of the GNU project by Brian Fox. It was released in 1989. Bash is the most popular shell available now and is the default shell on Linux and Max OS X systems. Bash is a superset of "sh" shell and it combines almost all the features of "sh", "csh and "ksh" shells listed above. Some of the improvements of bash over "sh" shell are:
+
+-> Provides the POSIX command substitution syntax of S(..)
+-> Provides new syntax for integer calculations that are performed without spawning an external process
+-> Provides a new and simple syntax for I/O redirection operations
+-> Bash uses a new syntax for defining functions, but is also backward compatible with the older syntax
+-> Later versions of Bash also supports associative arrays
+
+"zsh" Shell
+
+Zsh is also an improvement of the Boune shell [ sh ] "zsh" was written by Paul Falstad, a student at Princeton University, in 1990. Some notable features of Zsh shell are:
+
+-> Programmable command line completion
+-> Spelling correction
+-> Loadable modules for TCP or extended Maths functions
+-> Sharing of command history among all other running shells.
+
+"ash" Shell
+
+The Almquist shell is also called as the ash shell. "ash" shell was created in the late 1980s by Kenneth Almquist. It was written mainly to be executed on machines that ran low on memory and could not handle the heavily featured bash, zsh and other shells. It was compatible with sh shell, but added some extra features that were lightweight. With its low memory footprint, it is recommended for small handheld devices and other embedded systems that need a minimalistic shell.
+
+"dash" Shell
+
+Dash is a variant of Almquist shell [ ash ] known as the Debian Almquist shell. This is shipped on various Debian machines and its derivatives like Ubuntu as the default shell. The main advantage of using dash is its speed of execution. Considerable amount of startup time is saved when dash is used during boot up process of UNIX systems.
+
+"fish" Shell
+Fish is a "Friendly Interactive Shell". Newcomers to UNIX will love this shell. It was developed by Axel Liljencrantz and released in 2005. The main intention of developing fish shell was to make the shell more user friendly. To make it on par with the ease with which users use Graphical User Interface. The operations that can be performed are mostly the same as on any other shell, but the look and feel, the methodology to give these commands is new in fish. This new approach fish, one of the most loved shells for new comers. Veteran UNIX users might find it a bit hard to learn the new ways to using the shell in fish. But, once you get a hang of it, you start to enjoy it.
+
+Some of the noteworthy attractions of fish shell are:
+
+Powerful history recollection mechanism that lets you recollect previously typed commands, while you are typing the command itself. You do not need to use any special key like CtrL + r or ! to specifically recall previous commands. This recall of previous commands is done by default for the user in fish. This saves a lot of time and makes interacting with the shell more lively and exciting.
+
+fish also comes with a neat syntax highlighting feature. All errors are coloured red. Even, wrong option names or values are considered as erors. So, the user is immediately informed that he is doing something wrong. even before he executes the command. This eye catchy feature of fish is certainly something the new generation of developers would very easily connect with.
+
+Advanced tab completion feature that behaves differently based on what you are trying to auto complete. When you try to auto complete a command or a man page, only available UNIX commands are listed as options. When trying to auto complete files, only available files on the system are shown. Same is the case while trying to auto complete variable names as well.
+
+Help about commands and their usage is shown in the user's web browser. It has neat sections with specific chapters on each relevant topic. This helps learning UNIX commands much easier.
+
+New "open" command to open files from command line. This command automatically understands which application should be used to open the file and it launches the required application, right from the command line itself.
+
+A new syntax for variables and programming constructs are also added to make it more user friendly. When moving from another shell to fish shel, this is one feature that will take the most time to learn. This also makes "fish" scripts non-compatible with other shells. So, if you are using fish shell for your personal use then of course it helps you save a lot of precious development time. But, you will be limiting the reach of your programs if you right them for "fish" shell.
+
+Summary
+Here are the key takeaways:
+-> "sh" shel is the default shell on almost all the UNIX variants
+-> bash shell and zsh shell are two notable improvements over the "sh" shel.
+-> fish shell has very powerful interactive features

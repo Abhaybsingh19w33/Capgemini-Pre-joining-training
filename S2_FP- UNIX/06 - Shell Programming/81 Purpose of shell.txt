@@ -1,0 +1,34 @@
+Interface to the system
+
+PURPOSE OF SHELL -> UNIX SHELL
+-> UNIX program
+-> Command Line Interpreter
+-> Interface to the UNIX system
+
+PURPOSE OF SHELL -> UNIX SHELL CREATION
+-> System boot up
+-> User shell Environment
+-> UNIX shell prompt
+
+PURPOSE OF SHELL -> UNIX SHELL COMMANDS
+-> Built-in commands
+-> External commands
+--> Binaries
+--> Shell Scripts
+-> Executinng commands
+--> ./command [options] arguments
+--> command [options] arguments
+
+PURPOSE OF SHELL -> UNIX SHELL FEATURES
+-> Interactive processing
+-> Background Processing
+-> Wild card expansion
+-> Pipes and Redirection Facilities
+-> Command Substitution
+-> Programming constructs
+
+PURPOSE OF SHELL> SUMMARY
+Key points discussed in this video:
+-> UNIX Shell interprets the commands given by the user and also provides a programming platform.
+-> Binaries and Shell scripts with execute permissions for the user can be executed on a Shell.
+-> UNIX Shell provides a feature of command substitution that assists in creating complex programs.

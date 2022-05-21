@@ -1,0 +1,41 @@
+FLAVOURS OF SHELL -> sh SHELL
+/bin/sh : $
+Stephen Bourne at Bell labs - 1977
+-> Default shell for UNIX v7
+-> Shell Environment
+-> Scripting Programming Language
+-> Command Substitution using back quotes
+
+/bin/csh : %
+Bill Joy, graduate at University of California, Berkeley - 1978
+-> Command language Interpreter
+-> Uses C syntax along with expression grammar
+-> Very powerful interactive features
+--> History feature
+--> Command aliasing
+--> The tilde notation
+---> ~john
+--> Job control
+
+/bin/ksh
+KornShell, by David Korn at Bell Labs - 1983
+-> Default shell on IBM's AIX
+-> Command Line Editing modes
+-> Associative Arrays
+-> Borrowed from C shell
+--> Job Control
+--> Command Aliasing
+--> Command history
+
+bash Shell
+Brian Fox for GNU Project - 1989
+-> Default on Linux and Mac OS X
+-> Command History
+-> Commadn Line Editing
+-> The tilde notation
+--> ~john
+
+FLAVOURS OF SHELL -> SUMMARY
+Key points discussed in this video:
+-> sh, csh, ksh and bash are some popular flavours of UNIX Shell.
+-> sh provides a basic programming platform while csh provides good interactive support.
