@@ -1,0 +1,51 @@
+SUCCESS OF HTML -> INTRODUCTION
+Web Pages are created using HTML
+
+SUCCESS OF HTML -> ROLE OF HTML
+
+Presentation of User Interface (UI) is developed using HTML.
+
+HTML is executed by browser (client side).
+
+Layout engine of a browser processes HTML.
+
+HTML is not executed on server side (web server).
+
+HTML is used to enhance user experience on the browsers (web based apps).
+
+Examples: HTML Usage
+Flipkart.com: B2C market place
+Snapdeal.com: B2C market place
+Scroll.in: News and Current affairs
+Gaana.com: Music and Entertainment
+
+SUCCESS OF HTML -> WEB APPS USING HTML
+
+All the major websites run on HTML (client side).
+Google
+Microsoft
+Facebook
+Apple
+YouTube
+Flipkart
+Times of India
+Twitter
+Yahoo
+Baidu
+Bing
+
+SUCCESS OF HTML -> OFFLINE USE OF HTML
+
+HTML is used in the document format in help systems:
+MSDN
+Java Docs
+Windows Help
+MS Office docs
+
+HTML is used in ebook formats:
+azw3 (Amazon Kindle)
+chm (Compiled HTML)
+html/htm
+mobi
+
+Email uses HTML to format rich text

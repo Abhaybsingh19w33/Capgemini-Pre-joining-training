@@ -1,0 +1,46 @@
+INTRODUCTION TO HTML -> INTRODUCTION
+Hypertext is a mechanism that allows linking of web pages (HTML documents).
+
+INTRODUCTION TO HTML -> BASIC HTML STRUCTURE
+An HTML program:
+Is not case sensitive
+Is interpreted
+Does not have a strict syntax
+Does not give errors if the code is incorrect
+Cannot be debugged
+
+INTRODUCTION TO HTML -> BASIC HTMLM STRUCTURE
+Elements used to write an HTML Program
+
+<!DOCTYPE..> -  Defines the document type and HTML version
+<html> - Encloses the complete HTML document and mainly comprises document header which is represented by <head>.../head> and document body which is represented by <body>../body> tags
+
+<head> - Represents the document's header which can keep other HTML tags such as <title>, <link> etc.
+
+<title> - Is used inside the <head> tag to mention the document title.
+
+<body> - Represents the document's body which keeps other HTML tags Such as <h1>, <div>, <p> etc.
+
+<h1> - Represents the heading
+
+<p> - Represents a paragrapth
+
+INTRODUCTION TO HTML -> FORMATTING TAGS
+
+An HTML element is defined by a starting tag. If the element contains other content, it ends with a closing tag.
+
+Heading Tag is used to give a heading. Six levels of headings can be given using tags from <h1> to <h6>, where h1 tag has the maximum font size.
+
+Example
+<h1>This is heading 1</h1>
+<h6>This is heading 1</h6>
+
+Paragraph tag <p> is used to structure content in paragraphs.
+
+Example
+<p>Here is a first paragraph of text. </p>
+
+Center alignment tag <center> is used to align the text in center.
+
+Example:
+<center> This comes in center </center>

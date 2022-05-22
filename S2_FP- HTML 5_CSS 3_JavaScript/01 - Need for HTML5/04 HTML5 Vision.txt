@@ -1,0 +1,70 @@
+HTML5 VISION -> INTRODUCTION
+
+HTML5 aims to replace plug-in based RIA platforms.
+
+HTML5 VISION -> MORE ON HTML5
+
+HTML5:
+Is the latest version of HTML
+Was standardized in October 2014
+Is a higher version of HTML4
+Is used only on Client side
+Is categorized as an RIA technology
+
+Is based on open standards
+Is not a proprietary technology
+Does not require any plug-ins
+Is supported by all major browsers
+
+HTML5 VISION -> FEATURES
+Forms - New widgets
+Canvas - 2D and 3D graphics
+Multimedia - Audio and Video support
+Geolocation - Gets longitude and latitude
+WebStorage - Persistence on client side
+Web Worker - Threading and parallel execution
+WebSocket - Connected application
+Microdata - SEO and Metadata
+Drag and Drop - UI Drag and Drop
+
+HTML5 VISION -> CURRENT RIA PLATFORMS
+RIA technology makes the browser smart and interactive.
+
+Widely used RIA platforms:
+Adobe Flash
+Microsoft Silverlight
+Oracle JavaFX
+
+These are also called plug-in platforms.
+
+These platforms are being replaced by HTML5
+
+HTML5 VISION -> BROWSER SUPPORT FOR HTML 5
+HTML5 is also supported by:
+Sony PlayStation 4
+Microsoft Xbox One
+Samsung Smart TV
+Amazon Kindle
+Sony Reader
+
+HTML5 VISION -> WEBSITE SUPPORT FOR HTML5
+HTML5 is becoming a widely used platform and is getting rapid acceptance.
+
+Examples
+Youtube.com
+BBC.com
+Amazon.com
+Channel9.msdn.com
+
+HTML5 VISION -> HTML5 FRAMEWORKS
+Some of the popular HTML5 Frameworks are:
+Twitter Bootstrap
+HTML5 Boilerplate
+Foundation
+Titon toolkit
+Mootor
+
+HTML5 VISION -> SUMMARY
+Key points discussed in this video:
+-> HTML5 is categorized as an RIA technology.
+-> HTML5 is cross platform.

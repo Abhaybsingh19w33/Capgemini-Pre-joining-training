@@ -1,0 +1,49 @@
+WHAT IS HTML5 -> INTRODUCTION
+HTML stands for Hyper Text Markup Language
+
+WHAT IS HTML5 -> DEFINITION
+HTML:
+is a markup language
+is a collection of tags
+is used fro tyhe development of web pages
+is standardized by W3C AND WHATWG
+
+has an extension file names .html or .htm
+is extended from SQML
+is extended to XHTML
+is based on open standards
+
+is not a programming language
+Does not support
+-> Structured programming
+-> Object Oriented programming
+-> Functional Programming
+
+HTML tags are enclosed in '<' '>' symbols
+HTML is based on tags hence it is a markup language
+HTML page can contain:
+-> Tags
+-> CSS
+-> Script
+
+WHAT IS HTML5 -> CHARACTERISTICS
+HTML programs are not compiled but interpreted
+
+HTML programs are executed by the layout engine of a browser
+
+WHAT IS HTML5 -> LAYOUT ENGINES
+Safari - Webkit
+Firefox - Gecko
+Blink - Chrome and Opera
+Trident - Internet Explorer
+Konqueror - KHTML
+
+WHAT IS HTML5 -> LATEST VERSION
+The latest version of HTML is 5.0
+
+Version 5.01 is under development
+
+WHAT IS HTML5 -> TYPE OF HTML
+XHTML - XML HTML
+DHTML - Dynamic HTML
+CHTML - Compact HTML

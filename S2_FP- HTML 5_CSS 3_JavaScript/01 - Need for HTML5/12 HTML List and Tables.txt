@@ -1,0 +1,95 @@
+HTML LISTS AND TABLES -> INTRODUCTION
+
+Pure HTML(tag only) based programs cannot be debugged
+
+HTML LISTS AND TABLES -> CREATE HYPERLINK
+A link is specified using HTML tag <a>, known as anchor tag.
+
+Anything falling between the opening <a> and </a> tag becomes a hyperlink.
+
+<a href="link">Link text</a>
+
+HTML LISTS AND TABLES -> WORK WITH IMAGES
+A programmer can add an image to a web page using the <img> tag.
+
+<img src="test.png" alt="Test image" width="150" height="150"/>
+
+Images can be hyperlinked when associated with anchor tag.
+
+<a href="link">
+    <img src="test.png" alt="Test image" width="150" height="150"/>
+</a>
+
+HTML LISTS AND TABLES -> HTML TABLES
+A table:
+Is a means to organize data, images, links and text
+Is a combination of rows and columns
+can be nested
+
+<table> tag is used to create a table
+<tr> tag is used to create a table row
+<td> tag is used to create a cell
+
+<table>
+    <tr><td>    </td></tr>
+</table>
+
+rowspan 
+
+<thead>
+<tfoot>
+
+HTML LISTS AND TABLES -> HTML LISTS
+HTML HAS Support for three kinds of lists:
+-> <ul> Unordered List: Displayed with bullets
+-> <ol> Ordered List: Displayed in a numbered way
+-> <dl> Definition List: Displayed like a dictionary
+
+Unordered list is a collection of items that have no special order or sequence
+
+It is represented using a <ul> tag
+
+The items of an Unordered list have bullets
+
+<ul>
+    <li>    </li>
+</ul>
+
+Ordered list is a collection of items that have a sequence
+It is represented using a <ol> tag
+The items of an Ordered list are numbered
+
+<ol> 
+    <li></li>
+</ol>
+
+IN definition lists, entries are listed in the same way as they are lisited in a dictionary
+
+The definition list is a way to present a glossary, a list of terms or any other aname/value list.
+
+Definition list makes use of following tags
+<dl> : defines the start of the list
+<dt> : Used for a term
+<dd> : used for term definition
+</dl> : End of the list
+
+<dl>
+    <dt><b></b></dt>
+    <dd></dd>
+</dl>
+
+HTML LISTS AND TABLES -> HTML FONTS
+
+A <font> tag is used to add style, size and color to the text.
+
+A <basefont> tag is used to set all the text to the same size, face anf color.
+
+The font tag three attribute: size, color and face. These are used to customize the fonts.
+
+<font face="font name" size="5" color="red">
+</font>
+
+HTML LISTS AND TABLES -> SUMMARY
+Key points discussed in this video:
+-> Table allows organization of data, images and links.
+-> List allows representation of data in an ordered and unordered way.

@@ -1,0 +1,37 @@
+PROGRESS OF HTML -> INTRODUCTION
+
+HTML was invented in the yesr 1990 at CERN, Geneva
+
+PROGRESS OF HTML -> ORIGIN
+
+IETF recognized HTML to be an application of SGML (proposed by TB lee) in 1993
+
+Dave Regett proposed HTML + standard in 1994
+
+In early 1994, the HTML and HTML+ drafts expired. Thereafter, IETF created an HTML Working Group, which completed HTML 2.0 version in 1995.
+
+PROGRESS OF HTML -> EARLY AND CURRENT BROWSERS
+
+Early browsers
+WorldWideWeb (Nexus) - Developed by TB Lee
+Erwise - First GUI browser
+Mosaic - Developed by Marc Anderseen
+Lynx - Text browser
+Netscape - Developed by Marc Andersen
+Internet Explorer - Developed by Microsoft
+
+Mainstream browsers
+Chrome - Developed by Google
+Firefox - Developed by Mozilla Foundation
+Internet Explorer -  Developed by Microsoft
+Safari - Apple's default browser
+Opera - Introduced Speed Dial Browsing
+Maxthon - Originally known as MyIE2
+
+PROGRESS OF HTML -> GROWTH OF HTML
+HTML2.0 (IETF) - Nov 1995
+HTML3.2 - Jan 1997
+HTML4 - Dec 1997
+HTML4.01 - Dec 1999
+XHTML - May 2000
+HTML5 - Oct 2014
