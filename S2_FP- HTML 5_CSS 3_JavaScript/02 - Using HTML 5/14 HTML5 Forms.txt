@@ -1,0 +1,164 @@
+HTML5 WEB FORMS -> INTRODUCTION
+
+Web Forms help programmers to develop UI.
+
+HTML5 WEB FORMS -> INTRODUCTION TO WEB FORMS
+Web Forms 2.0 is an enhancement to HTML 4.
+
+Form elements and attributes in HTML5 provide a greater degree of smantic mark-up than HTML4
+
+Many new widgets have been added in HTML5 such as Date, Color, URL, Email etc.
+
+HTML4 UI elements use the type attribbute to specify the type.
+
+Some of the widgets supported by HTML4.
+text - A free-form text field.
+password - A text field for sensitive information.
+checkbox - A set of zero or more values from a predefined list.
+radio - An enumerated value.
+submit - A free-form of button that initiates form submission
+hidden - A string that is not normally displayed to the user.
+select - An enumerated value quite similar to the radio type.
+textarea - A multi-line text box.
+button - It initiates any event related to button.
+
+Example: HTML 4 UI
+<form action="http://www.mysite.com/start.jsp" method= "post">
+    <p>
+        <label for="firstname">first name: </label>
+        <input type="text" id="firstname"><br />
+
+        <label for="lastname">last name: </label>
+        <input type="text" id="lastname"><br />
+
+        <label for="email">email: </label>
+        <input type="text" id="email"><br>
+
+        <input type="radio" name="sex" value="male"> Male<br>
+        <input type="radio" name="sex" value="female"> Female<br>
+        <input type="submit" value="send"> <input type="reset">
+    </p>
+</form>
+
+HTML 5
+has backward compatibility wuth HTML4
+has support fo r over 60+ new widgets
+is well supported by major browsers
+
+Opera and Chrome has the maximum support for web forms.
+
+Some of new HTML5 elements
+
+datetime - A date and time (year, month, day, hour, minute, second, fractions of a second)
+
+date - A date (year, month, day)
+month - A date consisting of a year and a month
+week - A date consisting of a year and a week number
+time - time (hour, minute, seconds, fractional seconds)
+
+number - Accepts only numerical value
+range - Used for input fields that should contain a value from a range of numbers
+email - Accepts only email value
+url - Accepts only URL value
+
+HTML5 WEB FORMS -> IMPLEMENTS WEB FORMS
+<output> element is used to display the result of a computation written in a result.
+
+<html>
+<script type="text/javascript">
+    function showResult() {
+        x = document.forms["myform"]["newinput"].value;
+        document.forms["myform"]["result"].value=x;
+    }
+</script>
+
+<body>
+    <form action="http://www.website.com//start.jsp" method="get" name="myform">
+        Enter a value : <input type="text" name="newinput" />
+        <input type="button" value="Result" onclick="showResult();" />
+        <output name="result"/>
+    </form>
+</body>
+</html>
+
+Placeholder attribute is used on <input> and <textarea> elements, whihc provides a hint to the user of what can be entered in the field.
+
+<html>
+    <body>
+        <form action="www.website.com" method="get">
+            Enter email: <Input type="email" name="newinput" placeholder="email@example.com">
+            <input type="submit" value="submit"/>
+            <input type="text" name="search" placeholder="search the website"/>
+        <form>
+    </body>
+</html>
+
+Autofocus attribute at the time of document load, automatically focuses one particular form field.
+
+<html>
+    <body>
+        <form action="link" method="get">
+            Enter email <input type="text" name="newinput" />
+            <p>Try to submit using Submit button</p>
+            <input type="submit" value=" submit" />
+            <br>
+        	<input type="text" name="newinput" value="hello" autofocus/>
+        </ form>
+    </body>
+</html>
+
+Required attribute ensures that an element doesn't go empty. This eliminates the nedd for JavaScript Validations.
+
+<html>
+    <body>
+        <form action="mywebsite.com" method="get">
+            Enter email : <input type="text" name="newinput" required/>
+            <p>iry to subnit using Submit button</p>
+            <input type="submit" value="submit" />
+        </form>
+    </body>
+</html>
+
+Autocomplete attribute provides auto completion feature to the user.
+
+Example
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Title name will go here</title>
+    </head>
+    <body>
+        <form action="demo_form.php" autocomplete="on">
+            First name: <input type="text" name="fname"><br>
+            Last name: <input type="text" name="lname"><br>
+            E-mail: <input type="email" name="email" autocomplete="on">
+            Phone: <input type="text" name="text" autocomplete="on"><br>
+            <input type="submit">
+        </form>
+    </body>
+</html>
+
+Example: New Widgets
+<form>
+    <input type="number" min="0" max="10" step="2" value="6">
+    <input type="range" min="0" max="10" step="2" value="6">
+    <input type="date">
+    <input name="q" type="search">
+    <input type="submit" value="Go">
+    <input type='text' placeholder='Search inside'/>
+        <strong>Input Validation:</strong>
+        <style> :invalid{background-color: red;} </style>
+    <input type='color' value="bear" />
+    <input type='email' value="some@email.com" />
+    <input type='tel' value="1234" />
+</form>
+
+HTML5 WEB FORMS -> 
+HTML5 WEB FORMS -> 
+HTML5 WEB FORMS -> 
+HTML5 WEB FORMS -> 
+HTML5 WEB FORMS -> 
+HTML5 WEB FORMS -> 
+HTML5 WEB FORMS -> 
+HTML5 WEB FORMS -> 
+HTML5 WEB FORMS -> 

@@ -1,0 +1,101 @@
+AUDIO AND VIDEO -> INTRODUCTION
+
+HTML5 has support for native audio and video without the need for plug-in(Flash).
+
+AUDIO AND VIDEO -> UNDERSTAND AUDIO AND VIDEO TAGS
+
+The HTML% <audio> and <video> tags make it simple to add media to a web page.
+
+A programmer needs to set src attribute to identify the media source.
+
+A programmer needs to set the controls attribute so that the user can work on the media
+
+AUDIO AND VIDEO -> WORK WITH VIDEO
+
+A <video> tag is used to embed a video a web page.
+
+HTML5 supports formats such as ogg, webM, mp4, etc
+
+A programmer can use the <source> tag to specify media along with the media type
+
+Attributes of a <video> tag
+
+autoplay - The video will automatically begin to play.
+autobuffer - The video will automaticaly begin buffering even if it's not set to automaticaly play.
+controls - It will allow the user to control video playback including volume, seeking and pause/resume playback.
+height - It specifies the height of the video's display in pixels.
+loop - It specifies that the video automaticaly seeks back to the start after reaching at the end.
+preload - The video will be loaded at page load, and ready to run, ignored if autoplay is present.
+poster - This is a URL of an image to show until the user plays or seeks.
+width - It specifies the width of the video's display in pixels.
+
+Example: Using <video> tag
+
+<!DOCTYPE HTML>
+<html>
+<body>
+    <video width="300" height="200" controls autoplay>
+        <source src="/html5/My.mp4" type="video/mp4" />
+        Your browser does not support the <video> element
+    </video>
+</body>
+</html>
+
+AUDIO AND VIDEO -> WORK WITH AUDIO
+An <audio> tag is used to embed sound content in an HTML5 web page.
+
+Most browsers have support for audio formats such as mp3.
+
+A programmer can use the <source> tag to specify media along with the media type.
+
+An audio element allows multiple source elements and browser will use the first recognized.
+
+Attributes of an <audio> tag
+
+autoplay - The audio will automatically play.
+
+autobuffer - The video will automatically begin buffering.
+
+controls - It will allow the user to control audio playback including volume, seeking and pause/resume playback.
+
+loop - It specifies that the audio automatically seeks back to the start after reaching at the end.
+
+preload - The audio will be loaded at page load and ready to run.
+
+src - The URL of the audio to embed.
+
+Example: Using <audio> tag
+
+<!DOCTYPE HTML>
+<html>
+<body>
+    <audio controls autoplay>
+        <source src="/html5/my.ogg" type="audio/ogg" />
+        <source src="/html5/my.wav" type="audio/wav" />
+        Your browser does not support the <audio> element.
+    </audio>
+</body>
+</html>
+
+AUDIO AND VIDEO -> WORK WITH AUDIO AND VIDEO
+
+Example
+<!DOCTYPE HTML>
+<head>
+    <script type="text/javascript">
+    function MyVideo () {
+        var v = document.getElementsByTagName ("video") [0];
+        v.play();
+    }
+    </script>
+</head>
+<html>
+<body>
+    <form>
+        <video width="300" height="200" src="/html5/vids.mp4 ">
+            Your browser does not support the <video> element.
+        </video>
+        <input type="button" onclick="MyVideo();" value="Play" />
+    </form>
+</body>
+</html>

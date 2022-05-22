@@ -1,0 +1,211 @@
+HTML5 Forms
+
+Structure:
+-> Introduction
+-> Using Web Foms
+-> Examples
+
+Introduction
+
+Web Forms 2.0 is an extension to the forms features found in HTML4. Form elements and attributes in HTML5 provide a greater degree of semantic mark-up than HTML4 and remove a great deal of the need for tedious scripting and styling that was required in HTML4. Many new input types have been introduced. These provide native input assistance and validation without any JavaScript code.
+
+email
+-> enter an email address
+tel
+-> enter a telephone number no strict syntax is enforced, but line breaks will be removed
+
+url
+-> enter a URL
+
+search
+-> a search field with line breaks automatically removed
+
+number
+-> a floating point number
+
+range
+-> a control for entering an approximate value, typically represented by a slider
+
+date
+-> enter the day, month and year
+
+datetime
+-> enter the day, month, year, hour, minute, second and microsecond based on the current UTC timezone
+
+datetime-local
+-> enter a date and time with no timezone
+
+month
+-> enter the month and year with no timezone
+
+week
+-> enter a week number with no timezone
+
+time
+-> enter the time with no timezone
+
+color
+-> specify a color
+
+Using Web Forms
+
+Placeholders
+
+When an empty input box is presented in a form to the users, there is a good chance that users can get confused (especially if this is the first time they have interacted with your web page). A good way to reduce such confusion is to provide a hint to the user as to the type of content that is suitable for the input field.
+
+HTML5 Supports hinting on the input control via the placeholder attribute. The value of the placeholder attribute, also called the watermark, appears typically in light gray color. This Visual different from a typed in value allows user to understand if the value they are seeing is something they have typed in versus something that was created by the web server.
+
+Here is a simple example of the placeholder attribute in action.
+
+<!DOCTYPE html>
+<html>
+<body
+<header>
+<h1>placeholder demo</h1>
+<p>Demo showing placeholder attribute on input element</p>
+</header>
+<footer>
+<h1></h1>
+<p>HTML Goodies</p>
+</footer>
+    Enter phone number
+<input id="phone" placeholder="(xxx) xxx-xxxx">
+</body>
+</html>
+
+When the above HTML is rendered in a modern browser, we can see that we get "hinted" about the format of phone number that is expected
+
+While it is seem that placeholders can be used anywhere, it is a good web programming practice to only include them where there is ambiguity for the user. Placeholders aren't meant to describe the field or instructions.
+
+Autofocus
+
+Another attribute which helps make forms easier to use in HTML5 is the autofocus attribute. In the most typical scenario, users want to start interacting on a form by typing. However, because of no built in capability in HTML4 and below, users were expected to select the field where they want to type or web developers had to write JavaScript to get the focus on the proper element on page load event so that users can being typing as soon as the form loads.
+
+This attribute "autofocus" can be added to a single 'input' or 'textarea' element.
+
+For example, when the example used previously was loaded, we can see that we cannot directly type in the text field when the form was loaded. Instead, we had to click in the "input" field and only then could we type.
+
+Here is the earlier example updated with "autofocus" attribute added.
+
+<!DOCTYPE html>
+<html>
+<body>
+<header>
+<h1>placeholder demo</h1>
+<p>Demo showing placeholder attribute on input element</p>
+</header>
+<footer
+<h1></h1>
+<p>HTML Goodies</p>
+</footer>
+    Enter phone number
+<input id="phone" placeholder="(xxx) xxx-xxxx" autofocus>
+</body>
+</html>
+
+Date Picker
+
+The first thing we would like to take a look at is the date picker. Selecting date is a common thing you may find in registration form, particularly in some sites or application like flight and hotel booking.
+
+There are many JavaScript Libraries to create date picker. Now, we can also create one in much easier way with HTML5 input date, as follows.
+
+<input type= "date">
+
+The date picker in HTML5 basically works very similar to how the JavaScript Libraries did; when we focus on the field a calendar will pop out, and then we can navigate through the months and years to select the date.
+
+There are also some new input types to select date or time more specifically, month, week, time, datetime and datetime-local, which we are sure that the keyword itself is quite descriptive to tell what it does.
+
+<input type= "month">
+<input type= "week">
+<input type= "time">
+sinput type= "datetime"
+sinput type= "datetime-local'>
+
+Color Picker
+
+Color picker is often needed in certain web-based application, such as this CSS3 gradient generator, but all this time web developers also still rely on a JavaScript Library, such as jsColor, to do the job. But now we can create a native-browser color picker with HTML5 color input type.
+
+<input type="color">
+
+Furthermore, we can also set the default color with the value attribute, as follows,
+
+<input type="color" value="#ff0000">
+
+That way, when it is viewed in the unsupported browsers, the input will degrade in a text field and the default value will be visible that can give a sort of hint for users what should be entered in the field.
+
+Display the Color Value
+
+Rather than opening Photoshop just to copy the hex color format, you can actually create a
+Simple tool upon this input type to do the job. Since the generated color is already in
+hexadecimal this would be really easy.
+
+First, we add id colorpicker to the input and we also add an empty div with id hexcolor next to it to contain the value
+
+<input type="color" id="colorpicker" name="color" value="#f0000"><div id="hexcolor"></div>
+
+Range
+
+The range input type allows us to add a slider in the browser for selecting number in a range which we can also find in jQuery UI.
+
+<input type="range">
+
+The snippet above is basic the implementation of range input type. We can also change the slider orientation to vertical using CSS, as follows:
+
+input[type=range]{
+    width: 20px;
+    height: 200px;
+    -webkit-appearance: slider-vertical;
+}
+
+Additionally, we can set the min and max range of the numbers, for instance:
+
+<input type="range" name="range" min="0" max="225">
+
+In the snippet below we set the mininum to zero and 225 for the maximum. When they are not explicitly specified, by default the browser will take 0 for the minimum to 100 for the maximum.
+
+There is one constraint though, the number is invisible and we cannot see the generated number/value from the slider in the browser.
+
+<input type="range" id="slider" value="10" name="range"><div id="output"></div>
+
+Example:
+
+Example 1:
+
+<input type="text" name="browser" list="browsers" />
+
+<datalist id= "browsers">
+    <option value="Chrome" />
+    <option value="Firefox" />
+    <option value="Internet Explorer" />
+    <option value="Safari" />
+    <option value="Opera" />
+</datalist>
+
+Example 2:
+// Validation
+
+<p>
+    <label for="firstname">First name</label>
+    <input type="text" id="firstname" name="firstname" placeholder="first name" required maxlength="20" />
+</p>
+
+<p>
+    <label for="lastname">Last name</label>
+    <input type="texť" id="lastname" name="lastname" placeholder="last name" required maxlength="20" />
+</p>
+
+<p>
+    <label for="email">Email address</label>
+    <input type="email" id="email" name="email" placeholder="your@email.address" required maxlength="50" />
+</p>
+
+<p>
+    <label>
+        <input type= "checkbox" name="newsletter" /> Sign up for our newsletter
+    </label>
+</p>
+
+Summary
+To enable compulsory input "required" attribute is used.
+HTML 5 has over 60+ new widgets.
+HTML 5 controls have validation attributes
