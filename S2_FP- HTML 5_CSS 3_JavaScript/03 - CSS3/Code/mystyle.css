@@ -1,0 +1,17 @@
+/* mystyle.css */
+h1, h2, h3 {
+    color: #36C;
+    font-weight: normal;
+    letter-spacing: .4em;
+    margin-bottom: 1em;
+    text-transform: lowercase;
+}
+
+p {
+    color: #36CCC3;
+    font-weight: normal;
+    letter-spacing: .4em;
+    margin-bottom: 1em;
+    text-transform: lowercase;
+    border : 1px solid red;
+}

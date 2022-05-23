@@ -1,0 +1,270 @@
+CSS ADVANCE VISUAL EFFECTS -> INTRODUCTION
+
+CSS3 has support for animation.
+
+CSS ADVANCE VISUAL EFFECTS -> SHADOW OPERATIONS
+
+CSS3 shadow property can be divided into
+-> Text shadow
+-> Box shadow
+
+Example
+<html>
+
+<head>
+    <style>
+        h1 {
+            text-shadow: 2px 2px;
+        }
+
+        h2 {
+            text-shadow: 2px 2px red;
+        }
+
+        h3 {
+            text-shadow: 2px 2px 5px red;
+        }
+
+        h4 {
+            color: white;
+            text-shadow: 2px 2px 4px #000000;
+        }
+
+        h5 {
+            text-shadow: 0 0 3px #FF0000;
+        }
+
+        h6 {
+            text-shadow: 0 0 3px #FF0000, 0 0 5px #0000FF;
+        }
+
+        p {
+            color: white;
+            text-shadow: 1px 1px 2px black, 0 0 25px blue, o 0 5px darkblue;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Ram Kumar</h1>
+    <h2>Kishan Kumar</h2>
+    <h3>Gopi Kumar</h3>
+    <h4>Ali Hussain</h4>
+    <h5>John DSouza</h5>
+    <h6>Anita Swamy</h6>
+    <p>Chintan Gopal</p>
+</body>
+</htm1>
+
+CSS ADVANCE VISUAL EFFECTS -> TRANSFORM OPERATIONS
+
+A transformation is an effect that lets an element change shape, size and position.
+
+2D transforms are used to change the element structure to translate, rotate, scale, and skew.
+
+Transformation methods
+matrix(n,n,n,n,n,n) - defines matrix transforms with six values
+translate(x,y) - transforms the element along with x-axis and y-axis
+translateX(n) - transforms the element along with x-axis
+translateY(n) - transforms the element along with y-axis
+scale(x,y) - changes the width and height of an element
+
+scaleX(n) - change the width of element
+scaleY(n) - change the height of element
+rotate(angle) - rotate the element based on an angle
+skewX(angle) - defines skew transforms along with x axis
+skewY(angle) - defines skew transforms along with y axis
+
+Example
+<html>
+
+<head>
+    <style>
+        div {
+            width: 300px;
+            height: 100px;
+            background-color: pink;
+            border: 1px solid black;
+        }
+
+        div#myDiv {
+            /* IE 9 */
+            -ms-transform: rotate (-20deg);
+            /* Safari */
+            -webkit-transfom: rotate (-20deg);
+            /* Standard syntax */
+            transform: rotate (-20deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div>Ram Kumar</div>
+    <div id="myDiv">Gopal Kumar</div>
+</body>
+
+</html>
+
+Animation is the process of making shape changes and creating motions with elements.
+
+Keyframes control the intermediate animation steps in CSS3.
+
+Example 1
+@keyframes animation {
+    from {
+        background-color: pink;
+    }
+
+    to {
+        background-color: green;
+    }
+}
+
+div {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    animation-name: animation;
+    animation-duration: 5s;
+}
+
+Example 2
+<html>
+
+<head>
+    <style type=" text/css">
+        h1 {
+            -moz-animation-duration: 3s;
+            -webkit-animation-duration: 3s;
+            -moz-animation-name: slidein;
+            -webkit-animation-name: slidein;
+        }
+
+        @-moz-keyframes slidein {
+            from {
+                margin-left: 100%;
+                width: 300%;
+            }
+
+            to {
+                margin-left: 0%;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Animation Example</h1>
+    <p>This is an example of moving 1eft animation .</p>
+    <button onclick="myFunction()">Reload page</button>
+    <script>
+        function myFunction() {
+            location.reload();
+        }
+    </script>
+</body>
+
+</html>
+
+Example 3
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: relative;
+            -webkit-animation-name: example;
+            /* Chrome, Safari, Opera */
+            -webkit-animation-duration: 4s;
+            /* Chrome, Safari, opera */
+            -webkit-animation-iteration-count: 3;
+            /* Chrome, Safari, Opera */
+            -webkit-animation-direction: reverse;
+
+            /* Internet Explorer */
+            animation-name: example;
+            animation-duration: 4s;
+            animation-iteration-count: 3;
+            animation-direction: reverse;
+        }
+
+        /*Chrome, Safari, opera */
+        @-webkit-keyframes example {
+            0% {
+                background-color: red;
+                left: 0px;
+                top: 0px;
+            }
+
+            25% {
+                background-color: yellow;
+                left: 200px;
+                top: 0px;
+            }
+
+            50% {
+                background-color: blue;
+                left: 200px;
+                top: 200px;
+            }
+
+            75% {
+                background-color: green;
+                left: 0px;
+                top: 200px;
+            }
+
+            100% {
+                background-color: red;
+                left: 0px;
+                top: 0px;
+            }
+        }
+
+        /*Standard syntax */
+        @keyframes example {
+            0% {
+                background-color: red;
+                left: 0px;
+                top: 0px;
+            }
+
+            25% {
+                background-color: yellow;
+                left: 200px;
+                top: 0px;
+            }
+
+            50% {
+                background-color: blue;
+                left: 200px;
+                top: 200px;
+            }
+
+            75% {
+                background-color: green;
+                left: 0px;
+                top: 200px;
+            }
+
+            100% {
+                background-color: red;
+                left: 0px;
+                top: 0px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div>This a div</div>
+</body>
+
+</html>
+
+CSS ADVANCE VISUAL EFFECTS -> 
