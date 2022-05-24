@@ -1,0 +1,241 @@
+USER_DETAILS
+
+10001 raj@gmail.com	xxxxxxx 	     Rajan
+R		     Bangalore		  M 9555432100
+
+     11002 kumar@gmail.com	xxxxxxx 	     Akshay
+Kumar		     Mumbai		  M 9887642101
+
+     10003 Kanishk@gmail.com	xxxxxxx 	     Kanishk
+Shay		     Bangalore		  M 9886543210
+
+     11004 Anjali@gmail.com	xxxxxxx 	     Anjali
+Srivatsav	     Pune		  F 9882345001
+
+     10005 Preethi@gmail.com	xxxxxxx 	     Preethi
+
+Rashwin 	     Chennai		  F 9781234502
+
+     11006 rakesh@gmail.com	xxxxxxx 	     Rakesh
+Roy		     Pune		  M 9287654231
+
+     11007 aditi@gmail.com	xxxxxxx 	     Aditi
+Ras		     Bangalore		  F 9684327865
+
+     11008 krithi@gmail.com	xxxxxxx 	     Krithik
+Rajan		     Chennai		  M 9772347899
+
+     10009 chandrav@gmail.com	xxxxxxx 	     Chandrav
+Rajan		     Bangalore		  M 9227658026
+
+
+     10010 karthick@gmail.com	xxxxxx		     Karthick
+S		     Mumbai		  M 9337652855
+
+     10012 akansha@gmail.com	xxxxxxx 	     Akansha
+Sing		     Pune		  F 9228785472
+
+     10013 gaurav@gmail.com	xxxxxxx 	     Gaurav
+Kumar		     Delhi		  M 9007685422
+
+     10011 aishwarya@gmail.com	xxxxxx		     Aishwarya
+Rajesh		     Bangalore		  F 9776327644
+
+
+     10014 ragavan@gmail.com	xxxxxxx 	     Ragavan
+R		     Chennai		  M 9338987655
+
+     10015 sharmila@gmail.com	xxxxxxx 	     Sharmila
+Prasath 	     Bangalore		  M 9335258711
+
+     10016 kanan@gmail.com	xxxxxxx 	     Kananan
+Shekawath	     Bangalore		  F 9665834866
+
+     10017 sunil@gmailcom	xxxxxxx 	     Sunil
+Shan		     Mumbai		  M 9665467544
+
+     10018 naveen@gmail.com	xxxxxxx 	     Naveen
+
+R		     Chennai		  M 9556874587
+
+     10019 mothy@gmail.com	xxxxxxx 	     Mothy
+Rajan		     Chennai		  M 9003346842
+
+     10020 shilpa@gmail.com	xxxxxxx 	     Shilpa
+S		     Mumbai		  F 9334876944
+
+
+
+
+RIDE
+
+12001 CHN DLF		Tidle Park		      3 	  3
+	   10001
+25-NOV-20 07.00.13.36 PM
+25-NOV-20 08.02.13.36 PM						    yes
+yes
+
+     12002 Siruseri IT Park	Taramani		      2 	  3
+	   11002
+25-NOV-20 07.00.13.36 PM
+25-NOV-20 09.02.13.36 PM						    yes
+yes
+
+     12003 Electronic City	Madiwala		      2 	  3
+
+	   10003
+25-NOV-20 07.00.13.36 PM
+25-NOV-20 06.02.13.36 PM						    yes
+yes
+
+     12004 BMTC 		Electronic City 	      2 	  3
+	   11004
+26-NOV-20 07.30.13.36 PM
+26-NOV-20 08.02.13.36 PM						    yes
+yes
+
+     12005 Pune 		SP Info City		      0 	  3
+	   10005
+
+27-NOV-20 03.00.13.36 PM
+27-NOV-20 05.02.13.36 PM						    yes
+yes
+
+     12006 Mumbai		Pune			      0 	  3
+	   10015
+25-NOV-20 06.00.13.36 PM
+25-NOV-20 08.02.13.36 PM						    yes
+yes
+
+     12007 Chennai		Tidle Park		      0 	  3
+	   11006
+28-NOV-20 06.00.13.36 PM
+
+28-NOV-20 07.30.13.36 PM						    yes
+yes
+
+     12008 Coimbatore		DLF Park		      0 	  5
+	   10017
+28-NOV-20 07.30.13.36 PM
+28-NOV-20 08.02.13.36 PM						    no
+
+
+     12009 Mysore		Bangalore		      1 	  5
+	   10018
+29-NOV-20 06.00.13.36 PM
+29-NOV-20 08.02.13.36 PM						    no
+
+
+
+     12010 RMZ Ecoworld 	KR Puram		      3 	  3
+	   10018
+30-NOV-20 07.00.13.36 PM
+30-NOV-20 07.02.13.36 PM						    yes
+yes
+
+     12011 KR Pruam		Bangalore Airport	      2 	  3
+	   10019
+01-DEC-20 07.00.13.36 PM
+01-DEC-20 07.45.13.36 PM						    yes
+yes
+
+
+     12012 Egmore		Chennai Central 	      0 	  3
+	   10020
+05-DEC-20 07.20.13.36 PM
+05-DEC-20 08.30.13.36 PM						    yes
+yes
+
+     12013 LalBagh		Electronic City 	      1 	  3
+	   10001
+15-NOV-20 06.30.13.36 PM
+15-DEC-20 08.02.13.36 PM						    yes
+yes
+
+
+     12014 Nandi Hills		Bangalore		      0 	  3
+	   11002
+13-NOV-20 04.00.13.36 PM
+13-DEC-20 08.02.13.36 PM						    yes
+yes
+
+     12015 BMTC 		KR Puram		      2 	  2
+	   10003
+25-DEC-20 07.00.13.36 PM
+25-DEC-20 08.02.13.36 PM
+
+
+     12016 DLF Park		Coimbatore		      1 	  3
+
+	   10005
+22-DEC-20 06.30.13.36 PM
+22-DEC-20 07.25.13.36 PM
+
+
+     12017 Chennai Airport	DLF IT Park		      0 	  2
+	   10005
+21-DEC-20 07.00.13.36 PM
+21-DEC-20 08.12.13.36 PM						    yes
+yes
+
+     12018 Bangalore Airport	Madiwala		      2 	  3
+	   11007
+
+15-DEC-20 07.10.13.36 PM
+15-DEC-20 08.25.13.36 PM						    yes
+yes
+
+     12019 Chennai Central	Tambaram		      3 	  3
+	   11008
+15-DEC-20 07.20.13.36 PM
+15-DEC-20 08.40.13.36 PM						    yes
+yes
+
+     12020 Mumbai Central	Dadar			      2 	  3
+	   10020
+10-DEC-20 07.00.13.36 PM
+
+10-DEC-20 07.02.13.36 PM						    yes
+yes
+
+
+RIDE_USERS
+
+12002	10020
+     12003	10003
+     12004	11007
+     12005	11006
+     12005	10020
+     12005	10017
+     12006	11004
+     12006	11006
+     12006	10010
+     12007	10005
+     12007	11008
+     12007	10019
+     12008	10001
+
+     12008	10011
+     12008	10013
+     12009	10011
+     12009	10016
+     12009	10009
+     12009	11006
+     12011	10016
+     12012	10005
+     12012	11008
+     12012	10019
+     12013	10003
+     12013	11007
+     12014	10020
+
+     12014	10017
+     12014	10015
+     12015	10018
+     12015	10017
+     12016	10017
+     12016	10018
+     12016	10016
+     12018	10003
+     12020	10012
+
