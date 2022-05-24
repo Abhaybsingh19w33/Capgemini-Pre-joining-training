@@ -1,0 +1,68 @@
+PROGRAMMING MODEL OF JAVASCRIPT -> INTRODUCTION
+
+JavaScript supports multiple programming models.
+
+PROGRAMMING MODEL OF JAVASCRIPT -> IMPERATIVE AND STRUCTURED PROGRAMMING
+
+JavaScript is a scripting language, it is interpreted rather than compiled.
+
+JavaScript supports a lot of structured programming syntax from C such as if statements, while loops, switch statements, do while loops, etc.
+
+Block scoping('C' style) is not supported. Instead, JavaScript has function scoping.
+
+PROGRAMMING MODEL OF JAVASCRIPT -> FUNCTIONAL PROGRAMMING
+
+Functions are first class concepts in JavaScript.
+
+A function is an object. It has properties and methods such as .call() and .bind().
+
+JavaScript supports:
+-> Anonymous functions
+-> Nested functions
+-> Closures
+
+PROGRAMMING MODEL OF JAVASCRIPT -> OBJECT BASED PROGRAMMING
+
+JavaScript is object-based.
+
+Its abjects are associative arrays augmented with prototypes.
+
+It has a limited API such as Array, Error, Math and Date.
+
+Most properties of an object can be enumerated using a for .. in loop
+
+PROGRAMMING MODEL OF JAVASCRIPT -> DYNAMIC TYPING
+
+Types are associted with values, not with variables. Therefore, type is inferred by value tia variable.
+
+Example
+
+A variable x could be bound to a number, then later rebound to a string.
+
+var i = 30;
+i = "believe in yourself";
+
+JavaScript supports Duck Typing.
+
+Duck typing is concerned with establishing the suitability of an object for some purpose.
+
+PROGRAMMING MODEL OF JAVASCRIPT -> PROTOTYPE BASED OOP
+
+JavaScript uses prototypes where many other object-oriented languages use classes for inheritance.
+
+It is possible to simulate many class-based features
+with prototypes in JavaScript.
+
+Functions also play the role of object constructors
+along with their typical role.
+
+Prefixing a function call with 'new' will create an instance of a prototype, inheriting properties and methods from the constructor.
+
+PROGRAMMING MODEL OF JAVASCRIPT -> SUMMARY
+Key points discussed in this video:
+
+-> Code reusability is implemented using prototypes.
+
+-> JavaScript supports Closure.
+
+-> Code blocks are not supported by JavaScript.

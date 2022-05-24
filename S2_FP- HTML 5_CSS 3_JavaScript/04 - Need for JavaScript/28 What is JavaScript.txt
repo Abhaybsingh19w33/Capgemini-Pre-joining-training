@@ -1,0 +1,62 @@
+WHAT IS JAVASCRIPT -> INTRODUCTION
+
+JavaScript is a multi-paradign programming language.
+
+WHAT IS JAVASCRIPT -> DEFINITION
+JavaScript
+-> is a multi-paradigm programming language
+-> was inventede by Brendon Eich at Netscape
+-> was first released in 1995
+
+WHAT IS JAVASCRIPT -> CHARACTERISTICS
+JavaScript
+-> is a high level and an object baased (prototype-based) programming language
+-> is functional and imperative in nature
+-> is used for scripting
+
+JavaScript Supports:
+-> Dynamic typing
+-> Cross browser/platform development
+-> client side programming
+-> Server side programming
+
+The latest version of JavaScript is 1.8.5
+
+WHAT IS JAVASCRIPT -> TYPING SYSTEMS
+JavaScript Supports:
+-> Duck typing
+-> Dynamic typing
+
+WHAT IS JAVASCRIPT -> MAJOR IMPLEMENTATION
+Some of the important JavaScript implementations are:
+-> SpiderMonkey
+-> V8
+-> Carakan
+-> Chakra
+-> Rhino
+
+WHAT IS JAVASCRIPT -> LANGUAGES INFLUENCED JAVASCRIPT
+JavaScript has been influenced by many language:
+-> Lua
+-> Scheme
+-> C
+-> Python
+-> HyperTalk
+
+WHAT IS JAVASCRIPT -> LANGUAGES INFLUENCED BY JAVASCRIPT
+JavaScript has influenced the following languages:
+-> ActionScript
+-> CoffeeScript
+-> Dart
+-> TypeScript
+-> LiveScript
+
+WHAT IS JAVASCRIPT -> JAVASCRIPT FRAMEWORK
+A few important JavaScript frameworks are:
+jQuery
+Kendo UI
+AngularJS
+Ember.js
+YUI
+Ext.js
+OpenUI5

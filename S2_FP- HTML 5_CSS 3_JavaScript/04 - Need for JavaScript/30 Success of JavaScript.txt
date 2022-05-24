@@ -1,0 +1,57 @@
+SUCCESS OF JAVASCRIPT -> BROWSER (CLIENT SIDE)
+JavaScript was invented to add interactivity ti web application (client side).
+
+Web browsers support only HTML and JavaScript
+
+HTML is used to develop User Interface for web applications.
+
+JavaScript is used to add behaviour and interaction to the UIs of web applications.
+
+JavaScript is well supported by all major browsers.
+
+JavaScript is used to enhance user-experience on the browsers (web-based apps).
+
+Examples: JavaScript usage
+Mikekus.com: Portfolio designer
+HelloMonday.com: Digital graphics and animation
+Multeor.com: Multiplayer game
+Crimetimeline.io : Crime data in Britain
+Hereistoday.com: Ilustrates the scale of time on Earth
+Tweetmap.com: Tweets around the world
+Sidigital.io: Portfolio and blog
+
+SUCCESS OF JAVASCRIPT -> WEB SERVERS (SERVER SIDE)
+Server-Side JavaScript (SSJS) implementation has become popular for the developmetn of server side apps.
+
+Example 1
+Node.js uses V8 engine (Google) to build fast and scalable network applications.
+
+It uses an event-driven, non-blocking I/O model that makes it lightweight and efficient, which is perfect for data-intensive, real-time applications that run across distributed devices.
+
+Example 2
+Rhino.js is a CommonJS-based JavaScript runtime written in Java. It is based on the Mozilla Rhino JavaScript engine.
+
+Rhino.js, which runs on the Java VM, provides a rich set of modules that covers blocking and asynchronous 1/0, logging, persistence and development tools.
+
+Example 3
+Narwhal is a cross-platform, multi-interpreter, general purpose JavaScript platform.
+
+It aims to provide a solid foundation to build JavaScript applications, primarily outside the web browser.
+
+Example 4
+Wakanda is an "end-to-end" JavaScript platform based on the SquirrelFish JavaScript engine that provides REST API for Server-Side JavaScript object persistence and a client-side object browser.
+
+SUCCESS OF JAVASCRIPT -> BEYOND THE BROWSER
+libmozjs-24-bin package comes with Mozilla's SpiderMonkey engine. It can be used as an interactive interpreter(using JS24 command).
+
+libv8-dev package provides Google's V8 engine.
+
+Node.js is available as the executable Node.js.JIT compilation is provided as a courtesy of V8.
+
+libjavascriptcoregtk-3.0-bin uses WebKit's JavaScriptCore interpreter (JSC) as a regular interpreter from the command-line.
+
+SUCCESS OF JAVASCRIPT -> SUMMARY
+Key points discussed in this video:
+-> JavaScript can be used to create non-browser apps using JavaScript libraries.
+
+-> JavaScript is used for the development of interactive client side apps.

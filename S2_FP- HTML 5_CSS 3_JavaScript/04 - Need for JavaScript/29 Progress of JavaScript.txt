@@ -1,0 +1,79 @@
+PROGRESS OF JAVASCRIPT -> INTRODUCTION
+
+JavaScript was released in the year 1995.
+
+PROGRESS OF JAVASCRIPT -> THE BEGINNING
+Brendon Eich started developing JavaScript in 1995 at Netscape.
+
+During its development phase, it was called Mocha.
+
+Then, Mmocha was renamed as LiveScript.
+
+Finally, LiveScript was rebranded as JavaScript.
+
+PROGRESS OF JAVASCRIPT -> JAVASCRIPT ENGINES
+
+JavaScript engine is a virtual machine that interprets and executes JavaScript
+
+JavaScript engine is most commonly used in web browsers.
+
+Some of the important JavaScript implementations are:
+-> SpiderMonkey
+-> V8
+-> Carakan
+-> Chakra
+-> Rhino
+
+PROGRESS OF JAVASCRIPT -> CLIENT SIDE JAVASCRIPT FRAMEWORKS
+
+KUS is a JavaScript engine for Konqueror web browser.
+
+Nashorn, a part of OpenJDK has been written by Oracle.
+
+Juce, a C++ application framework, contains a custom embedded interpreter using a part of JavaScript's syntax.
+
+Adobe Acrobat and OpenLaszlo use JavaScript internally.
+
+PROGRESS OF JAVASCRIPT -> SERVER SIDE JAVASCRIPT FRAMEWORK
+
+A few important server side JavaScript frameworks are:
+Node.js (Spidermonkey, V8)
+MongoDB (V8)
+io.js (V8)
+CouchDB (SpiderMonkey)
+
+PROGRESS OF JAVASCRIPT -> TIMELINE OF JAVASCRIPT
+2011
+V1.8.5
+released
+
+2009
+v1.8
+released
+
+2006
+v1.7
+released
+
+2005
+v1.6
+released
+
+2000
+v1.5
+released
+
+1998
+v1.3
+released
+
+1997
+v1.1
+released
+
+1996
+v1.0
+released
+
+1995
+Start of JavaScript Project
