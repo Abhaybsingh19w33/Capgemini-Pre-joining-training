@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>User Registration</title>
+    <!-- <title>Hello from DoSelect!</title> -->
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/4.0.0/normalize.min.css">
+    <link rel="stylesheet" href="styles/main.css">
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+  </head>
+
+  <body onsubmit="validateForm();">
+    <h1>User Registration Form</h1>
+    <!-- <form name="user_registration_form" onsubmit="validateForm();"> -->
+    <table>
+        <tbody>
+            <tr><td><label for="fname">First Name</label></td><td><input type = "text" id="fname" name="fname"/></td></tr>
+            <tr><td><label for="lname">Last Name</label></td><td><input type = "text" id="lname" name="lname"/></td></tr>
+            <tr><td><label for="email">Email</label></td><td><input type="email" name="email" id="email" value="" /></td></tr>
+            <tr><td><label for="password">Password</label></td><td><input type="password" name="password" id="password" value="" /></td></tr>
+            <tr><td><label for="confirm_password">Confirm Password</label></td><td><input type="password" name="password" id="confirm_password" value="" /></td></tr>
+            <tr><td><label for="mobile_number">Mobile Number</label></td><td><input type="text" name="mobile_number" id="mobile_number" value="" /></td></tr>
+            <tr><td><label for="gender">Gender</label></td><td><input type = "radio" name = "gender" value = "Male"/>&nbsp;Male&nbsp;<input type = "radio" name = "gender" value = "Female"/>&nbsp;Female</td></tr>
+            <tr><td><label for="country">Country</label></td><td><select name="country" id="country">
+                <option value="india" selected>INDIA</option>
+                <option value="usa">USA</option>
+                <option value="germany">GERMANY</option>
+                <option value="france">FRANCE</option>
+            </select></td></tr>
+            <tr><td><label for="city">City</label></td><td><select name="city" id="city">
+                <option value="bengaluru" selected>Bengaluru</option>
+                <option value="chennai">Chennai</option>
+                <option value="delhi">Delhi</option>
+                <option value="mumbai">Mumbai</option>
+            </select></td></tr>
+            <tr><td><label for="dob">Date of Birth</label></td><td><input type="date" id="dob" name="dob"></td></tr>
+            <tr><td>&nbsp;</td></tr>
+            <tr><td></td><td><input type = "submit" value = "Submit"/></td></tr>
+        </tbody>
+    </table>
+    <!-- </form> -->
+
+    <script src="scripts/index.js"></script>
+  </body>
+</html>

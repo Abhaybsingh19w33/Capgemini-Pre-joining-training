@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Hello from DoSelect!</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/4.0.0/normalize.min.css">
+    <link rel="stylesheet" href="styles/main.css">
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+  </head>
+
+  <body onload="getAvailableSeats()" onsubmit="onSubmit()">
+    <h2 style="background-color:#000080; color:#ff6600">Request Ride</h2>
+    
+    <!-- <form id="requestRideForm" name="requestRideForm" onsubmit="validateForm();"> -->
+    <table>
+        <tbody>
+            <tr><td>Ride Id</td><td><select name="rideId" id="rideId">
+                <option value="R001" selected>R001</option>
+                <option value="R002" >R002</option>
+                <option value="R003" >R003</option>
+                <option value="R004" >R004</option>
+                <option value="R005" >R005</option>
+                <option value="R006" >R006</option>
+                <option value="R007" >R007</option>
+                <option value="R008" >R008</option>
+                <option value="R009" >R009</option>
+                <option value="R010" >R010</option>
+            </select></td></tr>
+            <tr><td>User Name</td><td><input type = "text" id="username" name="username" onblur="validateUserName()" minlength="5"/></td></tr>
+            <tr><td>Ride Start Date</td><td><input type = "date" id="rideStartDate" name="rideStartDate"/></td></tr>
+            <tr><td>Number of seats required</td><td><input type = "text" id="noOfSeatsRequired" name="noOfSeatsRequired" onblur="validateSeatsRequired()"/></td></tr>
+            <tr><td>Number of seats available</td><td><input type ="text" id="noOfSeatsAvailable" name="noOfSeatsAvailable"/></td></tr>
+            <tr><td>Ride Cost</td><td><input type = "text" id="rideCost" name="rideCost"/></td></tr>
+            <tr><td>&nbsp;</td></tr>
+            <tr><td>&nbsp;</td><td><input type = "submit" value = "Submit Query"/></td></tr>
+        </tbody>
+    </table>
+    <!-- </form> -->
+
+    <p hidden id="submitText"></p>
+    <p hidden id="errorText" style="color:red;"></p>
+
+    <script src="scripts/index.js"></script>
+  </body>
+</html>
