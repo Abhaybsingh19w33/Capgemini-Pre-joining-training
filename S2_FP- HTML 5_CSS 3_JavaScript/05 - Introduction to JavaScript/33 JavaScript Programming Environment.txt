@@ -1,0 +1,49 @@
+Introduction to JavaScript
+
+Structure:
+-> Introduction to JavaScript
+
+Introduction to Javascript
+
+Javascript gives you the freedom to add interactivity and responsiveness to your web pages.
+
+JavaScript is a lightweight, easy to learn, scripting language. If's used on almost every website to respond to user actions, validate web forms, detect browser support, and much more.
+
+JavaScript is a web programming language, that is, a language that enables you, the designer of your website, to control how a web page behaves. This makes JavaScript crucially diferent from HTML, the language that gives structure to your web documents, and CSS, the language that controls the appearance of web pages
+
+If you know other programming languages such as PHP, most programming concepts and basic JavaScript syntax will sound quite familiar to you. However, if this is not the case, don't worry. by following along and experimenting with the code, at the end of this hands-on tutorial you'll be able to spruce up your static web pages with fun effects and fantastic responsiveness for the joy of your website visitors.
+
+Mostly, JavaScript runs in your web browser alongside HTML and CSS, and can be added to any web page using a script tag. The script element can either contain JavaScript directly (internal) or link to an external resource via a src attribute (external).
+
+A browser then runs JavaScript line-by-line, starting at the top of the file or script element and finishing at the bottom (unless you tell it to go elsewhere).
+Internal
+
+You can just put the JavaScript inside a script element:
+<script>
+    alert("Hello, world");
+</script>
+
+External
+
+An external JavaScript resource is a text file with a js extension, just like an external cSS resource with a .css extension.
+
+To add a JavaScript file to your page, you just need to use a script tag with a src attribute pointing to the fle. So, if your fle was called scriptjs and sat in the same directory as your HTML file, your script element would look like this:
+
+<script src="script.js"></script>
+
+You might also come across another way on your view-source travels: inline. This involves event attributes inside HTML tags that look something like 
+
+<a href="somewhere.html" onclick="alert(Noooooo!);">
+    Click me
+</a>
+
+Just move along and pretend you haven't witnessed this aberration.
+
+Console
+
+In a modern browser you'll find some developer tools often you can right click on a page, then click "inspect element" to bring them up. Find the console and you'll be able to type JavaScript, hit enter and have it run immediately.
+
+Summary
+Javascript is a scripting language.
+Javascript code is written in <script> tag
+Javascript is case sensitive.

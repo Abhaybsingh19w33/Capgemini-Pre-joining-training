@@ -1,0 +1,58 @@
+USING OPERATOR -> INTRODUCTION
+
+JavaScript has support for Arithmetic Assignment, Bitwise and Logical operators.
+
+USING OPERATOR -> ASSIGNMENT OPERATORS
+Types of assignment operators
+=
++=
+-=
+*=
+/=
+>>=
+<<= 
+>>>=
+&=
+!=
+^=
+
+USING OPERATOR -> ARITHMETIC OPERATORS
+Basic arithmetic operators
++
+-
+/
+%
+
+USING OPERATOR -> BITWISE OPERATORS
+Bitwise operators treat numbers as signed 32-bit integers.
+
+Unlike C language, bitwise operations are not very fast in JavaScript.
+
+Bitwise operators supported by JavaScript.
+&   AND
+|   OR
+^   XOR
+~   NOT
+<<  LEFT SHIFT
+>>  RIGHT SHIFT
+>>> ZERO FILL RIGHT SHIFT
+
+USING OPERATOR -> LOGICAL OPERATORS
+Like other programming languages, JavaScript provides boolean evaluations.
+
+Logical operators supported by JavaScript.
+
+&&  AND
+||  OR
+!   NOT
+USING OPERATOR -> 
+USING OPERATOR -> 
+USING OPERATOR -> 
+USING OPERATOR -> 
+USING OPERATOR -> 
+USING OPERATOR -> 
+USING OPERATOR -> 
+USING OPERATOR -> 
+USING OPERATOR -> 
+USING OPERATOR -> 
+USING OPERATOR -> 

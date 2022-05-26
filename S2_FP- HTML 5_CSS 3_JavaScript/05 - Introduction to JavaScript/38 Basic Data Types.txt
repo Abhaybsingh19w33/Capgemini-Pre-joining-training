@@ -1,0 +1,111 @@
+BASIC DATA TYPES -> INTRODUCTION
+
+JavaScript is dynamically or loosely typed language.
+
+BASIC DATA TYPES -> PRIMITIVE TYPES
+
+Primitive data types supported by JavaScript are:
+boolean
+number
+null
+string
+undefined
+object
+
+boolean -> It represents a logical entity and can have two  values: true and false.
+
+Null Type -> The Null type has exactly one value, that is null. null Is an empty value which means no object value is present.
+
+undefined -> A variable that has not been assigned a value has the value undefined.
+
+number -> It can be an integer or a floating value.
+
+string -> It is used to represent textual data, strings are immutable.
+
+object -> An object is a value in memory which is possibly referenced by an identifier.
+
+Example
+var x = {firstName: "John", lastName: "Doe"};
+
+BASIC DATA TYPES -> DYNAMIC TYPING
+
+JavaScript is a loosely typed or a dynamic language.
+
+The type of a variable is not required to be declared ahead of time. The type will get determined automatically while the program is being processed.
+
+The same variable can be used as different types.
+
+JavaScript has 63 reserved words (keywords).
+
+Reserved words cannot be used as varibale name.
+
+Variable can be global or local.
+
+"typeof" operator returns a string taht identifies the data type of an expression.
+
+Example
+<script type="text/javascript">
+    <!--
+    var myVar = "global";
+    // Declare a global variable
+
+    function checkscope() {
+        var myVar = "local";
+        // Declare a local variable
+        document.write (myVar);
+    }
+    //-->
+</script>
+
+BASIC DATA TYPES -> IMPLEMENT DATA TYPES
+
+Example 1
+
+var x;
+
+// This method works.
+if (x == undefined) {
+    document.write("comparing x to undefined <br/>");
+}
+
+// This method doesn't work you must check for the string "undefined".
+
+if (typeof (x) == undefined)
+    document.write("comparing the type of x to undefined <br/>");
+}
+
+// This method does work.
+if (typeof(x) == "undefined") {
+    document.write("comparing the type of x to the string 'undefined'");
+}
+
+// output:
+// comparing x to undefined
+// comparing the type of x to the string 'undefined'
+
+Example 2
+// demo of typeof operator
+
+// egi
+var index = 5;
+var result = (typeof index === 'number');
+// Output: true
+
+var description = "abc";
+var result = (typeof description === 'string');
+// output: true
+
+var declared;
+var result = (declared === undefined);
+// Output: true
+
+var result (typeof declared === 'undefined ' );
+// Output: true
+
+Example 3
+// demo of typeof operator
+typeof "John"       // Returns string
+typeof 3.14         // Returns number
+typeof false        // Returns boolean
+typeof [1,2,3,4]    // Returns object
+typeof {name: 'John', age:34) // Returns object

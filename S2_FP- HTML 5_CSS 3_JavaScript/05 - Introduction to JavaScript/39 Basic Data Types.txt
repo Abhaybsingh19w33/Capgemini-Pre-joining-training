@@ -1,0 +1,143 @@
+Variables and Data Types
+
+Structure:
+-> Introduction
+-> Variables and Data Types
+
+Introduction
+To insert a JavaScript script in an HTML page, you use the <script>... /script> tag. Don't forget the closing </script> tag!. Now get ready to fire off your text editor of choice and let's get coding!
+
+Let's start with a basic HTML page, like this one:
+<!DOCTYPE html>
+<html>
+<head
+<titte>My first JavaScript page</title>
+
+<head>
+<body>
+
+</body>
+</html>
+
+The JavaScript script is inserted either in the HTML page itself or in a separate file. Embed JavaScript in the HTML page.
+
+The <script> tag and its type attribute tell the browser. "Hey, browser! There's a script coming up, and it's a JavaScript script."
+
+You can do this either in the <head> section, as follows:
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>My first JavaScript page</title>
+
+<script type="text/javascript">
+    // JavaScript code goes here
+</script>
+
+<head>
+<body>
+</body>
+</html>
+
+Or at the very bottom of the document just before the closing </body> tag, like so
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>My first JavaScript page</title>
+</head>
+
+<body>
+<script type="text/javascript>
+    // JavaScript code goes here
+</script>
+
+</body>
+</html>
+
+If you're wondering whether it's best to place your <script> tag in the <head> or the <body> tag, then you're not alone
+
+It mostly comes down to personal preference. However, because most of the times you'll want your JavaScript code to run after the web page and all its resources, e.g., stylesheets, graphics, videos, etc., have finished loading in the browser, I suggest you dump your JavaScript script tag at the bottom of your page.
+
+Comments, comments, comments
+
+One final thing to note about both code snippets above is the two forward slashes // before the text "Javascript code goes here". This is how you comment a one-line Javascript code.
+
+When a comment spans over more than one line, you use  /* Comment goes here */ to delimit a comment, just like you do in a stylesheet. Here's how if's done:
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My first JavaScript pages</title>
+</head>
+    <body>
+        <script type="text/javascript'>
+            // JavaScript code goes here
+        </script>
+    </body
+<html>
+
+When the JavaScript interpreter in your browser comes across either "//" or "/*  */", it just ignores whatever text is placed in between. Use comments in your code to remind your future self of what your code is designed to do. One day you'll be happy to have done so, just take my word for it!
+
+Variables and Data Types
+
+Lef's take is input from user.
+
+var surname = prompt("Greetings friend, may I enquire as to your surname?");
+
+A litle box will pop-up, asking your surname. Type your surname in and hit 'OK'.
+
+The surname you entered is now saved, and it can be referred to as surname. You can get what you entered back out again by typing surname into the console. You should see your surname appearing back to you underneath! Exciting!
+
+You've created a variable.
+
+Variables
+
+Think, if you will, of a variable as a shelf with a name so it's easy to get back to. You've named a shelf surname.
+
+You can name a variable anything you like, but it's best to name it in a way that tells what you've stored there.
+
+When you type a variable name into the console you are asking the browser, which looks after the shelves, to go find the shelf and give what's on it to you. This is also known as the variable's value. The value can be almost anything - in surname, you've stored some letters, known as a string. You can also store numbers and myriad other kinds of data.
+
+So, a variable has a name and a value.
+
+They are the way we store data, and you'll be using them a lot.
+
+There are two parts to creating a variable; declaration and initialization. Once it's created an assign (or set) its value.
+
+Declaration
+
+Declaration is declaring a variable to exist. To return to the shelf metaphor, it's like picking empty shelf in a massive warehouse and putting a name on it.
+
+As above, to declare a variable, use the var keyword followed by the variable name, like
+var surname;
+var age;
+
+Notice those semicolons (";")? Almost every line in JavaScript ends in a semicolon - you'll be using them a lot.
+
+Initialization
+
+Initialization is giving a variable its value for the first time. The value can change later, but it is only initialized once. You initialize a variable using the equals sign (=). You can read it as "the value of the variable on the left should be the data on the right":
+
+var name = "Tom";
+
+Tom is a string - a collection of letters. A string is surrounded by single or double quote marks.
+
+var age = 20;
+
+20 is just a number - and numbers don't go in quotes.
+
+Assignment
+
+As mentioned, you can set a variable's value as many times as you like. It's called assignment and it looks very similar to initialization. You again use the equals sign, but there's no need for the var keyword because we've already declared the variable.
+
+If's like this, your:
+name= "Andy";
+age= 43;
+
+Only do this if you've declared the variable using the var keyword!
+
+Summary
+Javascript is loosely typed language.
+typeof operator returns the datatype of variable.
+var keyword is used declare variables

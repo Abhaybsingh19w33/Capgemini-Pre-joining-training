@@ -1,0 +1,40 @@
+CONTROL STRUCTURES -> INTRODUCTION
+
+JavaScript has support for conditional and looping constructs
+
+CONTROL STRUCTURES -> CONDITIONAL CONSTRUCTS
+
+JavaScript
+if
+if .. else
+if else if
+Ternary operator
+Switch construct
+
+The Ternary operator helps in conditional execution
+
+Syntax
+result = condition ? value_if_true : value_if_false
+
+Switch provides a short sytax for multiple equality tests.
+Syntax 
+sqitch(x) {
+    case 'value1' : // 
+    case 'value2' : // 
+    default :
+    // default code
+}
+
+CONTROL STRUCTURES -> LOOPING CONSTRUCTS
+
+JavaScript supports four looping constructs
+-> for loop
+-> for .. in
+-> while
+-> do .. while
+
+CONTROL STRUCTURES -> KEYWORDS
+
+break keyword exits a loop
+
+continue keyword ignores next   step of statements in a loop

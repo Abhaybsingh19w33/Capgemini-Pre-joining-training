@@ -1,0 +1,58 @@
+JAVASCRIPT PROGRAMMING LANGUGAE -> INTRODUCTION
+
+JavaScript programs can be developed using IDE such as Visual Studio.
+
+JAVASCRIPT PROGRAMMING LANGUGAE -> INTEGRATED DEVELOPEMNT ENVIRONMENTS
+
+JavaScript applications can be developed using the following environments.
+-> Visual Studio
+-> Eclipse
+-> WebStorm
+-> NetBeans
+-> Sublime Text
+
+JAVASCRIPT PROGRAMMING LANGUGAE -> CLOUD DEVELOPMENT ENVIRONMENTS
+
+JavaScript applications can be developed live on a browser.
+
+Some of the popular Cloud/Web based IDEs are:
+
+Cloud Nine: c9.io
+Codeanywhere: codeanywhere.com
+JSFiddle: jsfiddle.net
+CloudIDE: cloud-ide.com
+Online JavaScript Editor: js.do
+Coderun Studio: coderun.com
+
+JAVASCRIPT PROGRAMMING LANGUGAE -> CHARACTERISTICS
+-> JavaScript is case sensitive.
+-> Semicolons are optional.
+-> The code is written in a <script> tag.
+-> The <script> tag is sandwiched in an html file
+-> There can be multiple <script> tags in an html file.
+-> JavaScript can be debugged using browser debugger.
+-> Chrome, Firefox, IE provide full debugging support.
+
+Comments in JavaScript are similar to C++ and C Pprogramming.
+Single line comment // 
+Multi line comment /**  */
+
+JAVASCRIPT PROGRAMMING LANGUGAE -> BENEFITS
+JavaScript:
+-> is standardizerd and universally supported
+-> Adds interactivity to webpages
+-> Has minimal syntax
+-> Builds rich interface
+-> has less server interaction
+-> has suppport for AJAX
+
+JAVASCRIPT PROGRAMMING LANGUGAE -> LIMITATIONS
+JavaScript
+-> Has limited syntax
+-> has limited API
+
+JAVASCRIPT PROGRAMMING LANGUGAE -> SUMMARY
+
+JAVASCRIPT PROGRAMMING LANGUGAE -> 
+JAVASCRIPT PROGRAMMING LANGUGAE -> 
+JAVASCRIPT PROGRAMMING LANGUGAE -> 
