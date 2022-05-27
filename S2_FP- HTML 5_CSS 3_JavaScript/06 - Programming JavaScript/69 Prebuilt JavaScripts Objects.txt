@@ -1,0 +1,261 @@
+PREBUILT JAVASCRIPT OBJECTS -> INTRODUCTION
+
+JavaScript has an application programming interface(API) whihc contains prebuilt reusable objects.
+
+PREBUILT JAVASCRIPT OBJECTS -> PREBUILT JAVASCRIPT OBJECTS
+
+Prebuilt objeccts from the API of JavaScript
+Some of the prebuilt objects are:
+-> Number object
+-> Date object
+-> Boolean object
+-> Array object
+-> Math object
+-> Navigator object
+
+PREBUILT JAVASCRIPT OBJECTS -> USE JAVASCRIPT OBJECTS
+
+The number object
+It represents the numerical data, either integers or floating-point numbers.
+
+Browser automatically converts the number literals to instances of the number object.
+
+The Number object
+NAN - Not a number
+MAX_VALUUE - Largest possible number in JavaScript
+MIN_VALUE - Smallest possible number in JavaScript
+
+toFixed() - Formats a number after the decimal point
+toPrecision() - Defines how many digits have to be displayed (to left and right of decimal point)
+toString() - Converts a number to a string
+
+Example: The Number object
+<script type="text/javascript">
+var num= 177.1234;
+document.write("num.toFixed () is: " + num.toFixed());
+document.write("num.toFixed (6) is " + num.toFixed(6))
+document.write("num.toFixed (1) is " + num.toFixed(1));
+document.write("(1.23e+20).toFixed (2) is : " + (1.23e+20).toFixed(2)) ;
+document.write("(1.23e-10).toFixed (2) is : " + (1.23e-10).toFixed(2));
+num = new Number(7.123456);
+document.write("num.toPrecision() is " + num.toPrecision());
+document.write("num.toPrecision(4) is " + num.toPrecision(4));
+document.write("num.toPrecision(2) is " + num.toPrecision(2));
+document.write("num.toPrecision(1) is " + num.toPrecision (1));
+</script>
+
+// output
+num. toFixed () is: 177
+num. toFixed (6) is: 177.123400
+num. toFixed (1) is: 177.1
+(1.23e+20).toFixed (2) is:123000000000000000000.00
+(1.23e-10).toFixed (2) is: 0.00
+num. toPrecision () is 7.123456
+num. toPrecision (4) is 7.123
+num. toPrecision (2) is 7.1
+num. toPrecision (1) is 7
+
+The Boolean object
+It has 2 states: true or flase
+
+Syntax
+var obj = new Boolean(true);
+
+toSource() - Returns a string representing the source code of the object
+toString() - Returns the value as a string
+valueOf() - Returns the primitive value of the specified boolean obiect
+
+Example: The Boolean object
+<script type = "text/javascript">
+    var obj = new Boolean (true)
+    document.write ("<br>" + obj. toSource ());
+    document.write ("<br>" + obj.valueOf ());
+    document.write ("<br>" + obj.tostring ());
+</script>
+
+//output
+(new Boolean (true))
+true
+true
+
+
+The String object
+
+This object helps to work with a series of characters; it composes JavaScript's string primitive with helper methods
+
+The String object
+length - Returns the length of a string
+
+
+concat - Combines two or more strings
+match - Matches a regular expression against a string
+search - Searches a string using regular expression
+slice - Extracts the part of a string
+substring - Returns characters between two indexes
+toLowerCase - Converts to lowercase
+toUpperCase - Converts to uppercase
+
+Example: The String object
+<script type="text/javascript">
+    var strl = new String ("This is string one");
+    var str2 = new String ("This is string two");
+    var str3 = str1.concat (str2):
+    document.write ("Concatenated String" + str3);
+    var str = "Apples are round, and apples are juicy.";
+    document.write ("(1,2):" + str.substring (1,2));
+    document.write ("<br />(0,10):" + str.substring(0,10)))
+    document.write ("<br /> (5) : " +str.substring(5));
+    document.write ("<br>" + str.toLowerCase());
+    document.write ("<br>" + str.toUpperCase());
+</script>
+
+// Output
+Concatenated String : This is string one, This is string two
+(1,2): P
+(0,10): Apples are
+(5): s are round, and apples are juicy.
+apples are round, and apples are juicy.
+APPLES ARE ROUND, AND APPLES ARE JUICY.
+
+The Date object
+It is a data type built into the JavaScript language.
+The ECMAScript standard requires the Date object
+to be able to represent any date and time, to
+millisecond precision, within 100 million days
+before or after 1/1/1970.
+Syntax
+new Date ()
+new Date (milliseconds)
+new Date (datestring)
+
+The Date object
+getDate()
+getDay(), getFullYear(), getHours()
+getMiliSeconds(), getMinutes(), getSeconds()
+getTime(), getYear(), setDate()
+setDate(), setYear()
+
+Example: The Date Object
+
+<script type="text/javascript">
+    var dt = new Date("December 25, 1995 23:15:00") ;
+    document.write ("getDate() :" +dt.getDate());
+    document.write ("<BR>" + "getFullYear() :"+ dt.getFullYear());
+    document. write ("<BR>" + "getTime():(In Milliseconds) " + dt.getTime()):
+    var dt = new Date("Aug 28, 2018 23:30:00");
+    dt.setDate(24);
+    document.write ("<BR>" + "New Date:" dt);
+    var msecs = Date.UTC(2015,7,6):
+    document.write ("<BR>"+ "Number of milliseconds from 1970:" +msecs );
+</script>
+
+// Output
+getDate () : 25
+getFullYear (): 1995
+getTime () : (In Milliseconds) 819913500000
+New Date: Fri Aug 24 2018 23:30:00 GMT+0530
+(India Standard Time)
+Number of milliseconds from 1970:
+1438819200000
+
+The Math object
+It provides properties and methods for mathematical constants and functions.
+
+Math is not a Constructor.
+
+The properties and methods of Math are static and can be called directly on Math object without creating an instance.
+
+The Math object
+
+Syntax
+var pi_val = Math.PI;
+var sine_val = Math.sin(30);
+
+LN2 - Natural logarithm of 2
+LN10 - Natural logarithm of 10
+PI - Value of PI
+SQRT2 - Square root of 2
+
+abs()
+Absolute value of a number
+acos()
+Arccosine (in radians) of a number
+asin()
+Returns the arcsine (in radians) of a number
+atan()
+Arctangent (in radians) of a number
+ceil()
+Smallest integer greater than or equal to a number
+cos()
+Returns the cosine of a number
+floor()
+Largest integer less than or equal to a number
+log()
+Natural logarithm (base E) of a number
+
+max()
+Largest of zero or more numbers
+min()
+Smallest of zero or more numbers
+pow()
+Exponent power, that is, base exponent
+random()
+Pseudo-random number between 0 and 1
+round()
+Value of a number rounded to the nearest integer
+sin()
+Sine of a number
+sqrt()
+Square root of a number
+
+Example: The Math Object
+<script type=" text/javascript">
+var value = Math. abs (-1);
+document.write ("Math. abs (-1) "+value );
+value Math.abs ("string");
+document.write (" <br /> Math. abs (\ "string\ "):" + value):
+value= Math.acos (-1):
+document. write ("br /> Math.acos (-1) :" + value );
+value= Math.ceil (45 . 6)
+document. write ("<br /> Math.ceil (45.6) : " + value );
+value = Math.floor (30.9);
+document.write ("<br />Math. floor (30.9):"+ value )
+value Math.pow (8, 3) ;
+document.write ("<br /> Math.pow (8, 3) " + value )
+
+value = Math.random ()
+document. write ("<br />Math.random () (between 0 to 1): " + value )
+value = Math.sqrt (81) ;
+document. write ("<br /> Math. sqrt (81):" + value );
+</script>
+
+#Output
+Math. abs (-1) 11
+Math.abs ("string"): NaN
+Math.acos (-1) :3.141592653589793
+Math.ceil (45.6) :46
+Math.floor (30. 9): 30
+Math.pow (8, 3) : 512
+Math. random () (between 0 to 1) 0.10561098962902371
+Math.sart (81)9
+
+PREBUILT JAVASCRIPT OBJECTS -> SUMMARY
+Key points discussed in this video:
+-> Math object allows mathematical operations.
+-> Date object allows date operations.
+
+PREBUILT JAVASCRIPT OBJECTS -> 
+PREBUILT JAVASCRIPT OBJECTS -> 
+PREBUILT JAVASCRIPT OBJECTS -> 
+PREBUILT JAVASCRIPT OBJECTS -> 
+PREBUILT JAVASCRIPT OBJECTS -> 
+PREBUILT JAVASCRIPT OBJECTS -> 
+PREBUILT JAVASCRIPT OBJECTS -> 
+PREBUILT JAVASCRIPT OBJECTS -> 
+PREBUILT JAVASCRIPT OBJECTS -> 
+PREBUILT JAVASCRIPT OBJECTS -> 
+PREBUILT JAVASCRIPT OBJECTS -> 
+PREBUILT JAVASCRIPT OBJECTS -> 
+PREBUILT JAVASCRIPT OBJECTS -> 
+PREBUILT JAVASCRIPT OBJECTS -> 
+PREBUILT JAVASCRIPT OBJECTS -> 

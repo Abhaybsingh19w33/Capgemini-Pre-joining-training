@@ -1,0 +1,91 @@
+PARAMETERS AND ARGUMENTS -> INTRODUCTION
+
+Function arguments are interpreted from left to right.
+
+PARAMETERS AND ARGUMENTS -> PASS VALUES
+
+Any number of argumnets can be passed to a function.
+
+The type of an argument is not defined becausse JavaScript is dynamically typed.
+
+Functions cannot be overloaded.
+
+Example 1
+function foo (a, b, opts) {
+
+}
+foo (1, 2) // opts is undefined
+foo (1, 2, {"method": "add"});
+foo (3, 4, {"test": "equals", "bar":" tree"}) ;
+
+Example 2
+
+function CatStrings (p1, p2, p3) {
+    var s = p1;
+    if (typeof p2 != "undefined") {s += p2;}
+    if (typeof p3 != "undefined") {s += p3;}
+    return s;
+};
+
+CatStrings ("one");             // result = one
+Catstrings ("one",2);           // result = one2
+Catstrings ("one",2, true);     // result = one2true
+
+PARAMETERS AND ARGUMENTS -> FUNCTION EXPRESSIONS
+
+A function in JavaScript is a first-class value, just like a number or string.
+
+Example
+var f = function(name) {
+    alert("Hi, " + name + "");
+}
+f("Ram")
+
+Function Expressions are created when the execution flow reaches them as a consequence, these expressions can be used only after they are executed.
+
+Example
+var sayHi
+
+// sayHi () <-- can't call here, there is no sayHi yet
+
+if (1) {
+    sayHi = function () {alert (1)}
+}
+else {
+    sayHi = function () {alert (2)}
+}
+
+sayHi ()
+
+A funcction in JavaScript is a regular value.
+
+The code of the function can be dislpayed.
+
+PARAMETERS AND ARGUMENTS -> FUNCTION EXPRESSIONS
+
+One fuction can be accept function as an argument.
+
+Example 
+// run given function with argument 1
+function runWithOne(f) {
+ f(1)
+}
+
+runWithOne( function(a) {alert(a)})
+
+In this example, a function is created without a name and is not asssigned to any variable. Such functions are calledd anonymous functions.
+
+It is possible to create and run a function created with function expression at once.
+
+Example 
+(function () {
+    var a, b // local varibale
+
+}) ()
+
+This code can be written in another way.
+var result = function(a, b) {return a + b}
+
+PARAMETERS AND ARGUMENTS -> NESTED FUNCTIONS
+
+A function within a function is called a nested function.

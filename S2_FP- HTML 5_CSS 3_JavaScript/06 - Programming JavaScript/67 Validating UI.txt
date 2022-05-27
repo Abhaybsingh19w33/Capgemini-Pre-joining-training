@@ -1,0 +1,162 @@
+VALIDATING UI -> INTRODUCTION
+
+Validation of data for correctness on client side(Browser) is known as validation.
+
+VALIDATING UI -> NEED FOR VALIDATION
+
+ta validation is the process to ensure that the input is correct and useful.
+
+Validation happens for HTML widgets.
+ 
+Validation is done by capturing events such as submit, blur, keypress, click, etc.
+
+Typical validation task
+The user:
+-> Fills all the required fields
+-> Enter a valid date
+-> Enters a valid numeric data
+-> fills the data based on condition
+
+Server side validation
+-> is performed on a web server after input has been sent to the server.
+
+Client side validation
+-> is performed on web browser before input is s ent to a web server.
+
+Validation, if implemented on server side leads to:
+-> Extra load on server
+-> Round trip to server
+-> Slower throughput
+-> Weak performance
+
+Kinds of validation that can be implemented on client side:
+-> Input validation
+-> Calculation validation
+-> Regular expression
+
+Advantages of validation on client side
+-> faster response
+-> Interactive application
+-> better performance
+-> Reduces load on the server
+
+HTML5 introduced a new HTML validation concept called constraint validation
+
+HTML constraint validation is based on:
+-> constraint validation HTML input attributes
+-> constraint validation CSS Pseudo selectors
+-> constraint validation DOM properties and methods
+
+
+VALIDATING UI -> IMPLEMENT VALIDATION
+Constraint Validation HTML Input Attributes
+disabled - It specifies that the input element should be disabled.
+max - It specifies the maximum value of an input element.
+min - It specifies the minimum value of an input element
+pattern - It specifies the value pattern of an input element
+required - It specifies that the input field requires an element.
+type - It specifies the type of an input element.
+
+Example
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+</head>
+
+<body>
+    <form name="myForm" onsubmit="return(validate());">
+        <table cellspacing="2" cellpadding="2" border="2">
+            <tr>
+                <td align="right">Name</td>
+                <td><input type="text" name="Name" /></td>
+            </tr>
+            <tr>
+                <td align="right">Email</td>
+                <td><input type="text" name="EMail" /></td>
+            </tr>
+            <tr>
+                <td align="right">Zip Code</td>
+                <td><input type="text" name="Zip" /></td>
+            </tr>
+            <tr>
+                <td align="right">Country</td>
+                <td>
+                    <select name="Country">
+                        <option value="-1">[choose yours]</option>
+                        <option vallue="1">USA</option>
+                        <option vallue="2">UK</option>
+                        <option vallue="3">INDIA</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td align="right"></td>
+                <td><input type="submit" name="Submit" /></td>
+            </tr>
+        </table>
+    </form>
+    <script>
+        function validateEmail() {
+            alert("hi");
+            var emailID = document.myForm.Email.value;
+            atpos = emailID.indexOf("@");
+            dotpos = emailID.lastIndexOf(".");
+
+            if (atpos < 1 || (dotpos - atpos < 2)) {
+                alert("Please enter correct email ID");
+                document.myForm.Email.focus();
+                return false;
+            }
+
+            return (true);
+        }
+
+        function validate() {
+            if (document.myForm.Name.value == "") {
+                alert("Please provide your name!");
+                document.myForm.Name.focus();
+                return false;
+            }
+            if (document.myForm.EMail.value == "") {
+                alert("Please provide your Email!");
+                document.myForm.EMail.focus();
+                return false;
+            }
+            if (document.myForm.Zip.value == "" || isNaN(document.myForm.Zip.value) || document.myForm.Zip.value.length != 5) {
+                alert("Please provide a zip in the format #####");
+                document.myForm.Zip.focus();
+                return false;
+            }
+            if (document.myForm.Country.value == "-1") {
+                alert("Please provide your country!");
+                return false;
+            }
+
+            validateEmail();
+
+            return (true);
+        }
+    </script>
+</body>
+
+</html>
+
+VALIDATING UI -> 
+VALIDATING UI -> 
+VALIDATING UI -> 
+VALIDATING UI -> 
+VALIDATING UI -> 
+VALIDATING UI -> 
+VALIDATING UI -> 
+VALIDATING UI -> 
+VALIDATING UI -> 
+VALIDATING UI -> 
+VALIDATING UI -> 
+VALIDATING UI -> 
+VALIDATING UI -> 
+VALIDATING UI -> 

@@ -1,0 +1,22 @@
+<input id="my" type="text">
+<script>
+    document.getElementById('my').onkeypress = function (event) {
+        var char = getChar(event || window.event)
+        if (!char) return // special key
+
+        this.value = this.value + char.toUpperCase()
+        return false
+    }
+
+    // event.type must be keypress
+    function getChar(event) {
+        if (event.which == null) {
+            return String.fromCharCode(event.keyCode) //IE
+        } else if (event.which != 0 && event.charCode != 0) {
+            return String.fromCharCode(event.which) //the rest
+        }
+        else {
+            return null //special key
+        }
+    }
+</script>

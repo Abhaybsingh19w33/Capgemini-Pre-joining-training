@@ -1,0 +1,134 @@
+WORKING WITH ARRAYS -> INTORDUCTION
+
+An Array is an enumerated list of variables.
+
+WORKING WITH ARRAYS -> ARRAY CREATION
+
+JavaScript arrays:
+-> are used to store multiple values in a single variable
+-> are index based string from 0
+-> are extensible
+
+Example 1
+var cars = ["Saab", "Volvo", "BMW","Maruti"];
+Document.write (cars [0]);
+
+var person= ["John", "Doe", 46,657.234]
+var badArray= new Array (10);
+// Creates an empty Array that's sized for 10 elements.
+
+var goodArray= [10];
+// Creates an Array with 10 as the first element.
+
+Example 2
+var myArray = ['January', 'February', 'March '];
+
+// array initialization
+var myArray = [];
+myArray [0] = 'January';
+myArray [1] = 'February';
+myArray [2] = 'March';
+
+var myArray = new Array (200, 300);
+var myarray = [20,30]; // same as above
+
+
+// Heterogenous array
+var mixArray = new Array ();
+mixArray [0] = "Hello World";
+mixArray [1] = 100;
+
+var anotherMixArray = new Array (200, 300, "Hello Again", 500);
+var moreMixArray = new Array ();
+moreMixArray [0] = 600;
+moreMixArray [1] = mixArray;
+moreMixArray [2] new Array (700,
+anotherMixArray);
+moreMixArray [3] = "Incredible !";
+
+
+An array can store other arrays which enables it to provide the benefit of multi-dimension.
+
+Example 1
+var x=[0,1,2,3,4,5] ;
+var y=[x] ;
+document.writeln (y [0] [3]);
+//Will output: 2
+
+Example 2
+// WAP to generate fib numbers using arrays
+var myArray = new Array;
+var maxNum = 100;
+var a = 0;
+var b = 0;
+var c = 1;
+while (c < maxNum) {
+    myArray [myArray. length] = c;
+    a = b;
+    b = c;
+    c  = a + b;
+} // displays // Fibonacci Series
+1,1,2,3,5,8,13,21,34,55,89
+alert ("Fibonacci Series :" +myArray);
+
+WORKING WITH ARRAYS -> ASSOCIATIVE ARRAYS
+
+Associative arrays can be created as key/value type.
+
+Steps to create an associative arrays.
+-> Enclose the arrays in curly brackets.
+-> Separatethe properties with a comma.
+-> Separate the keys and values with a colon.
+
+Example
+var person={
+    name: 'ram',
+    email 'ramêmytech.com',
+    twitter: 'eramtech'
+}
+
+Example 1
+var myArray = {abc: 200, "x y z": 300);
+
+for (key in myArray) {
+    alert ("key " + key +" has value " + myArray [key])
+}
+
+Example 2
+var myArray = new Date ();
+myArray ["a"] = 100;
+myArray ["b"] = 200;
+alert (myArray ["b"]); // output: 200
+
+WORKING WITH ARRAYS -> PASS ARRAYS
+
+Example: Arrays are passed by reference.
+var myArray = [ zero', 'one' 'two', 'three', 'four', 'five'];
+
+document.writeln(myArray [1]);
+// Will output: one
+
+function passedByReference (refArray) {
+    refArray [1] = 'changed';
+}
+
+passedByReference (myArray);
+document.writeln(myArray [1]);
+// Will output: changed
+
+Example: Arays are assigned by reference.
+
+var myArray = ['zero', 'one', two', 'three', 'four' , 'five'];
+
+var newArray = myArray;
+newArray [1] = 'changed';
+
+document.writeln (myArray [1]);
+// Will output: changed
+
+WORKING WITH ARRAYS -> 
+WORKING WITH ARRAYS -> 
+WORKING WITH ARRAYS -> 
+WORKING WITH ARRAYS -> 
+WORKING WITH ARRAYS -> 
+WORKING WITH ARRAYS -> 

@@ -1,0 +1,12 @@
+<ul>
+    <li tabindex="1" onfocus="showFocus(this)">One</li>
+    <li tabindex="0" onfocus="showFocus(this)">Zero</li>
+    <li tabindex="2" onfocus="showFocus(this)">Two</li>
+    <li tabindex="3" onfocus="showFocus(this)">Minus one</li>
+</ul>
+<span id="focus"></span>
+<script>
+    function showFocus(elem) {
+        document.getElementById("focus").innerHTML = "focus " + elem.tabIndex
+    }
+</script>

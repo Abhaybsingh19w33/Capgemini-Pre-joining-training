@@ -1,0 +1,166 @@
+Arrays
+
+Structure:
+-> Introduction to Arrays
+-> Using Arrays
+
+Introduction
+
+Arrays are lists of any kind of data, including other arrays. Each item in the array has an index - a number - which can be used to retrieve an element from the array.
+
+The indices start at 0; that is, the first element in the array has the index 0, and subsequent elements have incrementally increasing indices, so the last element in the aray has an index one less than the length of the array.
+
+An object's job is that of storing and allowing for the easy manipulation of data. We can safely say that the Array object performs both tasks wonderfully.
+
+From the perspective of data storage, an array works a bit like a variable. The difference is that you are not limited to one piece of data, as it's the case with common variables. You can stuff several items at once inside an array and retrieve whichever you need at the right time in your program.
+
+Creating Array objects
+
+use new Array()
+
+This is the most verbose approach. It works as follows:
+
+var colors = new Array();
+colors[0] = "green";
+colors[1]= "red";
+
+use new Array(tem0, item1, item2, ..)
+
+This approach also employs the new Array() constructor, but does so using a more concise formulation. Here's what it looks like:
+
+var colors= new Array("green", "red");
+
+use the literal array approach
+
+This is the shortest way of creating and populating an array, and it's the most widely used approach. It looks like this:
+
+var colors= ["green", "red"];
+
+All three approaches illustrated above, create an array object called colors containing 2 string values, "green" and "red", but arrays can store all other data types: numbers, Booleans and even other arrays! The items in our array occupy position 0 and 1 respectively.
+
+As you might have guessed, you count the index position of an item inside an array starting at 0.
+
+Arrays are great to store several values using only 1 variable. However, they wouldn't be so great if you couldn't access these values quickly and easily. Here's how it's done:
+
+// "green" is at index position 0, "red" is at index position 1, etc.
+var colors= ["green", "red, "yellow","orange", "blue"];
+var red = colors[1];
+document.write(red);
+
+Enter the code snippet above between enclosing <script> tags in an HTML page, save your work, and run the page in the browser. You should see the word red displayed on the page.
+
+What you did was to access the second value in the colors array by using its index position within the array starting to count at 0.
+
+Access all tems in the aray with a loop.
+
+You might have probably guessed this, but loops and arrays go together like cookies and milk. Here's how you would access all values inside an array by looping over each of them:
+
+// use the array from the previous example
+var colors = ["green", "red", "yellow", "orange", "blue"];
+// use a for loop to access each item in colors
+// The array object has a length property
+// that contains the size of the array: you can use it in the for loop
+for (var i=0, i < colors.length, i++) {
+    // You use the counter i to access the index position
+    document.write(colors[i] + "<br />");
+}
+
+There's also a special type of for loop that you can use with the Array object, the for .. in loop. Here's how it works:
+
+// use the array from the previous example
+var colors = ["green", "red, "yellow", "orange", "blue"];
+for (color in colors) {
+    // color is the variable that marks the index position
+    document.write(colors[color] + "<br >")
+}
+
+Run the HTML document containing the code snippet above inside <script> tags in a browser. The web page should look the same as it did in the previous example.
+
+Once you access a value inside an array you can simply retrieve it, as you did in the previous example, or you can modify it, as follows:
+
+var colors= ["green", "red", "yellow", "orange", "blue"];
+colors[2]= "pink";
+// Now you've replaced the item at index position 2,
+// the third item called "yellow",
+// with "pink"
+document.write(colors);
+// The code should print
+// green, red, pink, orange, blue ("pink" has replaced "yellow")
+
+Can I sort array items?
+
+You can do amazing stuff with values stored inside an array. For example, you can sort items alphabetically, in descending or ascending order, or numerically. Lef's see how this is done.
+
+You sort array elements with a fantastic method most appropriately called sort(). Here it is in action.
+
+// sort the colors array alphabetically and ascending:
+var colors = ["green", "red", "yellow", "orange", "blue"];
+var ascendingColors = colors.sort();
+// display each value
+document.write(ascendingColors);
+// This should print blue, green, orange, red, yellow
+
+If you want to sort numerical values inside an aray, either in ascending or descending order, you need to build a simple custom function and pass this function as argument to the sort() method. It sounds a bit harder than it actually is. Here's how it's done:
+
+// build a new array containing number values
+var myNumbers = [4, 2, 10, 6, 9];
+// build your custom function: this is a simple formula
+
+function sortAscending(a, b) {
+    // the formula return a - b sorts the numbers
+    // from the smaller to the bigger,
+    // the fomula return b - a sorts numbers in descending order,
+    // that is, from the bigger to the smaller number
+    return a - b;
+}
+
+// pass the sortAscending function as argument to sort()
+var sortedAscending = myNumbers.sort(sortAscending);
+// print result on the page
+document.write(sortedAscending);
+// This should print 2,4,6,9,10. Now try sorting in descending order on your own.
+
+How do I add data to the Array object?
+
+You can add new items inside an array in different ways. Which method you choose depends largely on your program's requirements.
+
+Add tems to the end of the array with push()
+
+What feels more like the natural order of things, that is, adding an item to the end of an array, is easily achieved using the push() method. Here's how it works:
+
+// use our old colors array
+var colors = ["green", "red, "yellow", "orange", "blue"];
+// use push() to add the color "pink" at the end
+colors.push("pink");
+// print the enlarged array
+document.write(colors);
+// This should print green,red,yellow,orange,blue,pink
+
+Add items to the beginning of an array with unshift().
+Use unshift() to add new items to the start index position of an array. This is easily done.
+
+Just replace push() with unshift() in the previous example, save your work and run the page in a browser. The page should display the color name "pink" at the very start, like so:
+
+pink,green,red.yellow, orange,blue
+
+How do I remove data from the Array object?
+
+If you want to remove the last item in an array you use pop(). If you want to remove the first item in an array, you use shift()
+
+var colors = ["green", "red, "yellow", "orange", "blue"];
+// remove "blue" from colors
+colors.pop()
+document.write(colors);
+// This prints: green,red,yellow,orange
+// remove "green" from colors
+colors.shift();
+document.write("<br />"+ colors);
+// This prints: red,yellow,orange on a new line break
+
+Have fun experimenting with the examples above.
+
+Summary
+Arrays are passed by reference to a function.
+To find size of array we use length property.
+Array is soted using sort() method
+Array can be reversed using reverse method

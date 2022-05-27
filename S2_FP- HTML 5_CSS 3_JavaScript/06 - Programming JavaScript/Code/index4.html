@@ -1,0 +1,21 @@
+<label>Enter your age: <input type="text" name="age"></label>
+<label>Enter your Deptno: <input type="text" name="deptno"></label>
+<div id="error"></div>
+
+<script>
+    var input = document.getElementsByName('age')[0]
+    var errorHolder = document.getElementById("error")
+
+    input.onfocus = function() {
+        this.style.backgroundColor = ''
+        errorHolder.innerHTML = ''
+    }
+
+    input.onblur = function() {
+        var age = +this.value
+        if(isNaN(age)) {
+            this.style.backgroundColor = 'red'
+            errorHolder.innerHTML = 'Enter a number please.'
+        }
+    }
+</script>

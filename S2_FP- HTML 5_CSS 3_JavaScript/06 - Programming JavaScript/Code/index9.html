@@ -1,0 +1,33 @@
+<script>
+    var dt = new Date("December 25, 1995 23:15:00");
+    document.write("getDate() : " + dt.getDate());
+    document.write("<br>" + "getFullYear() : " + dt.getFullYear());
+    document.write("<br>" + "getTime() : (In milliseconds)" + dt.getTime());
+
+    var dt = new Date("Aug 28, 2018 23:30:00");
+    dt.setDate(24);
+    document.write("<br>" + "New Date:" + dt);
+    var msecs = Date.UTC(2015, 7, 6);
+    document.write("<br>" + "Number of millisecond from 1970: " + msecs);
+
+    var value = Math.abs(-1);
+    document.write("Math.abs(-1) : " + value);
+    value = Math.abs("string");
+    document.write
+
+    value = Math.abs("string ");
+    document.write("<br /> Math.abs (\"string\") : " + value);
+    value = Math.acos(-1);
+    document.write("<br /> Math.acos(-1)" + value);
+    value = Math.ceil(45.6);
+    document.write("<br /> Math.ceil(45.6) : " + value);
+    value = Math.floor(30.9);
+    document.write("<br /> Math.floor(30.9) : " + value)
+    value = Math.pow(8, 3);
+    document.write("<br /> Math.pow(8,3) : " + value)
+    value = Math.random();
+    document.write("<br /> Math.random() (between 0 to 1) :" + value);
+    value = Math.sqrt(81);
+    document.write("<br /> Math.sqrt (81):" + value);
+
+</script>

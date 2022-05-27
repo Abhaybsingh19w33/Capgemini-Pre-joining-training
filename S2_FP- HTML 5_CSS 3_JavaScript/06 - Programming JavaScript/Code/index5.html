@@ -1,0 +1,27 @@
+<script>
+    // The function which is called on "keyUp" event
+    function keyup(e) {
+        var str = '';
+        if (e.keyCode) str = "keyCode : " + e.keyCode;
+        console.log('keyUp event, ' + str)
+    }
+
+    // The function which is called on "keyDown" event
+    function keydown(e) {
+        var str = '';
+        if (e.keyCode) str = "keyCode : " + e.keyCode;
+        console.log('keyDown event, ' + str)
+    }
+
+    // The function which is called on "keypress" event
+    function keypress(e) {
+        var str = ''
+        if (e.keyCode) str = "keyCode : " + e.keyCode;
+        else if (e.charCode) str = "charCode : " + e.charCode;
+        console.log('keyPress event, ' + str);
+    }
+</script>
+
+<!-- The 'input" element which receives the keystrokes -->
+
+<input type="text" name="val" onkeyup="keyup(event) " onkeydown="keydown(event)" onkeypress="keypress(event) ">

@@ -1,0 +1,15 @@
+<html>
+<input type="button" value="click me" id="btn">
+<input type="button" value="right-click me" id="btn2">
+
+<script>
+    document.getElementById('btn').onclick = function () {
+        alert('click');
+    }
+
+    document.getElementById('btn2').oncontextmenu = function () {
+        alert("right click!");
+    }
+</script>
+
+</html

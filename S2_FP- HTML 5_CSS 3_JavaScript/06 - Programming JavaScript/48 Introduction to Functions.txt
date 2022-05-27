@@ -1,0 +1,85 @@
+INTRODUCTION TO FUNCTIONS -> INTRODUCTION
+
+A function is a block of code designed to perform a particular task.
+
+INTRODUCTION TO FUNCTIONS -> WHAT IS A FUNCTION?
+-> is a pieceof code in a program
+-> is a block of organised, reusable code that is used to perfomr a single, related action
+-> performs a specific task
+
+Aa function:
+-> can be assigned to variables
+-> can be passed as arguments to other functions
+-> provides better modularity
+
+There are 2 basic types of functions
+-> Built-in functions
+-> User-defined functions
+
+A function help to:
+-> Reduce the duplication of the code
+-> Decompse complex problems into sompler pieces
+-> Improves the clarity of the code
+-> Reuse the code
+
+INTRODUCTION TO FUNCTIONS -> UNDERSTAND FUNCTIONS
+
+A function is created woth the 'function' keyword.
+
+Example
+
+function name(parameter1, parameter2) {
+    code can be executed
+}
+
+A function is executed only when it is called.
+
+To call a function, specify the function name within the round brackets.
+
+A function may contain variables, defined by var. Such variables are called local and are only visible inside the function.
+
+Function Declarations are passed at pre-execution stage when the browser prepares to execute the code because of which the function declared can be called both after and before the definition.
+
+Example 1
+function sayHi (name) {
+    alert ("Hi, "+name)
+}
+sayHi ("John")
+
+Example 2
+sayHi ("John")
+
+function sayHi (name) {
+    alert ("Hi, "+name)
+}
+
+A funcntion can return the value using return keyword.
+
+A function can return only one value.
+
+Multiple values can be returned from a function using an array or an object.
+
+Example 1
+function makeArray () {
+    var myArray = new Array (4);
+    myArray [0] = "A";
+    myArray [1] = "B";
+    myArray [2] = "C";
+    myArray [3] = "D";
+    return myArray;
+}
+
+Example 2
+function BlockID () {
+    var IDs = new object ();
+    IDs['s'] = "Images/Block_01.png";
+    IDs['g'] = "Images/Block_02.png";
+    IDs['C'] = "Images/Block_03.png";
+    IDs["d'] = "Images/Block_04.png";
+    return IDs;
+}
+
+INTRODUCTION TO FUNCTIONS -> SUMMARY
+Key points discussed in this video:
+-> Functions make a program modular.
+-> Functions are treated as objects.

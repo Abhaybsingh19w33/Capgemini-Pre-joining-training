@@ -1,0 +1,12 @@
+<form>
+    <input type="text" id="alphanumeric" size="25"></textarea>
+</form>
+
+<script>
+    document.getElementById("alphanumeric").onkeypress = function (e) {
+        var e = window.event || e
+        var keyunicode = e.charCode || e.keyCode
+        // Allow alphabeticl keys, plus BACKSPACE and SPACE
+        return (keyunicode >= 65 && keyunicode <= 122 || keyunicode == 8 || keyunicode == 32) ? true : false
+    }
+</script>

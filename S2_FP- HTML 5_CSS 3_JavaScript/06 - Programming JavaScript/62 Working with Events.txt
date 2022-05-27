@@ -1,0 +1,134 @@
+WORKING WITH EVENTS -> INTRODUCTION
+
+When a programmer performs an activity based on a signal, it is referred to as event handling.
+
+WORKING WITH EVENTS -> UNDERSTAND EVENTS
+
+Interaction with HTML is handled through events that occur when the user or browser manipulates a page.
+
+Events are means to add interactivity to a web page.
+
+Events are a part of the Document Object Model (DOM) and every HTML element has a certain set of events which can trigger JavaScript Code.
+
+WORKING WITH EVENTS -> UNDERSTAND EVENTS
+Example: Events
+-> Loading of a web page
+-> User clicking a button
+-> Pressing any key
+-> Closing a window
+-> Resizing a window
+
+An event can be codede at HTML tag level for an element
+
+Example
+<button onclick='getElementById("demo").innerHTML=Date()'>The time is?</button>
+
+An event can also be coded in JavaScript for an element.
+An element can have multiple event handlers.
+
+WORKING WITH EVENTS -> COMMON EVENTS
+
+onchange - An HTML element has been changed.
+onclick - The user clicks an HTML element.
+onkeydown - The user pushes a keyboard key.
+onload - The browser has finished loading the page.
+onkeypress - When a key is pressed and released.
+onkeyup - When a key is released.
+
+onclick - When a mouse is clicked.
+ondblclick - When a mouse is double-clicked.
+onmousedown - When the mouse button is pressed.
+onmousemove - When the mouse pointer moves.
+onmouseout - When the mouse pointer moves out of an element.
+onmouseover - When the mouse pointer moves over an element.
+onmouseup - When the mouse button is released.
+
+WORKING WITH EVENTS -> IMPLEMENT EVENTS
+
+Example 1: Working with onclick event
+<html>
+    <head>
+        <script type="text/javascript">
+            function Greeting() {
+                alert ("Welcome to Javascript")
+            }
+        </script>
+    </head>
+    <body>
+        <input type="button" onclick="Greeting()" value="Greetings" />
+    </body>
+</html>
+
+Example 2: Working with onclick event
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <script type="text/javascript">
+            function count_rabbits () {
+                for (var i=1; i<=3; i++) {
+                alert ("Rabbit "+i+" out of the hat! ")
+
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <input type="button" onclick="count_rabbits()" value="Count rabbits!"/>
+    </body>
+</html>
+
+Example: Add event using JavaScript code
+<input id="myElement" type="button" value="Press me"/>
+<script>
+    document.getElementById('myElement').onclick = function (){
+        alert ('Thanks ')
+    }
+</script>
+
+Example: onmouseover and onmouseout events
+<html>
+    <head>
+        <script type="text/javascript">
+            <--
+            function over () {
+                alert ("Mouse over");
+            }
+            function out () {
+                alert ("Mouse Out") ;
+            }
+            -->
+        </script>
+    </head>
+    <body>
+        <div onmouseover="over()" onmouseout="out()">
+            <h2>This is inside the division </h2>
+        </div>
+    </body>
+</html>
+
+Example: addEventListener demo
+<!DOCTYPE html>
+<html>
+    <body>
+        <p>This example uses the addEventListener() method to add many events on the document. </p>
+        <p i="demo"></p>
+
+        <script>
+            document.addEventListener ("mouseover", myFunction);
+            document.addEventListener ("click", mySecondFunction);
+            document.addEventListener ("mouseout", myThirdFunction);
+
+            function myFunction () {
+                document.getElementById("demo").innerHTML += "Moused over! <br>"
+            }
+
+            function mySecondFunction () {
+                document.getElementById("demo").innerHTML += "Clicked! <br>"
+            }
+
+            function myThirdFunction (){
+                document.getElementById("demo").innerHTML += "Moused out !<br>"
+            }
+        </script>
+    </body>
+</html>
