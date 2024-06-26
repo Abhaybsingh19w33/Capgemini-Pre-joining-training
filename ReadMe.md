@@ -1,16 +1,14 @@
 to toggle word wrap in eclipse - use alt+shift+y
 
 
-https://github.com/iamsomraj/Adapt-Solutions
-https://github.com/topics/capgemini
+[Adapt Solutions](https://github.com/iamsomraj/Adapt-Solutions)
+[Github Capgemini Topics](https://github.com/topics/capgemini)
 
 all videos are hosted on vimeo site there is possibility to download them
 https://vimeo.com/user19584879
-
 https://vimeo.com/414911754
 
 Used java version - 8u251
-
 In course JAVA version - 8u31
 
 JLS
@@ -19,8 +17,7 @@ Go to page for documentation
 
 Perspective button to reset the view of eclipse
 
-To run C programs in Vs code
-https://www.javatpoint.com/how-to-run-a-c-program-in-visual-studio-code
+[To run C programs in Vs code](https://www.javatpoint.com/how-to-run-a-c-program-in-visual-studio-code)
 
 copy text from videos
 https://www.youtube.com/watch?v=vfg8pwjJVIc
@@ -31,44 +28,33 @@ How to add and remove custom keyboard shortcuts and hotkeys for a Chrome Extensi
 https://obie.ai/blog/how-to-add-and-remove-custom-keyboard-shortcuts-and-hotkeys-for-a-chrome-extension-in-5-seconds-flat/
 
 To execute the c program in linux
-
--> g++ filename.c
-
--> ./a.out
-
--> g++ -g filename.c -o filename(any)  - this will create a executable file with name of filename(any).out
-
--> ./filename(any) - to execute the file
+```
+g++ filename.c
+./a.out
+g++ -g filename.c -o filename(any)  - this will create a executable file with name of filename(any).out
+./filename(any) - to execute the file
+```
 
 To debug c code in linux
-
--> g++ -g filename.c
-
--> gdb a.out
+```
+g++ -g filename.c
+gdb a.out
+```
 
 gdb commands
-
---> l - to list program (show code in terminal)
-
---> b linenumber - to set breakpoint at that line
-
---> r - to run the program till the breakpoint
-
---> info b - info about the break point
-
---> n - next line of program to be executed (in appropriate sequence of running of code)
-
---> n numberOfLines - next numberOfLine of program will be executed (in appropriate sequence of running of code)
-
---> (if function appers, and n command is passed then it will run the function and return the output, we will not be able to debug the function)
-
---> s - it was used to step into the function (this is to enter the function and debug the function)
-
---> p variableName - to print the value of variable
-
---> print variableName - to print the value of variable
-
---> q - to end the gdb
+```
+l - to list program (show code in terminal)
+b linenumber - to set breakpoint at that line
+r - to run the program till the breakpoint
+info b - info about the break point
+n - next line of program to be executed (in appropriate sequence of running of code)
+n numberOfLines - next numberOfLine of program will be executed (in appropriate sequence of running of code)
+(if function appers, and n command is passed then it will run the function and return the output, we will not be able to debug the function)
+s - it was used to step into the function (this is to enter the function and debug the function)
+p variableName - to print the value of variable
+print variableName - to print the value of variable
+q - to end the gdb
+```
 
 javap co.vinod.entity.Product // to print member variables
 
