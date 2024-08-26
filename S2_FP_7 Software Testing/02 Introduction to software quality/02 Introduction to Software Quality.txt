@@ -1,0 +1,121 @@
+SOFTWARE QUALITY -> DEFINITION OF QUALITY
+
+Software quality is the degree to which:
+-> A system, component, or process mmeets specified requirements.
+-> A system, component, or process mmeets customer ot user needs or expectations.
+
+SOFTWARE QUALITY -> QUALITY ASSURANCE VS QUALITY CONTROL
+Quality Assurance - Proactive approach focused on defect prevention
+
+Quality control - reative approach focused on defect detection
+
+SOFTWARE QUALITY -> QUALITY ASSURANCE
+
+What is it?
+-> It is the application of planned, systematic, quality activities to ensure that the project will employ all processes needed to meet requirements.
+
+Inputs
+-> Quality Management Plan, Quality Metrics, Process Improvement Plan, Work Performance Information, Approved Change Requests, Quality Control Measurements, Implemented Change Requests, Implemented Corrective Actions, Implemented Defect Repair, and Implemented Preventive Actions.
+
+Tools and Techniques
+-> Quality Planning Tools/Techniques, Quality Audits, Process Analysis, and Quality Control Tools and Techniques.
+
+Outputs
+-> Requested Changes, Recommended Corrective Actions, Organizational Process Assets Updates, and Project Management Plan Updates.
+
+SOFTWARE QUALITY -> QUALITY CONTROL
+
+What is it?
+-> It involves monitoring specific project results to determine whether they comply With relevant quality standards and also identity ways to eliminate causes of unsatisfying results.
+
+Inputs
+Quality Management Plan, Quality Metrics, Quality Checklists, Organizational Process Assets, Work Performance Information, Approved Change Requests, and Deliverables
+
+Tools and Techniques
+-> Cause and Effect Diagram, Control Charts, Flowcharting, Histogram, Pareto Chart, Run Chart, Scatter Diagram, Statistical Sampling, Inspection, and Defect Repair Review
+
+Outputs
+-> Quality Control Measurements, Validated Defect Repair, Quality Baseline Updates, Recommended Corrective Actions, Recommended Preventive Actions, Requested Changes, Recommended Defect Repair, Organizational Process Assets Updates, Validated Deliverables, and Project Managemenent Plan Updates
+
+SOFTWARE QUALITY ->  QUALITY ASSURANCE VS QUALITY CONTROL - SUMMARY
+
+Quality Assurance
+What is it?
+-> Ensures quality in software development process
+
+Aim
+-> To improve development and test process
+
+Approach
+-> Proactive
+
+System
+-> Failure prevention system
+
+Responsibility
+-> Project Team
+
+Orientation
+-> Process oriented
+
+Scope
+-> Organization wide
+
+Tool
+-> Managerial tool
+
+Lifetime
+-> Before software development process
+
+Activities
+-> Process definition and implementation, audits, training
+
+Quality Control
+What is it?
+-> Ensures quality in software products
+
+Aim
+-> To identity failures/defects
+
+Approach
+-> Reactive
+
+System
+-> Failure detection system
+
+Responsibility
+-> Testing Team
+
+Orientation
+-> Product oriented
+
+Scope
+-> Product/Project specific
+
+Tool
+-> Corrective tool
+
+Lifetime
+-> Post software development
+
+Activities
+-> Reviews, testing
+
+SOFTWARE QUALITY -> CHECK YOUR UNDERSTANDING
+1. From the given activities, check the appropriate boxes as part of Quality Assurance or Quality Control.
+
+Quality Assurance
+-> Analysis of defects to determine the stage of origin
+-> Analyze metrics collected that measure the effectiveness of system and Unit Testing
+
+Quality Control
+-> Inspection of source code
+-> Unit testing to validate that the program works
+
+2. The responsibilities of this job include facilitation, process configuration, measurement, and risk analysis.
+a. Quality Control
+b. Quality Assurance -- Answer
+
+3. The responsibilities of this job include conducting inspections, reviews, testing and focusing on the product.
+a. Quality Control -- answer
+b. Quality Assurance
